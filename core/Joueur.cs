@@ -3,7 +3,7 @@ public class Joueur
     // La classe comporte trois attributs
     private string nom;
     private int vie;
-    public int force { get; set; }
+    private int force { get; set; }
     
     // On définit les méthodes set et get pour le nom.
     public string Nom
@@ -23,6 +23,13 @@ public class Joueur
     {
         get => vie;
         set => vie = Math.Max(0, value);
+    }
+
+    // On définit les méthodes set et get pour l'attribut force.
+    public int Force
+    {
+        get => force;
+        set => force;
     }
 
     // Constructeur de la classe ; La vie est réglée sur 100 et la force sur 10.
