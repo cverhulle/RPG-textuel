@@ -3,7 +3,7 @@ public class Joueur
     // La classe comporte trois attributs
     private string nom;
     private int vie;
-    private int force { get; set; }
+    private int force;
     
     // On définit les méthodes set et get pour le nom.
     public string Nom
@@ -29,7 +29,7 @@ public class Joueur
     public int Force
     {
         get => force;
-        set => force;
+        set => force = value;
     }
 
     // Constructeur de la classe ; La vie est réglée sur 100 et la force sur 10.
