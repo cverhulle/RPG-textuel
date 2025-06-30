@@ -39,7 +39,7 @@ public class Player : Character
 
     // Cette méthode permet d'afficher les items du joueur
     public void DisplayInventory()
-    {   
+    {
         // Si l'inventaire est vide, on affiche un message personnalisé
         if (Inventory.Count == 0)
         {
@@ -52,7 +52,21 @@ public class Player : Character
 
         for (int i = 0; i < Inventory.Count; i++)
         {
-            Console.WriteLine($"  {i+1}. {Inventory[i].name}");
+            Console.WriteLine($"  {i + 1}. {Inventory[i].name}");
+        }
+    }
+    
+    // Cette méthode permet de retirer un objet
+    public void RemoveItem(int index)
+    {
+        if (IsValidItemIndex(index))
+        {
+            string removedName = Inventory[index].name;
+            Inventory.RemoveAt(index);
+        }
+        else
+        {
+            Console.WriteLine("Erreur lors de la suppression de l'objet.");
         }
     }
 }
