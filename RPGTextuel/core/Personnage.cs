@@ -64,7 +64,7 @@ public abstract class Character
     // Cette méthode permet d'infliger des dégats à un autre Character.
     public virtual void Attack(Character target)
     {
-        Console.WriteLine($"{Nam} attaque {target.Name} pour {Strength} points de dégâts !");
+        Console.WriteLine($"{Name} attaque {target.Name} pour {Strength} points de dégâts !");
         target.TakeDamage(Strength);
     }
 
