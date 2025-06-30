@@ -16,8 +16,8 @@ namespace RPGTextuel.Items
         // Elle régénère un certain montant de PV.
         public override void Use(Character target)
         {
+            Console.WriteLine($"{target.Name} utilise {Name}");
             target.Heal(HealAmount);
-            Console.WriteLine($"{target.Name} utilise la {Name} et récupère {HealAmount} PV!");
         }
     }
 }
