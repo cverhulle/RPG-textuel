@@ -61,7 +61,6 @@ public class Player : Character
     {
         if (IsValidItemIndex(index))
         {
-            string removedName = Inventory[index].name;
             Inventory.RemoveAt(index);
         }
         else
