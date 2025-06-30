@@ -1,42 +1,7 @@
-public class Joueur
+public class Joueur : Personnage
 {
-    // La classe comporte trois attributs
-    private string nom;
-    private int vie;
-    private int force;
-    
-    // On définit les méthodes set et get pour le nom.
-    public string Nom
+    // On définit un Joueur comme un Personnage à 100Pv, 10 de force et dont le nom est laissé libre.
+    public Joueur(string nom) : base(nom, 100, 10)
     {
-        get => nom;
-        set
-        {
-            if (!string.IsNullOrWhiteSpace(value))
-                nom = value;
-            else
-                Console.WriteLine("Le nom du joueur ne peut pas être vide ou null.");
-        }
-    }
-
-    // On définit les méthodes set et get pour l'attribut vie.
-    public int Vie
-    {
-        get => vie;
-        set => vie = Math.Max(0, value);
-    }
-
-    // On définit les méthodes set et get pour l'attribut force.
-    public int Force
-    {
-        get => force;
-        set => force = value;
-    }
-
-    // Constructeur de la classe ; La vie est réglée sur 100 et la force sur 10.
-    public Joueur(string nomDuJoueur)
-    {
-        nom = nomDuJoueur;
-        vie = 100;
-        force = 10;
     }
 }
