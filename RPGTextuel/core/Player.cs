@@ -23,7 +23,7 @@ public class Player : Character
         {
             Item item = Inventory[index];
             item.Use(target);
-            Inventory.RemoveAt(index);
+            RemoveItem(index);
         }
         else
         {
