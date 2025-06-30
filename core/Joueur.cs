@@ -14,7 +14,7 @@ public class Joueur
             if (!string.IsNullOrWhiteSpace(value))
                 nom = value;
             else
-                Console.WriteLine("Le nom ne peut pas être vide ou null.");
+                Console.WriteLine("Le nom du joueur ne peut pas être vide ou null.");
         }
     }
 
