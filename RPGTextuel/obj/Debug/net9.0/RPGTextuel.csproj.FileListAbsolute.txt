@@ -1,0 +1,15 @@
+D:\Informatique\Projet\C#\RPGTextuel\bin\Debug\net9.0\RPGTextuel.exe
+D:\Informatique\Projet\C#\RPGTextuel\bin\Debug\net9.0\RPGTextuel.deps.json
+D:\Informatique\Projet\C#\RPGTextuel\bin\Debug\net9.0\RPGTextuel.runtimeconfig.json
+D:\Informatique\Projet\C#\RPGTextuel\bin\Debug\net9.0\RPGTextuel.dll
+D:\Informatique\Projet\C#\RPGTextuel\bin\Debug\net9.0\RPGTextuel.pdb
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.AssemblyInfoInputs.cache
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.AssemblyInfo.cs
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.csproj.CoreCompileInputs.cache
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.sourcelink.json
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.dll
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\refint\RPGTextuel.dll
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.pdb
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\RPGTextuel.genruntimeconfig.cache
+D:\Informatique\Projet\C#\RPGTextuel\obj\Debug\net9.0\ref\RPGTextuel.dll
