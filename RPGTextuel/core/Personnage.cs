@@ -53,7 +53,7 @@ public abstract class Personnage
         pointsDeVieMax = pointsDeVieMaxPersonnage;
     }
 
-    // On définit la méthode encaisserDegats
+    // Cette méthode permet d'encaisser des dégats.
     // Elle prend en argument un entier "dégats" et diminue la vie du personnage de ce nombre.
     public virtual void EncaisserDegats(int degats)
     {
@@ -61,14 +61,20 @@ public abstract class Personnage
         Console.WriteLine($"{Nom} subit {degats} points de dégâts. PV restants : {Vie}");
     }
 
-    // On définit la méthode Attaquer.
+    // Cette méthode permet d'infliger des dégats à un autre personnage.
     public virtual void Attaquer(Personnage cible)
     {
         Console.WriteLine($"{Nom} attaque {cible.Nom} pour {Force} points de dégâts !");
         cible.EncaisserDegats(Force);
     }
 
-    // On définit la méthode Soigner.
+    // Cette méthode indique si le personnage peut recevoir des soins.
+    public bool PeutRecevoirSoin(int soin)
+    {
+        return soin > 0 && Vie < PointsDeVieMax;
+    }
+
+    // Cette méthode permet de se soigner de "soin" PV.
     public virtual void Soigner(int soin)
     {
         // Si le soin est négatif, ...
