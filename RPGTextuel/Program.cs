@@ -1,4 +1,5 @@
 ﻿using System;
+using RPGTextuel.Items;
 
 class Program
 {
@@ -8,15 +9,16 @@ class Program
         Player joueur = new Player("Link");
         Enemy adversaire = new Enemy("Gobelin", 50, 8, 50);
 
-        // Affichage initial
-        Console.WriteLine($"{joueur.Name} entre dans l'arène !");
-        Console.WriteLine($"Un {adversaire.Name} apparaît avec {adversaire.Health} points de vie.");
+        // Création d'une potion
+        HealPotion smallPotion = new HealPotion("Petite Potion", 30);
 
-        // Test d'une attaque
-        joueur.Attack(adversaire);
+        // Ajout au sac du joueur
+        joueur.AddItem(smallPotion);
+        
+        // On Simule des dégâts
+        joueur.TakeDamage(40); 
 
-        // Test d'un soin
-        adversaire.Heal(5);
-        adversaire.Heal(50);
+        // Utilisation de la potion (index 0 dans l’inventaire)
+        joueur.UseItem(0);
     }
 }
