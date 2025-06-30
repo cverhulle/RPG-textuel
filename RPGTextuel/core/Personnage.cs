@@ -34,4 +34,12 @@ public abstract class Personnage
         get => force;
         set => force = Math.Max(0, value);
     }
+
+    // On implémente le constructeur de la classe.
+    protected Personnage(string nomPersonnage, int viePersonnage, int forcePersonnage)
+    {
+        nom = nomPersonnage;
+        vie = viePersonnage;
+        force = forcePersonnage;
+    }
 }
