@@ -61,10 +61,37 @@ public abstract class Personnage
         Console.WriteLine($"{Nom} subit {degats} points de dégâts. PV restants : {Vie}");
     }
 
-    // On définit la méthode attaquer.
+    // On définit la méthode Attaquer.
     public virtual void Attaquer(Personnage cible)
     {
         Console.WriteLine($"{Nom} attaque {cible.Nom} pour {Force} points de dégâts !");
         cible.EncaisserDegats(Force);
+    }
+
+    // On définit la méthode Soigner.
+    public virtual void Soigner(int soin)
+    {
+        // Si le soin est négatif, ...
+        if (soin <= 0)
+        {
+            // On affiche un message et, on ne fait rien
+            Console.WriteLine($"{Nom} ne peut pas être soigné avec {soin} PV.");
+            return;
+        }
+
+        // On mémorise l'ancien nombre de PV.
+        int ancienneVie = Vie;
+
+        // On augmente la vie du personnage
+        Vie += soin;
+
+
+        // Si l'on dépasse les PVmax, on ajuste le montant
+        if (Vie > PointsDeVieMax)
+            Vie = PointsDeVieMax;
+
+        // On affiche un message à l'utilisateur.
+        int soinEffectif = Vie - ancienneVie;
+        Console.WriteLine($"{Nom} récupère {soinEffectif} points de vie. PV actuels : {Vie}");
     }
 }
