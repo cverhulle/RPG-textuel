@@ -13,7 +13,7 @@ public class Player : Character
     public void AddItem(Item item)
     {
         Inventory.Add(item);
-        Console.WriteLine($"{Name} reçoit {item.Name}.");
+        Console.WriteLine($"{Name} reçoit {item.name}.");
     }
 
     // Cette méthode permet d'utiliser un item.
