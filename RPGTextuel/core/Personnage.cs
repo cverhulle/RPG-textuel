@@ -74,6 +74,24 @@ public abstract class Personnage
         return soin > 0 && Vie < PointsDeVieMax;
     }
 
+    // Cette méthode permet de gérer le calcul des soins.
+    // Elle retourne le montnant de soin effectif.
+    protected int AppliquerSoin(int soin)
+    {
+        // On mémorise l'ancien nombre de PV.
+        int ancienneVie = Vie;
+
+        // On augmente la vie du personnage
+        Vie += soin;
+
+        // Si l'on dépasse les PVmax, on ajuste le montant
+        if (Vie > PointsDeVieMax)
+            Vie = PointsDeVieMax;
+
+        // On calcule les soins effectifs et, on retourne cette valeur.
+        return Vie - ancienneVie;
+    }
+
     // Cette méthode permet de se soigner de "soin" PV.
     public virtual void Soigner(int soin)
     {
