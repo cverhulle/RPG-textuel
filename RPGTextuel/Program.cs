@@ -19,5 +19,4 @@ class Program
         adversaire.Heal(5);
         adversaire.Heal(50);
     }
-
 }
