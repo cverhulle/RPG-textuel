@@ -4,6 +4,7 @@ public abstract class Personnage
     private string nom;
     private int vie;
     private int force;
+    private int pointsDeVieMax;
 
     // On définit les méthodes set et get pour le nom.
     // On rejette les noms "null" ou vide.
@@ -33,6 +34,14 @@ public abstract class Personnage
     {
         get => force;
         set => force = Math.Max(0, value);
+    }
+
+    // On définit les méthodes set et get pour l'attribut pointsDeVieMax.
+    // On utilise Math pour mettre à 0 les points de force s'ils tombent en négatif.
+    public int pointsDeVieMax
+    {
+        get => pointsDeVieMax;
+        set => pointsDeVieMax = Math.Max(0, value);
     }
 
     // On implémente le constructeur de la classe.
