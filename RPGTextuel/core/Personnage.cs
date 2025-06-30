@@ -74,6 +74,13 @@ public abstract class Personnage
         return soin > 0 && Vie < PointsDeVieMax;
     }
 
+    // Cette méthode permet de gérer le dépassement des points de vie max.
+    protected GérerDépassementPointsDeVieMax()
+    {
+        if (Vie > PointsDeVieMax)
+            Vie = PointsDeVieMax;
+    }
+
     // Cette méthode permet de gérer le calcul des soins.
     // Elle retourne le montnant de soin effectif.
     protected int AppliquerSoin(int soin)
@@ -84,9 +91,8 @@ public abstract class Personnage
         // On augmente la vie du personnage
         Vie += soin;
 
-        // Si l'on dépasse les PVmax, on ajuste le montant
-        if (Vie > PointsDeVieMax)
-            Vie = PointsDeVieMax;
+        // On gère le dépassement des points de vie max.
+        this.GérerDépassementPointsDeVieMax();
 
         // On calcule les soins effectifs et, on retourne cette valeur.
         return Vie - ancienneVie;
