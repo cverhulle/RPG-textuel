@@ -1,24 +1,33 @@
 ﻿using System;
+using RPGTextuel;
 using RPGTextuel.Items;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Création du joueur et de son ennemi
+        // Création du joueur et de l'ennemi
         Player joueur = new Player("Link");
-        Enemy adversaire = new Enemy("Gobelin", 50, 8, 50);
+        Enemy gobelin = new Enemy("Gobelin", 50, 8, 50);
 
-        // Création d'une potion
-        DamagePotion smallPotion = new DamagePotion("Petite Potion", 30);
+        // Ajout d'objets
+        joueur.Inventory.AddItem(new HealPotion("Potion de vie", 25));
+        joueur.Inventory.AddItem(new DamagePotion("Potion de dégats", 20));
 
-        // Ajout au sac du joueur
-        joueur.AddItem(smallPotion);
+        // Affichage initial
+        Console.WriteLine($"{joueur.Name} arrive dans la bataille");
+        Console.WriteLine($"Un {gobelin.Name} apparait avec {gobelin.Health} PV.");
 
-        // Affichage de l'inventaire
-        joueur.DisplayInventory();
-        
-        // Utilisation de la potion (index 0 dans l’inventaire)
-        joueur.UseItem(0,adversaire);
+        // Affiche l'inventaire
+        joueur.Inventory.DisplayInventory(joueur.Name);
+
+        // Simulation d'un dégât sur le joueur
+        joueur.TakeDamage(30);
+
+        // Utilise la potion de soin sur le joueur
+        joueur.Inventory.UseItem(0, joueur);
+
+        // Utilise la bombe sur le gobelin
+        joueur.Inventory.UseItem(0, gobelin);
     }
 }
