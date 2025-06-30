@@ -100,28 +100,17 @@ public abstract class Personnage
 
     // Cette méthode permet de se soigner de "soin" PV.
     public virtual void Soigner(int soin)
-    {
-        // Si le soin est négatif, ...
-        if (soin <= 0)
-        {
-            // On affiche un message et, on ne fait rien
+    {   
+        // On vérfie que le personnage peut recevoir des soins
+        if (!PeutRecevoirSoin(soin))
+        {   
+            // Si ce n'est pas le cas, on affiche un message et, on ne fait rien.
             Console.WriteLine($"{Nom} ne peut pas être soigné avec {soin} PV.");
             return;
         }
 
-        // On mémorise l'ancien nombre de PV.
-        int ancienneVie = Vie;
-
-        // On augmente la vie du personnage
-        Vie += soin;
-
-
-        // Si l'on dépasse les PVmax, on ajuste le montant
-        if (Vie > PointsDeVieMax)
-            Vie = PointsDeVieMax;
-
-        // On affiche un message à l'utilisateur.
-        int soinEffectif = Vie - ancienneVie;
+        // On applique les soins, et, on affiche un message d'information à l'utilisateur.
+        int soinEffectif = AppliquerSoin(soin);
         Console.WriteLine($"{Nom} récupère {soinEffectif} points de vie. PV actuels : {Vie}");
     }
 }
