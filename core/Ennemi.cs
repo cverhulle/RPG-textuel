@@ -31,4 +31,12 @@ public class Ennemi
         get => force;
         set => force = value;
     }
+
+    // Constructeur de la classe ; La vie est réglée sur 100 et la force sur 10.
+    public Ennemi(string nomEnnemi, int vieEnnemi, int forceEnnemi)
+    {
+        nom = nomEnnemi;
+        vie = vieEnnemi;
+        force = forceEnnemi;
+    }
 }
