@@ -50,4 +50,11 @@ public abstract class Personnage
         Vie -= degats;
         Console.WriteLine($"{Nom} subit {degats} points de dégâts. PV restants : {Vie}");
     }
+
+    // On définit la méthode attaquer.
+    public virtual void attaquer(Personnage cible)
+    {
+        Console.WriteLine($"{Nom} attaque {cible.Nom} pour {Force} points de dégâts !");
+        cible.encaisserDegats(Force);
+    }
 }
