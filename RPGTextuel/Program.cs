@@ -6,7 +6,7 @@ class Program
     {
         // Création du joueur et de l'ennemi
         Joueur joueur = new Joueur("Link");
-        Ennemi ennemi = new Ennemi("Gobelin", 50, 8);
+        Ennemi ennemi = new Ennemi("Gobelin", 50, 8, 50);
 
         // Affichage initial
         Console.WriteLine($"{joueur.Nom} entre dans l'arène !");

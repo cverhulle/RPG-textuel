@@ -38,7 +38,7 @@ public abstract class Personnage
 
     // On définit les méthodes set et get pour l'attribut pointsDeVieMax.
     // On utilise Math pour mettre à 0 les points de vie maximum s'ils tombent en négatif.
-    public int pointsDeVieMax
+    public int PointsDeVieMax
     {
         get => pointsDeVieMax;
         set => pointsDeVieMax = Math.Max(0, value);
