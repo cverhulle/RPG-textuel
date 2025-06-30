@@ -37,7 +37,7 @@ public abstract class Personnage
     }
 
     // On définit les méthodes set et get pour l'attribut pointsDeVieMax.
-    // On utilise Math pour mettre à 0 les points de force s'ils tombent en négatif.
+    // On utilise Math pour mettre à 0 les points de vie maximum s'ils tombent en négatif.
     public int pointsDeVieMax
     {
         get => pointsDeVieMax;
@@ -45,11 +45,12 @@ public abstract class Personnage
     }
 
     // On implémente le constructeur de la classe.
-    protected Personnage(string nomPersonnage, int viePersonnage, int forcePersonnage)
+    protected Personnage(string nomPersonnage, int viePersonnage, int forcePersonnage, int pointsDeVieMaxPersonnage)
     {
         nom = nomPersonnage;
         vie = viePersonnage;
         force = forcePersonnage;
+        pointsDeVieMax = pointsDeVieMaxPersonnage;
     }
 
     // On définit la méthode encaisserDegats
