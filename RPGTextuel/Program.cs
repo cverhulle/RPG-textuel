@@ -14,6 +14,9 @@ class Program
 
         // Ajout au sac du joueur
         joueur.AddItem(smallPotion);
+
+        // Affichage de l'inventaire
+        joueur.DisplayInventory();
         
         // Utilisation de la potion (index 0 dans l’inventaire)
         joueur.UseItem(0,adversaire);

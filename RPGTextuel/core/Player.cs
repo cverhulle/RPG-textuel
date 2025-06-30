@@ -52,7 +52,7 @@ public class Player : Character
 
         for (int i = 0; i < Inventory.Count; i++)
         {
-            Console.WriteLine($"  {i}. {Inventory[i].name}");
+            Console.WriteLine($"  {i+1}. {Inventory[i].name}");
         }
     }
 }
