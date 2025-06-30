@@ -14,6 +14,9 @@ class Program
 
         // Test d'une attaque
         joueur.Attaquer(ennemi);
+
+        // Test d'un soin
+        ennemi.Soigner(5);
     }
 
 }
