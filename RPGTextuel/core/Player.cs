@@ -8,4 +8,11 @@ public class Player : Character
     public Player(string name) : base(name, 100, 10, 100)
     {
     }
+
+    // Cette méthode permet d'ajouter un item dans l'inventaire.
+    public void AddItem(Item item)
+    {
+        Inventory.Add(item);
+        Console.WriteLine($"{Name} receives {item.Name}.");
+    }
 }
