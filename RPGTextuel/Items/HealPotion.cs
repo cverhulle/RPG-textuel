@@ -4,20 +4,20 @@ namespace RPGTextuel.Items
     public class HealPotion : Item
     {   
         // On liste ses attributs
-        public int HealAmount { get; }
+        public int healAmount { get; }
 
         // On définiti son constructeur
-        public HealPotion(string name, int healAmount) : base(name)
+        public HealPotion(string name, int healAmountOfPotion) : base(name)
         {
-            HealAmount = healAmount;
+            healAmount = healAmountOfPotion;
         }
 
         // Cette méthode permet d'utiliser la potion de soin.
         // Elle régénère un certain montant de PV.
         public override void Use(Character target)
         {
-            Console.WriteLine($"{target.Name} utilise {Name}");
-            target.Heal(HealAmount);
+            Console.WriteLine($"{target.Name} utilise {name}");
+            target.Heal(healAmount);
         }
     }
 }

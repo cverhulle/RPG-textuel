@@ -4,12 +4,12 @@ namespace RPGTextuel.Items
     public abstract class Item
     {
         // On liste ses attributs
-        public string Name { get; protected set; }
+        public string name { get; protected set; }
 
         // On implémente son constructeur.
-        public Item(string name)
+        public Item(string nameItem)
         {
-            Name = name;
+            name = nameItem;
         }
 
         // On oblige les classes dérivées à définir une méthode Use.

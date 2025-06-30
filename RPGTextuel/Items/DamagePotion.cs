@@ -16,7 +16,7 @@ namespace RPGTextuel.Items
         // Elle prend en argument un personnage et lui enlève des PV égaux à damage.
         public override void Use(Character target)
         {
-            Console.WriteLine($"{target.Name} est touché par {Name}");
+            Console.WriteLine($"{target.Name} est touché par {name}");
             target.TakeDamage(damage);
         }
     }
