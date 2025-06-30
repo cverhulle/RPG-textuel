@@ -11,5 +11,8 @@ namespace RPGTextuel.Items
         {
             Name = name;
         }
+
+        // On oblige les classes dérivées à définir une méthode Use.
+        public abstract void Use(Character target);
     }
 }
