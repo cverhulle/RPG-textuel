@@ -55,16 +55,16 @@ public abstract class Personnage
 
     // On définit la méthode encaisserDegats
     // Elle prend en argument un entier "dégats" et diminue la vie du personnage de ce nombre.
-    public virtual void encaisserDegats(int degats)
+    public virtual void EncaisserDegats(int degats)
     {
         Vie -= degats;
         Console.WriteLine($"{Nom} subit {degats} points de dégâts. PV restants : {Vie}");
     }
 
     // On définit la méthode attaquer.
-    public virtual void attaquer(Personnage cible)
+    public virtual void Attaquer(Personnage cible)
     {
         Console.WriteLine($"{Nom} attaque {cible.Nom} pour {Force} points de dégâts !");
-        cible.encaisserDegats(Force);
+        cible.EncaisserDegats(Force);
     }
 }
