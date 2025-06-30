@@ -1,116 +1,116 @@
-public abstract class Personnage
+public abstract class Character
 {
-    // On définit les attributs de la classe Personnage.
-    private string nom;
-    private int vie;
-    private int force;
-    private int pointsDeVieMax;
+    // On définit les attributs de la classe Character.
+    private string name;
+    private int health;
+    private int strength;
+    private int maxHealth;
 
-    // On définit les méthodes set et get pour le nom.
+    // On définit les méthodes set et get pour le name.
     // On rejette les noms "null" ou vide.
-    public string Nom
+    public string Name
     {
-        get => nom;
+        get => name;
         set
         {
             if (!string.IsNullOrWhiteSpace(value))
-                nom = value;
+                name = value;
             else
                 Console.WriteLine("Le nom ne peut pas être vide ou null.");
         }
     }
 
-    // On définit les méthodes set et get pour l'attribut vie.
+    // On définit les méthodes set et get pour l'attribut health.
     // On utilise Math pour mettre à 0 les points de vie s'ils tombent en négatif.
-    public int Vie
+    public int Health
     {
-        get => vie;
-        set => vie = Math.Max(0, value);
+        get => health;
+        set => health = Math.Max(0, value);
     }
 
-    // On définit les méthodes set et get pour l'attribut force.
+    // On définit les méthodes set et get pour l'attribut strength.
     // On utilise Math pour mettre à 0 les points de force s'ils tombent en négatif.
-    public int Force
+    public int Strength
     {
-        get => force;
-        set => force = Math.Max(0, value);
+        get => strength;
+        set => strength = Math.Max(0, value);
     }
 
-    // On définit les méthodes set et get pour l'attribut pointsDeVieMax.
+    // On définit les méthodes set et get pour l'attribut maxHealth.
     // On utilise Math pour mettre à 0 les points de vie maximum s'ils tombent en négatif.
-    public int PointsDeVieMax
+    public int MaxHealth
     {
-        get => pointsDeVieMax;
-        set => pointsDeVieMax = Math.Max(0, value);
+        get => maxHealth;
+        set => maxHealth = Math.Max(0, value);
     }
 
     // On implémente le constructeur de la classe.
-    protected Personnage(string nomPersonnage, int viePersonnage, int forcePersonnage, int pointsDeVieMaxPersonnage)
+    protected Character(string characterName, int characterHealth, int characterStrength, int characterMaxHealth)
     {
-        nom = nomPersonnage;
-        vie = viePersonnage;
-        force = forcePersonnage;
-        pointsDeVieMax = pointsDeVieMaxPersonnage;
+        name = characterName;
+        Health = characterHealth;
+        strength = characterStrength;
+        MaxHealth = characterMaxHealth;
     }
 
     // Cette méthode permet d'encaisser des dégats.
-    // Elle prend en argument un entier "dégats" et diminue la vie du personnage de ce nombre.
-    public virtual void EncaisserDegats(int degats)
+    // Elle prend en argument un entier "dégats" et diminue la vie du Character de ce nombre.
+    public virtual void TakeDamage(int hit)
     {
-        Vie -= degats;
-        Console.WriteLine($"{Nom} subit {degats} points de dégâts. PV restants : {Vie}");
+        Health -= hit;
+        Console.WriteLine($"{Name} subit {hit} points de dégâts. PV restants : {Health}");
     }
 
-    // Cette méthode permet d'infliger des dégats à un autre personnage.
-    public virtual void Attaquer(Personnage cible)
+    // Cette méthode permet d'infliger des dégats à un autre Character.
+    public virtual void Attack(Character target)
     {
-        Console.WriteLine($"{Nom} attaque {cible.Nom} pour {Force} points de dégâts !");
-        cible.EncaisserDegats(Force);
+        Console.WriteLine($"{Nam} attaque {target.Name} pour {Strength} points de dégâts !");
+        target.TakeDamage(Strength);
     }
 
-    // Cette méthode indique si le personnage peut recevoir des soins.
-    public bool PeutRecevoirSoin(int soin)
+    // Cette méthode indique si le Character peut recevoir des soins.
+    public bool CanBeHealed(int amount)
     {
-        return soin > 0 && Vie < PointsDeVieMax;
+        return amount > 0 && Health < MaxHealth;
     }
 
     // Cette méthode permet de gérer le dépassement des points de vie max.
-    protected void GérerDépassementPointsDeVieMax()
+    protected void HandleExceedingLifePoints()
     {
-        if (Vie > PointsDeVieMax)
-            Vie = PointsDeVieMax;
+        if (Health > MaxHealth)
+            Health = MaxHealth;
     }
 
     // Cette méthode permet de gérer le calcul des soins.
     // Elle retourne le montnant de soin effectif.
-    protected int AppliquerSoin(int soin)
+    protected int ApplyHeal(int amount)
     {
         // On mémorise l'ancien nombre de PV.
-        int ancienneVie = Vie;
+        int oldHealth = Health;
 
-        // On augmente la vie du personnage
-        Vie += soin;
+        // On augmente la vie du Character
+        Health += amount;
 
         // On gère le dépassement des points de vie max.
-        this.GérerDépassementPointsDeVieMax();
+        this.HandleExceedingLifePoints();
 
         // On calcule les soins effectifs et, on retourne cette valeur.
-        return Vie - ancienneVie;
+        return Health - oldHealth;
     }
 
     // Cette méthode permet de se soigner de "soin" PV.
-    public virtual void Soigner(int soin)
+    public virtual void Heal(int amount)
     {   
-        // On vérfie que le personnage peut recevoir des soins
-        if (!PeutRecevoirSoin(soin))
+        // On vérfie que le Character peut recevoir des soins
+        if (!CanBeHealed(amount))
         {   
             // Si ce n'est pas le cas, on affiche un message et, on ne fait rien.
-            Console.WriteLine($"{Nom} ne peut pas être soigné avec {soin} PV.");
+            Console.WriteLine($"{Name} ne peut pas être soigné avec {amount} PV.");
             return;
         }
 
         // On applique les soins, et, on affiche un message d'information à l'utilisateur.
-        int soinEffectif = AppliquerSoin(soin);
-        Console.WriteLine($"{Nom} récupère {soinEffectif} points de vie. PV actuels : {Vie}");
+        int actualHealed = ApplyHeal(amount);
+        Console.WriteLine($"{Name} récupère {actualHealed} points de vie. PV actuels : {Health}");
     }
 }
