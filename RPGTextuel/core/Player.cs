@@ -15,4 +15,19 @@ public class Player : Character
         Inventory.Add(item);
         Console.WriteLine($"{Name} receives {item.Name}.");
     }
+
+    // Cette méthode permet d'utiliser un item.
+    public void UseItem(int index)
+    {
+        if (index >= 0 && index < Inventory.Count)
+        {
+            Item item = Inventory[index];
+            item.Use(this);
+            Inventory.RemoveAt(index);
+        }
+        else
+        {
+            Console.WriteLine("Item introuvable");
+        }
+    }
 }
