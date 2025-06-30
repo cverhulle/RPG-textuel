@@ -17,4 +17,11 @@ public class Ennemi
                 Console.WriteLine("Le nom de l'ennemi ne peut pas être vide ou null.");
         }
     }
+
+    // Propriété pour la vie (lecture seule de l'extérieur)
+    public int Vie
+    {
+        get => vie;
+        set => vie = Math.Max(0, value);
+    }
 }
