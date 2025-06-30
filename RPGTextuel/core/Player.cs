@@ -19,7 +19,7 @@ public class Player : Character
     // Cette méthode permet d'utiliser un item.
     public void UseItem(int index, Character target)
     {
-        if (index >= 0 && index < Inventory.Count)
+        if (IsValidItemIndex(index))
         {
             Item item = Inventory[index];
             item.Use(target);
@@ -29,5 +29,11 @@ public class Player : Character
         {
             Console.WriteLine("Item introuvable");
         }
+    }
+
+    // Cette méthode vérifie si l'index passé en argument est valide.
+    public bool IsValidItemIndex(int index)
+    {
+        return index >= 0 && index < Inventory.Count;
     }
 }
