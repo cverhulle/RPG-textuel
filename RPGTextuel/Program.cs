@@ -16,6 +16,6 @@ class Program
         joueur.AddItem(smallPotion);
         
         // Utilisation de la potion (index 0 dans l’inventaire)
-        joueur.UseItem(0);
+        joueur.UseItem(0,adversaire);
     }
 }

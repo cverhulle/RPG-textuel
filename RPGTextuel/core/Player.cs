@@ -17,12 +17,12 @@ public class Player : Character
     }
 
     // Cette méthode permet d'utiliser un item.
-    public void UseItem(int index)
+    public void UseItem(int index, Character target)
     {
         if (index >= 0 && index < Inventory.Count)
         {
             Item item = Inventory[index];
-            item.Use(this);
+            item.Use(target);
             Inventory.RemoveAt(index);
         }
         else
