@@ -36,4 +36,23 @@ public class Player : Character
     {
         return index >= 0 && index < Inventory.Count;
     }
+
+    // Cette méthode permet d'afficher les items du joueur
+    public void DisplayInventory()
+    {   
+        // Si l'inventaire est vide, on affiche un message personnalisé
+        if (Inventory.Count == 0)
+        {
+            Console.WriteLine($"{Name} n'a pas d'objets");
+            return;
+        }
+
+        // Sinon, on affiche la liste de sobjets du personnage.
+        Console.WriteLine($"\n Inventaire de {Name}");
+
+        for (int i = 0; i < Inventory.Count; i++)
+        {
+            Console.WriteLine($"  {i}. {Inventory[i].name}");
+        }
+    }
 }
