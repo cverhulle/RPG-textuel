@@ -75,7 +75,7 @@ public abstract class Personnage
     }
 
     // Cette méthode permet de gérer le dépassement des points de vie max.
-    protected GérerDépassementPointsDeVieMax()
+    protected void GérerDépassementPointsDeVieMax()
     {
         if (Vie > PointsDeVieMax)
             Vie = PointsDeVieMax;
