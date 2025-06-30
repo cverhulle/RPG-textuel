@@ -42,4 +42,12 @@ public abstract class Personnage
         vie = viePersonnage;
         force = forcePersonnage;
     }
+
+    // On définit la méthode encaisserDegats
+    // Elle prend en argument un entier "dégats" et diminue la vie du personnage de ce nombre.
+    public virtual void encaisserDegats(int degats)
+    {
+        Vie -= degats;
+        Console.WriteLine($"{Nom} subit {degats} points de dégâts. PV restants : {Vie}");
+    }
 }
