@@ -11,6 +11,9 @@ class Program
         // Affichage initial
         Console.WriteLine($"{joueur.Nom} entre dans l'arène !");
         Console.WriteLine($"Un {ennemi.Nom} apparaît avec {ennemi.Vie} points de vie.");
+
+        // Test d'une attaque
+        joueur.attaquer(ennemi);
     }
 
 }
