@@ -24,4 +24,11 @@ public class Ennemi
         get => vie;
         set => vie = Math.Max(0, value);
     }
+
+    // On définit les méthodes set et get pour l'attribut force.
+    public int Force
+    {
+        get => force;
+        set => force = value;
+    }
 }
