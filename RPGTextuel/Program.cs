@@ -17,6 +17,7 @@ class Program
 
         // Test d'un soin
         ennemi.Soigner(5);
+        ennemi.Soigner(50);
     }
 
 }
