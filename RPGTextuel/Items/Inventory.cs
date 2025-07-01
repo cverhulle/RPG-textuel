@@ -5,8 +5,15 @@ namespace RPGTextuel
     // On crée la classe "Inventaire"
     public class Inventory
     {
-        // Cette classe contient une liste d'objet.
+        // Cette classe contient une liste d'objet et le nom de son propriétaire.
         private List<Item> items = new List<Item>();
+        private Character owner;
+
+        // On définit le constructeur de la classe.
+        public Inventory(Character inventoryOwner)
+        {
+            owner = inventoryOwner;
+        }
 
         // Cette méthode permet d'ajouter un item dans l'inventaire.
         public void AddItem(Item item)
