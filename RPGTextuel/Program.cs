@@ -1,4 +1,5 @@
-﻿using RPGTextuel.Items;
+﻿using RPGTextuel;
+using RPGTextuel.Items;
 
 class Program
 {
@@ -6,7 +7,7 @@ class Program
     {
         // Création du joueur et de l'ennemi
         Player joueur = new Player("Link");
-        Enemy gobelin = new Enemy("Gobelin", 50, 8, 50);
+        Enemy gobelin = new Enemy("Gobelin", 50, 8, 50, EnemyType.Goblin);
 
         // Ajout d'objets
         joueur.Inventory.AddItem(new HealPotion("Potion de vie", 25));
