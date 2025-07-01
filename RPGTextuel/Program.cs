@@ -19,7 +19,7 @@ class Program
         Console.WriteLine($"Un {gobelin.Name} apparait avec {gobelin.Health} PV.");
 
         // Affiche l'inventaire
-        joueur.Inventory.DisplayInventory(joueur.Name);
+        joueur.Inventory.DisplayInventory();
 
         // Simulation d'un dégât sur le joueur
         joueur.TakeDamage(30);
