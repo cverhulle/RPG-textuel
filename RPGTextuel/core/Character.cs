@@ -14,21 +14,6 @@ namespace RPGTextuel
         // Création de la propriété isAlive pour savoir si un personnage est en vie ou mort.
         public bool IsAlive => Health > 0;
 
-        // Cette méthode permet d'encaisser des dégats.
-        // Elle prend en argument un entier "dégats" et diminue la vie du Character de ce nombre.
-        public virtual void TakeDamage(int hit)
-        {
-            Health -= hit;
-            Console.WriteLine($"{Name} subit {hit} points de dégâts. PV restants : {Health}");
-        }
-
-        // Cette méthode permet d'infliger des dégats à un autre Character.
-        public virtual void Attack(Character target)
-        {
-            Console.WriteLine($"{Name} attaque {target.Name} pour {Strength} points de dégâts !");
-            target.TakeDamage(Strength);
-        }
-
         // Cette méthode indique si le Character peut recevoir des soins.
         public bool CanBeHealed(int amount)
         {
