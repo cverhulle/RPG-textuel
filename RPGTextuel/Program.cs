@@ -7,26 +7,15 @@ class Program
     {
         // Création du joueur et de l'ennemi
         Player joueur = new Player("Link");
-        Enemy gobelin = new Enemy("Gobelin", 50, 8, 50, EnemyType.Goblin);
 
-        // Ajout d'objets
-        joueur.Inventory.AddItem(new HealPotion("Potion de vie", 25));
-        joueur.Inventory.AddItem(new DamagePotion("Potion de dégats", 20));
+        // On récupère un gobelin aléatoire
+        Random rng = new Random();
+        var goblins = SetupEnemies.GoblinMinions;
+        var chosenGoblin = goblins[rng.Next(goblins.Count)];
 
-        // Affichage initial
-        Console.WriteLine($"{joueur.Name} arrive dans la bataille");
-        Console.WriteLine($"Un {gobelin.Name} apparait avec {gobelin.Health} PV.");
+        Console.WriteLine($"Un gobelin nommé {chosenGoblin.Name} apparaît avec {chosenGoblin.Health} PV et {chosenGoblin.Strength} ATK !");
 
-        // Affiche l'inventaire
-        joueur.Inventory.DisplayInventory();
-
-        // Simulation d'un dégât sur le joueur
-        joueur.TakeDamage(30);
-
-        // Utilise la potion de soin sur le joueur
-        joueur.Inventory.UseItem(0, joueur);
-
-        // Utilise la bombe sur le gobelin
-        joueur.Inventory.UseItem(0, gobelin);
+        // Le gobelin attaque le joueur.
+        chosenGoblin.Attack(joueur);
     }
 }
