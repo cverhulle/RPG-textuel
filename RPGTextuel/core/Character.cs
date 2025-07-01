@@ -53,6 +53,9 @@ public abstract class Character
         MaxHealth = characterMaxHealth;
     }
 
+    // Création de la propriété isAlive pour savoir si un personnage est en vie ou mort.
+    public bool IsAlive => Health > 0;
+
     // Cette méthode permet d'encaisser des dégats.
     // Elle prend en argument un entier "dégats" et diminue la vie du Character de ce nombre.
     public virtual void TakeDamage(int hit)
@@ -100,10 +103,10 @@ public abstract class Character
 
     // Cette méthode permet de se soigner de "soin" PV.
     public virtual void Heal(int amount)
-    {   
+    {
         // On vérfie que le Character peut recevoir des soins
         if (!CanBeHealed(amount))
-        {   
+        {
             // Si ce n'est pas le cas, on affiche un message et, on ne fait rien.
             Console.WriteLine($"{Name} ne peut pas être soigné avec {amount} PV.");
             return;
