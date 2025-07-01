@@ -19,7 +19,7 @@ namespace RPGTextuel
         public void AddItem(Item item)
         {
             items.Add(item);
-            Console.WriteLine($"Reçu {item.name}.");
+            Console.WriteLine($"{owner.Name} a reçu {item.name}.");
         }
 
         // Cette méthode permet d'utiliser un item.
@@ -43,17 +43,17 @@ namespace RPGTextuel
         }
 
         // Cette méthode permet d'afficher les items du joueur
-        public void DisplayInventory(string ownerName)
+        public void DisplayInventory()
         {
             // Si l'inventaire est vide, on affiche un message personnalisé
             if (items.Count == 0)
             {
-                Console.WriteLine($"{ownerName} n'a pas d'objet");
+                Console.WriteLine($"{owner.Name} n'a pas d'objet");
                 return;
             }
 
             // Sinon, on affiche la liste de sobjets du personnage.
-            Console.WriteLine($"\n Inventaire de {ownerName}");
+            Console.WriteLine($"\n Inventaire de {owner.Name}");
 
             for (int i = 0; i < items.Count; i++)
             {
