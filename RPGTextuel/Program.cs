@@ -1,6 +1,4 @@
-﻿using System;
-using RPGTextuel;
-using RPGTextuel.Items;
+﻿using RPGTextuel.Items;
 
 class Program
 {

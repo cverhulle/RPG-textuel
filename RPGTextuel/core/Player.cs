@@ -1,4 +1,3 @@
-using RPGTextuel.Items;
 using RPGTextuel;
 
 public class Player : Character

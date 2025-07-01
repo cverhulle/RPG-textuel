@@ -1,3 +1,4 @@
+using RPGTextuel;
 public class Enemy : Character
 {
     // On construit un Enemy à partir de la classe Character
