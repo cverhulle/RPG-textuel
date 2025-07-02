@@ -1,4 +1,4 @@
-namespace RPGTextuel
+namespace RPGTextuel.SetupEnemies
 {
     // Cette classe s'occupe de la sélection des ennemies.
     public static class EnemySelector

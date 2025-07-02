@@ -1,5 +1,5 @@
-﻿using RPGTextuel;
-using RPGTextuel.Items;
+﻿using RPGTextuel.Core;
+using RPGTextuel.SetupEnemies;
 
 class Program
 {
