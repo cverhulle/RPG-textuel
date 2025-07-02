@@ -6,9 +6,24 @@ namespace RPGTextuel
         // Créeons la liste des ennemies de type "GoblinMinion"
         public static List<GoblinMinion> GoblinMinions = new List<GoblinMinion>
         {
-            new GoblinMinion("Jack", 20, 5, 20),
-            new GoblinMinion("Paul", 30, 2, 25),
-            new GoblinMinion("Leo", 25, 4, 25)
+            new GoblinMinion("Virk", 20, 4, 20),
+            new GoblinMinion("Nak", 30, 2, 25),
+            new GoblinMinion("Vrag", 25, 3, 25)
+        };
+
+        // Créeons la liste des ennemies de type "Goblin"
+        public static List<Goblin> Goblins = new List<Goblin>
+        {
+            new Goblin("Snot", 36, 8, 40),
+            new Goblin("Pak", 40, 7, 40),
+            new Goblin("Tark", 45, 6, 45)
+        };
+
+        // Créeons la liste des ennemies de type "GoblinChief"
+        public static List<GoblinChief> GoblinChiefs = new List<GoblinChief>
+        {
+            new GoblinChief("Zonva", 60, 12, 60),
+            new GoblinChief("Grimlok", 65, 13, 65)
         };
     }
 }
