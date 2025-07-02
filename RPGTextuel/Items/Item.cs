@@ -1,3 +1,5 @@
+using RPGTextuel.Core.Characters;
+
 namespace RPGTextuel.Items
 {
     // On crée une classe abstraite appelée Item

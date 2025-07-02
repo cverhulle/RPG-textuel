@@ -1,4 +1,6 @@
-namespace RPGTextuel
+using RPGTextuel.Enemies.Class;
+
+namespace RPGTextuel.SetupEnemies
 {
     // Cette classe permet de créer les ennemis de type "GoblinMinion".
     public static class SetupGoblinMinions

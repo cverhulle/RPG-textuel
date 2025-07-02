@@ -1,8 +1,10 @@
+using RPGTextuel.Core.Characters;
+
 namespace RPGTextuel.Items
 {
     // Création de l'objet Potion de soin
     public class HealPotion : Item
-    {   
+    {
         // On liste ses attributs
         public int healAmount { get; }
 

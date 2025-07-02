@@ -1,14 +1,19 @@
-using RPGTextuel;
-public class Enemy : Character 
+using RPGTextuel.Core.Characters;
+using RPGTextuel.Enemies.EnemyTypes;
+
+namespace RPGTextuel.Enemies.Class
 {
-
-    // On ajoute un champ pour gérer le type de l'ennemi
-    public EnemyType type { get; }
-
-    // On construit un Enemy à partir de la classe Character
-    public Enemy(string name, int health, int strength, int maxHealth, EnemyType enemyType)
-        : base(name, health, strength, maxHealth)
+    public class Enemy : Character
     {
-        type = enemyType;
+
+        // On ajoute un champ pour gérer le type de l'ennemi
+        public EnemyType type { get; }
+
+        // On construit un Enemy à partir de la classe Character
+        public Enemy(string name, int health, int strength, int maxHealth, EnemyType enemyType)
+            : base(name, health, strength, maxHealth)
+        {
+            type = enemyType;
+        }
     }
 }

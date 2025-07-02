@@ -1,4 +1,4 @@
-namespace RPGTextuel
+namespace RPGTextuel.Core.Characters
 {
     public abstract partial class Character
     {

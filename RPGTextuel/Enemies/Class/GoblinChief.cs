@@ -1,4 +1,6 @@
-namespace RPGTextuel
+using RPGTextuel.Enemies.EnemyTypes;
+
+namespace RPGTextuel.Enemies.Class
 {
     // On crée un sous-type d'ennemi de type GoblinChief
     public class GoblinChief : Enemy

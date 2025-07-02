@@ -1,8 +1,10 @@
+using RPGTextuel.Core.Characters;
+
 namespace RPGTextuel.Items
-{   
+{
     // On crée la classe qui s'occupe de la potion de dégats.
     public class DamagePotion : Item
-    {   
+    {
         // On définit son attribut.
         public int damage { get; }
 
