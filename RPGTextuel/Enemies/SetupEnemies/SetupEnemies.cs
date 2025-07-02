@@ -25,5 +25,26 @@ namespace RPGTextuel
             new GoblinChief("Zonva", 60, 15, 60),
             new GoblinChief("Grimlok", 65, 13, 65)
         };
+
+        // Méthode pour récupérer un gobelin aléatoire
+        public static Goblin GetRandomGoblin()
+        {
+            var rng = new System.Random();
+            return Goblins[rng.Next(Goblins.Count)];
+        }
+
+        // Méthode pour récupérer un Petit Gobelin aléatoire
+        public static GoblinMinion GetRandomGoblinMinion()
+        {
+            var rng = new System.Random();
+            return GoblinMinions[rng.Next(GoblinMinions.Count)];
+        }
+
+        // Méthode pour récupérer un Petit Gobelin aléatoire
+        public static GoblinChief GetRandomGoblinChief()
+        {
+            var rng = new System.Random();
+            return GoblinChiefs[rng.Next(GoblinChiefs.Count)];
+        }
     }
 }
