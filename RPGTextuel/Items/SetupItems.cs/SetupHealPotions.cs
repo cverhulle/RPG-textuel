@@ -1,4 +1,6 @@
-namespace RPGTextuel.Items
+using RPGTextuel.Items.Consumables;
+
+namespace RPGTextuel.Items.SetupItems
 {
     public static class SetupHealPotions
     {

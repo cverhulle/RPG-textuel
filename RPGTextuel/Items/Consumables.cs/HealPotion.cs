@@ -1,6 +1,7 @@
 using RPGTextuel.Core.Characters;
+using RPGTextuel.Items.Class;
 
-namespace RPGTextuel.Items
+namespace RPGTextuel.Items.Consumables
 {
     // Création de l'objet Potion de soin
     public class HealPotion : Item

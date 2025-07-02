@@ -1,6 +1,6 @@
 using RPGTextuel.Core.Characters;
 
-namespace RPGTextuel.Items
+namespace RPGTextuel.Items.Class
 {
     // On crée la classe "Inventaire"
     public class Inventory

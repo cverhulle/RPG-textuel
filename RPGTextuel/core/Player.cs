@@ -1,5 +1,5 @@
 using RPGTextuel.Core.Characters;
-using RPGTextuel.Items;
+using RPGTextuel.Items.Class;
 
 namespace RPGTextuel.Core
 {
