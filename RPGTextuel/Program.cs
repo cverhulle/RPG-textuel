@@ -1,5 +1,5 @@
 ﻿using RPGTextuel.Core;
-using RPGTextuel.SetupEnemies;
+using RPGTextuel.Items.SetupItems.HealPotions;
 
 class Program
 {
@@ -8,9 +8,9 @@ class Program
         // Création du joueur et de l'ennemi
         Player joueur = new Player("Link");
 
-        // On récupère un gobelin aléatoire
-        var chosenGoblin = SetupGoblinChiefs.GoblinChiefs.PickRandom();
-
-        Console.WriteLine($"Un gobelin nommé {chosenGoblin.Name} apparaît avec {chosenGoblin.Health} PV et {chosenGoblin.Strength} ATK !");
+        // On ajoute trois potions au joueur.
+        SetupHealPotions.GiveHealPotionToPlayer(joueur, HealPotionSize.Small);
+        SetupHealPotions.GiveHealPotionToPlayer(joueur, HealPotionSize.Medium);
+        SetupHealPotions.GiveHealPotionToPlayer(joueur, HealPotionSize.Large);
     }
 }
