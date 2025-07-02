@@ -9,7 +9,7 @@ class Program
         Player joueur = new Player("Link");
 
         // On récupère un gobelin aléatoire
-        var chosenGoblin = SetupEnemies.GoblinChiefs.PickRandom();
+        var chosenGoblin = SetupGoblinChiefs.GoblinChiefs.PickRandom();
 
         Console.WriteLine($"Un gobelin nommé {chosenGoblin.Name} apparaît avec {chosenGoblin.Health} PV et {chosenGoblin.Strength} ATK !");
     }
