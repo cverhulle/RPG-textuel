@@ -1,6 +1,6 @@
 using RPGTextuel.Enemies.Class;
 
-namespace RPGTextuel.Extensions
+namespace RPGTextuel.Extensions.Enemies
 {   
     // Cette classe étend la classe Enemy
     public static class EnemyExtensions
