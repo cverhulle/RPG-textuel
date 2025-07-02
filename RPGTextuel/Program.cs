@@ -1,6 +1,5 @@
 ﻿using RPGTextuel.Core;
-using RPGTextuel.Extensions.Players;
-using RPGTextuel.Items.SetupItems.HealPotions;
+using RPGTextuel.Extensions.Characters;
 
 class Program
 {
@@ -9,8 +8,7 @@ class Program
         // Création du joueur et de l'ennemi
         Player joueur = new Player("Link");
 
-        // On ajoute deux potions au joueur.
-        joueur.AddPotion(HealPotionSize.Small);
-        joueur.AddPotion(HealPotionSize.Large);
+        // On affiche la barre de vie d'un joueur.
+        joueur.PrintHealthBar();
     }
 }

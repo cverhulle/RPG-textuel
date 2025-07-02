@@ -1,6 +1,6 @@
 using RPGTextuel.Core.Characters;
 
-namespace RPGTextuel.Extensions
+namespace RPGTextuel.Extensions.Characters
 {   
     // Cette classe permet de créer des extensions de la classe Character.
     public static class CharacterExtensions
