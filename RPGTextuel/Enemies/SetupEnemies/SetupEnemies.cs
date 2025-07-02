@@ -22,7 +22,7 @@ namespace RPGTextuel
         // Créeons la liste des ennemies de type "GoblinChief"
         public static List<GoblinChief> GoblinChiefs = new List<GoblinChief>
         {
-            new GoblinChief("Zonva", 60, 12, 60),
+            new GoblinChief("Zonva", 60, 15, 60),
             new GoblinChief("Grimlok", 65, 13, 65)
         };
     }
