@@ -5,9 +5,16 @@ namespace RPGTextuel.Game
     // Cette classe s'occupe de gérer la boucle de jeu.
     public static class Game
     {
+        // Cette méthode demande à l'utilisateur le nom pour son joueur
+        private static string AskPlayerName()
+        {
+            // On demande le nom à l'utilisateur.
+            Console.Write("🐱‍🏍 Entrez le nom de votre héros : ");
+            return Console.ReadLine()?.Trim() ?? "";
+        }
 
         // Cette méthode récupère le nom du héros du joueur
-        private static string GetPlayerName()
+        private static string AskAndVerifyPlayerName()
         {
             // On initialise une variable name de type string.
             string name;
@@ -16,10 +23,9 @@ namespace RPGTextuel.Game
             Boolean valid = false;
 
             do
-            {   
-                // On demande le nom à l'utilisateur.
-                Console.Write("🐱‍🏍 Entrez le nom de votre héros : ");
-                name = Console.ReadLine()?.Trim() ?? "";
+            {
+                // On demande le nom du joueur à l'utilisateur 
+                name = AskPlayerName();
 
                 // On analyse si le nom est correct.
                 valid = HandlePlayerName(name);
