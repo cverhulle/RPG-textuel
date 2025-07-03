@@ -1,4 +1,5 @@
 ﻿using RPGTextuel.Game;
+using RPGTextuel.GameFeatures;
 
 class Program
 {

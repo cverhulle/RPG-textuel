@@ -1,4 +1,4 @@
-namespace RPGTextuel.Game
+namespace RPGTextuel.GameFeatures
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
     public static class GameDisplay

@@ -1,4 +1,5 @@
 using RPGTextuel.Config;
+using RPGTextuel.GameFeatures;
 
 namespace RPGTextuel.Game
 {
