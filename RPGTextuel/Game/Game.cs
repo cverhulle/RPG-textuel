@@ -20,7 +20,7 @@ namespace RPGTextuel.Game
             string name;
 
             // On initialise la variable pour savoir si le nom est valide.
-            Boolean valid = false;
+            Boolean valid = true;
 
             do
             {
@@ -42,16 +42,16 @@ namespace RPGTextuel.Game
             if (GameUtils.IsNameNullOrWhiteSpace(name))
             {
                 Console.WriteLine("❌ Le nom ne peut pas être vide. Réessayez.\n");
-                return false;
+                return true;
             }
             else if (GameUtils.IsNameTooLong(name))
             {
-                Console.WriteLine($"❌ Le nom ne peut pas dépasser {GameConfig.MaxNameLength} Réessayez.\n");
-                return false;
+                Console.WriteLine($"❌ Le nom ne peut pas dépasser {GameConfig.MaxNameLength} caractères. Réessayez.\n");
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
     }
