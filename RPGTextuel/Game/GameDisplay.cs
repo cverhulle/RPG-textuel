@@ -1,6 +1,6 @@
 namespace RPGTextuel.Game
 {
-    // Cette classe s'occupe de gérer la boucle de jeu.
+    // Cette classe s'occupe de gérer l'affichage pour le jeu.
     public static class GameDisplay
     {
         // Cette méthode affiche le message de début de jeu
