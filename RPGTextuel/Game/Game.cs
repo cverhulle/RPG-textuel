@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 
 namespace RPGTextuel.Game
 {
@@ -7,7 +8,7 @@ namespace RPGTextuel.Game
 
         // Cette méthode récupère le nom du héros du joueur
         private static string GetPlayerName()
-        {   
+        {
             // On initialise une variable name de type string.
             string name;
 
@@ -17,9 +18,13 @@ namespace RPGTextuel.Game
                 name = Console.ReadLine()?.Trim() ?? "";
 
                 // Si le nom est vide ou null, on affiche un message et, on repose la question.
-                if (string.IsNullOrWhiteSpace(name))
+                if (GameUtils.IsNameNullOrWhiteSpace(name))
                 {
                     Console.WriteLine("❌ Le nom ne peut pas être vide. Réessayez.\n");
+                }
+                else if (GameUtils.IsNameTooLong(name))
+                {
+                    Console.WriteLine($"❌ Le nom ne peut pas dépasser {GameConfig.MaxNameLength} Réessayez.\n");
                 }
 
             } while (string.IsNullOrWhiteSpace(name));
