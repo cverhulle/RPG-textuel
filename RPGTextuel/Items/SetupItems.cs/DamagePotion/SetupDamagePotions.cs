@@ -15,14 +15,13 @@ namespace RPGTextuel.Items.SetupItems.DamagePotions
         // Elle retourne une erreur si la taille est inconnue.
         public static void GiveDamagePotionToPlayer(Player player, PotionSize size)
         {
-            DamagePotion potion = size switch
+            PotionHelper.GivePotionToPlayer(player, size, s => s switch
             {
                 PotionSize.Small => SmallDamagePotion,
                 PotionSize.Medium => MediumDamagePotion,
                 PotionSize.Large => LargeDamagePotion,
                 _ => throw new ArgumentOutOfRangeException(nameof(size), "Taille de potion inconnue")
-            };
-            player.Inventory.AddItem(potion);
+            });
         }
     }
 }

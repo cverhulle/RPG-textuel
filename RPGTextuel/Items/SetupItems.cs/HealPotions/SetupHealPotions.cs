@@ -1,6 +1,5 @@
 using RPGTextuel.Items.Consumables;
 using RPGTextuel.Core;
-using RPGTextuel.Items.SetupItems;
 
 namespace RPGTextuel.Items.SetupItems.HealPotions
 {
