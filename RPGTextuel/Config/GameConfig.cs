@@ -10,5 +10,8 @@ namespace RPGTextuel.Config
 
         // Symbole pour un cœur vide
         public const string EmptyHeartSymbol = "🤍 ";
+
+        // Taille Maximum pour le nom des personnages.
+        public const int MaxNameLength = 15;
     }
 }
