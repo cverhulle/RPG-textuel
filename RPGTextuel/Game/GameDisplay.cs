@@ -1,7 +1,7 @@
 namespace RPGTextuel.Game
 {
     // Cette classe s'occupe de gérer la boucle de jeu.
-    public static class GameLoopDisplay
+    public static class GameDisplay
     {
         // Cette méthode affiche le message de début de jeu
         public static void ShowWelcomeMessage()

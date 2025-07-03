@@ -2,7 +2,7 @@
 namespace RPGTextuel.Game
 {
     // Cette classe s'occupe de gérer la boucle de jeu.
-    public static class GameLoop
+    public static class Game
     {
 
         // Cette méthode récupère le nom du héros du joueur
