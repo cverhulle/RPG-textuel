@@ -12,6 +12,7 @@ namespace RPGTextuel.Game.GameFeatures
             Player player = new Player(playerName);
 
             // On donne une potion de soin petite et une autre moyenne au joueur
+            SetupHealPotions.GiveHealPotionToPlayer(player, HealPotionSize.Small);
             SetupHealPotions.GiveHealPotionToPlayer(player, HealPotionSize.Medium);
 
             // On retourne le joueur crée.
