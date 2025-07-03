@@ -52,7 +52,7 @@ namespace RPGTextuel.Items.Class
             }
 
             // Sinon, on affiche la liste de sobjets du personnage.
-            Console.WriteLine($"\n Inventaire de {owner.Name}");
+            Console.WriteLine($"Inventaire de {owner.Name}");
 
             for (int i = 0; i < items.Count; i++)
             {
