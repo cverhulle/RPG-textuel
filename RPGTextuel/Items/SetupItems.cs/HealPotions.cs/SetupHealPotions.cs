@@ -13,7 +13,7 @@ namespace RPGTextuel.Items.SetupItems.HealPotions
 
         // Cette méthode permet de donner une potion à un joueur
         // Elle retourne une erreur si la taille est inconnue.
-        public static void GiveHealPotionToPlayer(Player player, HealPotionSize size)
+        public static void GiveHealPotionToPlayer(Player player, HealPotionSize size, Boolean displayMessage)
         {
             HealPotion potion = size switch
             {
@@ -23,7 +23,7 @@ namespace RPGTextuel.Items.SetupItems.HealPotions
                 _ => throw new ArgumentOutOfRangeException(nameof(size), "Taille de potion inconnue")
             };
 
-            player.Inventory.AddItem(potion);
+            player.Inventory.AddItem(potion, displayMessage);
         }
     }
 }
