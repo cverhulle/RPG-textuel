@@ -1,25 +1,25 @@
 using RPGTextuel.Items.Consumables;
 using RPGTextuel.Core;
 
-namespace RPGTextuel.Items.SetupItems.HealPotions
+namespace RPGTextuel.Items.SetupItems.DamagePotions
 {
-    public static class SetupHealPotions
+    public static class SetupDamagePotions
     {
         // Potions prédéfinies
-        public static readonly HealPotion SmallHealPotion = new HealPotion("Potion de soin (petite)", 30);
-        public static readonly HealPotion MediumHealPotion = new HealPotion("Potion de soin (moyenne)", 60);
-        public static readonly HealPotion LargeHealPotion = new HealPotion("Potion de soin (grande)", 100);
+        public static readonly DamagePotion SmallDamagePotion = new DamagePotion("Potion de dégats (petite)", 20);
+        public static readonly DamagePotion MediumDamagePotion = new DamagePotion("Potion de dégats (moyenne)", 40);
+        public static readonly DamagePotion LargeDamagePotion = new DamagePotion("Potion de dégats (grande)", 60);
 
 
-        // Cette méthode permet de donner une potion à un joueur
+        // Cette méthode permet de donner une potion de dégats à un joueur.
         // Elle retourne une erreur si la taille est inconnue.
-        public static void GiveHealPotionToPlayer(Player player, HealPotionSize size)
+        public static void GiveDamagePotionToPlayer(Player player, DamagePotionSize size)
         {
-            HealPotion potion = size switch
+            DamagePotion potion = size switch
             {
-                HealPotionSize.Small => SmallHealPotion,
-                HealPotionSize.Medium => MediumHealPotion,
-                HealPotionSize.Large => LargeHealPotion,
+                DamagePotionSize.Small => SmallDamagePotion,
+                DamagePotionSize.Medium => MediumDamagePotion,
+                DamagePotionSize.Large => LargeDamagePotion,
                 _ => throw new ArgumentOutOfRangeException(nameof(size), "Taille de potion inconnue")
             };
             player.Inventory.AddItem(potion);
