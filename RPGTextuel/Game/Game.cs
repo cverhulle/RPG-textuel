@@ -28,6 +28,5 @@ namespace RPGTextuel.Game
 
             return name;
         }
-
     }
 }

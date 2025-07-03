@@ -6,7 +6,6 @@ namespace RPGTextuel.Game.GameFeatures
     public static class GamePlayerName
     {
 
-
         // Cette méthode demande à l'utilisateur le nom pour son joueur
         private static string AskPlayerName()
         {
