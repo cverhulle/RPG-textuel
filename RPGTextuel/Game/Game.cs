@@ -9,7 +9,7 @@ namespace RPGTextuel.Game
         private static string AskPlayerName()
         {
             // On demande le nom à l'utilisateur.
-            Console.Write("🐱‍🏍 Entrez le nom de votre héros : ");
+            Console.Write("Entrez le nom de votre héros : ");
             return Console.ReadLine()?.Trim() ?? "";
         }
 
