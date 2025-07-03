@@ -1,5 +1,5 @@
 using RPGTextuel.Config;
-using RPGTextuel.GameFeatures;
+using RPGTextuel.Game.GameFeatures;
 
 namespace RPGTextuel.Game
 {
