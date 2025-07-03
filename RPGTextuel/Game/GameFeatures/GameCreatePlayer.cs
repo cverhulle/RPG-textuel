@@ -1,5 +1,5 @@
 using RPGTextuel.Core;
-using RPGTextuel.Items.SetupItems.HealPotions;
+using RPGTextuel.Items.SetupItems;
 using RPGTextuel.Extensions.Players;
 
 namespace RPGTextuel.Game.GameFeatures
@@ -13,8 +13,8 @@ namespace RPGTextuel.Game.GameFeatures
             Player player = new Player(playerName);
 
             // On donne une potion de soin petite et une autre moyenne au joueur
-            player.AddPotion(HealPotionSize.Small);
-            player.AddPotion(HealPotionSize.Medium);
+            player.AddPotion(PotionSize.Small);
+            player.AddPotion(PotionSize.Medium);
 
             // On retourne le joueur crée.
             return player;

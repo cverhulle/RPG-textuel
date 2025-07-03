@@ -13,13 +13,13 @@ namespace RPGTextuel.Items.SetupItems.DamagePotions
 
         // Cette méthode permet de donner une potion de dégats à un joueur.
         // Elle retourne une erreur si la taille est inconnue.
-        public static void GiveDamagePotionToPlayer(Player player, DamagePotionSize size)
+        public static void GiveDamagePotionToPlayer(Player player, PotionSize size)
         {
             DamagePotion potion = size switch
             {
-                DamagePotionSize.Small => SmallDamagePotion,
-                DamagePotionSize.Medium => MediumDamagePotion,
-                DamagePotionSize.Large => LargeDamagePotion,
+                PotionSize.Small => SmallDamagePotion,
+                PotionSize.Medium => MediumDamagePotion,
+                PotionSize.Large => LargeDamagePotion,
                 _ => throw new ArgumentOutOfRangeException(nameof(size), "Taille de potion inconnue")
             };
             player.Inventory.AddItem(potion);
