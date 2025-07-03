@@ -9,7 +9,7 @@ namespace RPGTextuel.Game
             Console.Clear();
             Console.WriteLine("Bienvenue dans AventureRPG ✨");
             Console.WriteLine("Vous allez affronter trois ennemis redoutables !");
-            Console.WriteLine("Avant cela, donnez un nom à votre héros 🐱‍🏍");
+            Console.WriteLine("Avant cela, donnez un nom à votre héros");
             Console.WriteLine();
         }
     }
