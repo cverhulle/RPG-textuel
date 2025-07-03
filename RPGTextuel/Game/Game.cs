@@ -10,7 +10,7 @@ namespace RPGTextuel.Game
         {
             // On initialise la partie
             string playerName = InitGame();
-            Console.Write("Le nom est " + playerName);
+
         }
 
         // Cette méthode permet d'initialiser la partie.
@@ -21,7 +21,12 @@ namespace RPGTextuel.Game
             GameDisplay.ShowWelcomeMessage();
 
             // On récupère le nom du joueur
-            return GamePlayerName.AskAndVerifyPlayerName();
+            string name = GamePlayerName.AskAndVerifyPlayerName();
+
+            // On affiche le dexième message d'accueil
+            GameDisplay.ShowWelcomeMessage2(name);
+
+            return name;
         }
 
     }
