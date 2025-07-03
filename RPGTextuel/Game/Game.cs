@@ -12,6 +12,9 @@ namespace RPGTextuel.Game
             // On initialise la partie
             Player joueur = InitGame();
 
+            // On affiche l'inventaire du jouer
+            joueur.Inventory.DisplayInventory();
+
         }
 
         // Cette méthode permet d'initialiser la partie.
