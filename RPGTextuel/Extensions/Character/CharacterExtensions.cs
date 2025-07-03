@@ -1,4 +1,5 @@
 using RPGTextuel.Core.Characters;
+using RPGTextuel.Config;
 
 namespace RPGTextuel.Extensions.Characters
 {
@@ -8,15 +9,12 @@ namespace RPGTextuel.Extensions.Characters
         // Cette méthode permet d'afficher la barre de vie d'un character.
         public static void PrintHealthBar(this Character character)
         {
-            // On initialise la taille de la barre de vie à 20 caractères.
-            int total = 10;
-
-            // On choisit les symboles pour la barre.
-            string filledSymbol = "🧡 ";
-            string emptySymbol = "🤍 ";
-
             // On appelle la méthode pour construire la barre de vie.
-            string bar = character.BuildHealthBar(total, filledSymbol, emptySymbol);
+                string bar = character.BuildHealthBar(
+                    GameConfig.HealthBarLength,
+                    GameConfig.FilledHeartSymbol,
+                    GameConfig.EmptyHeartSymbol
+                );
 
             // Affichage de la barre de vie.
             Console.WriteLine($"{character.Name} : [{bar}] {character.Health}/{character.MaxHealth} PV");
