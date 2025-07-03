@@ -1,7 +1,7 @@
 using RPGTextuel.Core.Characters;
 
 namespace RPGTextuel.Extensions.Characters
-{   
+{
     // Cette classe permet de créer des extensions de la classe Character.
     public static class CharacterExtensions
     {
@@ -33,6 +33,30 @@ namespace RPGTextuel.Extensions.Characters
                 bar += emptySymbol;
 
             Console.WriteLine($"{character.Name} : [{bar}] {character.Health}/{character.MaxHealth} PV");
+        }
+
+        // Cette méthode s'occupe de construire la barre de vie.
+        public static string BuildHealthBar(Character character, int total, string filledSymbol, string emptySymbol)
+        {
+
+            // On calcule le ratio entre la vie restante sur la vie total
+            double ratio = (double)character.Health / character.MaxHealth;
+
+            // On calcule le nombre de coeurs de vie on doit afficher.
+            int filled = (int)(ratio * total);
+
+            // On calcule le nombre de coeurs vides à afficher
+            int empty = total - filled;
+
+            // Construction de la barre de vie.
+            string bar = new string(' ', 0);
+
+            for (int i = 0; i < filled; i++)
+                bar += filledSymbol;
+            for (int i = 0; i < empty; i++)
+                bar += emptySymbol;
+
+            return bar;
         }
     }
 }
