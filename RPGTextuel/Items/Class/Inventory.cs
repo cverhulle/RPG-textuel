@@ -16,13 +16,9 @@ namespace RPGTextuel.Items.Class
         }
 
         // Cette méthode permet d'ajouter un item dans l'inventaire.
-        public void AddItem(Item item, Boolean displayMessage)
+        public void AddItem(Item item)
         {
             items.Add(item);
-            if (displayMessage)
-            {
-                Console.WriteLine($"{owner.Name} a reçu {item.name}.");
-            }
         }
 
         // Cette méthode permet d'utiliser un item.
