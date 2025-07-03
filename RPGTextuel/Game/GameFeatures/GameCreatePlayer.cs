@@ -13,8 +13,12 @@ namespace RPGTextuel.Game.GameFeatures
             Player player = new Player(playerName);
 
             // On donne une potion de soin petite et une autre moyenne au joueur
-            player.AddPotion(PotionSize.Small);
-            player.AddPotion(PotionSize.Medium);
+            player.AddHealPotion(PotionSize.Small);
+            player.AddHealPotion(PotionSize.Medium);
+
+            // On donne une potion de dégats petite et une autre moyenne au joueur
+            player.AddDamagePotion(PotionSize.Small);
+            player.AddDamagePotion(PotionSize.Medium);
 
             // On retourne le joueur crée.
             return player;
