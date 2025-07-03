@@ -1,28 +1,28 @@
 using RPGTextuel.Items.Consumables;
 using RPGTextuel.Core;
+using RPGTextuel.Items.SetupItems;
 
-namespace RPGTextuel.Items.SetupItems.DamagePotions
+namespace RPGTextuel.Items.SetupItems.HealPotions
 {
-    public static class SetupDamagePotions
+    public static class SetupHealPotions
     {
         // Potions prédéfinies
-        public static readonly DamagePotion SmallDamagePotion = new DamagePotion("Potion de dégats (petite)", 20);
-        public static readonly DamagePotion MediumDamagePotion = new DamagePotion("Potion de dégats (moyenne)", 40);
-        public static readonly DamagePotion LargeDamagePotion = new DamagePotion("Potion de dégats (grande)", 60);
+        public static readonly HealPotion SmallHealPotion = new HealPotion("Potion de soin (petite)", 30);
+        public static readonly HealPotion MediumHealPotion = new HealPotion("Potion de soin (moyenne)", 60);
+        public static readonly HealPotion LargeHealPotion = new HealPotion("Potion de soin (grande)", 100);
 
 
-        // Cette méthode permet de donner une potion de dégats à un joueur.
+        // Cette méthode permet de donner une potion à un joueur
         // Elle retourne une erreur si la taille est inconnue.
-        public static void GiveDamagePotionToPlayer(Player player, PotionSize size)
+        public static void GiveHealPotionToPlayer(Player player, PotionSize size)
         {
-            DamagePotion potion = size switch
+            PotionHelper.GivePotionToPlayer(player, size, s => s switch
             {
-                PotionSize.Small => SmallDamagePotion,
-                PotionSize.Medium => MediumDamagePotion,
-                PotionSize.Large => LargeDamagePotion,
+                PotionSize.Small => SmallHealPotion,
+                PotionSize.Medium => MediumHealPotion,
+                PotionSize.Large => LargeHealPotion,
                 _ => throw new ArgumentOutOfRangeException(nameof(size), "Taille de potion inconnue")
-            };
-            player.Inventory.AddItem(potion);
+            });
         }
     }
 }
