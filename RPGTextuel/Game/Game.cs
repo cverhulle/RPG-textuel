@@ -10,7 +10,7 @@ namespace RPGTextuel.Game
         {
             // On initialise la partie
             string playerName = InitGame();
-            Console.Write("Le nom est ${playerName}");
+            Console.Write("Le nom est " + playerName);
         }
 
         // Cette méthode permet d'initialiser la partie.
