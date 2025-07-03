@@ -10,7 +10,8 @@ namespace RPGTextuel.Extensions.Characters
         public static void PrintHealthBar(this Character character)
         {
             // On appelle la méthode pour construire la barre de vie.
-                string bar = character.BuildHealthBar(
+                string bar = BuildHealthBar(
+                    character,
                     GameConfig.HealthBarLength,
                     GameConfig.FilledHeartSymbol,
                     GameConfig.EmptyHeartSymbol
@@ -21,10 +22,10 @@ namespace RPGTextuel.Extensions.Characters
         }
 
         // Cette méthode s'occupe de construire la barre de vie.
-        public static string BuildHealthBar(this Character character, int total, string filledSymbol, string emptySymbol)
+        private static string BuildHealthBar(Character character, int total, string filledSymbol, string emptySymbol)
         {
             // On récupère le nombre de coeurs à remplir et à laisser vide.
-            var (filled, empty) = character.GetFilledAndEmptyHeart(total);
+            var (filled, empty) = GetFilledAndEmptyHeart(character, total);
 
             // Construction de la barre de vie.
             string bar = new string(' ', 0);
@@ -39,7 +40,7 @@ namespace RPGTextuel.Extensions.Characters
 
         // Cette méthode permet de calculer le nombre de coeurs restants.
         // Elle retourne le nombre de coeurs à remplir dans la barre et le nombre de coeurs vides.
-        public static (int, int) GetFilledAndEmptyHeart(this Character character, int total)
+        private static (int, int) GetFilledAndEmptyHeart(Character character, int total)
         {
             // On gère la division par 0 (cas où maxHealth = 0).
             if (character.MaxHealth <= 0) return (0, total);
