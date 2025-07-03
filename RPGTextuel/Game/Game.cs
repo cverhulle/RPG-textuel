@@ -12,6 +12,9 @@ namespace RPGTextuel.Game
             // On initialise une variable name de type string.
             string name;
 
+            // On itniatialise la variable pour savoir si le nom est valide.
+            Boolean valid = false;
+
             do
             {
                 Console.Write("🐱‍🏍 Entrez le nom de votre héros : ");
@@ -26,8 +29,12 @@ namespace RPGTextuel.Game
                 {
                     Console.WriteLine($"❌ Le nom ne peut pas dépasser {GameConfig.MaxNameLength} Réessayez.\n");
                 }
+                else
+                {
+                    valid = true;
+                }
 
-            } while (string.IsNullOrWhiteSpace(name));
+            } while (valid);
 
             return name;
         }
