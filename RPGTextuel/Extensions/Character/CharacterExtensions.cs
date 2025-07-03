@@ -45,5 +45,20 @@ namespace RPGTextuel.Extensions.Characters
 
             return bar;
         }
+
+        // Cette méthode permet de calculer le nombre de coeurs restants
+        public static (int, int) GetFilledAndEmptyHeart(this Character character, int total)
+        {
+            // On calcule le ratio entre la vie restante sur la vie total
+            double ratio = (double)character.Health / character.MaxHealth;
+
+            // On calcule le nombre de coeurs de vie on doit afficher.
+            int filled = (int)(ratio * total);
+
+            // On calcule le nombre de coeurs vides à afficher
+            int empty = total - filled;
+
+            return (filled, empty);
+        }
     }
 }
