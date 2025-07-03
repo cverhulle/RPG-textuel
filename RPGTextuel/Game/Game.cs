@@ -14,7 +14,7 @@ namespace RPGTextuel.Game
         }
 
         // Cette méthode récupère le nom du héros du joueur
-        private static string AskAndVerifyPlayerName()
+        public static string AskAndVerifyPlayerName()
         {
             // On initialise une variable name de type string.
             string name;
