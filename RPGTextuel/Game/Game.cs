@@ -10,14 +10,31 @@ namespace RPGTextuel.Game
         {
             Console.Clear();
             Console.WriteLine("Bienvenue dans AventureRPG ✨");
-            Console.WriteLine("Vous allez affronter trois ennemis redoutables");
-            Console.WriteLine("Avant cela, donnez un nom à votre héros");
+            Console.WriteLine("Vous allez affronter trois ennemis redoutables !");
+            Console.WriteLine("Avant cela, donnez un nom à votre héros 🐱‍🏍");
+            Console.WriteLine();
         }
 
         // Cette méthode récupère le nom du héros du joueur
-        private static void GetPlayerName()
-        {
+        private static string GetPlayerName()
+        {   
+            // On initialise une variable name de type string.
+            string name;
 
+            do
+            {
+                Console.Write("🐱‍🏍 Entrez le nom de votre héros : ");
+                name = Console.ReadLine()?.Trim() ?? "";
+
+                // Si le nom est vide ou null, on affiche un message et, on repose la question.
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("❌ Le nom ne peut pas être vide. Réessayez.\n");
+                }
+
+            } while (string.IsNullOrWhiteSpace(name));
+
+            return name;
         }
     }
 }
