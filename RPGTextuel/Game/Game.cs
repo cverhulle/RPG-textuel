@@ -28,7 +28,7 @@ namespace RPGTextuel.Game
                 name = AskPlayerName();
 
                 // On analyse si le nom est correct.
-                valid = HandlePlayerName(name);
+                valid = VerifyPlayerName(name);
 
             } while (valid);
 
@@ -36,7 +36,7 @@ namespace RPGTextuel.Game
         }
 
         // Cette méthode prend un nom en argument et vérifie qu'il est valide pour un joueur.
-        private static Boolean HandlePlayerName(string name)
+        private static Boolean VerifyPlayerName(string name)
         {
             // Si le nom est vide ou null, on affiche un message et, on repose la question.
             if (GameUtils.IsNameNullOrWhiteSpace(name))
