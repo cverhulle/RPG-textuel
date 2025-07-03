@@ -43,8 +43,12 @@ namespace RPGTextuel.Extensions.Characters
         // Elle retourne le nombre de coeurs à remplir dans la barre et le nombre de coeurs vides.
         public static (int, int) GetFilledAndEmptyHeart(this Character character, int total)
         {
+            // On gère la division par 0 (cas où maxHealth = 0).
+            if (character.MaxHealth <= 0) return (0, total);
+
             // On calcule le ratio entre la vie restante sur la vie total
             double ratio = (double)character.Health / character.MaxHealth;
+            ratio = Math.Clamp(ratio, 0, 1); // On fait en sorte que ratio reste entre 0 et 1.
 
             // On calcule le nombre de coeurs de vie on doit afficher.
             int filled = (int)(ratio * total);
