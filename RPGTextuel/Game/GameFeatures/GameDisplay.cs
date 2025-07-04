@@ -30,7 +30,6 @@ namespace RPGTextuel.Game.GameFeatures
             {
                 int backlineLength = $"===== {title} =====".Length;
                 Console.WriteLine(new string('=', backlineLength));
-                Console.WriteLine();
             }
         }        
 
