@@ -6,10 +6,14 @@ namespace RPGTextuel.Game.GameFeatures
     public static class GameDisplay
     {
 
-        // Cette méthode affiche le menu principal du jeu
-        public static void ShowMainMenu(Player player)
+        // Cette méthode affiche permet d'afficher un menu.
+        // Elle prend en paramètre une liste de phrases à afficher.
+        public static int ShowMenu(List<string> options, string? title = null)
         {
-            
+            if (options == null || options.Count == 0)
+            {
+                throw new ArgumentException("Le menu ne peut pas être vide.");
+            }
         }        
 
         // Cette méthode affiche le message de début de jeu
