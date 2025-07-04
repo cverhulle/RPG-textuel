@@ -1,6 +1,6 @@
 using RPGTextuel.Config;
 
-namespace RPGTextuel.Game.GameFeatures
+namespace RPGTextuel.Game.GameUtils
 {
     // Cette classe s'occupe de gérer les méthodes utilitaires.
     public static class GameUtils
