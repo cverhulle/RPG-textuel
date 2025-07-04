@@ -1,6 +1,6 @@
 using RPGTextuel.Config;
 
-namespace RPGTextuel.Game.GameUtils
+namespace RPGTextuel.Game.GameUtilsNamespace
 {
     // Cette classe s'occupe de gérer les méthodes utilitaires.
     public static class GameUtils
