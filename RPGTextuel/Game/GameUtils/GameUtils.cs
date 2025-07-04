@@ -17,7 +17,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
                 return false;
             }
         }
-        
+
         // Cette méthode vérifie si un nom, donné en paramètre, est trop long ou pas.
         public static Boolean IsNameTooLong(string name)
         {
@@ -29,6 +29,15 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             {
                 return false;
             }
+        }
+
+        // Cette méthode permet de vérifier que la réponse à un menu est valide.
+        // Une réponse est valide si elle est située entre 1 et le  maximum d'options disponibles.
+        public static bool IsValidMenuChoice(string input, int maxOptionCount, out int choice)
+        {
+            return int.TryParse(input, out choice) &&
+                choice >= 1 &&
+                choice <= maxOptionCount;
         }
     }
 }
