@@ -3,7 +3,6 @@ namespace RPGTextuel.Game.GameFeatures
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
     public static class GameDisplay
     {
-
         // Cette méthode affiche permet d'afficher une liste d'options.
         // Elle prend en paramètre une liste de phrases à afficher et, éventuellement, un titre.
         public static void ShowOptionsList(List<string> options, string? title = null)
