@@ -22,8 +22,7 @@ namespace RPGTextuel.Game.GameFeatures
             while (true)
             {
                 // On récupère la réponse de l'utilisateur.
-                Console.Write("\nFaites votre choix : ");
-                string? input = Console.ReadLine();
+                string input = AskUserInput("\nFaites votre choix : ");
 
                 // On analyse la réponse de l'utilisateur
                 if (int.TryParse(input, out int choice) &&
