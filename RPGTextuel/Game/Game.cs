@@ -33,6 +33,8 @@ namespace RPGTextuel.Game
             return joueur;
         }
 
+        // --------------------- TODO : A SIMPLIFIER ------------------------------
+        
         // Cette méthode affiche le menu principal du jeu.
         // Elle récupère la réponse utilisateur et lance la méthode associée.
         public static void HandleMainMenu(Player player)
