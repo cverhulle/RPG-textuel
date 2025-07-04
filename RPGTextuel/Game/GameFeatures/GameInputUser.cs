@@ -1,3 +1,5 @@
+using RPGTextuel.Game.GameUtilsNamespace;
+
 namespace RPGTextuel.Game.GameFeatures
 {
     // Cette regroupe les méthodes liées aux demandes envers l'utilisateur.
@@ -25,8 +27,7 @@ namespace RPGTextuel.Game.GameFeatures
                 string input = AskUserInput("\nFaites votre choix : ");
 
                 // On analyse la réponse de l'utilisateur
-                if (int.TryParse(input, out int choice) &&
-                        choice >= 1 && choice <= options.Count)
+                if (GameUtils.IsValidMenuChoice(input, options.Count, out int choice))
                 {
                     return choice;
                 }
