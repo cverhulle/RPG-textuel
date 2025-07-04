@@ -1,5 +1,3 @@
-using RPGTextuel.Core;
-
 namespace RPGTextuel.Game.GameFeatures
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
