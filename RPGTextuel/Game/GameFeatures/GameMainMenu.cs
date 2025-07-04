@@ -1,8 +1,6 @@
-
-
 namespace RPGTextuel.Game.GameFeatures
 {
-    public class HandleMainMenu
+    public class GameMainMenu
     {   
         // Cette variable contient les options du menu principal.
         public static readonly List<string> MainMenuChoice = new List<string>
