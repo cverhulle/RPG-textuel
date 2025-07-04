@@ -6,13 +6,23 @@ namespace RPGTextuel.Game.GameFeatures
     public static class GameDisplay
     {
 
-        // Cette méthode affiche permet d'afficher un menu.
-        // Elle prend en paramètre une liste de phrases à afficher.
-        public static int ShowMenu(List<string> options, string? title = null)
+        // Cette méthode affiche permet d'afficher une liste d'options.
+        // Elle prend en paramètre une liste de phrases à afficher et, éventuellement, un titre.
+        public static void ShowOptionsList(List<string> options, string? title = null)
         {
             if (options == null || options.Count == 0)
             {
                 throw new ArgumentException("Le menu ne peut pas être vide.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(title))
+            {
+                Console.WriteLine($"===== {title.ToUpper()} =====\n");
+            }
+
+            for (int i = 0; i < options.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {options[i]}");
             }
         }        
 
