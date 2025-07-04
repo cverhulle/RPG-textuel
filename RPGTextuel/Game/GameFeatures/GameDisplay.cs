@@ -9,10 +9,14 @@ namespace RPGTextuel.Game.GameFeatures
         // Cette méthode affiche le menu principal du jeu
         public static void ShowMainMenu(Player player)
         {
+            // On crée une variable pour gérer une boucle
             bool isRunning = true;
 
+            // Tant qu'aucune réponse n'est fournie, on repète la question.
             while (isRunning)
             {
+
+                // On affiche le menu principal.
                 Console.Clear();
                 Console.WriteLine("===== MENU PRINCIPAL =====");
                 Console.WriteLine("1. Passer au combat suivant.");
@@ -22,6 +26,7 @@ namespace RPGTextuel.Game.GameFeatures
                 Console.WriteLine("==========================");
                 Console.Write("Choisissez une option : ");
 
+                // On récupère la réponse de l'utilisateur.
                 string? input = Console.ReadLine();
                 Console.Clear();
             }
