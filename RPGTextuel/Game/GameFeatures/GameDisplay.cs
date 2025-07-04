@@ -29,6 +29,31 @@ namespace RPGTextuel.Game.GameFeatures
                 // On récupère la réponse de l'utilisateur.
                 string? input = Console.ReadLine();
                 Console.Clear();
+
+                // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
+                switch (input)
+                {
+                    case "1":
+                        Console.WriteLine("Combat suivant ");                        
+                        break;
+
+                    case "2":
+                        Console.WriteLine("=== STATISTIQUES ===");
+                        break;
+
+                    case "3":
+                        Console.WriteLine("=== INVENTAIRE ===");
+                        break;
+
+                    case "4":
+                        Console.WriteLine("À bientôt !");
+                        isRunning = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Option invalide. Appuyez sur une touche pour réessayer...");
+                        break;
+                }
             }
         }        
 
