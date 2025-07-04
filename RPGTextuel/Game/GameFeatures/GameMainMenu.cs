@@ -38,38 +38,37 @@ namespace RPGTextuel.Game.GameFeatures
             // On crée une variable pour gérer une boucle
             bool isRunning = true;
 
+            // On affiche le menu principal.
+            // On récupère la réponse, valide, de l'utilisateur.
+            int input = AskMainMenuChoice();
+
             // Tant qu'aucune réponse n'est fournie, on repète la question.
             while (isRunning)
             {
-                // On affiche le menu principal.
-                // On récupère la réponse, valide, de l'utilisateur.
-                int input = AskMainMenuChoice();
-/*
                 // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
                 switch (input)
                 {
-                    case "1":
+                    case 1:
                         Console.WriteLine("Combat suivant ");
                         break;
 
-                    case "2":
-                        Console.WriteLine("=== STATISTIQUES ===");
+                    case 2:
+                        Console.WriteLine("Statistiques");
                         break;
 
-                    case "3":
-                        Console.WriteLine("=== INVENTAIRE ===");
+                    case 3:
+                        Console.WriteLine("Inventaire");
                         break;
 
-                    case "4":
+                    case 4:
                         Console.WriteLine("À bientôt !");
                         isRunning = false;
                         break;
 
                     default:
-                        Console.WriteLine("Option invalide. Appuyez sur une touche pour réessayer...");
+                        Console.WriteLine("Option invalide. Veuillez selectionner une option valide.");
                         break;
                 }
-*/
             }
         }
     }
