@@ -13,10 +13,12 @@ namespace RPGTextuel.Game.GameFeatures
             "Quitter le jeu"
         };
 
-        // Cette méthode affiche le menu principal
-        public static void DisplayMainMenu()
+        // Cette méthode affiche le menu principal.
+        // Elle retourne le choix, valide, de l'utilisateur
+        public static void AskMainMenuChoice()
         {
-            
+            Console.Clear();
+            int input = GameInputUser.AskMenuChoice(MainMenuChoice, "MENU PRINCIPAL");
         }
 
     }
