@@ -34,13 +34,13 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // On crée une variable pour gérer une boucle
             bool isRunning = true;
 
-            // On affiche le menu principal.
-            // On récupère la réponse, valide, de l'utilisateur.
-            int input = AskMainMenuChoice();
-
             // Tant qu'aucune réponse n'est fournie, on repète la question.
             while (isRunning)
             {
+                // On affiche le menu principal.
+                // On récupère la réponse, valide, de l'utilisateur.
+                int input = AskMainMenuChoice();
+                
                 // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
                 switch (input)
                 {
