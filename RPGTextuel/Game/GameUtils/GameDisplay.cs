@@ -41,5 +41,13 @@ namespace RPGTextuel.Game.GameUtilsNamespace
                 Console.WriteLine(new string('=', backlineLength));
             }
         }
+
+        // Cette méthode affiche les stats d'un personnage et met le jeu en attente
+        public static void PrintCharacterStats(Character character)
+        {
+            character.PrintStats();
+            GameUtils.WaitForUser();
+
+        }
     }       
 }
