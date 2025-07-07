@@ -6,10 +6,11 @@ namespace RPGTextuel.Game.GameUtilsNamespace
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
     public static class GameDisplay
     {
-        // Cette méthode s'occupe de l'affichage des stats d'un personnage
+        // Cette méthode affiche les stats d'un personnage et met le jeu en attente
         public static void PrintStats(Character character)
         {
             character.PrintStats();
+            GameUtils.WaitForUser();
         }
 
         // Cette méthode affiche permet d'afficher une liste d'options.
@@ -40,14 +41,6 @@ namespace RPGTextuel.Game.GameUtilsNamespace
                 int backlineLength = $"===== {title} =====".Length;
                 Console.WriteLine(new string('=', backlineLength));
             }
-        }
-
-        // Cette méthode affiche les stats d'un personnage et met le jeu en attente
-        public static void PrintCharacterStats(Character character)
-        {
-            character.PrintStats();
-            GameUtils.WaitForUser();
-
         }
     }       
 }
