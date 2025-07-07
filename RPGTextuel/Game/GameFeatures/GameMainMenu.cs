@@ -27,10 +27,6 @@ namespace RPGTextuel.Game.GameFeatures
             return input = GameInputUser.AskMenuChoice(MainMenuChoice, "MENU PRINCIPAL");
         }
 
-
-
-        // --------------------- TODO : A SIMPLIFIER ------------------------------
-
         // Cette méthode affiche le menu principal du jeu.
         // Elle récupère la réponse utilisateur et lance la méthode associée.
         public static void HandleMainMenu()
