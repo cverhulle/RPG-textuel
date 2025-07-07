@@ -20,7 +20,7 @@ namespace RPGTextuel.Game
         private static Player InitGame()
         {
             // On affiche le message d'accueil
-            GameDisplay.ShowWelcomeMessage();
+            GameDisplayWelcomeMessage.ShowWelcomeMessage();
 
             // On récupère le nom du joueur
             string name = GamePlayerName.AskAndVerifyPlayerName();
@@ -29,7 +29,7 @@ namespace RPGTextuel.Game
             Player joueur = CreatePlayer.CreateAPlayer(name);
 
             // On affiche le dexième message d'accueil
-            GameDisplay.ShowWelcomeMessage2(name);
+            GameDisplayWelcomeMessage.ShowWelcomeMessage2(name);
 
             return joueur;
         }
