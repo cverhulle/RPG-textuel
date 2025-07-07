@@ -41,6 +41,12 @@ namespace RPGTextuel.Items.Class
         {
             return index >= 0 && index < items.Count;
         }
+        
+        // Cette méthode retourne true si l'inventaire est vide et false sinon.
+        public bool IsEmpty()
+        {
+            return items.Count == 0;
+        }
 
         // Cette méthode permet d'afficher les items du joueur
         public void DisplayInventory()
@@ -55,7 +61,7 @@ namespace RPGTextuel.Items.Class
 
             // On appelle la méthode pour gérer l'affichage des options.
             GameDisplay.PrintFramedList(
-                items, 
+                items,
                 item => item.name,
                 $"Inventaire de {owner.Name}",
                 showCount: true
