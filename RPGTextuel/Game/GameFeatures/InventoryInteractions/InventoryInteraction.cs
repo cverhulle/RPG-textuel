@@ -6,6 +6,8 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
 {
     // Cette classe s'occupe des intéractions entre le joueur et son inventaire
     public static class InventoryInteraction
+
+    //------------------ TODO : A simplifier ---------------------------------
     {
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
         public static void PromptUseItem(Player player)
@@ -19,11 +21,23 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
                 GameUtils.WaitForUser("Votre inventaire est vide.");
                 return;
             }
+            // Crée la liste des noms d’objets pour affichage dans le menu
+            List<string> options = inventory.GetItemNames();
 
-            while (true)
-            {
-                
-            }
+            // Ajoute une option "Retour" à la fin
+            options.Add("Retour");
+
+            // Appelle la fonction qui gère l'affichage et la réponse au menu.
+            int choice = GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
+
+            // Si l’utilisateur a choisi "Retour" (dernier élément), on quitte.
+            if (choice == options.Count)
+                return;
+
+            // Sinon, on utilise l’objet correspondant
+            int index = choice - 1;
+            inventory.UseItem(index, player);
+            GameUtils.WaitForUser("Objet utilisé !");
         }
     }
 }
