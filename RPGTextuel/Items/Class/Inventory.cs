@@ -54,6 +54,12 @@ namespace RPGTextuel.Items.Class
             return index >= 0 && index < items.Count;
         }
 
+        // Cette méthode retourne le nom de tous les items dans l'inventaire sous forme de liste.
+        public List<string> GetItemNames()
+        {
+            return items.Select(i => i.name).ToList();
+        }
+
         // Cette méthode permet de retirer un objet
         public void RemoveItem(int index)
         {
