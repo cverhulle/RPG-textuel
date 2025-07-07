@@ -1,8 +1,17 @@
+using RPGTextuel.Core.Characters;
+using RPGTextuel.Extensions.Characters;
+
 namespace RPGTextuel.Game.GameUtilsNamespace
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
     public static class GameDisplay
     {
+        // Cette méthode s'occupe de l'affichage des stats d'un personnage
+        public static void PrintStats(Character character)
+        {
+            character.PrintStats();
+        }
+
         // Cette méthode affiche permet d'afficher une liste d'options.
         // Elle prend en paramètre une liste de phrases à afficher et, éventuellement, un titre.
         public static void ShowOptionsList(List<string> options, string? title = null)
