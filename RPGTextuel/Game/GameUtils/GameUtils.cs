@@ -39,5 +39,13 @@ namespace RPGTextuel.Game.GameUtilsNamespace
                 choice >= 1 &&
                 choice <= maxOptionCount;
         }
+
+        // Cette méthode affiche un message à l'utilisateur et attend qu'il tape sur le clavier pour
+        // continuer le déroulé du programme
+        public static void WaitForUser(string message = "Appuyez sur une touche pour continuer...")
+        {
+            Console.WriteLine($"\n{message}");
+            Console.ReadKey(true);
+        }
     }
 }
