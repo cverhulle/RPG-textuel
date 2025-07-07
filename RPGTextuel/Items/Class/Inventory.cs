@@ -1,4 +1,5 @@
 using RPGTextuel.Core.Characters;
+using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Items.Class
 {
@@ -44,29 +45,21 @@ namespace RPGTextuel.Items.Class
         // Cette méthode permet d'afficher les items du joueur
         public void DisplayInventory()
         {
-            // Si l'inventaire est vide, on affiche un message personnalisé
+            // On regarde si l'inventaire est vide.
             if (items.Count == 0)
             {
+                // Si c'est le cas, on affiche un message personnalisé.
                 Console.WriteLine($"{owner.Name} n'a pas d'objet");
                 return;
             }
 
-            // Variable pour le titre de l'inventaire
-            string titleInventory = $"===== INVENTAIRE DE {owner.Name.ToUpper()} =====";
-
-            // Sinon, on affiche la liste des objets du personnage.
-            Console.WriteLine(titleInventory);
-            for (int i = 0; i < items.Count; i++)
-            {
-                Console.WriteLine($"  {i + 1}. {items[i].name}");
-            }
-
-            // On affiche une liste de "=" en bas de l'inventaire.
-            int backlineLength = titleInventory.Length;
-            Console.WriteLine(new string('=', backlineLength));
-
-            // On affiche le nombre d'objets au total.
-            Console.WriteLine($"\n{items.Count} objet(s) au total.");
+            // On appelle la méthode pour gérer l'affichage des options.
+            GameDisplay.PrintFramedList(
+                items, 
+                item => item.name,
+                $"Inventaire de {owner.Name}",
+                showCount: true
+            );
         }
 
         // Cette méthode permet de retirer un objet
