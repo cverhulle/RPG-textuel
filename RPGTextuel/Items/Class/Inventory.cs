@@ -22,32 +22,6 @@ namespace RPGTextuel.Items.Class
             items.Add(item);
         }
 
-        // Cette méthode permet d'utiliser un item.
-        public void UseItem(int index, Character target)
-        {
-            if (IsValidItemIndex(index))
-            {
-                items[index].Use(target);
-                RemoveItem(index);
-            }
-            else
-            {
-                Console.WriteLine("Item introuvable");
-            }
-        }
-
-        // Cette méthode vérifie si l'index passé en argument est valide.
-        public bool IsValidItemIndex(int index)
-        {
-            return index >= 0 && index < items.Count;
-        }
-        
-        // Cette méthode retourne true si l'inventaire est vide et false sinon.
-        public bool IsEmpty()
-        {
-            return items.Count == 0;
-        }
-
         // Cette méthode permet d'afficher les items du joueur
         public void DisplayInventory()
         {
@@ -68,6 +42,18 @@ namespace RPGTextuel.Items.Class
             );
         }
 
+        // Cette méthode retourne true si l'inventaire est vide et false sinon.
+        public bool IsEmpty()
+        {
+            return items.Count == 0;
+        }
+
+        // Cette méthode vérifie si l'index passé en argument est valide.
+        public bool IsValidItemIndex(int index)
+        {
+            return index >= 0 && index < items.Count;
+        }
+
         // Cette méthode permet de retirer un objet
         public void RemoveItem(int index)
         {
@@ -78,6 +64,20 @@ namespace RPGTextuel.Items.Class
             else
             {
                 Console.WriteLine("Erreur lors de la suppression de l'objet.");
+            }
+        }
+        
+        // Cette méthode permet d'utiliser un item.
+        public void UseItem(int index, Character target)
+        {
+            if (IsValidItemIndex(index))
+            {
+                items[index].Use(target);
+                RemoveItem(index);
+            }
+            else
+            {
+                Console.WriteLine("Item introuvable");
             }
         }
     }
