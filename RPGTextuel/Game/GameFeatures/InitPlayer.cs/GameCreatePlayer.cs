@@ -2,7 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Items.SetupItems;
 using RPGTextuel.Extensions.Players;
 
-namespace RPGTextuel.Game.GameFeatures
+namespace RPGTextuel.Game.GameFeatures.InitPlayer
 {
     public static class CreatePlayer
     {
