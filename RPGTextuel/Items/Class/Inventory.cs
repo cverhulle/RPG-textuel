@@ -51,13 +51,16 @@ namespace RPGTextuel.Items.Class
                 return;
             }
 
-            // Sinon, on affiche la liste de sobjets du personnage.
-            Console.WriteLine($"Inventaire de {owner.Name}");
-
+            // Sinon, on affiche la liste des objets du personnage.
+            Console.WriteLine($"===== INVENTAIRE DE {owner.Name.ToUpper()} =====");
             for (int i = 0; i < items.Count; i++)
             {
                 Console.WriteLine($"  {i + 1}. {items[i].name}");
             }
+
+            // On affiche une liste de "=" en bas de l'inventaire.
+            int backlineLength = $"===== {owner.Name.ToUpper()} =====".Length;
+            Console.WriteLine(new string('=', backlineLength));
         }
 
         // Cette méthode permet de retirer un objet
