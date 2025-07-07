@@ -1,6 +1,4 @@
-using RPGTextuel.Game.GameUtilsNamespace;
-
-namespace RPGTextuel.Game.GameFeatures
+namespace RPGTextuel.Game.GameUtilsNamespace
 {
     // Cette regroupe les méthodes liées aux demandes envers l'utilisateur.
     public class GameInputUser

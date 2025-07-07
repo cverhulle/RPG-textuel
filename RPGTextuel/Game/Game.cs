@@ -1,5 +1,4 @@
 using RPGTextuel.Core;
-using RPGTextuel.Game.GameFeatures;
 using RPGTextuel.Game.GameFeatures.InitPlayer;
 
 namespace RPGTextuel.Game

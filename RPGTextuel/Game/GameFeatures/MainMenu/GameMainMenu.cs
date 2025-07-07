@@ -1,4 +1,4 @@
-using RPGTextuel.Core;
+using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.MainMenu
 {
