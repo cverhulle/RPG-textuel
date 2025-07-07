@@ -51,15 +51,18 @@ namespace RPGTextuel.Items.Class
                 return;
             }
 
+            // Variable pour le titre de l'inventaire
+            string titleInventory = $"===== INVENTAIRE DE {owner.Name.ToUpper()} =====";
+
             // Sinon, on affiche la liste des objets du personnage.
-            Console.WriteLine($"===== INVENTAIRE DE {owner.Name.ToUpper()} =====");
+            Console.WriteLine(titleInventory);
             for (int i = 0; i < items.Count; i++)
             {
                 Console.WriteLine($"  {i + 1}. {items[i].name}");
             }
 
             // On affiche une liste de "=" en bas de l'inventaire.
-            int backlineLength = $"===== {owner.Name.ToUpper()} =====".Length;
+            int backlineLength = titleInventory.Length;
             Console.WriteLine(new string('=', backlineLength));
         }
 

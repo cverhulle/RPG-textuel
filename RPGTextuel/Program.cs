@@ -1,6 +1,7 @@
 ﻿using RPGTextuel.Core;
-using RPGTextuel.Game;
+using RPGTextuel.Extensions.Players;
 using RPGTextuel.Game.GameFeatures.MainMenu;
+using RPGTextuel.Items.SetupItems;
 
 class Program
 {
@@ -8,6 +9,8 @@ class Program
     static void Main(string[] args)
     {
         Player player = new Player("Link");
+
+        player.AddHealPotion(PotionSize.Small);
         // Game.StartGame();
         GameMainMenu.HandleMainMenu(player);
     }

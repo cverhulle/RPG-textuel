@@ -54,7 +54,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                         break;
 
                     case 3:
-                        Console.WriteLine("Inventaire");
+                        GameDisplay.PrintInventory(player);
                         break;
 
                     case 4:
