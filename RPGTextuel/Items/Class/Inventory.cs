@@ -52,7 +52,7 @@ namespace RPGTextuel.Items.Class
         public void DisplayInventory()
         {
             // On regarde si l'inventaire est vide.
-            if (items.Count == 0)
+            if (IsEmpty())
             {
                 // Si c'est le cas, on affiche un message personnalisé.
                 Console.WriteLine($"{owner.Name} n'a pas d'objet");
