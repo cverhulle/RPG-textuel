@@ -1,5 +1,5 @@
 ﻿using RPGTextuel.Game;
-using RPGTextuel.Game.GameFeatures;
+using RPGTextuel.Game.GameFeatures.MainMenu;
 
 class Program
 {
@@ -7,6 +7,6 @@ class Program
     static void Main(string[] args)
     {
         // Game.StartGame();
-        GameMainMenu.HandleMainMenu();
+        GameMainMenu.AskMainMenuChoice();
     }
 }
