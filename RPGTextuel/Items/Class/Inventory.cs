@@ -64,6 +64,9 @@ namespace RPGTextuel.Items.Class
             // On affiche une liste de "=" en bas de l'inventaire.
             int backlineLength = titleInventory.Length;
             Console.WriteLine(new string('=', backlineLength));
+
+            // On affiche le nombre d'objets au total.
+            Console.WriteLine($"\n{items.Count} objet(s) au total.");
         }
 
         // Cette méthode permet de retirer un objet
