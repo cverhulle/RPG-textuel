@@ -50,11 +50,11 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                         break;
 
                     case 2:
-                        Console.WriteLine("Statistiques");
+                        GameDisplay.PrintStats(player);
                         break;
 
                     case 3:
-                        GameDisplay.PrintStats(player);
+                        Console.WriteLine("Inventaire");
                         break;
 
                     case 4:
