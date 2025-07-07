@@ -42,6 +42,12 @@ namespace RPGTextuel.Items.Class
             );
         }
 
+        // Cette méthode retourne tous les items dans l'inventaire.
+        public List<Item> GetAllItems()
+        {
+            return items;
+        }
+
         // Cette méthode retourne true si l'inventaire est vide et false sinon.
         public bool IsEmpty()
         {

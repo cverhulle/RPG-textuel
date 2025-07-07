@@ -30,11 +30,8 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
                 return;
             }
 
-            // Crée la liste des noms d’objets pour affichage dans le menu
-            List<string> options = inventory.GetItemNames();
-
-            // Ajoute une option "Retour" à la fin
-            options.Add("Retour");
+            // Crée la liste des noms d’objets et un message de retour.
+            List<string> options = GetItemNameListsAndBackMessage(inventory.GetAllItems());
 
             // Appelle la fonction qui gère l'affichage et la réponse au menu.
             int choice = GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
