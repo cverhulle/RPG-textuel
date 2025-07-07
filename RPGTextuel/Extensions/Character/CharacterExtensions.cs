@@ -10,12 +10,12 @@ namespace RPGTextuel.Extensions.Characters
         public static void PrintHealthBar(this Character character)
         {
             // On appelle la méthode pour construire la barre de vie.
-                string bar = BuildHealthBar(
-                    character,
-                    GameConfig.HealthBarLength,
-                    GameConfig.FilledHeartSymbol,
-                    GameConfig.EmptyHeartSymbol
-                );
+            string bar = BuildHealthBar(
+                character,
+                GameConfig.HealthBarLength,
+                GameConfig.FilledHeartSymbol,
+                GameConfig.EmptyHeartSymbol
+            );
 
             // Affichage de la barre de vie.
             Console.WriteLine($"{character.Name} : [{bar}] {character.Health}/{character.MaxHealth} PV");
@@ -56,6 +56,17 @@ namespace RPGTextuel.Extensions.Characters
             int empty = total - filled;
 
             return (filled, empty);
+        }
+
+        // Cette méthode permet d'afficher toutes les statistiques d'un personnage
+        public static void PrintStats(this Character character)
+        {
+            Console.WriteLine("===== STATISTIQUES =====");
+            Console.WriteLine($"Nom        : {character.Name}");
+            Console.Write("PV         : ");
+            character.PrintHealthBar(); 
+            Console.WriteLine($"Force      : {character.Strength}");
+            Console.WriteLine("========================");
         }
     }
 }
