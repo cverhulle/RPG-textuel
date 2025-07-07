@@ -58,7 +58,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                         break;
 
                     case 4:
-                        CloseGame.CloseTheGame();
+                        isRunning = CloseGame.CloseTheGame();
                         break;
 
                     default:
