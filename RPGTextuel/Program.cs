@@ -7,6 +7,6 @@ class Program
     static void Main(string[] args)
     {
         // Game.StartGame();
-        GameMainMenu.HandleMainMenu();
+        // GameMainMenu.HandleMainMenu();
     }
 }

@@ -1,3 +1,4 @@
+using RPGTextuel.Core;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.MainMenu
@@ -29,7 +30,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
 
         // Cette méthode affiche le menu principal du jeu.
         // Elle récupère la réponse utilisateur et lance la méthode associée.
-        public static void HandleMainMenu()
+        public static void HandleMainMenu(Player player)
         {
             // On crée une variable pour gérer une boucle
             bool isRunning = true;
@@ -40,7 +41,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // On affiche le menu principal.
                 // On récupère la réponse, valide, de l'utilisateur.
                 int input = AskMainMenuChoice();
-                
+
                 // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
                 switch (input)
                 {
@@ -53,7 +54,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                         break;
 
                     case 3:
-                        Console.WriteLine("Inventaire");
+                        GameDisplay.PrintStats(player);
                         break;
 
                     case 4:
