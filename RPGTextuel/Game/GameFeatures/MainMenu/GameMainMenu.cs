@@ -57,8 +57,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                         break;
 
                     case 4:
-                        Console.WriteLine("À bientôt !");
-                        isRunning = false;
+                        isRunning = CloseGame.CloseTheGame();
                         break;
 
                     default:
