@@ -78,14 +78,18 @@ namespace RPGTextuel.Items.Class
                 Console.WriteLine("Erreur lors de la suppression de l'objet.");
             }
         }
-        
-        // Cette méthode permet d'utiliser un item.
+
+        // Cette méthode permet d'utiliser un item et de le supprimer après utilisation.
+        // Si l'item ne peut pas être utilisé, on ne fait rien.
         public void UseItem(int index, Character target)
         {
             if (IsValidItemIndex(index))
             {
-                items[index].Use(target);
-                RemoveItem(index);
+                Boolean isItemUsed = items[index].Use(target);
+                if (isItemUsed)
+                {
+                    RemoveItem(index);
+                }
             }
             else
             {
