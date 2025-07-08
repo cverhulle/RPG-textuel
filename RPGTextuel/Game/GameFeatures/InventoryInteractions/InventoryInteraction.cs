@@ -37,7 +37,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             int choice = GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
 
             // Si l’utilisateur a choisi "Retour" (dernier élément), on quitte.
-            if (IsBackChoice(choice, options))
+            if (GameUtils.IsBackChoice(choice, options))
                 return;
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
