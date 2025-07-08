@@ -11,5 +11,11 @@ namespace RPGTextuel.SetupEnemies
             new GoblinChief("Zonva", 60, 15, 60),
             new GoblinChief("Grimlok", 65, 13, 65)
         };
+
+        // Cette méthode permet de choisir aléatoirement un élement de la liste des GoblinChiefs.
+        public static GoblinChief GetRandomGoblinChief()
+        {
+            return GoblinChiefs.PickRandom();
+        }
     }
 }

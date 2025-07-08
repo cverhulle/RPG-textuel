@@ -12,5 +12,11 @@ namespace RPGTextuel.SetupEnemies
             new GoblinMinion("Nak", 30, 2, 25),
             new GoblinMinion("Vrag", 25, 3, 25)
         };
+
+        // Cette méthode permet de choisir aléatoirement un élement de la liste des GoblinMinions.
+        public static GoblinMinion GetRandomGoblinMinion()
+        {
+            return GoblinMinions.PickRandom();
+        }
     }
 }

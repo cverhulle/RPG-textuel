@@ -12,5 +12,11 @@ namespace RPGTextuel.SetupEnemies
             new Goblin("Pak", 40, 7, 40),
             new Goblin("Tark", 45, 6, 45)
         };
+
+        // Cette méthode permet de choisir aléatoirement un élement de la liste des Goblins.
+        public static Goblin GetRandomGoblin()
+        {
+            return Goblins.PickRandom();
+        }
     }
 }
