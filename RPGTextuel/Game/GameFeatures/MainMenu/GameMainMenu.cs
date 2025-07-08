@@ -46,22 +46,28 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
                 switch (input)
                 {
+                    // On lance l'écran de combat
                     case 1:
                         Console.WriteLine("Combat suivant ");
                         break;
 
+                    // On affiche les statistiques du joueur.
                     case 2:
                         GameDisplay.PrintStats(player);
                         break;
 
+                    // On affiche l'inventaire et on gère l'utilisation des objets sur soi-même
                     case 3:
+                        // Les objets ne peuvent être utilisés que sur soi-même ici.
                         InventoryInteraction.PromptUseItem(player, player);
                         break;
 
+                    // Fermeture du jeu
                     case 4:
                         isRunning = CloseGame.CloseTheGame();
                         break;
 
+                    // Si la réponse n'est pas valide, on recommence la boucle.
                     default:
                         Console.WriteLine("Option invalide. Veuillez selectionner une option valide.");
                         break;
