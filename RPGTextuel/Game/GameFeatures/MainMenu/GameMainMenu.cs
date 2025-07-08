@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Game.GameFeatures.InventoryNamespace;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.MainMenu
@@ -54,7 +55,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                         break;
 
                     case 3:
-                        GameDisplay.PrintInventory(player);
+                        InventoryInteraction.PromptUseItem(player, player);
                         break;
 
                     case 4:

@@ -39,7 +39,7 @@ namespace RPGTextuel.Core.Characters
             if (!CanBeHealed(amount))
             {
                 // Si ce n'est pas le cas, on affiche un message et, on ne fait rien.
-                Console.WriteLine($"{Name} ne peut pas être soigné avec {amount} PV.");
+                Console.WriteLine($"{Name} possède déjà tous ses PV.");
                 return;
             }
 
