@@ -46,6 +46,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
                 switch (input)
                 {
+                    // --------------------- TODO-----------------
                     // On lance l'écran de combat
                     case 1:
                         Console.WriteLine("Combat suivant ");
