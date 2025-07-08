@@ -11,14 +11,14 @@ namespace RPGTextuel.Game
         public static void StartGame()
         {
             // On initialise la partie
-            Player player = InitGame();
+            var (player,ennemies) = InitGame();
         }
 
         // Cette méthode permet d'initialiser la partie.
         // Elle affiche les messages d'accueils, demande le nom du joueur et l'instancie.
         // Elle s'occupe également de créer la liste des ennemis à affronter pendant cette partie.
         // Elle retourne le joueur ainsi crée de type Player.
-        private static Player InitGame()
+        private static (Player player, List<Enemy> ennemies) InitGame()
         {
             // On affiche le message d'accueil
             InitWelcomeMessage.ShowWelcomeMessage();
@@ -35,7 +35,7 @@ namespace RPGTextuel.Game
             // On affiche le dexième message d'accueil
             InitWelcomeMessage.ShowWelcomeMessage2(name);
 
-            return player;
+            return (player, ennemies);
         }
     }
 }
