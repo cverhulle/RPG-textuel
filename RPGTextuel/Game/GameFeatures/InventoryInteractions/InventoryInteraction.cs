@@ -15,12 +15,6 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             names.Add(backLabel);
             return names;
         }
-        
-        // Cette méthode retourne true si "retour" est choisi.
-        public static bool IsBackChoice(int choice, List<string> options)
-        {
-            return choice == options.Count;
-        }
 
         //------------------ TODO : A simplifier ---------------------------------
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
