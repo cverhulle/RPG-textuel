@@ -16,6 +16,6 @@ namespace RPGTextuel.Items.Class
 
         // On oblige les classes dérivées à définir une méthode Use.
         // On retourne un booléen correspondant au fait que l'objet soit utilisé ou non.
-        public abstract Boolean Use(Character target);
+        public abstract Boolean Use(Character user, Character target);
     }
 }
