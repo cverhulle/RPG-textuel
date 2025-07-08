@@ -11,6 +11,7 @@ class Program
         Player player = new Player("Link");
 
         player.AddHealPotion(PotionSize.Small);
+        player.AddDamagePotion(PotionSize.Small);
         // Game.StartGame();
         GameMainMenu.HandleMainMenu(player);
     }
