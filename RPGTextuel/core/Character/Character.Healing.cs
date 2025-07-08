@@ -33,19 +33,21 @@ namespace RPGTextuel.Core.Characters
         }
 
         // Cette méthode permet de se soigner de "soin" PV.
-        public virtual void Heal(int amount)
+        // On retourne true si la potion est utilisée et false sinon.
+        public virtual Boolean Heal(int amount)
         {
             // On vérfie que le Character peut recevoir des soins
             if (!CanBeHealed(amount))
             {
                 // Si ce n'est pas le cas, on affiche un message et, on ne fait rien.
                 Console.WriteLine($"{Name} possède déjà tous ses PV.");
-                return;
+                return false;
             }
 
             // On applique les soins, et, on affiche un message d'information à l'utilisateur.
             int actualHealed = ApplyHeal(amount);
             Console.WriteLine($"{Name} récupère {actualHealed} points de vie. PV actuels : {Health}");
+            return true;
         }
     }
 }
