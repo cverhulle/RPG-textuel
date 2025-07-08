@@ -7,9 +7,16 @@ namespace RPGTextuel.Game.GameFeatures.InitPlayer
     // affrontera pendant cette partie.
     public static class InitEnnemiesToFight
     {
-        public static void GetRandomGoblinMinion()
+        // Cette méthode retourne une liste d'ennemis, choisis au hasard.
+        // Pour le moment, on choisit un gobelin de chaque type.
+        public static List<Enemy> GetRandomGoblinSet()
         {
-            
+            return new List<Enemy>
+                {
+                    SetupGoblinMinions.GetRandomGoblinMinion(),
+                    SetupGoblins.GetRandomGoblin(),
+                    SetupGoblinChiefs.GetRandomGoblinChief()
+                };
         }        
     }
 }
