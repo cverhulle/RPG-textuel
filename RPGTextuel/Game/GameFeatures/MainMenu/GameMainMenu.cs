@@ -49,6 +49,8 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                     // On lance l'écran de combat
                     case 1:
                         Console.WriteLine("Combat suivant ");
+                        Console.WriteLine("A venir ; Appuyez sur une touche pour revenir au menu");
+                        Console.ReadKey(true);
                         break;
 
                     // On affiche les statistiques du joueur.

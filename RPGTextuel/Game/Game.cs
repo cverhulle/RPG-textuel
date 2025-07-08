@@ -1,6 +1,7 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.InitPlayer;
+using RPGTextuel.Game.GameFeatures.MainMenu;
 
 namespace RPGTextuel.Game
 {
@@ -11,7 +12,10 @@ namespace RPGTextuel.Game
         public static void StartGame()
         {
             // On initialise la partie
-            var (player,ennemies) = InitGame();
+            var (player, ennemies) = InitGame();
+
+            // On lance ouvre le menu principal et, on lance la boucle de jeu.
+            GameMainMenu.HandleMainMenu(player);
         }
 
         // Cette méthode permet d'initialiser la partie.
