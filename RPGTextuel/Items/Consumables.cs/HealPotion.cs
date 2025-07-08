@@ -17,10 +17,10 @@ namespace RPGTextuel.Items.Consumables
 
         // Cette méthode permet d'utiliser la potion de soin.
         // Elle régénère un certain montant de PV.
-        public override void Use(Character target)
+        public override Boolean Use(Character target)
         {
             Console.WriteLine($"{target.Name} utilise {name}");
-            target.Heal(healAmount);
+            return target.Heal(healAmount);
         }
     }
 }

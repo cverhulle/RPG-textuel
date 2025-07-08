@@ -17,10 +17,11 @@ namespace RPGTextuel.Items.Consumables
 
         // On implémente la méthode Use.
         // Elle prend en argument un personnage et lui enlève des PV égaux à damage.
-        public override void Use(Character target)
+        public override Boolean Use(Character target)
         {
             Console.WriteLine($"{target.Name} est touché par {name}");
             target.TakeDamage(damage);
+            return true;
         }
     }
 }
