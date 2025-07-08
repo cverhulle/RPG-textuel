@@ -17,8 +17,8 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             return names;
         }
 
-        //------------------ TODO : A simplifier ---------------------------------
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
+        // Elle utilise ensuite l'item selectionné si possible ou, elle retourne vide sinon.
         public static void PromptUseItem(Player player, Character target)
         {
             // On récupère l'inventaire du joueur.
