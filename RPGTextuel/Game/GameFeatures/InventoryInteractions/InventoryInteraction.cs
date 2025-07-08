@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Core.Characters;
 using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.Items.Class;
 
@@ -9,7 +10,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
 
     {
         // Cette méthode retourne une liste de string contenant les objets de l'inventaire et un message de retour.
-        public static List<string> GetItemNameListsAndBackMessage (List<Item> items, string backLabel = "Retour")
+        public static List<string> GetItemNameListsAndBackMessage(List<Item> items, string backLabel = "Retour")
         {
             var names = items.Select(i => i.name).ToList();
             names.Add(backLabel);
@@ -41,7 +42,15 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
                 return;
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
-            inventory.UseItem(choice-1, player);
+            inventory.UseItem(choice - 1, player);
+            GameUtils.WaitForUser("Objet utilisé !");
+        }
+
+        // Cette méthode permet à l'utilisateur d'utiliser un objet à l'aide de son index
+        // Elle affiche un message et attend qu'il tape sur le clavier pour continuer
+        public static void UseItemAndWait(int index, Player player, Character target)
+        {
+            player.Inventory.UseItem(index, target);
             GameUtils.WaitForUser("Objet utilisé !");
         }
     }
