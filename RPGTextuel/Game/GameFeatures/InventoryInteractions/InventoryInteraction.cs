@@ -49,8 +49,12 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
         // Elle affiche un message et attend qu'il tape sur le clavier pour continuer.
         public static void UseItemAndWait(int index, Player player, Character target)
         {
-            player.Inventory.UseItem(index, target);
-            GameUtils.WaitForUser("Objet utilisé !");
+            Boolean isItemUsed = player.Inventory.UseItem(index, target);
+            if (isItemUsed)
+            {
+                GameUtils.WaitForUser("Objet utilisé !");
+            }
+            GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.");
         }
     }
 }
