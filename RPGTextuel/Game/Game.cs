@@ -19,16 +19,16 @@ namespace RPGTextuel.Game
         private static Player InitGame()
         {
             // On affiche le message d'accueil
-            GameDisplayWelcomeMessage.ShowWelcomeMessage();
+            InitWelcomeMessage.ShowWelcomeMessage();
 
             // On récupère le nom du joueur
-            string name = GamePlayerName.AskAndVerifyPlayerName();
+            string name = InitPlayerName.AskAndVerifyPlayerName();
 
             // On crée l'instance de type joueur
-            Player joueur = CreatePlayer.CreateAPlayer(name);
+            Player joueur = InitPlayerCreation.CreateAPlayer(name);
 
             // On affiche le dexième message d'accueil
-            GameDisplayWelcomeMessage.ShowWelcomeMessage2(name);
+            InitWelcomeMessage.ShowWelcomeMessage2(name);
 
             return joueur;
         }

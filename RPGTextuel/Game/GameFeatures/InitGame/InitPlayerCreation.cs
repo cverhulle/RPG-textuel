@@ -4,7 +4,7 @@ using RPGTextuel.Extensions.Players;
 
 namespace RPGTextuel.Game.GameFeatures.InitPlayer
 {
-    public static class CreatePlayer
+    public static class InitPlayerCreation
     {
         // Cette classe permet de créer un personnage à partir de son nom.
         public static Player CreateAPlayer(string playerName)

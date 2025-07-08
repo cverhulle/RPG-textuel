@@ -1,7 +1,7 @@
 namespace RPGTextuel.Game.GameFeatures.InitPlayer
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
-    public static class GameDisplayWelcomeMessage
+    public static class InitWelcomeMessage
     {
         // Cette méthode affiche le message de début de jeu
         public static void ShowWelcomeMessage()

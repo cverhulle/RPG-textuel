@@ -4,7 +4,7 @@ using RPGTextuel.Game.GameUtilsNamespace;
 namespace RPGTextuel.Game.GameFeatures.InitPlayer
 {
     // Cette classe s'occupe la récupération du nom du joueur.
-    public static class GamePlayerName
+    public static class InitPlayerName
     {
 
         // Cette méthode demande à l'utilisateur le nom pour son joueur
