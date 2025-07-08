@@ -81,7 +81,8 @@ namespace RPGTextuel.Items.Class
 
         // Cette méthode permet d'utiliser un item et de le supprimer après utilisation.
         // Si l'item ne peut pas être utilisé, on ne fait rien.
-        public void UseItem(int index, Character target)
+        // On retourne true si l'item est utilisé ; false sinon.
+        public Boolean UseItem(int index, Character target)
         {
             if (IsValidItemIndex(index))
             {
@@ -89,12 +90,14 @@ namespace RPGTextuel.Items.Class
                 if (isItemUsed)
                 {
                     RemoveItem(index);
+                    return true;
                 }
             }
             else
             {
                 Console.WriteLine("Item introuvable");
             }
+            return false;
         }
     }
 }
