@@ -19,7 +19,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
 
         //------------------ TODO : A simplifier ---------------------------------
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
-        public static void PromptUseItem(Player player)
+        public static void PromptUseItem(Player player, Character target)
         {
             // On récupère l'inventaire du joueur.
             Inventory inventory = player.Inventory;
@@ -42,12 +42,11 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
                 return;
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
-            inventory.UseItem(choice - 1, player);
-            GameUtils.WaitForUser("Objet utilisé !");
+            UseItemAndWait(choice - 1, player, target);
         }
 
-        // Cette méthode permet à l'utilisateur d'utiliser un objet à l'aide de son index
-        // Elle affiche un message et attend qu'il tape sur le clavier pour continuer
+        // Cette méthode permet à l'utilisateur d'utiliser un objet à l'aide de son index.
+        // Elle affiche un message et attend qu'il tape sur le clavier pour continuer.
         public static void UseItemAndWait(int index, Player player, Character target)
         {
             player.Inventory.UseItem(index, target);
