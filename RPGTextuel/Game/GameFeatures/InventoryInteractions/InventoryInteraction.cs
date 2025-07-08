@@ -46,9 +46,8 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             if (IsBackChoice(choice, options))
                 return;
 
-            // Sinon, on utilise l’objet correspondant
-            int index = choice - 1;
-            inventory.UseItem(index, player);
+            // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
+            inventory.UseItem(choice-1, player);
             GameUtils.WaitForUser("Objet utilisé !");
         }
     }
