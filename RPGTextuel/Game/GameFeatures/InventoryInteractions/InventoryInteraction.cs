@@ -18,8 +18,9 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
         }
 
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
-        // Elle utilise ensuite l'item selectionné si possible ou, elle retourne vide sinon.
-        public static void PromptUseItem(Player player, Character target)
+        // Elle utilise ensuite l'item selectionné.
+        // Elle retourne un booléan pour savoir si l'objet est utilisé ou non.
+        public static Boolean PromptUseItem(Player player, Character target)
         {
             // On récupère l'inventaire du joueur.
             Inventory inventory = player.Inventory;
@@ -28,7 +29,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             if (inventory.IsEmpty())
             {
                 GameUtils.WaitForUser("Votre inventaire est vide.");
-                return;
+                return false;
             }
 
             // Crée la liste des noms d’objets et un message de retour.
@@ -39,15 +40,16 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
 
             // Si l’utilisateur a choisi "Retour" (dernier élément), on quitte.
             if (GameUtils.IsBackChoice(choice, options))
-                return;
+                return false;
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
-            UseItemAndWait(choice - 1, player, target);
+            return UseItemAndWait(choice - 1, player, target);
         }
 
         // Cette méthode permet à l'utilisateur d'utiliser un objet à l'aide de son index.
         // Elle affiche un message et attend qu'il tape sur le clavier pour continuer.
-        public static void UseItemAndWait(int index, Player player, Character target)
+        // Elle retourne un booléan pour savoir si l'objet est utilisé ou non.
+        public static Boolean UseItemAndWait(int index, Player player, Character target)
         {
             Boolean isItemUsed = player.Inventory.UseItem(index, player, target);
             if (isItemUsed)
@@ -58,6 +60,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             {
                 GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.");
             }
+            return isItemUsed;
         }
     }
 }
