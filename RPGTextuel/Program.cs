@@ -10,15 +10,15 @@ class Program
     static void Main(string[] args)
     {
         // Méthode pour lancer le jeu
-        Game.StartGame();
+        // Game.StartGame();
 
-        /* Test d'un combat
+        // Test d'un combat
         Player player = new Player("Link");
         Enemy enemy = SetupGoblins.GetRandomGoblin();
 
         MainFight.HandleBattle(player, enemy);
 
-        */
+        
         
     }
 }

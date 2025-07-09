@@ -11,17 +11,15 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         public static void ShowBattleState(Player player, Enemy enemy)
         {
             Console.Clear();
-            Console.WriteLine("===== COMBAT EN COURS =====\n");
+            Console.WriteLine("===== COMBAT EN COURS =====");
 
             // Affichage de la santé du joueur
             player.PrintHealthBar();
 
-            Console.WriteLine("\n--- Ennemi ---");
-
             // Affichage de la santé de l'ennemi.
             enemy.PrintHealthBar();
 
-            Console.WriteLine("\n============================\n");
+            Console.WriteLine("============================");
         }
     }
 }
