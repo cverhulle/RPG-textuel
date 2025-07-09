@@ -16,6 +16,8 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 BattleDisplay.ShowBattleState(player, enemy);
 
                 // Tour du joueur
+                PlayerAction.PlayerTurn(player, enemy);
+                
                 // Tour de l'ennemi
             }
 
