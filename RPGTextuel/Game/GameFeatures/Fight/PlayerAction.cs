@@ -47,13 +47,11 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                     // Voir les stats de l'adversaire
                     case 3: 
                         GameDisplay.PrintStats(enemy);
-                        GameUtils.WaitForUser();
                         break;
 
                     // Voir mes stats
                     case 4: 
                         GameDisplay.PrintStats(player);
-                        GameUtils.WaitForUser();
                         break;
                 }
             }
