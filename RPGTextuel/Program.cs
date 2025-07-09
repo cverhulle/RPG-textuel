@@ -1,19 +1,24 @@
 ﻿using RPGTextuel.Core;
-using RPGTextuel.Extensions.Players;
-using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Game;
-using RPGTextuel.Items.SetupItems;
+using RPGTextuel.Enemies.Class;
+using RPGTextuel.SetupEnemies;
+using RPGTextuel.Game.GameFeatures.Fight;
 
 class Program
 {
     // Cette méthode permet de lancer le programme.
     static void Main(string[] args)
     {
-        // Player player = new Player("Link");
-
-        // player.AddHealPotion(PotionSize.Small);
-        // player.AddDamagePotion(PotionSize.Small);
+        // Méthode pour lancer le jeu
         Game.StartGame();
-        // GameMainMenu.HandleMainMenu(player);
+
+        /* Test d'un combat
+        Player player = new Player("Link");
+        Enemy enemy = SetupGoblins.GetRandomGoblin();
+
+        MainFight.HandleBattle(player, enemy);
+
+        */
+        
     }
 }
