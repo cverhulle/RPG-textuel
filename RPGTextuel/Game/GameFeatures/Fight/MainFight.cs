@@ -14,13 +14,12 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             {
                 // Affichage des infos de combat.
                 BattleDisplay.ShowBattleState(player, enemy);
-                
+
                 // Tour du joueur
                 // Tour de l'ennemi
             }
 
             // Résultat du combat. Retour de la fonction ?
         }
-
     }
 }
