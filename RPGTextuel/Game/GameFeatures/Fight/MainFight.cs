@@ -1,10 +1,10 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 
-namespace RPGTextuel.Game.GameFeatures.MainFight
+namespace RPGTextuel.Game.GameFeatures.Fight
 {
     // Cette classe est la classe principale qui s'occupe des combats.
-    public class MainFights
+    public class MainFight
     {
         // Cette classe s'occupe du déroulé du combat.
         public static void HandleBattle(Player player, Enemy enemy)
