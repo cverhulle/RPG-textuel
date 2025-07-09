@@ -13,6 +13,8 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             while (player.IsAlive && enemy.IsAlive)
             {
                 // Affichage des infos de combat.
+                BattleDisplay.ShowBattleState(player, enemy);
+                
                 // Tour du joueur
                 // Tour de l'ennemi
             }
