@@ -54,7 +54,10 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             {
                 GameUtils.WaitForUser("Objet utilisé !");
             }
-            GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.");
+            else
+            {
+                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.");
+            }
         }
     }
 }

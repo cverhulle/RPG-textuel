@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameFeatures.InventoryNamespace;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.Fight
@@ -32,12 +33,15 @@ namespace RPGTextuel.Game.GameFeatures.Fight
 
                 switch (choice)
                 {
-                    // Attaque
-                    case 1: 
+                    // Attaque ; Cette action met fin au tour.
+                    case 1:
+                        player.Attack(enemy);
+                        hasActed = true;
                         break;
 
-                    // Objet
+                    // Affichage des objets ; L'utilisation d'un objet met fin au tour.
                     case 2:
+                        InventoryInteraction.PromptUseItem(player, enemy);
                         break;
 
                     // Voir les stats de l'adversaire
