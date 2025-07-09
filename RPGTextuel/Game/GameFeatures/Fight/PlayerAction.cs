@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.Fight
 {
@@ -11,8 +12,8 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         {
             "Attaquer",
             "Utiliser un objet",
-            "Voir mes stats",
-            "Voir les stats de l'ennemi"
+            "Voir les stats de l'ennemi",
+            "Voir mes stats"
         };
 
         // Cette méthode gère le tour du joueur.
@@ -26,7 +27,27 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // Tant que le joueur ne termine pas son tour, on reste dans la méthode.
             while (!hasActed)
             {
+                // On demande le choix de l'utilisateur.
+                int choice = GameInputUser.AskMenuChoice(playersAction, "Que souhaitez-vous faire ?");
 
+                switch (choice)
+                {
+                    // Attaque
+                    case 1: 
+                        break;
+
+                    // Objet
+                    case 2:
+                        break;
+
+                    // Voir les stats de l'adversaire
+                    case 3: 
+                        break;
+
+                    // Voir mes stats
+                    case 4: 
+                        break;
+                }
             }
         }
     }
