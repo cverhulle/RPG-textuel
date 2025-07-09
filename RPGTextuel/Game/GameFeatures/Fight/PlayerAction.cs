@@ -36,6 +36,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                     // Attaque ; Cette action met fin au tour.
                     case 1:
                         player.Attack(enemy);
+                        GameUtils.WaitForUser();
                         hasActed = true;
                         break;
 
