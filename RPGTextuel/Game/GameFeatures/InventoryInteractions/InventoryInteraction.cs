@@ -18,7 +18,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
         }
 
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
-        // Elle retourne vide si on choisit de revenir en arrière
+        // Elle retourne le choix de l'utilisateur (retour si l'inventaire est vide).
         public static int PromptItem(Player player)
         {
              // On récupère l'inventaire du joueur.
