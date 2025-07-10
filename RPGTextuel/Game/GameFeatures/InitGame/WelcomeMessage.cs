@@ -1,3 +1,5 @@
+using RPGTextuel.Game.GameUtilsNamespace;
+
 namespace RPGTextuel.Game.GameFeatures.InitPlayer
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
@@ -18,8 +20,7 @@ namespace RPGTextuel.Game.GameFeatures.InitPlayer
             Console.WriteLine();
             Console.WriteLine("Bienvenue " + name);
             Console.WriteLine("Vous allez devoir affronter trois ennemis redoutables !");
-            Console.WriteLine("Choisissez une option dans le menu suivant :");
-            Console.WriteLine();
+            GameUtils.WaitForUser();
         }
     }
 }
