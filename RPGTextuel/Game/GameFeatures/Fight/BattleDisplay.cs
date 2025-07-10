@@ -30,10 +30,11 @@ namespace RPGTextuel.Game.GameFeatures.Fight
 
             Console.WriteLine("===== FIN DU COMBAT =====\n");
 
+            // On affiche un message relatif au résultat du combat.
             if (player.IsAlive && !enemy.IsAlive)
             {
-                Console.WriteLine($"🎉 Victoire ! {enemy.Name} a été vaincu.");
-                player.PrintStats();
+                Console.WriteLine($"🎉 Victoire ! {enemy.Name} a été vaincu. \n");
+                player.PrintHealthBar();
             }
             else if (!player.IsAlive && enemy.IsAlive)
             {
@@ -43,7 +44,8 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             {
                 Console.WriteLine("Erreur : Fin prématurée du combat.");
             }
-
+            
+            // On attend l'appui de l'utilisateur pour continuer.
             GameUtils.WaitForUser("Appuyez sur une touche pour continuer...");
         }
     }
