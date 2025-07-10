@@ -12,10 +12,10 @@ namespace RPGTextuel.Game
         public static void StartGame()
         {
             // On initialise la partie
-            var (player, ennemies) = InitGame();
+            (Player player, List<Enemy> ennemies) = InitGame();
 
             // On lance ouvre le menu principal et, on lance la boucle de jeu.
-            GameMainMenu.HandleMainMenu(player);
+            // GameMainMenu.HandleMainMenu(player);
         }
 
         // Cette méthode permet d'initialiser la partie.
