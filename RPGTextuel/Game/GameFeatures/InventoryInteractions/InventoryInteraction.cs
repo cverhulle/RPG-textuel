@@ -9,11 +9,26 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
     public static class InventoryInteraction
     {
         // Cette méthode permet de choisir la cible de l'objet à utiliser.
-        // Deux choix sont possibles : soi-même ou l'adversaire.
-        public static Character ChooseTarget(Character player, Character enemy)
+        // On peut fournir un ennemi à la liste des cibles.
+        // S'il n'y pas d'ennemis, la cible est le joueur.
+        public static Character ChooseTarget(Character player, Character? enemy = null)
         {
-            var targets = new List<Character> { player, enemy };
-            var options = new List<string> { $"{player.Name} (vous)", $"{enemy.Name}" };
+            // Par défaut, il n'y a que le joueur dans la liste des cibles.
+            var targets = new List<Character> { player };
+            var options = new List<string> { $"{player.Name} (vous)" };
+
+            // Si un ennemi est présent, on l'ajoute à la liste des cibles.
+            if (enemy != null)
+            {
+                targets.Add(enemy);
+                options.Add(enemy.Name);
+            }
+
+            // Si une seule cible possible (le joueur), on ne pose pas la question
+            if (targets.Count == 1)
+            {
+                return player;
+            }
 
             int choice = GameInputUser.AskMenuChoice(options, "Choisissez une cible");
 
