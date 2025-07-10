@@ -16,8 +16,6 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 BattleDisplay.ShowBattleState(player, enemy);
 
                 // Tour du joueur
-                // ------------------- TODO : Test du cas d'utilisation des objets -------------------
-                // ---------------------- Modification de PromptUseItem requise pour utiliser un objet sur soi-même -------
                 PlayerAction.PlayerTurn(player, enemy);
 
                 // Tour de l'ennemi
