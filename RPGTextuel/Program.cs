@@ -12,9 +12,9 @@ class Program
     static void Main(string[] args)
     {
         // Méthode pour lancer le jeu
-        Game.StartGame();
-
-        /* Test d'un combat
+        // Game.StartGame();
+        
+        // Test d'un combat
         Player player = new Player("Link");
         player.AddHealPotion(PotionSize.Small);
         player.AddDamagePotion(PotionSize.Small);
@@ -23,7 +23,7 @@ class Program
         Enemy enemy = SetupGoblins.GetRandomGoblin();
 
         MainFight.HandleBattle(player, enemy);    
-        */ 
-          
+        
+
     }
 }

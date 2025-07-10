@@ -62,7 +62,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                     // On affiche l'inventaire et on gère l'utilisation des objets sur soi-même
                     case 3:
                         // Les objets ne peuvent être utilisés que sur soi-même ici.
-                        InventoryInteraction.PromptUseItem(player, player);
+                        InventoryInteraction.PromptUseItem(player);
                         break;
 
                     // Fermeture du jeu

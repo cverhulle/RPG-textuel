@@ -42,7 +42,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
 
                     // Affichage des objets ; L'utilisation d'un objet met fin au tour.
                     case 2:
-                        hasActed = InventoryInteraction.PromptUseItem(player);
+                        hasActed = InventoryInteraction.PromptUseItem(player, enemy);
                         break;
 
                     // Voir les stats de l'adversaire
