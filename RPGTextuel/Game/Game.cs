@@ -3,6 +3,7 @@ using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
 using RPGTextuel.Game.GameFeatures.InitPlayer;
+using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game
@@ -26,14 +27,21 @@ namespace RPGTextuel.Game
                 GameUtils.WaitForUser();
 
                 // On délègue la gestion du menu principal à une méthode dédiée
-                FightingAnEnemyMenu.HandleMainMenu(player, enemy);
+                Boolean wantToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
 
-                // Si le joueur meurt, on arrête la partie
-                if (!player.IsAlive)
+                // Si le joueur quite, on arrête la partie
+                if (wantToQuit)
                 {
-                    Console.WriteLine("Le joueur est mort. Fin de la partie.");
+                    CloseGame.CloseTheGame();
                     return;
                 }
+
+                // Si le joueur meurt, on arrête la partie
+                    if (!player.IsAlive)
+                    {
+                        Console.WriteLine("Le joueur est mort. Fin de la partie.");
+                        return;
+                    }
             }
 
             // Si tous les ennemis sont vaincus

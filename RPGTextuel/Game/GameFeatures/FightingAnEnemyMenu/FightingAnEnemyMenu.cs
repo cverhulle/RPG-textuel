@@ -62,7 +62,6 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 
                     // Fermeture du jeu
                     case 4:
-                        CloseGame.CloseTheGame();
                         return true;
 
                     // Si la réponse n'est pas valide, on recommence la boucle.
