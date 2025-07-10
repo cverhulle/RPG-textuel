@@ -22,11 +22,11 @@ namespace RPGTextuel.Extensions.Players
         }
 
         // Cette méthode permet d'afficher toutes les statistiques d'un joueur
-        public static void PrintStatsPlayer(this Player player)
+        public static void PrintStats(this Player player)
         {
             string title = $" STATISTIQUES DE {player.Name.ToUpper()} ";
             string border = new string('=', title.Length + 12);
-            
+
             Console.WriteLine($"===== {title.ToUpper()} =====");
             Console.WriteLine($"Nom        : {player.Name}");
             Console.Write("PV         : ");
