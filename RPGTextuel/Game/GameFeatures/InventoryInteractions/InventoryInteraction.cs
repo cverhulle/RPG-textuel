@@ -52,7 +52,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
         // Elle utilise ensuite l'item selectionné.
         // Elle retourne un booléan pour savoir si l'objet est utilisé ou non.
-        public static Boolean PromptUseItem(Player player, Character target)
+        public static Boolean PromptUseItem(Player player, Character enemy)
         {
             // Appelle la fonction qui gère l'affichage et la réponse au menu.
             int choice = PromptItem(player);
@@ -61,7 +61,8 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             if (choice == player.Inventory.Count +1)
                 return false;
 
-            // Choix de la cible ; définition de target
+            // Choix de la cible
+            Character target = ChooseTarget(player, enemy);
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
             return UseItemAndWait(choice - 1, player, target);
