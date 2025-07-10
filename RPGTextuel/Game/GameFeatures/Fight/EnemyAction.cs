@@ -10,16 +10,19 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         // Cette méthode gère le tour des ennemis.
         public static void EnemyTurn(Player player, Enemy enemy)
         {
-            // Message d'action
-            Console.WriteLine("\n== TOUR DE L'ADVERSAIRE ====");
+            if (enemy.IsAlive)
+            {
+                // Message d'action
+                Console.WriteLine("\n== TOUR DE L'ADVERSAIRE ====");
 
-            // Attaque de l'ennemi
-            enemy.Attack(player);
+                // Attaque de l'ennemi
+                enemy.Attack(player);
 
-            Console.WriteLine("============================");
+                Console.WriteLine("============================");
 
-            //Pause pour que le joueur ait le temps de lire
-            GameUtils.WaitForUser();
+                //Pause pour que le joueur ait le temps de lire
+                GameUtils.WaitForUser();
+            }
         }
     }
 }
