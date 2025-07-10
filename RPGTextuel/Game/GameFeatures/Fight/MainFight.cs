@@ -19,7 +19,10 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 PlayerAction.PlayerTurn(player, enemy);
 
                 // Tour de l'ennemi
-                EnemyAction.EnemyTurn(player, enemy);
+                if (enemy.IsAlive)
+                {
+                    EnemyAction.EnemyTurn(player, enemy);
+                }
             }
 
             // Résultat du combat. Retour de la fonction ?
