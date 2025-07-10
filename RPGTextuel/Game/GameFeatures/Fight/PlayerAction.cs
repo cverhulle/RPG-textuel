@@ -20,7 +20,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         // Cette méthode gère le tour du joueur.
         public static void PlayerTurn(Player player, Enemy enemy)
         {
-            Console.WriteLine("\n===== VOTRE TOUR ===========");
+            Console.WriteLine("\n===== VOTRE TOUR ===========\n");
 
             // On crée le booléen asActed pour savoir si le joueur a terminé son tour ou non.
             bool hasActed = false;
