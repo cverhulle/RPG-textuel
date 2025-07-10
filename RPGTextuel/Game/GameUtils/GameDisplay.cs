@@ -1,6 +1,8 @@
 using RPGTextuel.Core;
 using RPGTextuel.Core.Characters;
-using RPGTextuel.Extensions.Characters;
+using RPGTextuel.Enemies.Class;
+using RPGTextuel.Extensions.Players;
+using RPGTextuel.Extensions.Enemies;
 
 namespace RPGTextuel.Game.GameUtilsNamespace
 {
@@ -54,8 +56,23 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         // Cette méthode affiche les stats d'un personnage et met le jeu en attente.
         public static void PrintStats(Character character)
         {
-            character.PrintStats();
+            switch (character)
+                {
+                    case Player player:
+                        player.PrintStats();
+                        break;
+
+                    case Enemy enemy:
+                        enemy.PrintStats();
+                        break;
+
+                    default:
+                        Console.WriteLine("Type de personnage inconnu.");
+                        break;
+                }
+
             GameUtils.WaitForUser();
+
         }
 
         // Cette méthode affiche permet d'afficher une liste d'options.
