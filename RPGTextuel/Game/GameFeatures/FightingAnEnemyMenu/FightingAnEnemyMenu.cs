@@ -2,7 +2,6 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
-using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus

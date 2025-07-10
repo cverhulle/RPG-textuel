@@ -1,4 +1,4 @@
-namespace RPGTextuel.Game.GameFeatures.MainMenu
+namespace RPGTextuel.Game.GameUtilsNamespace
 {
     public class CloseGame
     {

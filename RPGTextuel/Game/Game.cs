@@ -3,7 +3,6 @@ using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
 using RPGTextuel.Game.GameFeatures.InitPlayer;
-using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game
