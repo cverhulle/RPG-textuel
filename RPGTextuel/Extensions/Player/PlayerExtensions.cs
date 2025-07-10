@@ -25,12 +25,13 @@ namespace RPGTextuel.Extensions.Players
         public static void PrintStatsPlayer(this Player player)
         {
             string title = $" STATISTIQUES DE {player.Name.ToUpper()} ";
+            string border = new string('=', title.Length + 12);
+            
             Console.WriteLine($"===== {title.ToUpper()} =====");
             Console.WriteLine($"Nom        : {player.Name}");
             Console.Write("PV         : ");
             player.PrintHealthBar();
             Console.WriteLine($"Force      : {player.Strength}");
-            string border = new string('=', title.Length + 12);
             Console.WriteLine(border);
         }
     }
