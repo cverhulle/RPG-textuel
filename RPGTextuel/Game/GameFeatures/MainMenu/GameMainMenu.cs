@@ -1,4 +1,6 @@
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
 using RPGTextuel.Game.GameUtilsNamespace;
 
@@ -31,7 +33,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
 
         // Cette méthode affiche le menu principal du jeu.
         // Elle récupère la réponse utilisateur et lance la méthode associée.
-        public static void HandleMainMenu(Player player)
+        public static void HandleMainMenu(Player player, Enemy enemy)
         {
             // On crée une variable pour gérer une boucle
             bool isRunning = true;
@@ -46,12 +48,10 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // On évalue la réponse de l'utilisateur et, on lance la méthode associée.
                 switch (input)
                 {
-                    // --------------------- TODO-----------------
                     // On lance l'écran de combat
                     case 1:
-                        Console.WriteLine("Combat suivant ");
-                        Console.WriteLine("A venir ; Appuyez sur une touche pour revenir au menu");
-                        Console.ReadKey(true);
+                        MainFight.HandleBattle(player, enemy);
+                        isRunning = false;
                         break;
 
                     // On affiche les statistiques du joueur.
