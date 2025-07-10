@@ -23,6 +23,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             }
 
             // Résultat du combat. Retour de la fonction ?
+            BattleDisplay.ShowBattleResult(player, enemy);
         }
     }
 }
