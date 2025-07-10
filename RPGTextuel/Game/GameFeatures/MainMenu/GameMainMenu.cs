@@ -21,14 +21,11 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         // Elle retourne le choix, valide, de l'utilisateur
         public static int AskMainMenuChoice()
         {
-            // On déclare la variable input.
-            int input;
-
             // On nettoie la console.
             Console.Clear();
 
             // On retourne le choix, valide, de l'utilisateur.
-            return input = GameInputUser.AskMenuChoice(MainMenuChoice, "MENU PRINCIPAL");
+            return GameInputUser.AskMenuChoice(MainMenuChoice, "MENU PRINCIPAL");
         }
 
         // Cette méthode affiche le menu principal du jeu.
