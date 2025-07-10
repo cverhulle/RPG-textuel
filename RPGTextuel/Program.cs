@@ -1,5 +1,4 @@
-﻿
-using RPGTextuel.Game;
+﻿using RPGTextuel.Game;
 
 class Program
 {
