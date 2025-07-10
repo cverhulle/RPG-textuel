@@ -9,12 +9,16 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
     public static class InventoryInteraction
     {
         // Cette méthode permet de choisir la cible de l'objet à utiliser.
-        /*
-        public static Character ChooseTarget()
+        // Deux choix sont possibles : soi-même ou l'adversaire.
+        public static Character ChooseTarget(Character player, Character enemy)
         {
+            var targets = new List<Character> { player, enemy };
+            var options = new List<string> { $"{player.Name} (vous)", $"{enemy.Name}" };
 
+            int choice = GameInputUser.AskMenuChoice(options, "Choisissez une cible");
+
+            return targets[choice - 1];
         }
-        */
 
         // Cette méthode retourne une liste de string contenant les objets de l'inventaire et un message de retour.
         public static List<string> GetItemNameListsAndBackMessage(List<Item> items, string backLabel = "Retour")
