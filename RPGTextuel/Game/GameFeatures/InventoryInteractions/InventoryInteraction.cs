@@ -7,8 +7,15 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
 {
     // Cette classe s'occupe des intéractions entre le joueur et son inventaire
     public static class InventoryInteraction
-
     {
+        // Cette méthode permet de choisir la cible de l'objet à utiliser.
+        /*
+        public static Character ChooseTarget()
+        {
+
+        }
+        */
+
         // Cette méthode retourne une liste de string contenant les objets de l'inventaire et un message de retour.
         public static List<string> GetItemNameListsAndBackMessage(List<Item> items, string backLabel = "Retour")
         {
@@ -49,6 +56,8 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             // Si l’utilisateur a choisi "Retour" (dernier élément) ou que son inventaire est vide, on quitte.
             if (choice == player.Inventory.Count +1)
                 return false;
+
+            // Choix de la cible ; définition de target
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
             return UseItemAndWait(choice - 1, player, target);
