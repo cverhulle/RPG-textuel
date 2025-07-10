@@ -29,15 +29,13 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
             return GameInputUser.AskMenuChoice(MainMenuChoice, "MENU PRINCIPAL");
         }
 
-        // Cette méthode affiche le menu principal du jeu.
-        // Elle récupère la réponse utilisateur et lance la méthode associée.
-        public static void HandleMainMenu(Player player, Enemy enemy)
+        // Cette méthode affiche le menu de combat contre un ennemi donné
+        // Elle retourne un booléan déterminant si l'utilisateur veut continuer de jouer ou non.
+        public static Boolean HandleMainMenu(Player player, Enemy enemy)
         {
-            // On crée une variable pour gérer une boucle
-            bool isRunning = true;
-
-            // Tant qu'aucune réponse n'est fournie, on repète la question.
-            while (isRunning)
+            // On crée une boucle infinie. Tant que le combat n'est pas choisi
+            // Ou que le joueur ne quitte pas le jeu, on continue !
+            while (true)
             {
                 // On affiche le menu principal.
                 // On récupère la réponse, valide, de l'utilisateur.
@@ -49,8 +47,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                     // On lance l'écran de combat
                     case 1:
                         MainFight.HandleBattle(player, enemy);
-                        isRunning = false;
-                        break;
+                        return false;
 
                     // On affiche les statistiques du joueur.
                     case 2:
@@ -65,8 +62,8 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 
                     // Fermeture du jeu
                     case 4:
-                        isRunning = CloseGame.CloseTheGame();
-                        break;
+                        CloseGame.CloseTheGame();
+                        return true;
 
                     // Si la réponse n'est pas valide, on recommence la boucle.
                     default:
