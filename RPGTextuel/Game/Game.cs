@@ -26,10 +26,10 @@ namespace RPGTextuel.Game
                 GameUtils.WaitForUser();
 
                 // On délègue la gestion du menu principal à une méthode dédiée
-                Boolean wantToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
+                Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
 
                 // Si le joueur quite, on arrête la partie
-                if (wantToQuit)
+                if (wantsToQuit)
                 {
                     CloseGame.CloseTheGame();
                     return;
