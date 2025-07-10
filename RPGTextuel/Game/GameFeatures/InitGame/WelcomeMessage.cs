@@ -18,7 +18,7 @@ namespace RPGTextuel.Game.GameFeatures.InitPlayer
         public static void ShowWelcomeMessage2(string name)
         {
             Console.WriteLine();
-            Console.WriteLine("Bienvenue " + name);
+            Console.WriteLine("💥 Bienvenue " + name);
             Console.WriteLine("Vous allez devoir affronter trois ennemis redoutables !");
             GameUtils.WaitForUser();
         }
