@@ -59,12 +59,13 @@ namespace RPGTextuel.Extensions.Characters
         }
 
         // Cette méthode permet d'afficher toutes les statistiques d'un personnage
+        // ------------ TODO : Différencier player et ennemi -----------------
         public static void PrintStats(this Character character)
         {
             Console.WriteLine("===== STATISTIQUES =====");
             Console.WriteLine($"Nom        : {character.Name}");
             Console.Write("PV         : ");
-            character.PrintHealthBar(); 
+            character.PrintHealthBar();
             Console.WriteLine($"Force      : {character.Strength}");
             Console.WriteLine("========================");
         }
