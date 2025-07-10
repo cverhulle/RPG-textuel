@@ -16,6 +16,9 @@ namespace RPGTextuel.Items.Class
             owner = inventoryOwner;
         }
 
+        // Cette méthode retourne le nombre d'objets dans l'inventaire.
+        public int Count => items.Count;
+
         // Cette méthode permet d'ajouter un item dans l'inventaire.
         public void AddItem(Item item)
         {
