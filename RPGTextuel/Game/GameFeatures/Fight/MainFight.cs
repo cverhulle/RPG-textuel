@@ -17,7 +17,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
 
                 // Tour du joueur
                 // ------------------- TODO : Test du cas d'utilisation des objets -------------------
-                // ---------------------- Modification de PromptUseItem requise pour utiliser u objet sur soi-même -------
+                // ---------------------- Modification de PromptUseItem requise pour utiliser un objet sur soi-même -------
                 PlayerAction.PlayerTurn(player, enemy);
 
                 // Tour de l'ennemi
