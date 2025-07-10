@@ -1,8 +1,8 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Characters;
+using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
 using RPGTextuel.Game.GameFeatures.InitPlayer;
-using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game
@@ -26,7 +26,7 @@ namespace RPGTextuel.Game
                 GameUtils.WaitForUser();
 
                 // On délègue la gestion du menu principal à une méthode dédiée
-                GameMainMenu.HandleMainMenu(player, enemy);
+                FightingAnEnemyMenu.HandleMainMenu(player, enemy);
 
                 // Si le joueur meurt, on arrête la partie
                 if (!player.IsAlive)

@@ -2,11 +2,12 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
+using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Game.GameUtilsNamespace;
 
-namespace RPGTextuel.Game.GameFeatures.MainMenu
+namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 {
-    public class GameMainMenu
+    public class FightingAnEnemyMenu
     {
         // Cette variable contient les options du menu principal.
         public static readonly List<string> MainMenuChoice = new List<string>
