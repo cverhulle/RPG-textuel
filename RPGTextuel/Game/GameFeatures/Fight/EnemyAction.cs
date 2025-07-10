@@ -16,6 +16,8 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // Attaque de l'ennemi
             enemy.Attack(player);
 
+            Console.WriteLine("============================");
+
             //Pause pour que le joueur ait le temps de lire
             GameUtils.WaitForUser();
         }
