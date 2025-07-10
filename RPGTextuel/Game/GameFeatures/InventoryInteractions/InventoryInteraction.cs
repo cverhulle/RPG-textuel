@@ -19,7 +19,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
 
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
         // Elle retourne vide si on choisit de revenir en arrière
-        public static void PromptItem(Player player)
+        public static int PromptItem(Player player)
         {
              // On récupère l'inventaire du joueur.
             Inventory inventory = player.Inventory;
@@ -28,14 +28,14 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             if (inventory.IsEmpty())
             {
                 GameUtils.WaitForUser("Votre inventaire est vide.");
-                return;
+                return inventory.Count +1;
             }
 
             // Crée la liste des noms d’objets et un message de retour.
             List<string> options = GetItemNameListsAndBackMessage(inventory.GetAllItems());
 
             // Appelle la fonction qui gère l'affichage et la réponse au menu.
-            int choice = GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
+            return GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
         }
 
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
