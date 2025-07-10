@@ -5,9 +5,8 @@ namespace RPGTextuel.Game.GameUtilsNamespace
     // Cette classe s'occupe de gérer les méthodes utilitaires.
     public static class GameUtils
     {
-
         // Cette méthode retourne true si "retour" est choisi.
-        public static bool IsBackChoice(int choice, List<string> options)
+        public static bool IsBackChoiceWithList(int choice, List<string> options)
         {
             return choice == options.Count;
         }
