@@ -23,7 +23,7 @@ namespace RPGTextuel.Extensions.Enemies
             Console.Write("PV         : ");
             enemy.PrintHealthBar();
             Console.WriteLine($"Force      : {enemy.Strength}");
-            Console.WriteLine($"Type      : {enemy.GetType}");
+            Console.WriteLine($"Type      : {enemy.GetType()}");
             Console.WriteLine(border);
         }
     }
