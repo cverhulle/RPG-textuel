@@ -43,24 +43,11 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
         // Elle retourne un booléan pour savoir si l'objet est utilisé ou non.
         public static Boolean PromptUseItem(Player player, Character target)
         {
-            // On récupère l'inventaire du joueur.
-            Inventory inventory = player.Inventory;
-
-            // On gère le cas où l'inventaire est vide.
-            if (inventory.IsEmpty())
-            {
-                GameUtils.WaitForUser("Votre inventaire est vide.");
-                return false;
-            }
-
-            // Crée la liste des noms d’objets et un message de retour.
-            List<string> options = GetItemNameListsAndBackMessage(inventory.GetAllItems());
-
             // Appelle la fonction qui gère l'affichage et la réponse au menu.
-            int choice = GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
+            int choice = PromptItem(player);
 
-            // Si l’utilisateur a choisi "Retour" (dernier élément), on quitte.
-            if (GameUtils.IsBackChoice(choice, options))
+            // Si l’utilisateur a choisi "Retour" (dernier élément) ou que son inventaire est vide, on quitte.
+            if (choice == player.Inventory.Count +1)
                 return false;
 
             // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
