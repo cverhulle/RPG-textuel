@@ -36,17 +36,15 @@ namespace RPGTextuel.Game
                 }
 
                 // Si le joueur meurt, on arrête la partie
-                    if (!player.IsAlive)
-                    {
-                        Console.WriteLine("Le joueur est mort. Fin de la partie.");
-                        return;
-                    }
+                if (!player.IsAlive)
+                {
+                    Console.WriteLine("Le joueur est mort. Fin de la partie.");
+                    return;
+                }
             }
 
             // Si tous les ennemis sont vaincus
-            Console.Clear();
-            Console.WriteLine("🎉 Félicitations ! Vous avez vaincu tous les ennemis !");
-            GameUtils.WaitForUser();
+            VictoryMessage();
         }
 
         // Cette méthode permet d'initialiser la partie.
@@ -72,5 +70,14 @@ namespace RPGTextuel.Game
 
             return (player, ennemies);
         }
+
+        // Cette méthode gère l'affichage en cas de victoire du joueur.
+        private static void VictoryMessage()
+        {
+            Console.Clear();
+            Console.WriteLine("🎉 Félicitations ! Vous avez vaincu tous les ennemis !");
+            GameUtils.WaitForUser();
+        }
+
     }
 }
