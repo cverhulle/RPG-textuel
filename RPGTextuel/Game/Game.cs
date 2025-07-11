@@ -16,8 +16,14 @@ namespace RPGTextuel.Game
             // On initialise la partie
             (Player player, List<Enemy> ennemies) = InitGame();
 
-            // Si tous les ennemis sont vaincus
-            VictoryMessage();
+            // On lance la boucle de jeu
+            Boolean stopGame = LaunchGame(player, ennemies);
+
+            // Si tous les ennemis sont vaincus, on affiche le message de victoire.
+            if (!stopGame)
+            {
+                VictoryMessage();
+            }
         }
 
         // Cette méthode permet d'initialiser la partie.
