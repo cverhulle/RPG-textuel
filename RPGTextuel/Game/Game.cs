@@ -45,7 +45,8 @@ namespace RPGTextuel.Game
         }
 
         // Cette méthode lance la boucle de jeu.
-        private static void LaunchGame(Player player, List<Enemy> ennemies)
+        // Elle retourne, en booléan, l'arrêt de la partie.
+        private static Boolean LaunchGame(Player player, List<Enemy> ennemies)
         {
             // Pour chaque ennemi dans la liste
             foreach (Enemy enemy in ennemies)
@@ -63,16 +64,17 @@ namespace RPGTextuel.Game
                 if (wantsToQuit)
                 {
                     CloseGame.CloseTheGame();
-                    return;
+                    return true;
                 }
 
                 // Si le joueur meurt, on arrête la partie
                 if (!player.IsAlive)
                 {
                     Console.WriteLine("Le joueur est mort. Fin de la partie.");
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
         // Cette méthode gère l'affichage en cas de victoire du joueur.
