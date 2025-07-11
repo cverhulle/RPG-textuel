@@ -1,6 +1,7 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Enemies;
+using RPGTextuel.Game.GameFeatures.EndGame;
 using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
 using RPGTextuel.Game.GameFeatures.InitGame;
 using RPGTextuel.Game.GameUtilsNamespace;
@@ -17,12 +18,13 @@ namespace RPGTextuel.Game
             (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
 
             // On lance la boucle de jeu
+            // En cas d'arret de la partie, on récupère le booléan "true".
             Boolean stopGame = LaunchGame(player, ennemies);
 
             // Si tous les ennemis sont vaincus, on affiche le message de victoire.
             if (!stopGame)
             {
-                VictoryMessage();
+                EndGame.VictoryMessage();
             }
         }
 
@@ -58,14 +60,5 @@ namespace RPGTextuel.Game
             }
             return false;
         }
-
-        // Cette méthode gère l'affichage en cas de victoire du joueur.
-        private static void VictoryMessage()
-        {
-            Console.Clear();
-            Console.WriteLine("🎉 Félicitations ! Vous avez vaincu tous les ennemis !");
-            GameUtils.WaitForUser();
-        }
-
     }
 }
