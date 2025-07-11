@@ -15,5 +15,9 @@ namespace RPGTextuel.Enemies.Class
         {
             type = enemyType;
         }
+
+        // Cette méthode retourne le type de l'ennemi.
+        // Par défaut, le type est "Ennemi".
+        public virtual string DisplayType => "Ennemi";
     }
 }
