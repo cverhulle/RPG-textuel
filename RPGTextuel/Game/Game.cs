@@ -14,7 +14,7 @@ namespace RPGTextuel.Game
         public static void StartGame()
         {
             // On initialise la partie
-            (Player player, List<Enemy> ennemies) = InitGame();
+            (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
 
             // On lance la boucle de jeu
             Boolean stopGame = LaunchGame(player, ennemies);
