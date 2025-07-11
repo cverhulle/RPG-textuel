@@ -21,7 +21,7 @@ namespace RPGTextuel.Extensions.Players
             SetupDamagePotions.GiveDamagePotionToPlayer(player, size);
         }
 
-        // Cette méthode permet d'afficher toutes les statistiques d'un joueur
+        // Cette méthode permet d'afficher toutes les statistiques d'un joueur.
         public static void PrintStats(this Player player)
         {
             string title = $" STATISTIQUES DE {player.Name.ToUpper()} ";
