@@ -1,7 +1,7 @@
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.SetupEnemies;
 
-namespace RPGTextuel.Game.GameFeatures.InitPlayer
+namespace RPGTextuel.Game.GameFeatures.InitGame
 {
     // Cette classe s'occupe de créer une liste contenant les ennemis que le jouer
     // affrontera pendant cette partie.

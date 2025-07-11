@@ -1,7 +1,7 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 
-namespace RPGTextuel.Game.GameFeatures.InitPlayer
+namespace RPGTextuel.Game.GameFeatures.InitGame
 {
     public static class InitGame
     {

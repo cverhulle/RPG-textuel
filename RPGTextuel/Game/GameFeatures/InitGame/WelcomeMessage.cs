@@ -1,6 +1,6 @@
 using RPGTextuel.Game.GameUtilsNamespace;
 
-namespace RPGTextuel.Game.GameFeatures.InitPlayer
+namespace RPGTextuel.Game.GameFeatures.InitGame
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
     public static class InitWelcomeMessage
