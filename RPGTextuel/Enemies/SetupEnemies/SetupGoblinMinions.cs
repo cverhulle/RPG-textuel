@@ -9,7 +9,7 @@ namespace RPGTextuel.SetupEnemies
         public static List<GoblinMinion> GoblinMinions = new List<GoblinMinion>
         {
             new GoblinMinion("Virk", 20, 4, 20),
-            new GoblinMinion("Nak", 30, 2, 25),
+            new GoblinMinion("Nak", 25, 2, 25),
             new GoblinMinion("Vrag", 25, 3, 25)
         };
 
