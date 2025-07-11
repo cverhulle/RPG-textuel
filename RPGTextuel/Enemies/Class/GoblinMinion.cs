@@ -9,5 +9,8 @@ namespace RPGTextuel.Enemies.Class
             : base(name, health, strength, maxHealth, EnemyType.GoblinMinion)
         {
         }
+
+        // Propriété pour afficher le type de l'ennemi.
+        public override string DisplayType => "Petit Gobelin";
     }
 }
