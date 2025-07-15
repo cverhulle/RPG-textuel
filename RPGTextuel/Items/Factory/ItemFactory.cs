@@ -1,6 +1,7 @@
 using RPGTextuel.Items.Class;
 using RPGTextuel.Items.SetupItems.HealPotions;
 using RPGTextuel.Items.SetupItems.DamagePotions;
+using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.Items.Factory
 {
@@ -19,9 +20,9 @@ namespace RPGTextuel.Items.Factory
         };
 
         // On choisit aléatoirement un objet parmi la liste.
-        // public static Item GetRandomItem()
-        // {
-            // return allPotions.PickRandom();
-        // }
+        public static Item GetRandomItem()
+        {
+            return allPotions.PickRandom();
+        }
     }
 }
