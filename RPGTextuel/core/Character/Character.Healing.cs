@@ -33,7 +33,7 @@ namespace RPGTextuel.Core.Characters
         }
 
         // Cette méthode permet de se soigner de "soin" PV.
-        // On retourne true si la potion est utilisée et false sinon.
+        // On retourne true si le soin est effectué et false sinon.
         public virtual Boolean Heal(int amount)
         {
             // On vérfie que le Character peut recevoir des soins
