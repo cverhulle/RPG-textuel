@@ -9,7 +9,7 @@ namespace RPGTextuel.Items.Factory
     public static class ItemFactory
     {
         // On liste tous les objets existants.
-        private static readonly List<Item> allPotions = new List<Item>
+        public static readonly List<Item> allPotions = new List<Item>
         {
             SetupHealPotions.SmallHealPotion,
             SetupHealPotions.MediumHealPotion,
