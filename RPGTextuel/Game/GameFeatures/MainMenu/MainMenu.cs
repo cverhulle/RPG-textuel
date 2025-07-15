@@ -36,7 +36,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // Si le joueur meurt, on arrête la partie
                 if (!player.IsAlive)
                 {
-                    Console.WriteLine("Le joueur est mort. Fin de la partie.");
+                    Console.WriteLine("Vous êtes mort. Fin de la partie.");
                     return true;
                 }
             }
