@@ -1,4 +1,5 @@
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
