@@ -2,7 +2,7 @@ using RPGTextuel.Items.Class;
 using RPGTextuel.Items.SetupItems.HealPotions;
 using RPGTextuel.Items.SetupItems.DamagePotions;
 
-namespace RPGTextuel.Items.Factories
+namespace RPGTextuel.Items.Factory
 {
     // Cette classe s'occupe de regrouper tous le objets existants.
     public static class ItemFactory
