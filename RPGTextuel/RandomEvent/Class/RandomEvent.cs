@@ -1,9 +1,9 @@
 using RPGTextuel.Core;
 
-namespace RPGTextuel.Event.Class
+namespace RPGTextuel.RandomEvent.Class
 {
-    // Cette classe définit la structure d'un évenemnt aléatoire.
-    public abstract class RandomEvent
+    // Cette classe définit la structure d'un évenement aléatoire.
+    public abstract class RandomEventClass
     {
         // On crée deux attributs "Name" et "Description"
         public abstract string Name { get; }
