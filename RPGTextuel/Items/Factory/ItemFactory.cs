@@ -20,9 +20,12 @@ namespace RPGTextuel.Items.Factory
         };
 
         // On choisit aléatoirement un objet parmi la liste.
-        public static Item GetRandomItem()
+        public static Item GetRandomItem(List<Item> items)
         {
-            return allPotions.PickRandom();
+            if (items == null || items.Count == 0)
+                throw new ArgumentException("La liste ne peut pas être vide");
+
+            return items.PickRandom();
         }
     }
 }
