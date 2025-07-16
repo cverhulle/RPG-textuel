@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Test.Items;
 
 namespace RPGTextuel.Test.Core
 {
