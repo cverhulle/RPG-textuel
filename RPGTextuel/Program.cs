@@ -1,4 +1,5 @@
 ﻿using RPGTextuel.Game;
+using RPGTextuel.Test;
 
 class Program
 {
@@ -7,5 +8,8 @@ class Program
     {
         // Méthode pour lancer le jeu
         Game.StartGame();
+
+        // Méthode pour tester le jeu.
+        // TestLauncher.TestLauncherMain();
     }
 }
