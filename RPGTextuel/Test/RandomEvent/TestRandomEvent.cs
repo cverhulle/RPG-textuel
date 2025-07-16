@@ -16,7 +16,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement LoseItemEvent
-        public static void LoseItemEvent(Player player)
+        public static void TestLoseItemEvent(Player player)
         {
             player.Inventory.DisplayInventory();
             LoseItemEvent loseItemEvent = new LoseItemEvent();
@@ -24,7 +24,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement GainHealthEvent
-        public static void GainHealthEvent(Player player)
+        public static void TestGainHealthEvent(Player player)
         {
             player.PrintHealthBar();
             GainHealthEvent gainHealthEvent = new GainHealthEvent();
@@ -32,7 +32,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement LoseHealthEvent
-        public static void LoseHealthEvent(Player player)
+        public static void TestLoseHealthEvent(Player player)
         {
             player.PrintHealthBar();
             LoseHealthEvent loseHealthEvent = new LoseHealthEvent();
