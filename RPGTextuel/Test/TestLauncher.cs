@@ -14,7 +14,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestLosetemEventWithInventoryNotEmpty();
+            TestLoseItemEventWithInventoryNotEmpty();
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
@@ -27,7 +27,7 @@ namespace RPGTextuel.Test
         }
 
         // Cette méthode permet de tester l'évenement FindItemEvent
-        private static void TestFindtemEvent()
+        private static void TestFindItemEvent()
         {
             Player player = TestPlayerFactory.SetupPlayerAndSmallHealAndDamagePotion();
 
@@ -37,7 +37,7 @@ namespace RPGTextuel.Test
         }
 
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
-        private static void TestLosetemEventWithInventoryNotEmpty()
+        private static void TestLoseItemEventWithInventoryNotEmpty()
         {
             Player player = TestPlayerFactory.SetupPlayerAndSmallHealAndDamagePotion();
 
@@ -47,7 +47,7 @@ namespace RPGTextuel.Test
         }
 
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire vide 
-        private static void TestLosetemEventWithInventoryEmpty()
+        private static void TestLoseItemEventWithInventoryEmpty()
         {
             Player player = TestPlayerFactory.TestPlayerCreation();
 
