@@ -2,7 +2,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Players;
-using RPGTextuel.Items.Consumables;
 using RPGTextuel.Items.SetupItems;
 using RPGTextuel.SetupEnemies;
 
