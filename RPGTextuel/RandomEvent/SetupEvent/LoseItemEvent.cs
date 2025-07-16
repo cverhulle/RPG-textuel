@@ -1,11 +1,9 @@
 using RPGTextuel.Core;
 using RPGTextuel.Items.Class;
-using RPGTextuel.Items.Factory;
 using RPGTextuel.RandomEvent.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    
     // On définit l'évenement "Perdre un objet".
     public class LoseItemEvent : RandomEventClass
     {
