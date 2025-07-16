@@ -32,17 +32,23 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement GainHealthEvent
         public static void TestGainHealthEvent(Player player)
         {
+            Console.WriteLine("Santé initial :");
             player.PrintHealthBar();
             GainHealthEvent gainHealthEvent = new GainHealthEvent();
             gainHealthEvent.Trigger(player);
+            Console.WriteLine("Santé final :");
+            player.PrintHealthBar();
         }
 
         // Cette méthode permet de tester l'évenement LoseHealthEvent
         public static void TestLoseHealthEvent(Player player)
         {
+            Console.WriteLine("Santé initial :");
             player.PrintHealthBar();
             LoseHealthEvent loseHealthEvent = new LoseHealthEvent();
             loseHealthEvent.Trigger(player);
+            Console.WriteLine("Santé final :");
+            player.PrintHealthBar();
         }
         
     }
