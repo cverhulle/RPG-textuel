@@ -8,9 +8,11 @@ namespace RPGTextuel.Test
     // Cette classe lance le test.
     public class TestLauncher
     {
+        // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion();
+            (Player player, Enemy enemy) = TestUtils.SetupPlayerAndGoblinAndSmallHealAndDamagePotion();
+            player.TakeDamage(20);
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
