@@ -1,9 +1,12 @@
 En cours : 
-Ajout d'évenemnts aléatoires.
+Ajout d'évenements aléatoires.
+Tests crées et fonctionnels.
 
 Idées d'améliorations :
-1. Niveaux de difficultés
+1. Test sur toutes les parties du programme ?
 2. Affronter plusieurs ennemis en combat
 3. Ajout d'alliés
-4. Ajout de différentes classes 
-5. Coup^s spéciaux.
+
+4. Niveaux de difficultés
+5. Ajout de différentes classes 
+6. Coups spéciaux
