@@ -16,7 +16,6 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         {
             int damage = Random.Shared.Next(5, 15);
             player.TakeDamage(damage);
-            Console.WriteLine($"Vous perdez {damage} PV.");
         }
     }
 }
