@@ -9,6 +9,14 @@ namespace RPGTextuel.Test
 {
     public static class TestProgram
     {
+        // Cette fonction permet de créer le joueur et un ennemi de type Goblin
+        public static (Player, Enemy) SetupPlayerAndGoblin()
+        {
+            Player player = TestPlayerCreation();
+            Enemy enemy = TestGoblinEnemyCreation();
+            return (player, enemy);
+        }
+
         // Cette fonction permet de créer le joueur, un ennemi de type Goblin
         // et d'ajouter une potion de soin et de dégats au joeur
         public static (Player, Enemy) SetupPlayerAndGoblinAndSmallHealAndDamagePotion()
