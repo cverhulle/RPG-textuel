@@ -10,10 +10,15 @@ namespace RPGTextuel.Test
 {
     public static class TestProgram
     {
-        // Cette fonction est la méthode permettant de tester le jeu.
-        public static void GameTest()
+        // Cette fonction permet de créer le joueur, un ennemi de type Goblin
+        // et d'ajouter une potion de soin et de dégats au joeur
+        public static (Player, Enemy) SetupPlayerAndGoblinAndSmallHealAndDamagePotion()
         {
-
+            Player player = TestPlayerCreation();
+            Enemy enemy = TestGoblinEnemyCreation();
+            player.TestAddingSmallDamagePotion();
+            player.TestAddingSmallHealPotion();
+            return (player, enemy);
         }
 
         // Cette fonction permet de créer un personnage nommé Link
@@ -29,14 +34,13 @@ namespace RPGTextuel.Test
         }
 
         // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
-        public static void TestAddingHealPotion(Player player)
+        public static void TestAddingSmallHealPotion(this Player player)
         {
             player.AddHealPotion(PotionSize.Small);
         }
 
-        
         // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
-        public static void TestAddingDamagePotion(Player player)
+        public static void TestAddingSmallDamagePotion(this Player player)
         {
             player.AddDamagePotion(PotionSize.Small);
         }
