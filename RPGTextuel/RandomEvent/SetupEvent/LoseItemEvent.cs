@@ -5,7 +5,7 @@ using RPGTextuel.RandomEvent.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    /*
+    
     // On définit l'évenement "Perdre un objet".
     public class LoseItemEvent : RandomEventClass
     {
@@ -18,10 +18,26 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // Perte d'un item aléatoire dans l'inventaire du joueur.
         public override void Trigger(Player player)
         {
-            Item itemToLose = ItemFactory.GetRandomItem(player.Inventory.GetAllItems());
-            player.Inventory.RemoveItem(itemToLose);
-            Console.WriteLine($"Vous avez trouvé un objet : {itemToLose.name} !");
+            // On récupère le nombre d'objet du player.
+            int inventoryLength = player.Inventory.Count;
+
+            // Si l'inventaire est vide, on ne fait rien.
+            if (inventoryLength == 0)
+            {
+                Console.WriteLine("Vous n'avez aucun objet à perdre.");
+                return;
+            }
+
+            // On choisit aléatoirement l'index de l'objet perdu.
+            Random rng = new Random();
+            int index = rng.Next(inventoryLength);
+
+            // On affiche le message à l'utilisateur
+            Item item = player.Inventory.GetAllItems()[index];
+            Console.WriteLine($"Vous avez perdu {item.name}");
+
+            // On retire l'objet.
+            player.Inventory.RemoveItemByIndex(index);
         }
     }
-    */
 }
