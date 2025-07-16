@@ -1,5 +1,7 @@
 // Ce fichier permet de tester les différentes fonctionnalités du programme.
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
+using RPGTextuel.SetupEnemies;
 
 namespace RPGTextuel.Test
 {
@@ -15,6 +17,12 @@ namespace RPGTextuel.Test
         public static Player TestPlayerCreation()
         {
             return new Player("Link");
+        }
+
+        // Cette fonction permet de créer un ennemi de type Gobelin
+        public static Enemy TestGoblinEnemyCreation()
+        {
+            return SetupGoblins.GetRandomGoblin();
         }
     }
 }
