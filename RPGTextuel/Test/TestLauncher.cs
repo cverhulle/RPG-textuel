@@ -9,16 +9,15 @@ using RPGTextuel.Test.RandomEvents;
 namespace RPGTextuel.Test
 {
     // Cette classe lance le test.
-    public class TestLauncher
+    public static class TestLauncher
     {
         // On lance cette méthode pour tester le programme.
-        public void TestLauncherMain()
+        public static void TestLauncherMain()
         {
-            TestFindAndLoseItemEvents();
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
-        private void TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion()
+        private static void TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion()
         {
             (Player player, Enemy enemy) = TestUtils.SetupPlayerAndGoblinAndSmallHealAndDamagePotion();
             player.PrintStats();
@@ -26,19 +25,13 @@ namespace RPGTextuel.Test
             enemy.PrintStats();
         }
 
-        // Cette méthode permet de tester les 2 évenements liés aux objets.
-        private void TestFindAndLoseItemEvents()
+        // Cette méthode permet de tester l'évenement FindItemEvent
+        private static void TestFindtemEvent()
         {
             Player player = TestPlayerFactory.SetupPlayerAndSmallHealAndDamagePotion();
 
-            Console.WriteLine("Inventaire initial :");
-            player.Inventory.DisplayInventory();
-
             Console.WriteLine("\n Événement : Trouver un objet");
             TestRandomEvents.TestFindItemEvent(player);
-
-            Console.WriteLine("\n Événement : Perdre un objet");
-            TestRandomEvents.TestLoseItemEvent(player);
 
             GameUtils.WaitForUser();
         }

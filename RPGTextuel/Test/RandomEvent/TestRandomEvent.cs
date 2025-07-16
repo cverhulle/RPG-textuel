@@ -10,17 +10,23 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement FindItemEvent
         public static void TestFindItemEvent(Player player)
         {
+            Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
             FindItemEvent findItemEvent = new FindItemEvent();
             findItemEvent.Trigger(player);
+            Console.WriteLine("Inventaire final :");
+            player.Inventory.DisplayInventory();
         }
 
         // Cette méthode permet de tester l'évenement LoseItemEvent
         public static void TestLoseItemEvent(Player player)
         {
+            Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
             LoseItemEvent loseItemEvent = new LoseItemEvent();
             loseItemEvent.Trigger(player);
+            Console.WriteLine("Inventaire final :");
+            player.Inventory.DisplayInventory();
         }
 
         // Cette méthode permet de tester l'évenement GainHealthEvent
