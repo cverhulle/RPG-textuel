@@ -70,7 +70,7 @@ namespace RPGTextuel.Items.Class
         }
 
         // Cette méthode permet de retirer un objet
-        public void RemoveItem(int index)
+        public void RemoveItemByIndex(int index)
         {
             if (IsValidItemIndex(index))
             {
@@ -92,7 +92,7 @@ namespace RPGTextuel.Items.Class
                 Boolean isItemUsed = items[index].Use(user, target);
                 if (isItemUsed)
                 {
-                    RemoveItem(index);
+                    RemoveItemByIndex(index);
                     return true;
                 }
             }
