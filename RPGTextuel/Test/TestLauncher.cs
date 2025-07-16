@@ -16,12 +16,18 @@ namespace RPGTextuel.Test
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
-        public static void TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion()
+        private void TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion()
         {
             (Player player, Enemy enemy) = TestUtils.SetupPlayerAndGoblinAndSmallHealAndDamagePotion();
             player.PrintStats();
             player.Inventory.DisplayInventory();
             enemy.PrintStats();
+        }
+
+        // Cette méthode permet de tester les 4 évenements aléatoires
+        private void TestAllEvents()
+        {
+            
         }
     }
 }
