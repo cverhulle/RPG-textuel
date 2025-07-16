@@ -4,11 +4,11 @@ using RPGTextuel.RandomEvent.SetupEvent;
 
 namespace RPGTextuel.Test.RandomEvents
 {
-    // Cette classe permet de tester les évenements aléatoires.
-    public static class TestRandomEvents
+    // Cette classe regroupe les méthodes d'aide liées aux évenements aléatoires.
+    public static class RandomEventsTestsUtils
     {
-        // Cette méthode permet de tester l'évenement FindItemEvent
-        public static void TestFindItemEvent(Player player)
+        // Méthode utilitaire liée à l'évenement FindItemEvent
+        public static void FindItemEventUtils(Player player)
         {
             Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
@@ -18,8 +18,8 @@ namespace RPGTextuel.Test.RandomEvents
             player.Inventory.DisplayInventory();
         }
 
-        // Cette méthode permet de tester l'évenement LoseItemEvent
-        public static void TestLoseItemEvent(Player player)
+        // Méthode utilitaire liée à l'évenement LoseItemEvent
+        public static void LoseItemEventUtils(Player player)
         {
             Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
@@ -29,8 +29,8 @@ namespace RPGTextuel.Test.RandomEvents
             player.Inventory.DisplayInventory();
         }
 
-        // Cette méthode permet de tester l'évenement GainHealthEvent
-        public static void TestGainHealthEvent(Player player)
+        // Méthode utilitaire liée à l'évenement Gain!healthEvent
+        public static void GainHealthEventUtils(Player player)
         {
             Console.WriteLine("Santé initial :");
             player.PrintHealthBar();
@@ -40,8 +40,8 @@ namespace RPGTextuel.Test.RandomEvents
             player.PrintHealthBar();
         }
 
-        // Cette méthode permet de tester l'évenement LoseHealthEvent
-        public static void TestLoseHealthEvent(Player player)
+        // Méthode utilitaire liée à l'évenement LosehealthEvent
+        public static void LoseHealthEventUtils(Player player)
         {
             Console.WriteLine("Santé initial :");
             player.PrintHealthBar();
@@ -50,6 +50,5 @@ namespace RPGTextuel.Test.RandomEvents
             Console.WriteLine("Santé final :");
             player.PrintHealthBar();
         }
-        
     }
 }
