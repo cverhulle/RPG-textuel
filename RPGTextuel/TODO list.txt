@@ -1,0 +1,9 @@
+En cours : 
+Ajout d'évenemnts aléatoires.
+
+Idées d'améliorations :
+1. Niveaux de difficultés
+2. Affronter plusieurs ennemis en combat
+3. Ajout d'alliés
+4. Ajout de différentes classes 
+5. Coup^s spéciaux.
