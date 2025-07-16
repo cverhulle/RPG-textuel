@@ -1,6 +1,9 @@
 // Ce fichier permet de tester les différentes fonctionnalités du programme.
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Extensions.Players;
+using RPGTextuel.Items.Consumables;
+using RPGTextuel.Items.SetupItems;
 using RPGTextuel.SetupEnemies;
 
 namespace RPGTextuel.Test
@@ -23,6 +26,19 @@ namespace RPGTextuel.Test
         public static Enemy TestGoblinEnemyCreation()
         {
             return SetupGoblins.GetRandomGoblin();
+        }
+
+        // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
+        public static void TestAddingHealPotion(Player player)
+        {
+            player.AddHealPotion(PotionSize.Small);
+        }
+
+        
+        // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
+        public static void TestAddingDamagePotion(Player player)
+        {
+            player.AddDamagePotion(PotionSize.Small);
         }
     }
 }
