@@ -14,7 +14,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            GainHealthEventNotWithFullHealth();
+            LoseHealthEvent();
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
@@ -73,6 +73,16 @@ namespace RPGTextuel.Test
             player.TakeDamage(20);
 
             TestRandomEvents.TestGainHealthEvent(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Cette méthode permet de tester l'évenement LoseHealthEvent
+        private static void LoseHealthEvent()
+        {
+            Player player = TestPlayerFactory.TestPlayerCreation();
+
+            TestRandomEvents.TestLoseHealthEvent(player);
 
             GameUtils.WaitForUser();
         }
