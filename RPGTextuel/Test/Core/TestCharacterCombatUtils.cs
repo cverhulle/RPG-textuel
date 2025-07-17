@@ -1,20 +1,24 @@
+using RPGTextuel.Core;
 using RPGTextuel.Core.Characters;
+using RPGTextuel.Enemies.Class;
 
-namespace RPGTextuel.Test.Core
+namespace RPGTextuel.Test.Core.TestCombat
 {
     // Cette classe permet de tester les méthodes de combat de la classe Character
     public static class TestCharacterCombat
     {
         // On teste la méthode TakeDamage.
-        public static void TestTakeDamage(Character character)
+        public static void TestTakeDamageUtils()
         {
-            character.TakeDamage(20);
+            Character player = TestPlayerFactory.TestPlayerCreation();
+            player.TakeDamage(20);
         }
 
         // On teste la méthode Attack
-        public static void TestAttack(Character character1, Character character2)
+        public static void TestAttackUtils()
         {
-            character1.Attack(character2);
+            Character player = TestPlayerFactory.TestPlayerCreation();
+            // Enemy enemy = 
         }
     }
 }
