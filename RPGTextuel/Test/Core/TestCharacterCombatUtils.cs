@@ -10,5 +10,11 @@ namespace RPGTextuel.Test.Core
         {
             character.TakeDamage(20);
         }
+
+        // On teste la méthode Attack
+        public static void TestAttack(Character character1, Character character2)
+        {
+            character1.Attack(character2);
+        }
     }
 }
