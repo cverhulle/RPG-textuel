@@ -13,5 +13,14 @@ namespace RPGTextuel.Test.CoreCharacter
             Console.WriteLine("Le joueur peut-il être soigné ?");
             Console.WriteLine(player.CanBeHealed(1));
         }
+
+        // Cette méthode teste CanBeHealed avec une vie non pleine
+        public static void TestCanBeHealedNotWithFullHealth()
+        {
+            Player player = TestPlayerFactory.TestPlayerCreation();
+            player.TakeDamage(20);
+            Console.WriteLine("Le joueur peut-il être soigné ?");
+            Console.WriteLine(player.CanBeHealed(1));
+        }
     }
 }
