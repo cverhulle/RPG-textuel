@@ -2,7 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Extensions.Players;
-using RPGTextuel.Test.Core.TestCombat;
+using RPGTextuel.Test.CoreCharacter;
 
 namespace RPGTextuel.Test
 {

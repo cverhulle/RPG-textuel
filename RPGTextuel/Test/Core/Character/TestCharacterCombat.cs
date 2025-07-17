@@ -1,8 +1,9 @@
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Test.Core;
 using RPGTextuel.Test.Enemies;
 
-namespace RPGTextuel.Test.Core.TestCombat
+namespace RPGTextuel.Test.CoreCharacter
 {
     // Cette classe permet de tester les méthodes de combat de la classe Character
     public static class TestCharacterCombat
