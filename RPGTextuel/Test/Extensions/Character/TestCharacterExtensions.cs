@@ -8,9 +8,17 @@ namespace RPGTextuel.Test.ExtensionsCharacter
     public static class TestCharacterExtensions
     {
         // Cette méthode teste la méthode PrintHealthBar
-        public static void TestPrintHealthBar()
+        public static void TestPrintHealthBarWithFullHealth()
         {
             Player player = TestPlayerFactory.TestPlayerCreation();
+            player.PrintHealthBar();
+        }
+
+        // Cette méthode teste la méthode PrintHealthBar
+        public static void TestPrintHealthBarNotWithFullHealth()
+        {
+            Player player = TestPlayerFactory.TestPlayerCreation();
+            player.TakeDamage(20);
             player.PrintHealthBar();
         }
     }
