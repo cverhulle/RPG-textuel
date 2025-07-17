@@ -12,7 +12,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestCharacterCombat.TestTakeDamageUtils();
+            TestCharacterCombat.TestAttack();
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.

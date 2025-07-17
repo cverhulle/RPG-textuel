@@ -1,6 +1,7 @@
 using RPGTextuel.Core;
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Test.Enemies;
 
 namespace RPGTextuel.Test.Core.TestCombat
 {
@@ -8,17 +9,18 @@ namespace RPGTextuel.Test.Core.TestCombat
     public static class TestCharacterCombat
     {
         // On teste la méthode TakeDamage.
-        public static void TestTakeDamageUtils()
+        public static void TestTakeDamage()
         {
             Character player = TestPlayerFactory.TestPlayerCreation();
             player.TakeDamage(20);
         }
 
         // On teste la méthode Attack
-        public static void TestAttackUtils()
+        public static void TestAttack()
         {
             Character player = TestPlayerFactory.TestPlayerCreation();
-            // Enemy enemy = 
+            Enemy enemy = TestEnememyFactory.TestGoblinMinionEnemyCreation();
+            player.Attack(enemy);
         }
     }
 }
