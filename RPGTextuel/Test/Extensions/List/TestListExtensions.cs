@@ -25,7 +25,22 @@ namespace RPGTextuel.Test.ExtensionsList
             }
 
             GameUtils.WaitForUser();
+        }
 
+        // Cette méthode teste PickRandom avec une liste non vide.
+        public static void TestPickRandomWithNonEmptyList()
+        {
+            Console.WriteLine("=== Test : PickRandom sur une liste non vide ===");
+
+            List<string> names = new List<string> { "Alice", "Bob", "Charlie", "Diana" };
+
+            // On appele PickRandom plusieurs fois pour observer le comportement.
+            for (int i = 0; i < 5; i++)
+            {
+                string picked = names.PickRandom();
+                Console.WriteLine($"Tirage {i + 1} : {picked}");
+            }
+            GameUtils.WaitForUser();
         }
     }
 }
