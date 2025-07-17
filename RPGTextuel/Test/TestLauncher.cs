@@ -2,6 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Extensions.Players;
+using RPGTextuel.Test.Core.TestCombat;
 
 namespace RPGTextuel.Test
 {
@@ -11,7 +12,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion();
+            TestCharacterCombat.TestTakeDamageUtils();
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
