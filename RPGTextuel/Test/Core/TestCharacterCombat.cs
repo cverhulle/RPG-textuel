@@ -1,4 +1,3 @@
-using RPGTextuel.Core;
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Test.Enemies;
