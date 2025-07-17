@@ -27,7 +27,7 @@ namespace RPGTextuel.Test.CoreCharacter
         public static void TestHealWithFullHealth()
         {
             Player player = TestPlayerFactory.TestPlayerCreation();
-            Console.WriteLine(player.Heal(1));
+            player.Heal(1);
         }
 
         // Cette méthode teste Heal avec une vie pleine non pleine
@@ -35,7 +35,7 @@ namespace RPGTextuel.Test.CoreCharacter
         {
             Player player = TestPlayerFactory.TestPlayerCreation();
             player.TakeDamage(20);
-            Console.WriteLine(player.Heal(1));
+            player.Heal(1);
         }
     }
 }
