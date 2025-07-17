@@ -5,6 +5,7 @@ using RPGTextuel.Test.Enemies;
 using RPGTextuel.Core;
 using RPGTextuel.Extensions.Players;
 using RPGTextuel.Game.GameUtilsNamespace;
+using RPGTextuel.Extensions.Enemies;
 
 namespace RPGTextuel.Test.CoreCharacter
 {
@@ -31,9 +32,25 @@ namespace RPGTextuel.Test.CoreCharacter
         // On teste la méthode Attack
         public static void TestAttack()
         {
-            Character player = TestPlayerFactory.TestPlayerCreation();
+            Console.WriteLine("=== Test : Attack ===");
+            Player player = TestPlayerFactory.TestPlayerCreation();
             Enemy enemy = TestEnememyFactory.TestGoblinMinionEnemyCreation();
+
+            Console.WriteLine("Statistiques initiales :");
+            Console.WriteLine(">>> Joueur :");
+            player.PrintStats();
+            Console.WriteLine(">>> Ennemi :");
+            enemy.PrintStats();
+
             player.Attack(enemy);
+
+            Console.WriteLine("\nStatistiques après attaque :");
+            Console.WriteLine(">>> Joueur :");
+            player.PrintStats();
+            Console.WriteLine(">>> Ennemi :");
+            enemy.PrintStats();
+
+            GameUtils.WaitForUser();
         }
     }
 }
