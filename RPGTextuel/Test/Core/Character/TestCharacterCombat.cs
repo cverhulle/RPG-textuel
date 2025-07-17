@@ -2,6 +2,9 @@ using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Test.Core;
 using RPGTextuel.Test.Enemies;
+using RPGTextuel.Core;
+using RPGTextuel.Extensions.Players;
+using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Test.CoreCharacter
 {
@@ -11,8 +14,18 @@ namespace RPGTextuel.Test.CoreCharacter
         // On teste la méthode TakeDamage.
         public static void TestTakeDamage()
         {
-            Character player = TestPlayerFactory.TestPlayerCreation();
+            Console.WriteLine("=== Test : TakeDamage ===");
+            Player player = TestPlayerFactory.TestPlayerCreation();
+
+            Console.WriteLine("Avant dégât :");
+            player.PrintStats();
+
             player.TakeDamage(20);
+
+            Console.WriteLine("\nAprès avoir pris 20 dégâts :");
+            player.PrintStats();
+
+            GameUtils.WaitForUser();
         }
 
         // On teste la méthode Attack
