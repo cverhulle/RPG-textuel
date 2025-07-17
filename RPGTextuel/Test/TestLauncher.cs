@@ -2,7 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Extensions.Players;
-using RPGTextuel.Test.ExtensionsCharacter;
+using RPGTextuel.Test.ExtensionsEnemy;
 
 namespace RPGTextuel.Test
 {
@@ -12,7 +12,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestCharacterExtensions.TestPrintHealthBar();
+            TestEnemyExtensions.TestPrintStats();
         }
 
         // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
