@@ -14,16 +14,11 @@ namespace RPGTextuel.Test.Items
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
             Inventory inventory = player.Inventory;
 
-            Console.WriteLine("=== Test Ajout d'Item ===");
-            Console.WriteLine($"Avant ajout (attendu : 0): {inventory.Count}");
-
             TestItems.TestAddSmallHealPotion();
-
-            Console.WriteLine($"Après ajout (attendu: 1) : {inventory.Count}");
         }
 
         // Cette méthode teste le retrait d'objet dans un inventaire non vide.
-        public static void TestRemoveItemWithInventoryNotempty()
+        public static void TestRemoveItemWithInventoryNotEmpty()
         {
             Console.WriteLine("=== Test retrait d'item avec inventaire non vide ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
