@@ -3,9 +3,9 @@ Ajout d'évenements aléatoires.
 Tests crées et fonctionnels.
 
 Idées d'améliorations :
-2. Affronter plusieurs ennemis en combat
-3. Ajout d'alliés
+1. Affronter plusieurs ennemis en combat
+2. Ajout d'alliés
 
-4. Niveaux de difficultés
-5. Ajout de différentes classes 
-6. Coups spéciaux
+3. Niveaux de difficultés
+4. Ajout de différentes classes 
+5. Coups spéciaux
