@@ -44,9 +44,28 @@ namespace RPGTextuel.Test.Items
             player.Inventory.RemoveItemByIndex(0);
         }
 
+        // Cette méthode permet de tester la méthode DisplayInventory avec un inventaire vide.
+        public static void TestDisplayInventoryWithEmptyInventory()
+        {
+            Console.WriteLine("=== Test de DisplayInventory avec un inventiare vide ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Console.WriteLine("\n Résultat attendu : Message d'erreur ; Inventaire vide : ");
+            player.Inventory.DisplayInventory();
+        }
+
+        // Cette méthode permet de tester la méthode DisplayInventory avec un inventaire non vide.
+        public static void TestDisplayInventoryWithNonEmptyInventory()
+        {
+            Console.WriteLine("=== Test de DisplayInventory avec un inventiare non vide ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Console.WriteLine("\n Résultat attendu : Affichage fonctionnel ");
+            player.Inventory.DisplayInventory();
+        }
+
         // Cette méthode teste la fonction isEmpty avec inventaire vide
         public static void TestIsEmptyWithEmptyInventory()
         {
+            Console.WriteLine("=== Test de isEmpty avec un inventiare vide ===");
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
             Console.WriteLine($"Inventaire vide (attendu: true): {player.Inventory.IsEmpty()}");
         }
@@ -54,6 +73,7 @@ namespace RPGTextuel.Test.Items
         // Cette méthode teste la fonction isEmpty avec inventaire non vide
         public static void TestIsEmptyWithInventoryNotempty()
         {
+            Console.WriteLine("=== Test de isEmpty avec un inventiare non vide ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
             Console.WriteLine($"Inventaire vide (attendu: false): {player.Inventory.IsEmpty()}");
         }
