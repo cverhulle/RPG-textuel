@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Extensions.Characters;
+using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.Test.Core;
 
 namespace RPGTextuel.Test.ExtensionsCharacter
@@ -10,16 +11,19 @@ namespace RPGTextuel.Test.ExtensionsCharacter
         // Cette méthode teste la méthode PrintHealthBar
         public static void TestPrintHealthBarWithFullHealth()
         {
-            Player player = TestPlayerFactory.TestPlayerCreation();
+            Console.WriteLine("=== Test : PrintHealthBar avec vie pleine ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
             player.PrintHealthBar();
+            GameUtils.WaitForUser();
         }
 
         // Cette méthode teste la méthode PrintHealthBar
         public static void TestPrintHealthBarNotWithFullHealth()
         {
-            Player player = TestPlayerFactory.TestPlayerCreation();
-            player.TakeDamage(20);
+            Console.WriteLine("=== Test : PrintHealthBar avec vie réduite ===");
+            Player player = PlayerTestFactory.CreateWoundedPlayer(20);
             player.PrintHealthBar();
+            GameUtils.WaitForUser();
         }
     }
 }

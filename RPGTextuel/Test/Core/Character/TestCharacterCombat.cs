@@ -33,7 +33,7 @@ namespace RPGTextuel.Test.CoreCharacter
         {
             Console.WriteLine("=== Test : Attack ===");
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
-            Enemy enemy = TestEnememyFactory.TestGoblinMinionEnemyCreation();
+            Enemy enemy = EnemyTestFactory.CreateGoblinMinion();
 
             Console.WriteLine("Statistiques initiales :");
             Console.WriteLine(">>> Joueur :");
