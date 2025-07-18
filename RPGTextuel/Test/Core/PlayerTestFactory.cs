@@ -22,10 +22,18 @@ namespace RPGTextuel.Test.Core
             return player;
         }
 
-        // Joueur blessé
+        // Création d'un joueur blessé
         public static Player CreateWoundedPlayer(int damage)
         {
             Player player = CreateBasicTestPlayer();
+            player.TakeDamage(damage);
+            return player;
+        }
+
+        // Création d'un joueur blessé avec deux petites potions.
+        public static Player CreateWoundedPlayerWithPotions(int damage)
+        {
+            Player player = CreatePlayerWithHealAndDamagePotions();
             player.TakeDamage(damage);
             return player;
         }
