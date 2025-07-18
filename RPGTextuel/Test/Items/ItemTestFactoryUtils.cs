@@ -8,7 +8,7 @@ namespace RPGTextuel.Test.Items
     public static class ItemTestFactoryUtils
     {
         // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
-        public static void AssSmallHealPotionToInventory(this Player player)
+        public static void AddSmallHealPotionToInventory(this Player player)
         {
             player.AddHealPotion(PotionSize.Small);
         }

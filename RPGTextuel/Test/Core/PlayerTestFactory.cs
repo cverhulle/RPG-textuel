@@ -17,8 +17,8 @@ namespace RPGTextuel.Test.Core
         public static Player CreatePlayerWithHealAndDamagePotions()
         {
             Player player = CreateBasicTestPlayer();
-            player.TestAddingSmallHealPotion();
-            player.TestAddingSmallDamagePotion();
+            player.AddSmallDamagePotionToInventory();
+            player.AddSmallHealPotionToInventory();
             return player;
         }
 
