@@ -50,7 +50,7 @@ namespace RPGTextuel.Test.Items
 
             Boolean isPotionUsed = player.Inventory.UseItem(1, player, goblin);
             Console.WriteLine($"La potion a-t-elle été utilisée ? (attendu : true): {isPotionUsed}");
-            player.PrintHealthBar(); // Les PV ont diminué.
+            goblin.PrintHealthBar(); // Les PV ont diminué.
         }
 
         // Test de DamagePotion sur soi-même
