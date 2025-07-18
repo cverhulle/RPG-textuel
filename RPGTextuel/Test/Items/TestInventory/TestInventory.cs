@@ -22,10 +22,10 @@ namespace RPGTextuel.Test.Items
             Console.WriteLine($"Après ajout (attendu: 1) : {inventory.Count}");
         }
 
-        // Cette méthode teste le retrait d'objet dans l'inventaire.
-        public static void TestRemoveItem()
+        // Cette méthode teste le retrait d'objet dans un inventaire non vide.
+        public static void TestRemoveItemWithInventoryNotempty()
         {
-            Console.WriteLine("=== Test retrait d'item ===");
+            Console.WriteLine("=== Test retrait d'item avec inventaire non vide ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
             Inventory inventory = player.Inventory;
 
@@ -35,6 +35,19 @@ namespace RPGTextuel.Test.Items
             player.Inventory.RemoveItemByIndex(0);
 
             Console.WriteLine($"Nombre d'objets (attendu: 1) : {inventory.Count}");
+        }
+
+        // Cette méthode teste le retrait d'objet dans l'inventaire.
+        public static void TestRemoveItemWithEmptyInventory()
+        {
+            Console.WriteLine("=== Test retrait d'item avec inventaire vide ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Inventory inventory = player.Inventory;
+
+            Console.WriteLine("=== Etat initial ===");
+            Console.WriteLine($"Nombre d'objets (attendu : 0): {inventory.Count}");
+            Console.WriteLine("\n Résultat attendu : Message d'erreur : ");
+            player.Inventory.RemoveItemByIndex(0);
         }
 
         /*
