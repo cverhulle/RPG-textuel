@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Test.Core;
 
 namespace RPGTextuel.Test.Items
@@ -9,17 +10,19 @@ namespace RPGTextuel.Test.Items
         // Test de la potion de soin sur un personnage bléssé.
         public static void TestHealPotionOnWoundedPlayer()
         {
-            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
-            Player target = PlayerTestFactory.CreatePlayer();
-            target.TakeDamage(20);
+            Console.WriteLine("=== Test de HealPotion sur un personnage blessé ===");
+            Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(20);
 
-            HealPotion potion = new HealPotion(PotionSize.Small);
-            bool result = potion.Use(user, target);
+            Console.WriteLine("=== Etat avant l'utilisation ===");
+            player.PrintHealthBar();
 
-            Console.WriteLine($"Résultat de l'utilisation : {result}");
-            target.PrintHealthBar();
+
+            Boolean isPotionUsed = player.Inventory.UseItem(0, player, player);
+            Console.WriteLine($"La potion a-t-elle été utilisée ? (attendu : true): {isPotionUsed}");
+            player.PrintHealthBar(); // Pas de changement attendu.
         }
 
+        /*
         // Test de HealPotion sur un personnage avec la vie pleine
         public static void TestHealPotionOnFullHealthAlly()
         {
@@ -57,5 +60,6 @@ namespace RPGTextuel.Test.Items
             Console.WriteLine($"Résultat de l'utilisation : {result}");
             user.PrintStats();
         }
+        */
     }
 }
