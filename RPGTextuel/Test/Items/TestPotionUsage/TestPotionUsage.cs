@@ -1,6 +1,8 @@
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Test.Core;
+using RPGTextuel.Test.Enemies;
 
 namespace RPGTextuel.Test.Items
 {
@@ -11,7 +13,7 @@ namespace RPGTextuel.Test.Items
         public static void TestHealPotionOnWoundedPlayer()
         {
             Console.WriteLine("=== Test de HealPotion sur un personnage blessé ===");
-            Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(20);
+            Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(40);
 
             Console.WriteLine("=== Etat avant l'utilisation ===");
             player.PrintHealthBar();
@@ -19,47 +21,50 @@ namespace RPGTextuel.Test.Items
 
             Boolean isPotionUsed = player.Inventory.UseItem(0, player, player);
             Console.WriteLine($"La potion a-t-elle été utilisée ? (attendu : true): {isPotionUsed}");
-            player.PrintHealthBar(); // Pas de changement attendu.
+            player.PrintHealthBar(); // Les PV ont remonté
         }
 
-        /*
         // Test de HealPotion sur un personnage avec la vie pleine
-        public static void TestHealPotionOnFullHealthAlly()
+        public static void TestHealPotionWithFullHealth()
         {
-            Player user = PlayerTestFactory.CreatePlayer();
-            Player target = PlayerTestFactory.CreatePlayer();
+            Console.WriteLine("=== Test de HealPotion sur un personnage avec vie pleine ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
-            HealPotion potion = new HealPotion(PotionSize.Small);
-            bool result = potion.Use(user, target);
+            Console.WriteLine("=== Etat avant l'utilisation ===");
+            player.PrintHealthBar();
 
-            Console.WriteLine($"Résultat de l'utilisation : {result}");
-            target.PrintHealthBar();
+            Boolean isPotionUsed = player.Inventory.UseItem(0, player, player);
+            Console.WriteLine($"La potion a-t-elle été utilisée ? (attendu : false): {isPotionUsed}");
+            player.PrintHealthBar(); // Pas de changement attendu.
         }
 
         // Test de DamagePotion sur un ennemi
         public static void TestDamagePotionOnEnemy()
         {
-            Player user = PlayerTestFactory.CreatePlayer();
-            Enemy enemy = EnemyTestFactory.CreateGoblin();
+            Console.WriteLine("=== Test de DamagePotion sur un ennemi ==");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Goblin goblin = EnemyTestFactory.CreateGoblin();
 
-            DamagePotion potion = new DamagePotion(PotionSize.Small);
-            bool result = potion.Use(user, enemy);
+            Console.WriteLine("=== Etat avant l'utilisation ===");
+            goblin.PrintHealthBar();
 
-            Console.WriteLine($"Résultat de l'utilisation : {result}");
-            enemy.PrintStats();
+            Boolean isPotionUsed = player.Inventory.UseItem(1, player, goblin);
+            Console.WriteLine($"La potion a-t-elle été utilisée ? (attendu : true): {isPotionUsed}");
+            player.PrintHealthBar(); // Les PV ont diminué.
         }
 
         // Test de DamagePotion sur soi-même
         public static void TestDamagePotionOnSelf()
         {
-            Player user = PlayerTestFactory.CreatePlayer();
+            Console.WriteLine("=== Test de DamagePotion sur un soi-même ==");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
-            DamagePotion potion = new DamagePotion(PotionSize.Small);
-            bool result = potion.Use(user, user);
+            Console.WriteLine("=== Etat avant l'utilisation ===");
+            player.PrintHealthBar();
 
-            Console.WriteLine($"Résultat de l'utilisation : {result}");
-            user.PrintStats();
+            Boolean isPotionUsed = player.Inventory.UseItem(1, player, player);
+            Console.WriteLine($"La potion a-t-elle été utilisée ? (attendu : false): {isPotionUsed}");
+            player.PrintHealthBar(); // Pas changement attendu.
         }
-        */
     }
 }
