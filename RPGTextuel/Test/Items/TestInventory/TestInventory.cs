@@ -86,6 +86,30 @@ namespace RPGTextuel.Test.Items
             Console.WriteLine($"Index {itemCount} valide ? (attendu : false) → {inventory.IsValidItemIndex(itemCount)}");
         }
 
+        // Test de la méthode GetItemNames.
+        public static void TestGetItemNames()
+        {
+            Console.WriteLine("=== Test de GetItemNames ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Inventory inventory = player.Inventory;
+
+            List<string> itemNames = inventory.GetItemNames();
+
+            Console.WriteLine("Résultat attendu : une liste contenant les noms des potions ajoutées.");
+            Console.WriteLine("Noms retournés :");
+            foreach (string name in itemNames)
+            {
+                Console.WriteLine($"- {name}");
+            }
+
+            // Vérification simple
+            bool containsHealPotion = itemNames.Any(name => name.ToLower().Contains("soin") || name.ToLower().Contains("heal"));
+            bool containsDamagePotion = itemNames.Any(name => name.ToLower().Contains("dégât") || name.ToLower().Contains("damage"));
+
+            Console.WriteLine($"Contient une potion de soin ? (attendu : true) → {containsHealPotion}");
+            Console.WriteLine($"Contient une potion de dégâts ? (attendu : true) → {containsDamagePotion}");
+        }
+
         // Cette méthode teste le retrait d'objet dans un inventaire non vide.
         public static void TestRemoveItemWithInventoryNotEmpty()
         {
@@ -131,15 +155,6 @@ namespace RPGTextuel.Test.Items
             Player player = new Player("Test");
             bool result = player.Inventory.UseItem(99, player, player);
             Console.WriteLine($"Index invalide → item utilisé ? (attendu: false): {result}");
-        }
-
-        public static void TestGetItemNames()
-        {
-            Player player = new Player("Test");
-            player.Inventory.AddItem(new HealPotion(PotionSize.Medium));
-            var names = player.Inventory.GetItemNames();
-
-            Console.WriteLine($"Nom du premier item (attendu: Potion de soin moyenne): {names[0]}");
         }
         */
     }
