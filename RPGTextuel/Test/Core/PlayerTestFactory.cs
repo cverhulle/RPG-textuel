@@ -3,7 +3,7 @@ using RPGTextuel.Test.Items;
 
 namespace RPGTextuel.Test.Core
 {
-    // Cette classe regroupe les tests liés à la classe Player.
+    // Fournit des instances de Player prédéfinis pour les tests.
     public static class PlayerTestFactory
     {
         // Cette fonction permet de créer un personnage nommé Link

@@ -3,25 +3,33 @@ using RPGTextuel.SetupEnemies;
 
 namespace RPGTextuel.Test.Enemies
 {
-    // Cette classe regroupe les tests liés aux ennemis
-    public static class TestEnememyFactory
+    // Fournit des instances d'ennemis prédéfinis pour les tests.
+    public static class EnemyTestFactory
     {
         // Cette fonction permet de créer un ennemi de type Gobelin
-        public static Enemy TestGoblinEnemyCreation()
+        public static Goblin CreateGoblin()
         {
             return SetupGoblins.GetRandomGoblin();
         }
 
         // Cette fonction permet de créer un ennemi de type Petit Gobelin
-        public static Enemy TestGoblinMinionEnemyCreation()
+        public static GoblinMinion CreateGoblinMinion()
         {
             return SetupGoblinMinions.GetRandomGoblinMinion();
         }
 
         // Cette fonction permet de créer un ennemi de type Chef Gobelin
-        public static Enemy TestGoblinChiefEnemyCreation()
+        public static GoblinChief CreateGoblinChief()
         {
             return SetupGoblinChiefs.GetRandomGoblinChief();
+        }
+
+        // Cette fonction crée un Petit Gobelin endommagé.
+        public static Enemy CreateWeakGoblinMinion()
+        {
+            GoblinMinion weakGoblinMinion = CreateGoblinMinion();
+            weakGoblinMinion.TakeDamage(10);
+            return weakGoblinMinion;
         }
     }
 }
