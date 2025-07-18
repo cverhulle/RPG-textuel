@@ -5,16 +5,16 @@ using RPGTextuel.Items.SetupItems;
 namespace RPGTextuel.Test.Items
 {
     // Cette classe regroupe les tests liés aux objets
-    public static class TestItemFactory
+    public static class ItemTestFactoryUtils
     {
         // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
-        public static void TestAddingSmallHealPotion(this Player player)
+        public static void AssSmallHealPotionToInventory(this Player player)
         {
             player.AddHealPotion(PotionSize.Small);
         }
 
         // Cette fonction permet d'ajouter une potion de soin de taille petite dans l'inventaire
-        public static void TestAddingSmallDamagePotion(this Player player)
+        public static void AddSmallDamagePotionToInventory(this Player player)
         {
             player.AddDamagePotion(PotionSize.Small);
         }
