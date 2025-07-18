@@ -16,34 +16,6 @@ namespace RPGTextuel.Test.Items
             TestItems.TestAddSmallHealPotion();
         }
 
-        // Cette méthode teste le retrait d'objet dans un inventaire non vide.
-        public static void TestRemoveItemWithInventoryNotEmpty()
-        {
-            Console.WriteLine("=== Test retrait d'item avec inventaire non vide ===");
-            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
-            Inventory inventory = player.Inventory;
-
-            Console.WriteLine("=== Etat initial ===");
-            Console.WriteLine($"Nombre d'objets (attendu : 2): {inventory.Count}");
-
-            player.Inventory.RemoveItemByIndex(0);
-
-            Console.WriteLine($"Nombre d'objets (attendu: 1) : {inventory.Count}");
-        }
-
-        // Cette méthode teste le retrait d'objet dans l'inventaire.
-        public static void TestRemoveItemWithEmptyInventory()
-        {
-            Console.WriteLine("=== Test retrait d'item avec inventaire vide ===");
-            Player player = PlayerTestFactory.CreateBasicTestPlayer();
-            Inventory inventory = player.Inventory;
-
-            Console.WriteLine("=== Etat initial ===");
-            Console.WriteLine($"Nombre d'objets (attendu : 0): {inventory.Count}");
-            Console.WriteLine("\n Résultat attendu : Message d'erreur : ");
-            player.Inventory.RemoveItemByIndex(0);
-        }
-
         // Cette méthode permet de tester la méthode DisplayInventory avec un inventaire vide.
         public static void TestDisplayInventoryWithEmptyInventory()
         {
@@ -76,6 +48,43 @@ namespace RPGTextuel.Test.Items
             Console.WriteLine("=== Test de isEmpty avec un inventiare non vide ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
             Console.WriteLine($"Inventaire vide (attendu: false): {player.Inventory.IsEmpty()}");
+        }
+
+        // Cette méthode teste la fonction GetAllItems
+        public static void TestGetAllItems()
+        {
+            Console.WriteLine("=== Test de GetAllItems ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Console.WriteLine("\n Résultat attendu : Liste avec les items du joueur (soin et dégats)");
+            Console.WriteLine(player.Inventory.GetAllItems());
+        }
+
+        // Cette méthode teste le retrait d'objet dans un inventaire non vide.
+        public static void TestRemoveItemWithInventoryNotEmpty()
+        {
+            Console.WriteLine("=== Test retrait d'item avec inventaire non vide ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Inventory inventory = player.Inventory;
+
+            Console.WriteLine("=== Etat initial ===");
+            Console.WriteLine($"Nombre d'objets (attendu : 2): {inventory.Count}");
+
+            player.Inventory.RemoveItemByIndex(0);
+
+            Console.WriteLine($"Nombre d'objets (attendu: 1) : {inventory.Count}");
+        }
+
+        // Cette méthode teste le retrait d'objet dans l'inventaire.
+        public static void TestRemoveItemWithEmptyInventory()
+        {
+            Console.WriteLine("=== Test retrait d'item avec inventaire vide ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Inventory inventory = player.Inventory;
+
+            Console.WriteLine("=== Etat initial ===");
+            Console.WriteLine($"Nombre d'objets (attendu : 0): {inventory.Count}");
+            Console.WriteLine("\n Résultat attendu : Message d'erreur : ");
+            player.Inventory.RemoveItemByIndex(0);
         }
 
         /*
