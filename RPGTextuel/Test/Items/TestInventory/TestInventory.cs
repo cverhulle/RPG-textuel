@@ -37,15 +37,15 @@ namespace RPGTextuel.Test.Items
         // Cette méthode teste la fonction isEmpty avec inventaire vide
         public static void TestIsEmptyWithEmptyInventory()
         {
-            Console.WriteLine("=== Test de isEmpty avec un inventiare vide ===");
+            Console.WriteLine("=== Test de isEmpty avec un inventaire vide ===");
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
             Console.WriteLine($"Inventaire vide (attendu: true): {player.Inventory.IsEmpty()}");
         }
 
         // Cette méthode teste la fonction isEmpty avec inventaire non vide
-        public static void TestIsEmptyWithInventoryNotempty()
+        public static void TestIsEmptyWithInventoryNonEmpty()
         {
-            Console.WriteLine("=== Test de isEmpty avec un inventiare non vide ===");
+            Console.WriteLine("=== Test de isEmpty avec un inventaire non vide ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
             Console.WriteLine($"Inventaire vide (attendu: false): {player.Inventory.IsEmpty()}");
         }
@@ -55,8 +55,14 @@ namespace RPGTextuel.Test.Items
         {
             Console.WriteLine("=== Test de GetAllItems ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
-            Console.WriteLine("\n Résultat attendu : Liste avec les items du joueur (soin et dégats)");
-            Console.WriteLine(player.Inventory.GetAllItems());
+
+            Console.WriteLine("\n Résultat attendu : Liste avec les 2 items du joueur (potion de soin et potion de dégats)");
+
+            List<Item> items = player.Inventory.GetAllItems();
+            for (int i = 0; i < items.Count; i++)
+            {
+                Console.WriteLine($"Item {i} : {items[i].name}");
+            }
         }
 
         // Cette méthode teste le retrait d'objet dans un inventaire non vide.
