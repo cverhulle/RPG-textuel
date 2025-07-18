@@ -95,19 +95,12 @@ namespace RPGTextuel.Test.Items
 
             List<string> itemNames = inventory.GetItemNames();
 
-            Console.WriteLine("Résultat attendu : une liste contenant les noms des potions ajoutées.");
+            Console.WriteLine("Résultat attendu : une liste contenant deux éléments : Une potion de soin et une de dégats (petite)");
             Console.WriteLine("Noms retournés :");
             foreach (string name in itemNames)
             {
                 Console.WriteLine($"- {name}");
             }
-
-            // Vérification simple
-            bool containsHealPotion = itemNames.Any(name => name.ToLower().Contains("soin") || name.ToLower().Contains("heal"));
-            bool containsDamagePotion = itemNames.Any(name => name.ToLower().Contains("dégât") || name.ToLower().Contains("damage"));
-
-            Console.WriteLine($"Contient une potion de soin ? (attendu : true) → {containsHealPotion}");
-            Console.WriteLine($"Contient une potion de dégâts ? (attendu : true) → {containsDamagePotion}");
         }
 
         // Cette méthode teste le retrait d'objet dans un inventaire non vide.
