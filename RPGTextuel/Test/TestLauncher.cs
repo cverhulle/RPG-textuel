@@ -15,14 +15,5 @@ namespace RPGTextuel.Test
         {
             TestListExtensions.TestPickRandomWithNonEmptyList();
         }
-
-        // Cette méthode permet de tester la méthode SetupPlayerAndGoblinAndSmallHealAndDamagePotion.
-        private static void TestSetupPlayerAndGoblinAndSmallHealAndDamagePotion()
-        {
-            (Player player, Enemy enemy) = TestUtils.SetupPlayerAndGoblinAndSmallHealAndDamagePotion();
-            player.PrintStats();
-            player.Inventory.DisplayInventory();
-            enemy.PrintStats();
-        }
     }
 }
