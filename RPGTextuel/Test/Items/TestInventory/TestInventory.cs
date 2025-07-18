@@ -65,6 +65,27 @@ namespace RPGTextuel.Test.Items
             }
         }
 
+        // Cette méthode permet de tester isValidItemIndex.
+        public static void TestIsValidItemIndex()
+        {
+            Console.WriteLine("=== Test de IsValidItemIndex ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Inventory inventory = player.Inventory;
+
+            int itemCount = inventory.Count;
+
+            Console.WriteLine($"Nombre d'items dans l'inventaire : {itemCount}");
+
+            // Cas valides
+            Console.WriteLine($"Index 0 valide ? (attendu : true) → {inventory.IsValidItemIndex(0)}");
+            if (itemCount > 1)
+                Console.WriteLine($"Index 1 valide ? (attendu : true) → {inventory.IsValidItemIndex(1)}");
+
+            // Cas invalides
+            Console.WriteLine($"Index -1 valide ? (attendu : false) → {inventory.IsValidItemIndex(-1)}");
+            Console.WriteLine($"Index {itemCount} valide ? (attendu : false) → {inventory.IsValidItemIndex(itemCount)}");
+        }
+
         // Cette méthode teste le retrait d'objet dans un inventaire non vide.
         public static void TestRemoveItemWithInventoryNotEmpty()
         {
