@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Extensions.Players;
+using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.Test.Core;
 
 namespace RPGTextuel.Test.ExtensionsPlayer
@@ -10,8 +11,10 @@ namespace RPGTextuel.Test.ExtensionsPlayer
         // Cette méthode teste la méthode PrintStats
         public static void TestPrintStats()
         {
-            Player player = TestPlayerFactory.TestPlayerCreation();
+            Console.WriteLine("=== Test : PrintStats (Player) ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
             player.PrintStats();
+            GameUtils.WaitForUser();
         }
     }
 }
