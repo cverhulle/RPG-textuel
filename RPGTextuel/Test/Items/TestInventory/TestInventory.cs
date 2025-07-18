@@ -12,7 +12,6 @@ namespace RPGTextuel.Test.Items
         {
             Console.WriteLine("=== Test Ajout d'Item ===");
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
-            Inventory inventory = player.Inventory;
 
             TestItems.TestAddSmallHealPotion();
         }
@@ -45,6 +44,20 @@ namespace RPGTextuel.Test.Items
             player.Inventory.RemoveItemByIndex(0);
         }
 
+        // Cette méthode teste la fonction isEmpty avec inventaire vide
+        public static void TestIsEmptyWithEmptyInventory()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Console.WriteLine($"Inventaire vide (attendu: true): {player.Inventory.IsEmpty()}");
+        }
+
+        // Cette méthode teste la fonction isEmpty avec inventaire non vide
+        public static void TestIsEmptyWithInventoryNotempty()
+        {
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Console.WriteLine($"Inventaire vide (attendu: false): {player.Inventory.IsEmpty()}");
+        }
+
         /*
         public static void TestUseItemValid()
         {
@@ -62,12 +75,6 @@ namespace RPGTextuel.Test.Items
             Player player = new Player("Test");
             bool result = player.Inventory.UseItem(99, player, player);
             Console.WriteLine($"Index invalide → item utilisé ? (attendu: false): {result}");
-        }
-
-        public static void TestIsEmpty()
-        {
-            Player player = new Player("Test");
-            Console.WriteLine($"Inventaire vide (attendu: true): {player.Inventory.IsEmpty()}");
         }
 
         public static void TestGetItemNames()
