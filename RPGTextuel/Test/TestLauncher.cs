@@ -1,8 +1,3 @@
-using RPGTextuel.Core;
-using RPGTextuel.Enemies.Class;
-using RPGTextuel.Extensions.Enemies;
-using RPGTextuel.Extensions.Players;
-using RPGTextuel.Test.ExtensionsEnemy;
 using RPGTextuel.Test.ExtensionsList;
 
 namespace RPGTextuel.Test
