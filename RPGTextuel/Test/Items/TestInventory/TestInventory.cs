@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Items.Class;
 using RPGTextuel.Test.Core;
 
@@ -131,24 +132,62 @@ namespace RPGTextuel.Test.Items
             player.Inventory.RemoveItemByIndex(0);
         }
 
-        /*
-        public static void TestUseItemValid()
+        // Test de la méthode UseItem avec succès.
+        public static void TestUseItemSuccessfully()
         {
-            Player player = new Player("Test");
-            player.TakeDamage(30);
-            Inventory inventory = player.Inventory;
-            inventory.AddItem(new HealPotion(PotionSize.Small));
+            Console.WriteLine("=== Test de UseItem avec succès ===");
+            Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(50);
+            int index = 0;
 
-            bool result = inventory.UseItem(0, player, player);
-            Console.WriteLine($"Item utilisé ? (attendu: true): {result}");
+            Console.WriteLine("Vie avant :");
+            player.PrintHealthBar();
+
+            bool result = player.Inventory.UseItem(index, player, player);
+
+            Console.WriteLine($"Résultat attendu : true → Résultat obtenu : {result}");
+            Console.WriteLine("Vie après (attendu : PV en plus) :");
+            player.PrintHealthBar();
+
+            Console.WriteLine($"Nombre d'objets restant (attendu : 1) : {player.Inventory.Count}");
         }
 
-        public static void TestUseItemInvalidIndex()
+        // Test de UseItem : Potion de dégats sur soi-même.
+        public static void TestUseItemWithDamagePotionOnSelf()
         {
-            Player player = new Player("Test");
-            bool result = player.Inventory.UseItem(99, player, player);
-            Console.WriteLine($"Index invalide → item utilisé ? (attendu: false): {result}");
+            Console.WriteLine("=== Test de UseItem échoué (potion de dégâts sur soi) ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+
+            int index = 1; // index de la potion de dégats par défaut.
+            bool result = player.Inventory.UseItem(index, player, player);
+
+            Console.WriteLine($"Résultat attendu : false → Résultat obtenu : {result}");
+            Console.WriteLine($"Nombre d'objets restant (attendu : 2) : {player.Inventory.Count}");
         }
-        */
+
+        // Test de UseItem : Potion de soin avec vie pleine
+        public static void TestUseItemWithHealPotionWhereAsPlayerAsFullHealth()
+        {
+            Console.WriteLine("=== Test de UseItem échoué (potion de soin avec vie pleine) ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+
+            int index = 0; // index de la potion de dégats par défaut.
+            bool result = player.Inventory.UseItem(index, player, player);
+
+            Console.WriteLine($"Résultat attendu : false → Résultat obtenu : {result}");
+            Console.WriteLine($"Nombre d'objets restant (attendu : 2) : {player.Inventory.Count}");
+        }
+        
+        // Test de UseItem avec un index invalide.
+        public static void TestUseItemWithInvalidIndex()
+        {
+            Console.WriteLine("=== Test de UseItem avec index invalide ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+
+            int invalidIndex = 5;
+            bool result = player.Inventory.UseItem(invalidIndex, player, player);
+
+            Console.WriteLine($"Résultat attendu : false → Résultat obtenu : {result}");
+            Console.WriteLine($"Nombre d'objets restant (attendu : 2) : {player.Inventory.Count}");
+        }
     }
 }
