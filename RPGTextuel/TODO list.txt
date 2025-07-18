@@ -1,11 +1,13 @@
 En cours : 
-Ajout d'évenements aléatoires.
+1. Ajout de tests sur la partie "Game"
+
+2. Ajout d'évenements aléatoires.
 Tests crées et fonctionnels.
+
 
 Idées d'améliorations :
 1. Affronter plusieurs ennemis en combat
 2. Ajout d'alliés
-
 3. Niveaux de difficultés
 4. Ajout de différentes classes 
 5. Coups spéciaux
