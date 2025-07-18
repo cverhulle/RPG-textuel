@@ -1,4 +1,3 @@
-using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Test.Core;
 using RPGTextuel.Test.Enemies;
@@ -16,7 +15,7 @@ namespace RPGTextuel.Test.CoreCharacter
         public static void TestTakeDamage()
         {
             Console.WriteLine("=== Test : TakeDamage ===");
-            Player player = TestPlayerFactory.TestPlayerCreation();
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             Console.WriteLine("Avant dégât :");
             player.PrintStats();
@@ -33,7 +32,7 @@ namespace RPGTextuel.Test.CoreCharacter
         public static void TestAttack()
         {
             Console.WriteLine("=== Test : Attack ===");
-            Player player = TestPlayerFactory.TestPlayerCreation();
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
             Enemy enemy = TestEnememyFactory.TestGoblinMinionEnemyCreation();
 
             Console.WriteLine("Statistiques initiales :");

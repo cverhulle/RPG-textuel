@@ -13,7 +13,7 @@ namespace RPGTextuel.Test.CoreCharacter
         {
             Console.WriteLine("=== Test : CanBeHealed (vie pleine) ===");
 
-            Player player = TestPlayerFactory.TestPlayerCreation();
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
             player.PrintHealthBar();
 
             bool result = player.CanBeHealed(1);
@@ -26,8 +26,7 @@ namespace RPGTextuel.Test.CoreCharacter
         public static void TestCanBeHealedNotWithFullHealth()
         {
             Console.WriteLine("=== Test : CanBeHealed (vie non pleine) ===");
-            Player player = TestPlayerFactory.TestPlayerCreation();
-            player.TakeDamage(20);
+            Player player = PlayerTestFactory.CreateWoundedPlayer(20);
             player.PrintHealthBar();
 
 
@@ -41,7 +40,7 @@ namespace RPGTextuel.Test.CoreCharacter
         public static void TestHealWithFullHealth()
         {
             Console.WriteLine("=== Test : Heal (avec vie pleine) ===");
-            Player player = TestPlayerFactory.TestPlayerCreation();
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
             player.PrintHealthBar();
 
             player.Heal(1);
@@ -56,8 +55,7 @@ namespace RPGTextuel.Test.CoreCharacter
         {
             Console.WriteLine("=== Test : Heal (avec vie manquante) ===");
 
-            Player player = TestPlayerFactory.TestPlayerCreation();
-            player.TakeDamage(20);
+            Player player = PlayerTestFactory.CreateWoundedPlayer(20);
             player.PrintHealthBar();
 
             Console.WriteLine("Soins de 10 PV...");
