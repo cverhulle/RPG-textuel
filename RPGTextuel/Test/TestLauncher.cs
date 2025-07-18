@@ -1,4 +1,4 @@
-using RPGTextuel.Test.ExtensionsList;
+using RPGTextuel.Test.CoreCharacter;
 
 namespace RPGTextuel.Test
 {
@@ -8,7 +8,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestListExtensions.TestPickRandomWithNonEmptyList();
+            TestCharacterHealing.TestHealWithFullHealth();
         }
     }
 }
