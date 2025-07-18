@@ -1,0 +1,4 @@
+namespace RPGTextuel.Test.Items
+{
+    
+}
