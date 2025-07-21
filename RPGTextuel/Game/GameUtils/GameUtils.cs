@@ -12,7 +12,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         }
         
         // Cette méthode vérifie si un nom, donné en paramètre, est null ou vide.
-        public static Boolean IsNameNullOrWhiteSpace(string name)
+        public static Boolean IsNameNullOrWhiteSpace(string? name)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
