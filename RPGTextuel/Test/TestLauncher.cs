@@ -1,4 +1,4 @@
-using RPGTextuel.Test.Items;
+using RPGTextuel.Test.Game.TestGameUtils;
 
 namespace RPGTextuel.Test
 {
@@ -8,7 +8,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestInventory.TestUseItemWithInvalidIndex();
+            TestGameUtils.TestIsValidMenuChoice();
         }
     }
 }
