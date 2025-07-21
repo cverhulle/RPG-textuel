@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Test.Game.TestGameUtils
@@ -23,10 +24,22 @@ namespace RPGTextuel.Test.Game.TestGameUtils
         {
             Console.WriteLine("=== Test IsNameNullOrWhiteSpace ===");
 
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace(null)}");   
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("")}");       
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("   ")}");    
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace(null)}");
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("")}");
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("   ")}");
             Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("John")}");
+        }
+
+        // Test de la méthode isnameTooLong
+        public static void TestIsNameTooLong()
+        {
+            Console.WriteLine("=== Test IsNameTooLong ===");
+
+            string validName = "Jean";
+            string longName = new string('a', GameConfig.MaxNameLength + 1);
+
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameTooLong(validName)}"); 
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameTooLong(longName)}");  
         }
     }
 }
