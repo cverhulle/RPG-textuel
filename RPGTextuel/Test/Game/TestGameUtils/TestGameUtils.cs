@@ -12,11 +12,8 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Test IsBackChoiceWithList ===");
             List<string> options = new List<string> { "Option 1", "Option 2", "Option 3" };
 
-            bool backChoice = GameUtils.IsBackChoiceWithList(3, options);
-            bool notBackChoice = GameUtils.IsBackChoiceWithList(1, options);
-
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {backChoice}");
-            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {notBackChoice}");
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsBackChoiceWithList(3, options)}");
+            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsBackChoiceWithList(1, options)}");
         }
 
         // On teste isNameNullOrWhiteSpace
