@@ -17,5 +17,16 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine($"Retour attendu : true → Résultat obtenu : {backChoice}");
             Console.WriteLine($"Retour attendu : false → Résultat obtenu : {notBackChoice}");
         }
+
+        // On teste isNameNullOrWhiteSpace
+        public static void TestIsNameNullOrWhiteSpace()
+        {
+            Console.WriteLine("=== Test IsNameNullOrWhiteSpace ===");
+
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace(null)}");   
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("")}");       
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("   ")}");    
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("John")}");
+        }
     }
 }
