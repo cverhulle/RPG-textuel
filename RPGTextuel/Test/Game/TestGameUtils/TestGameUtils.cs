@@ -35,8 +35,8 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             string validName = "Jean";
             string longName = new string('a', GameConfig.MaxNameLength + 1);
 
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameTooLong(validName)}");
-            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsNameTooLong(longName)}");
+            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsNameTooLong(validName)}");
+            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameTooLong(longName)}");
         }
 
         // Test de isValidMenuChoice
