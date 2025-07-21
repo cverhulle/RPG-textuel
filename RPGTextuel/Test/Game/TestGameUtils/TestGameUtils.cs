@@ -23,8 +23,8 @@ namespace RPGTextuel.Test.Game.TestGameUtils
 
             Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace(null)}");
             Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("")}");
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("   ")}");
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("John")}");
+            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("   ")}");
+            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsNameNullOrWhiteSpace("Zelda")}");
         }
 
         // Test de la méthode isnameTooLong
@@ -36,7 +36,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             string longName = new string('a', GameConfig.MaxNameLength + 1);
 
             Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameTooLong(validName)}");
-            Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsNameTooLong(longName)}");
+            Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsNameTooLong(longName)}");
         }
 
         // Test de isValidMenuChoice
@@ -47,9 +47,9 @@ namespace RPGTextuel.Test.Game.TestGameUtils
                 int choice;
 
                 Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsValidMenuChoice("1", 3, out choice)}");  
-                Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsValidMenuChoice("0", 3, out choice)}"); 
-                Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsValidMenuChoice("abc", 3, out choice)}"); 
-                Console.WriteLine($"Retour attendu : true → Résultat obtenu : {GameUtils.IsValidMenuChoice("4", 3, out choice)}");   
+                Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsValidMenuChoice("0", 3, out choice)}"); 
+                Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsValidMenuChoice("abc", 3, out choice)}"); 
+                Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsValidMenuChoice("4", 3, out choice)}");   
             }
     }
 }
