@@ -8,7 +8,7 @@ namespace RPGTextuel.Test.RandomEvents
     public static class RandomEventsTests
     {
         // Cette méthode permet de tester l'évenement FindItemEvent
-        private static void TestFindItemEvent()
+        public static void TestFindItemEvent()
         {
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
@@ -18,7 +18,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
-        private static void TestLoseItemEventWithInventoryNotEmpty()
+        public static void TestLoseItemEventWithInventoryNotEmpty()
         {
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
@@ -28,7 +28,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire vide 
-        private static void TestLoseItemEventWithInventoryEmpty()
+        public static void TestLoseItemEventWithInventoryEmpty()
         {
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
@@ -38,7 +38,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie pleine 
-        private static void TestGainHealthEventWithFullHealth()
+        public static void TestGainHealthEventWithFullHealth()
         {
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
@@ -48,7 +48,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie non pleine
-        private static void TestGainHealthEventNotWithFullHealth()
+        public static void TestGainHealthEventNotWithFullHealth()
         {
             Player player = PlayerTestFactory.CreateWoundedPlayer(20);
 
@@ -58,7 +58,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Cette méthode permet de tester l'évenement LoseHealthEvent
-        private static void TestLoseHealthEvent()
+        public static void TestLoseHealthEvent()
         {
         Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
