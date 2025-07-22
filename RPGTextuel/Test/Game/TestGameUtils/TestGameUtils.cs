@@ -16,7 +16,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine($"Retour attendu : false → Résultat obtenu : {GameUtils.IsBackChoiceWithList(1, options)}");
         }
 
-        // On teste isNameNullOrWhiteSpace
+        // On teste isNameNullOrWhiteSpace 
         public static void TestIsNameNullOrWhiteSpace()
         {
             Console.WriteLine("=== Test IsNameNullOrWhiteSpace ===");
