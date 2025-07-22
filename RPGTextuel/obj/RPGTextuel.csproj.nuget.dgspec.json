@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Informatique\\Projet\\C#\\rPGTextuel\\RPGTextuel.csproj": {}
+    "D:\\Informatique\\Projet\\C#\\RPGTextuel\\RPGTextuel.csproj": {}
   },
   "projects": {
-    "D:\\Informatique\\Projet\\C#\\rPGTextuel\\RPGTextuel.csproj": {
+    "D:\\Informatique\\Projet\\C#\\RPGTextuel\\RPGTextuel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Informatique\\Projet\\C#\\rPGTextuel\\RPGTextuel.csproj",
+        "projectUniqueName": "D:\\Informatique\\Projet\\C#\\RPGTextuel\\RPGTextuel.csproj",
         "projectName": "RPGTextuel",
-        "projectPath": "D:\\Informatique\\Projet\\C#\\rPGTextuel\\RPGTextuel.csproj",
+        "projectPath": "D:\\Informatique\\Projet\\C#\\RPGTextuel\\RPGTextuel.csproj",
         "packagesPath": "C:\\Users\\Corentin\\.nuget\\packages\\",
-        "outputPath": "D:\\Informatique\\Projet\\C#\\rPGTextuel\\obj\\",
+        "outputPath": "D:\\Informatique\\Projet\\C#\\RPGTextuel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Corentin\\AppData\\Roaming\\NuGet\\NuGet.Config"
