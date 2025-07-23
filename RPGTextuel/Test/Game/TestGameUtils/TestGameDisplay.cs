@@ -14,7 +14,9 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Test de PrintFramedListWithEmptyList ===");
             List<string> elements = new List<string> { };
 
-            Console.WriteLine("Résultat attendu : Message informant que la liste est vide \n Résultat obtenu :");
+            Console.WriteLine("Résultat attendu : Message informant que la liste est vide \n");
+            
+            Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintFramedList(elements, item => item, "Objets du joueur", showCount: true);
         }
 
@@ -24,8 +26,9 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Test de PrintFramedListWithoutTitle ===");
             List<string> elements = new List<string> { "Potion de soin", "Potion de dégâts" };
 
-            Console.WriteLine("Résultat attendu : \n 1. Potion de soin \n 2. Potion de dégâts \n 2 élément(s) au total. \n Résultat obtenu : ");
+            Console.WriteLine("Résultat attendu : \n 1. Potion de soin \n 2. Potion de dégâts \n 2 élément(s) au total. \n ");
 
+            Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintFramedList(elements, item => item, showCount: true);
 
             // À l'écran, on doit voir :
@@ -40,8 +43,9 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Test de PrintFramedListWithoutShowcount ===");
             List<string> elements = new List<string> { "Potion de soin", "Potion de dégâts" };
 
-            Console.WriteLine("Résultat attendu : \n  ===== OBJETS DU JOUEUR ===== \n 1. Potion de soin \n 2. Potion de dégâts \n ============= \n Résultat obtenu : ");
+            Console.WriteLine("Résultat attendu : \n  ===== OBJETS DU JOUEUR ===== \n 1. Potion de soin \n 2. Potion de dégâts \n ============= \n");
 
+            Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintFramedList(elements, item => item, showCount: true);
 
             // À l'écran, tu devrais voir :
@@ -58,7 +62,9 @@ namespace RPGTextuel.Test.Game.TestGameUtils
 
             List<string> elements = new List<string> { "Potion de soin", "Potion de dégâts" };
 
-            Console.WriteLine("Résultat attendu : \n  ===== OBJETS DU JOUEUR ===== \n 1. Potion de soin \n 2. Potion de dégâts \n ============= \n 2 élément(s) au total. \n Résultat obtenu : ");
+            Console.WriteLine("Résultat attendu : \n  ===== OBJETS DU JOUEUR ===== \n 1. Potion de soin \n 2. Potion de dégâts \n ============= \n 2 élément(s) au total. \n ");
+            
+            Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintFramedList(elements, item => item, "Objets du joueur", showCount: true);
 
             // À l'écran, tu devrais voir :
@@ -75,9 +81,10 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Test de PrintInventory ===");
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
-            Console.WriteLine("Résultat attendu : Affichage de l'inventaire puis : Appuyez sur une touche... \n Résultat obtenu : ");
+            Console.WriteLine("Résultat attendu :\n- Affichage de l'inventaire (objets présents)\n- Puis message : Appuyez sur une touche pour continuer...\n");
+
+            Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintInventory(player);
         }
     }
-
 }
