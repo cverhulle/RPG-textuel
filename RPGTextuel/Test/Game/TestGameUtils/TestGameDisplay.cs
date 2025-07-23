@@ -49,7 +49,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("Résultat attendu : \n  ===== OBJETS DU JOUEUR ===== \n 1. Potion de soin \n 2. Potion de dégâts \n ============= \n");
 
             Console.WriteLine("=== Résultat obtenu ===");
-            GameDisplay.PrintFramedList(elements, item => item, showCount: true);
+            GameDisplay.PrintFramedList(elements, item => item, "Objets du joueur", showCount: false);
 
             // À l'écran, tu devrais voir :
             // ===== OBJETS DU JOUEUR =====
