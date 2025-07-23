@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.Test.Core;
@@ -28,7 +29,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Test de PrintFramedListWithoutTitle ===");
             List<string> elements = new List<string> { "Potion de soin", "Potion de dégâts" };
 
-            Console.WriteLine("Résultat attendu : \n 1. Potion de soin \n 2. Potion de dégâts \n 2 élément(s) au total. \n ");
+            Console.WriteLine("Résultat attendu : \n 1. Potion de soin \n 2. Potion de dégâts \n \n 2 élément(s) au total. \n ");
 
             Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintFramedList(elements, item => item, showCount: true);
@@ -100,7 +101,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintStats(player);
         }
-        
+
         // Test de PrintStats avec un ennemi.
         public static void TestPrintStatsWithEnemy()
         {
