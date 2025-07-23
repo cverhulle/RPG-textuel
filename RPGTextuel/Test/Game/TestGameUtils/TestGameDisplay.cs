@@ -16,19 +16,19 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             GameDisplay.PrintFramedList(elements, item => item, "Objets du joueur", showCount: true);
         }
 
-        // Test de la méthode PrintFramedList
-        public static void TestPrintFramedList()
+        // Test de la méthode PrintFramedList sans titre
+        public static void TestPrintFramedListWithoutTitle()
         {
-            Console.WriteLine("=== Test de PrintFramedList ===");
-
+            Console.WriteLine("=== Test de PrintFramedListWithoutTitle ===");
             List<string> elements = new List<string> { "Potion de soin", "Potion de dégâts" };
-            GameDisplay.PrintFramedList(elements, item => item, "Objets du joueur", showCount: true);
+
+            Console.WriteLine("Résultat attendu : \n 1. Potion de soin \n 2. Potion de dégâts \n 2 élément(s) au total. \n Résultat obtenu : ");
+
+            GameDisplay.PrintFramedList(elements, item => item, showCount: true);
 
             // À l'écran, on doit voir :
-            // ===== OBJETS DU JOUEUR =====
             //   1. Potion de soin
             //   2. Potion de dégâts
-            // ===== Obj... =====
             // 2 élément(s) au total.
         }
     }
