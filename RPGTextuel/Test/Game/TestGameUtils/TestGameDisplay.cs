@@ -1,4 +1,6 @@
+using RPGTextuel.Core;
 using RPGTextuel.Game.GameUtilsNamespace;
+using RPGTextuel.Test.Core;
 
 namespace RPGTextuel.Test.Game.TestGameUtils
 {
@@ -65,6 +67,16 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             //   2. Potion de dégâts
             // ============================
             // 2 élément(s) au total.
+        }
+
+        // Test de la méthode PrintInventory
+        public static void TestPrintInventory()
+        {
+            Console.WriteLine("=== Test de PrintInventory ===");
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+
+            Console.WriteLine("Résultat attendu : Affichage de l'inventaire puis : Appuyez sur une touche... \n Résultat obtenu : ");
+            GameDisplay.PrintInventory(player);
         }
     }
 
