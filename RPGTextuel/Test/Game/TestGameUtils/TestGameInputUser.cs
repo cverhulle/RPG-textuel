@@ -12,5 +12,21 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             string result = GameInputUser.AskUserInput("Quel est ton nom ? ");
             Console.WriteLine($"Tu as tapé : {result}");
         }
+
+        // Cette méthode permet de tester AskMenuChoice.
+        public static void TestAskMenuChoice()
+        {
+            Console.WriteLine("=== Test de AskMenuChoice ===");
+
+            List<string> options = new List<string>
+            {
+                "Explorer",
+                "Inventaire",
+                "Quitter"
+            };
+
+            int result = GameInputUser.AskMenuChoice(options, "MENU PRINCIPAL"); // Tester manuellement différentes possibilités.
+            Console.WriteLine($"Tu as choisi l'option numéro : {result}");
+        }
     }
 }
