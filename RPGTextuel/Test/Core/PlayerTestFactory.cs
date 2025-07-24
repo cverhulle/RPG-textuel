@@ -37,5 +37,13 @@ namespace RPGTextuel.Test.Core
             player.TakeDamage(damage);
             return player;
         }
+
+        // Cette méthode permet de créer un joueur mort.
+        public static Player CreateDeadPlayer()
+        {
+            Player player = new Player("Héros mort");
+            player.Health = 0;  // Simule la mort
+            return player;
+        }
     }
 }
