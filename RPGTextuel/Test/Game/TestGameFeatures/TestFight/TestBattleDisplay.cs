@@ -20,5 +20,16 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             Console.WriteLine("Résultat attendu : affichage des barres de santé du joueur et de l'ennemi.");
             BattleDisplay.ShowBattleState(player, enemy);
         }
+
+        // Cette méthode permet de tester ShowBattleResult dans le cas d'une victoire
+        public static void TestShowBattleResult_Victory()
+        {
+            Console.WriteLine("=== Test de ShowBattleResult : Victoire ===");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Enemy enemy = EnemyTestFactory.CreateDeadGoblin();
+
+            BattleDisplay.ShowBattleResult(player, enemy);
+        }
     }
 }
