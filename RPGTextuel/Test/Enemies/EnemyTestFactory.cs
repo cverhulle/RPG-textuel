@@ -31,5 +31,12 @@ namespace RPGTextuel.Test.Enemies
             weakGoblinMinion.TakeDamage(10);
             return weakGoblinMinion;
         }
+
+        // Cette méthode permet de créer un Gobelin mort.
+        public static Enemy CreateDeadGoblin()
+        {
+            Enemy enemy = new Goblin("Gobelin mort", 0, 5, 20); 
+            return enemy;
+        }
     }
 }
