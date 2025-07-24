@@ -1,4 +1,4 @@
-using RPGTextuel.Test.Game.TestGameUtils;
+using RPGTextuel.Test.Game.TestGameFeatures;
 
 namespace RPGTextuel.Test
 {
@@ -8,7 +8,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestGameInputUser.TestAskUserInput();
+            TestBattleDisplay.TestShowBattleResult_Error();
         }
     }
 }
