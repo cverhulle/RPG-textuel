@@ -21,8 +21,6 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
 
             // On simule l'attaque de l'ennemi
             EnemyAction.EnemyTurn(player, enemy);
-
-            Console.WriteLine($"Vie du joueur après l'attaque : {player.Health} (attendu : {enemy.Attack} dégats)");
         }
     }
 }
