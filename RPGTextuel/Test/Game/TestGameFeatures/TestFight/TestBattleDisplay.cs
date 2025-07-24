@@ -31,5 +31,27 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
 
             BattleDisplay.ShowBattleResult(player, enemy);
         }
+
+        // Cette méthode permet de tester ShowBattleResult dans le cas d'une défaite
+        public static void TestShowBattleResult_Defeat()
+        {
+            Console.WriteLine("=== Test de ShowBattleResult : Défaite ===");
+
+            Player player = PlayerTestFactory.CreateDeadPlayer();
+            Enemy enemy = EnemyTestFactory.CreateGoblinChief();
+
+            BattleDisplay.ShowBattleResult(player, enemy);
+        }
+
+        // Cette méthode permet de tester ShowBattleResult dans le cas d'erreur
+        public static void TestShowBattleResult_Error()
+        {
+            Console.WriteLine("=== Test de ShowBattleResult : Erreur de logique ===");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Enemy enemy = EnemyTestFactory.CreateGoblinMinion();
+
+            BattleDisplay.ShowBattleResult(player, enemy);
+        }
     }
 }
