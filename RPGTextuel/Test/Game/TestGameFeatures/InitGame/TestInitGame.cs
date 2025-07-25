@@ -10,7 +10,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
 
         // On lance la méthode InitTheGame pour la tester.
         // Ce n'est pas vraiment un test unitaire.
-        public static void TestInitTheGame()
+        public static void FakeTestInitTheGame()
         {
             (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
 
