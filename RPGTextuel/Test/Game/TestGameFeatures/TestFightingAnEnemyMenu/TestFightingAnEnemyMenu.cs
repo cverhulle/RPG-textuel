@@ -9,7 +9,8 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
     // Cette classe permet de tester FightingAnEnemyMenu
     public static class TestFightingAnEnemyMenu
     {
-        // Cette méthode permet de lancer HandleMainMenu pour le tester
+        // Cette méthode permet de lancer HandleMainMenu pour le tester.
+        // Pas vraiment un test
         public static void FakeTestHandleMainMenu()
         {
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();

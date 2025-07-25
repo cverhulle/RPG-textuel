@@ -9,7 +9,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
     // Cette classe permet de tester le fichier MainFight
     public static class TesTMainFight
     {
-        // Cette méthode permet de lancer HandleBattle.
+        // Cette méthode permet de lancer HandleBattle pour le tester.
         // Pas vraiment un test
         public static void FakeTestHandleBattle()
         {
