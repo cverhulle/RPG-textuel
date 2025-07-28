@@ -43,12 +43,12 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             // Si le nom est vide ou null, on affiche un message et, on repose la question.
             if (GameUtils.IsNameNullOrWhiteSpace(name))
             {
-                Console.WriteLine("❌ Le nom ne peut pas être vide. Réessayez.\n");
+                Console.WriteLine("Le nom ne peut pas être vide. Réessayez.\n");
                 return true;
             }
             else if (GameUtils.IsNameTooLong(name))
             {
-                Console.WriteLine($"❌ Le nom ne peut pas dépasser {GameConfig.MaxNameLength} caractères. Réessayez.\n");
+                Console.WriteLine($"Le nom ne peut pas dépasser {GameConfig.MaxNameLength} caractères. Réessayez.\n");
                 return true;
             }
             else
