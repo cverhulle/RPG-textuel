@@ -19,7 +19,7 @@ namespace RPGTextuel.Items.Factory
             SetupDamagePotions.LargeDamagePotion
         };
 
-        // On choisit aléatoirement un objet parmi la liste.
+        // On choisit aléatoirement un objet parmi une liste.
         public static Item GetRandomItem(List<Item> items)
         {
             if (items == null || items.Count == 0)

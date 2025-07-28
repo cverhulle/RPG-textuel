@@ -1,3 +1,4 @@
+using RPGTextuel.Extensions.List;
 using RPGTextuel.RandomEvent.Class;
 using RPGTextuel.RandomEvent.SetupEvent;
 
@@ -15,11 +16,14 @@ namespace RPGTextuel.RandomEvent.Factory
             new LoseItemEvent()
         };
 
-        // On choisit aléatoirement un événement de la liste.
-        public static RandomEventClass GetRandomEvent()
+        // On choisit aléatoirement un événement parmi une liste.
+        public static RandomEventClass GetRandomEvent(List<RandomEventClass> options)
         {
-            int index = Random.Shared.Next(allEvents.Count);
-            return allEvents[index];
+            if (options == null || options.Count == 0)
+            {
+                throw new ArgumentException("La liste ne peut pas être vide");
+            }
+            return options.PickRandom();
         }
     }
 }
