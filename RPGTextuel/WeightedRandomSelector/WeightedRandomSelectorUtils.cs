@@ -14,5 +14,11 @@ namespace RPGTextuel.WeightedRandomSelector
             if (ObjectsToDraw.Any(i => i.Weight < 0))
                 throw new ArgumentException("Tous les poids doivent être strictement positifs.");
         }
+
+        // Cette méthode permet de calculer le poids total d'une liste d'objects avec des poids.
+        public static int CalculateTotalWeight<T>(List<(T objectToDraw, int Weight)> ObjectsToDraw)
+        {
+            return ObjectsToDraw.Sum(i => i.Weight);
+        }
     }
 }
