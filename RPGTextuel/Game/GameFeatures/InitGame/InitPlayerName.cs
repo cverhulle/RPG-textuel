@@ -38,7 +38,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         }
 
         // Cette méthode prend un nom en argument et vérifie qu'il est valide pour un joueur.
-        private static Boolean VerifyPlayerName(string name)
+        public static Boolean VerifyPlayerName(string name)
         {
             // Si le nom est vide ou null, on affiche un message et, on repose la question.
             if (GameUtils.IsNameNullOrWhiteSpace(name))
