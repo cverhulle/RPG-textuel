@@ -7,14 +7,14 @@ namespace RPGTextuel.WeightedRandomSelector
     public static class WeightedRandomSelector
     {
         // Méthode générique pour tout type pondéré.
-        public static T SelectRandom<T>(List<(T ObjectToDraw, int Weight)> ObjectsToDraw)
+        public static T SelectRandom<T>(List<(T objectToDraw, int Weight)> objectsToDraw)
         {
             // Si la liste est vide, on retourne une erreur
-            if (ObjectsToDraw == null || ObjectsToDraw.Count == 0)
+            if (objectsToDraw == null || objectsToDraw.Count == 0)
                 throw new ArgumentException("La liste ne peut pas être vide.");
 
             // On récupère le poids total des objets.
-            int totalWeight = ObjectsToDraw.Sum(i => i.Weight);
+            int totalWeight =objectsToDraw.Sum(i => i.Weight);
 
             // On selectionne aléatoirement un nombre entre 1 et le poids total.
             int roll = Random.Shared.Next(1, totalWeight + 1);
@@ -23,11 +23,11 @@ namespace RPGTextuel.WeightedRandomSelector
             // En ajoutant les poids des divers objets successivement,
             // on cherche la première occurence qui dépasse le "roll".
             int cumulative = 0;
-            foreach (var entry in ObjectsToDraw)
+            foreach (var entry in objectsToDraw)
             {
                 cumulative += entry.Weight;
                 if (roll <= cumulative)
-                    return entry.ObjectToDraw;
+                    return entry.objectToDraw;
             }
 
             // En cas d'erreur, on retourne une erreur.
