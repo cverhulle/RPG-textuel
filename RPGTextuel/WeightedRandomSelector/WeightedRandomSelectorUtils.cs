@@ -20,5 +20,11 @@ namespace RPGTextuel.WeightedRandomSelector
         {
             return ObjectsToDraw.Sum(i => i.Weight);
         }
+
+        // Cette méthode permet de choisir aléatoirement un nombre entre 1 et le poids total
+        private static int GetRandomRoll(int totalWeight)
+        {
+            return Random.Shared.Next(1, totalWeight + 1);
+        }
     }
 }
