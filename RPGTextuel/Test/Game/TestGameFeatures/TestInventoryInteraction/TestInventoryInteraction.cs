@@ -16,7 +16,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
 
             var result = InventoryInteraction.GetItemNameListsAndBackMessage(player.Inventory.GetAllItems(), "Quitter");
 
-            Console.WriteLine("Résultat attendu : [\"Petite potion de soin\", \"Potion de dégât moyenne\", \"Quitter\"]");
+            Console.WriteLine("Résultat attendu : \n [\"Potion de soin (petite)\", \"Potion de dégât (petite)\", \"Quitter\"]");
             Console.WriteLine("Résultat obtenu :");
             foreach (var name in result)
             {
