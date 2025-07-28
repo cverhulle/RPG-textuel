@@ -26,5 +26,21 @@ namespace RPGTextuel.WeightedRandomSelector
         {
             return Random.Shared.Next(1, totalWeight + 1);
         }
+
+        // On retourne l' "objet choisi" : 
+        // En ajoutant les poids des divers objets successivement,
+        // on cherche la première occurence qui dépasse le "roll".
+        // On retourne une erreur s'il y a un problème.
+        public static T PickObjectToDrawByRoll<T>(List<(T objectToDraw, int Weight)> ObjectsToDraw, int roll)
+        {
+            int cumulative = 0;
+            foreach (var (ObjectToDraw, weight) in ObjectsToDraw)
+            {
+                cumulative += weight;
+                if (roll <= cumulative)
+                    return ObjectToDraw;
+            }
+            throw new InvalidOperationException("Erreur dans la sélection pondérée.");
+        }
     }
 }
