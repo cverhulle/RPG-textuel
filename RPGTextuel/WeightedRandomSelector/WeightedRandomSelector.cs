@@ -1,3 +1,5 @@
+using RPGTextuel.Items.Class;
+
 namespace RPGTextuel.WeightedRandomSelector
 {
     // Cette classe permet de sélectionner aléatoirement un objet ayant un poids
@@ -30,6 +32,12 @@ namespace RPGTextuel.WeightedRandomSelector
 
             // En cas d'erreur, on retourne une erreur.
             throw new InvalidOperationException("Erreur dans la sélection pondérée.");
+        }
+
+        // Méthode pour les items ayant un poids.
+        public static Item SelectRandomItem(List<WeightedItem> items)
+        {
+            return SelectRandom(items.Select(wi => (wi.Item, wi.Weight)).ToList());
         }
     }
 }
