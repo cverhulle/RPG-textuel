@@ -9,9 +9,10 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
         // Cette méthode permet de lancer AskAndVerifyPlayerName pour tester son fonctionnement
         public static void FakeTestAskAndVerifyPlayerName()
         {
-            InitPlayerName.AskAndVerifyPlayerName();
+            string name = InitPlayerName.AskAndVerifyPlayerName();
+            Console.WriteLine($"Nom du joueur retenu : {name}");
         }
-        
+
         // Cette méthode permet de tester VerifyPlayerName
         public static void TestVerifyPlayerName()
         {
