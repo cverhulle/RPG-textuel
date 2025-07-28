@@ -6,10 +6,16 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
     // Cette classe permet de tester InitPlayerName
     public static class TestInitPlayerName
     {
+        // Cette méthode permet de lancer AskAndVerifyPlayerName pour tester son fonctionnement
+        public static void FakeTestAskAndVerifyPlayerName()
+        {
+            InitPlayerName.AskAndVerifyPlayerName();
+        }
+        
         // Cette méthode permet de tester VerifyPlayerName
         public static void TestVerifyPlayerName()
         {
-             Console.WriteLine("=== Test de VerifyPlayerName ===");
+            Console.WriteLine("=== Test de VerifyPlayerName ===");
 
             // Cas 1 : Nom vide
             string name1 = "";
