@@ -1,15 +1,15 @@
 namespace RPGTextuel.Items.Class
 {
-    // Cette classe permet de donner du poids aux objets.
+    // Cette classe permet de donner du poids à un élément.
     // Elle gère leur taux d'obtention lors des évenements.
-    public class WeightedItem
+    public class Weighted<T>
     {
-        public Item Item { get; }
+        public T Value { get; }
         public int Weight { get; }
 
-        public WeightedItem(Item item, int weight)
+        public Weighted(T value, int weight)
         {
-            Item = item ?? throw new ArgumentNullException(nameof(item));
+            Value = value ?? throw new ArgumentNullException(nameof(value));
             Weight = weight > 0 ? weight : throw new ArgumentException("Le poids doit être strictement positif.");
         }
     }
