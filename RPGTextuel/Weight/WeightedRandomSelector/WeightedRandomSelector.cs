@@ -1,7 +1,7 @@
 using RPGTextuel.Items.Class;
 using RPGTextuel.Weight.Class;
 
-namespace RPGTextuel.WeightedRandomSelector
+namespace RPGTextuel.Weight
 {
     // Cette classe permet de sélectionner aléatoirement un objet ayant un poids
     // de façon aléatoire.

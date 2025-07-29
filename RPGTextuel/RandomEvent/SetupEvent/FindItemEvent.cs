@@ -1,6 +1,7 @@
 using RPGTextuel.Core;
 using RPGTextuel.Items.Class;
 using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Weight;
 using RPGTextuel.Weight.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
@@ -25,7 +26,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // Ajout d'un item aléatoire dans l'inventaire du joueur.
         public override void Trigger(Player player)
         {
-            Item randomItem = WeightedRandomSelector.WeightedRandomSelector.SelectRandom(_weightedItems);
+            Item randomItem = WeightedRandomSelector.SelectRandom(_weightedItems);
             player.Inventory.AddItem(randomItem);
             Console.WriteLine($"Vous avez trouvé un objet : {randomItem.name} !");
         }

@@ -1,6 +1,6 @@
 using RPGTextuel.Weight.Class;
 
-namespace RPGTextuel.WeightedRandomSelector
+namespace RPGTextuel.Weight
 {
     // Cette classe fournit une liste de méthodes utilitaires pour WeightedRandomSelector
     public static class WeightedRandomSelectorUtils
