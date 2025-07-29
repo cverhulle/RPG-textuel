@@ -2,6 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Items.Class;
 using RPGTextuel.Items.Factory;
 using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Weight.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
@@ -11,6 +12,15 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // On définit son nom et sa description.
         public override string Name => "Jour de chance";
         public override string Description => "Au détour d'un chemin, vous trouvez un objet au sol !";
+
+        // On ajoute la liste des items avec un poids.
+        private readonly List<Weighted<Item>> _weightedItems;
+
+        // On définit le constructeur de la classe.
+        public FindItemEvent(List<Weighted<Item>> weightedItems)
+        {
+            _weightedItems = weightedItems ?? throw new ArgumentNullException(nameof(weightedItems));
+        }
 
         // On définit son activation : 
         // Ajout d'un item aléatoire dans l'inventaire du joueur.
