@@ -36,11 +36,11 @@ namespace RPGTextuel.WeightedRandomSelector
         public static T PickObjectToDrawByRoll<T>(List<Weighted<T>> weightedObjects, int roll)
         {
             int cumulative = 0;
-            foreach (var entry in weightedObjects)
+            foreach (var weightedObject in weightedObjects)
             {
-                cumulative += entry.Weight;
+                cumulative += weightedObject.Weight;
                 if (roll <= cumulative)
-                    return entry.Value;
+                    return weightedObject.Value;
             }
             throw new InvalidOperationException("Erreur dans la sélection pondérée.");
         }
