@@ -1,4 +1,4 @@
-namespace RPGTextuel.Items.Class
+namespace RPGTextuel.Weight.Class
 {
     // Cette classe permet de donner du poids à un élément.
     // Elle gère leur taux d'obtention lors des évenements.
