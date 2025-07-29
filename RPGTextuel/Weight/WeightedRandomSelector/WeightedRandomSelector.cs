@@ -1,4 +1,5 @@
 using RPGTextuel.Items.Class;
+using RPGTextuel.Weight.Class;
 
 namespace RPGTextuel.WeightedRandomSelector
 {
@@ -7,26 +8,26 @@ namespace RPGTextuel.WeightedRandomSelector
     public static class WeightedRandomSelector
     {
         // Méthode générique pour tout type pondéré.
-        public static T SelectRandom<T>(List<(T objectToDraw, int Weight)> objectsToDraw)
+        public static T SelectRandom<T>(List<Weighted<T>> weightedObjects)
         {
             // On teste la liste en entrée est valide.
             // Si ce n'est pas le cas, une erreur est retournée.
-            WeightedRandomSelectorUtils.ValidateInput(objectsToDraw);
+            WeightedRandomSelectorUtils.ValidateInput(weightedObjects);
 
             // On récupère le poids total des objets.
-            int totalWeight = WeightedRandomSelectorUtils.CalculateTotalWeight(objectsToDraw);
+            int totalWeight = WeightedRandomSelectorUtils.CalculateTotalWeight(weightedObjects);
 
             // On "selectionne" aléatoirement un nombre entre 1 et le poids total.
             int roll = WeightedRandomSelectorUtils.GetRandomRoll(totalWeight);
             
             // On retourne l'objet choisi.
-            return WeightedRandomSelectorUtils.PickObjectToDrawByRoll(objectsToDraw, roll);
+            return WeightedRandomSelectorUtils.PickObjectToDrawByRoll(weightedObjects, roll);
         }
 
         // Méthode pour les items ayant un poids.
-        public static Item SelectRandomItem(List<WeightedItem> items)
+        public static Item SelectRandomItem(List<Weighted<Item>> items)
         {
-            return SelectRandom(items.Select(wi => (wi.Item, wi.Weight)).ToList());
+            return SelectRandom(items);
         }
     }
 }
