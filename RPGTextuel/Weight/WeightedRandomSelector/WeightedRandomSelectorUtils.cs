@@ -1,3 +1,5 @@
+using RPGTextuel.Weight.Class;
+
 namespace RPGTextuel.WeightedRandomSelector
 {
     // Cette classe fournit une liste de méthodes utilitaires pour WeightedRandomSelector
@@ -6,19 +8,19 @@ namespace RPGTextuel.WeightedRandomSelector
         // Cette méthode permet de valider la liste d'objects en entrée.
         // Elle retourne une erreur si elle est vide ou null
         // On retourne une erreur si un poids est strictement négatif.
-        public static void ValidateInput<T>(List<(T objectToDraw, int Weight)> ObjectsToDraw)
+        public static void ValidateInput<T>(List<Weighted<T>> weightedObjects)
         {
-            if (ObjectsToDraw == null || ObjectsToDraw.Count == 0)
+            if (weightedObjects == null || weightedObjects.Count == 0)
                 throw new ArgumentException("La liste ne peut pas être vide.");
 
-            if (ObjectsToDraw.Any(i => i.Weight < 0))
+            if (weightedObjects.Any(i => i.Weight < 0))
                 throw new ArgumentException("Tous les poids doivent être strictement positifs.");
         }
 
         // Cette méthode permet de calculer le poids total d'une liste d'objects avec des poids.
-        public static int CalculateTotalWeight<T>(List<(T objectToDraw, int Weight)> ObjectsToDraw)
+        public static int CalculateTotalWeight<T>(List<Weighted<T>> weightedObjects)
         {
-            return ObjectsToDraw.Sum(i => i.Weight);
+            return weightedObjects.Sum(i => i.Weight);
         }
 
         // Cette méthode permet de choisir aléatoirement un nombre entre 1 et le poids total
@@ -31,14 +33,14 @@ namespace RPGTextuel.WeightedRandomSelector
         // En ajoutant les poids des divers objets successivement,
         // on cherche la première occurence qui dépasse le "roll".
         // On retourne une erreur s'il y a un problème.
-        public static T PickObjectToDrawByRoll<T>(List<(T objectToDraw, int Weight)> ObjectsToDraw, int roll)
+        public static T PickObjectToDrawByRoll<T>(List<Weighted<T>> weightedObjects, int roll)
         {
             int cumulative = 0;
-            foreach (var (ObjectToDraw, weight) in ObjectsToDraw)
+            foreach (var entry in weightedObjects)
             {
-                cumulative += weight;
+                cumulative += entry.Weight;
                 if (roll <= cumulative)
-                    return ObjectToDraw;
+                    return entry.Value;
             }
             throw new InvalidOperationException("Erreur dans la sélection pondérée.");
         }
