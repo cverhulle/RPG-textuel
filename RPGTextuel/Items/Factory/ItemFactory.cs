@@ -19,17 +19,6 @@ namespace RPGTextuel.Items.Factory
             SetupDamagePotions.LargeDamagePotion
         };
 
-        // On liste tous les objets existants avec une chance d'obtention (poids).
-        public static readonly List<WeightedItem> weightedPotions = new List<WeightedItem>
-        {
-            new WeightedItem(SetupHealPotions.SmallHealPotion, 50),
-            new WeightedItem(SetupHealPotions.MediumHealPotion, 30),
-            new WeightedItem(SetupHealPotions.LargeHealPotion, 10),
-            new WeightedItem(SetupDamagePotions.SmallDamagePotion, 40),
-            new WeightedItem(SetupDamagePotions.MediumDamagePotion, 20),
-            new WeightedItem(SetupDamagePotions.LargeDamagePotion, 5)
-        };
-
         // On choisit aléatoirement un objet parmi une liste.
         public static Item GetRandomItem(List<Item> items)
         {
