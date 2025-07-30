@@ -10,7 +10,8 @@ namespace RPGTextuel.RandomEvent.Factory
         // Liste de tous les événements disponibles.
         private static readonly List<RandomEventClass> allEvents = new()
         {
-            new FindItemEvent(),
+            // -------------- TODO : Gérer l'événement FindItemEvent() -------------------
+            // new FindItemEvent(),
             new GainHealthEvent(),
             new LoseHealthEvent(),
             new LoseItemEvent()
