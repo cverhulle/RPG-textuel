@@ -1,6 +1,7 @@
 En cours : 
 1. Ajout d'évenements aléatoires.
 Tests crées et fonctionnels.
+Revoir l'appel de FindItemEvent dans RandomEventFactory
 
 
 Idées d'améliorations :
