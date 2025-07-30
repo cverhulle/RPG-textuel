@@ -7,6 +7,8 @@ namespace RPGTextuel.Weight.Class
         public T Value { get; }
         public int Weight { get; }
 
+        // On définit le constructeur de la classe
+        // Value a pour but de prendre un item, un événement etc...
         public Weighted(T value, int weight)
         {
             Value = value ?? throw new ArgumentNullException(nameof(value));
