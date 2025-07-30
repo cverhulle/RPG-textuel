@@ -24,7 +24,8 @@ namespace RPGTextuel.Weight
             return WeightedRandomSelectorUtils.PickObjectToDrawByRoll(weightedObjects, roll);
         }
 
-        // Méthode pour les items ayant un poids.
+        // On entre une liste d'items ayant des poids.
+        // Cette méthode permet de selectionner aléatoirement un item de la liste.
         public static Item SelectRandomItem(List<Weighted<Item>> items)
         {
             return SelectRandom(items);
