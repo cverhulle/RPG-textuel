@@ -7,7 +7,8 @@ namespace RPGTextuel.Weight
     // de façon aléatoire.
     public static class WeightedRandomSelector
     {
-        // Méthode générique pour tout type pondéré.
+        // Méthode générique pour sélectionner un élément parmi 
+        // une liste d'éléments pondérés.
         public static T SelectRandom<T>(List<Weighted<T>> weightedObjects)
         {
             // On teste la liste en entrée est valide.
