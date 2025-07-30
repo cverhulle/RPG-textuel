@@ -6,7 +6,7 @@ namespace RPGTextuel.Weight
     public static class WeightedRandomSelectorUtils
     {
         // Cette méthode permet de valider la liste d'objects en entrée.
-        // Elle retourne une erreur si elle est vide ou null
+        // Elle retourne une erreur si elle est vide ou null.
         // On retourne une erreur si un poids est strictement négatif.
         public static void ValidateInput<T>(List<Weighted<T>> weightedObjects)
         {
