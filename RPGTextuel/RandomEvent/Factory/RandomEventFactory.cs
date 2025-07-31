@@ -1,6 +1,8 @@
 using RPGTextuel.Extensions.List;
+using RPGTextuel.Items.Class;
 using RPGTextuel.RandomEvent.Class;
 using RPGTextuel.RandomEvent.SetupEvent;
+using RPGTextuel.Weight.Class;
 
 namespace RPGTextuel.RandomEvent.Factory
 {
@@ -16,6 +18,13 @@ namespace RPGTextuel.RandomEvent.Factory
             new LoseHealthEvent(),
             new LoseItemEvent()
         };
+
+        // Cette méthode permet de créer un item pour trouver un objet.
+        // En entrée, on donne la liste des objets et leur poids.
+        public static RandomEventClass CreateFindItemEvent(List<Weighted<Item>> items)
+        {
+            return new FindItemEvent(items);
+        }
 
         // On choisit aléatoirement un événement parmi une liste.
         public static RandomEventClass GetRandomEvent(List<RandomEventClass> options)
