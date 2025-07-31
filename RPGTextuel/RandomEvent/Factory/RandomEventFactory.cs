@@ -18,6 +18,7 @@ namespace RPGTextuel.RandomEvent.Factory
         }
 
         // Liste de tous les événements disponibles.
+        // On stocke des fonctions qui, lorsqu'elles sont appelées, instancient un événement avec les drop par défaut.
         private static readonly List<Func<RandomEventClass>> allEventFactoriesByDefault = new()
         {
             () => CreateFindItemEvent(ItemDropConfig.DefaultPotionDrops),
