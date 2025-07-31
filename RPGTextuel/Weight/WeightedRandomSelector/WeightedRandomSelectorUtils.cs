@@ -11,10 +11,15 @@ namespace RPGTextuel.Weight
         public static void ValidateInput<T>(List<Weighted<T>> weightedObjects)
         {
             if (weightedObjects == null || weightedObjects.Count == 0)
-                throw new ArgumentException("La liste ne peut pas être vide.");
+            {
+                Console.WriteLine("La liste des objets est vide");
+                return;
+            }
 
             if (weightedObjects.Any(i => i.Weight < 0))
+            {
                 throw new ArgumentException("Tous les poids doivent être strictement positifs.");
+            }
         }
 
         // Cette méthode permet de calculer le poids total d'une liste d'objects avec des poids.
