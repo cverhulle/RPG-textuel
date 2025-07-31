@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Items.Class;
 using RPGTextuel.RandomEvent.Class;
@@ -15,6 +16,11 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         // On ajoute la liste des items avec un poids.
         private readonly List<Weighted<Item>> _weightedItems;
+
+        // Constructeur par défaut : utilise les drops par défaut
+        public FindItemEvent() : this(ItemDropConfig.DefaultPotionDrops)
+        {
+        }
 
         // On définit le constructeur de la classe.
         public FindItemEvent(List<Weighted<Item>> weightedItems)
