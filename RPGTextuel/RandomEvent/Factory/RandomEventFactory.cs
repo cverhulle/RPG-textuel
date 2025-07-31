@@ -1,4 +1,5 @@
 using RPGTextuel.Config;
+using RPGTextuel.Config.Enum;
 using RPGTextuel.Extensions.List;
 using RPGTextuel.Items.Class;
 using RPGTextuel.RandomEvent.Class;
@@ -10,12 +11,12 @@ namespace RPGTextuel.RandomEvent.Factory
     // Cette classe permet de regrouper tous les évenements aléatoires.
     public static class RandomEventFactory
     {
-        // Cette méthode permet de créer un item pour trouver un objet.
-        // En entrée, on donne la liste des objets et leur poids.
-        public static RandomEventClass CreateFindItemEvent(List<Weighted<Item>> items)
+        // Renvoie la bonne table de loot
+        private static List<Weighted<Item>> GetItemTable(ItemDropTableType dropType) => dropType switch
         {
-            return new FindItemEvent(items);
-        }
+            ItemDropTableType.Boss => ItemDropConfig.BossItemDrops,
+            _ => ItemDropConfig.DefaultPotionDrops
+        };
 
         // Liste de tous les événements disponibles.
         // On stocke des fonctions qui, lorsqu'elles sont appelées, instancient un événement avec les drop par défaut.
