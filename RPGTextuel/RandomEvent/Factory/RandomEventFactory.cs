@@ -27,7 +27,7 @@ namespace RPGTextuel.RandomEvent.Factory
             (_) => new GainHealthEvent(),
             (_) => new LoseHealthEvent(),
             (_) => new LoseItemEvent(),
-            (_) => new NoEvent()
+            (_) => new PeacefulDayEvent()
         };
 
         // On choisit aléatoirement un événement parmi une liste.
@@ -35,7 +35,7 @@ namespace RPGTextuel.RandomEvent.Factory
         {
             if (allEventFactories == null || allEventFactories.Count == 0)
             {
-                return new NoEvent();
+                return new PeacefulDayEvent();
             }
             var factory = allEventFactories.PickRandom();
             return factory(dropType);
