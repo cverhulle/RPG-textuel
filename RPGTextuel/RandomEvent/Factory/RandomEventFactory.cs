@@ -26,7 +26,8 @@ namespace RPGTextuel.RandomEvent.Factory
             (dropType) => new FindItemEvent(GetItemTable(dropType)),
             (_) => new GainHealthEvent(),
             (_) => new LoseHealthEvent(),
-            (_) => new LoseItemEvent()
+            (_) => new LoseItemEvent(),
+            (_) => new NoEvent()
         };
 
         // On choisit aléatoirement un événement parmi une liste.
@@ -34,10 +35,8 @@ namespace RPGTextuel.RandomEvent.Factory
         {
             if (allEventFactories == null || allEventFactories.Count == 0)
             {
-                Console.WriteLine("Aucun événement disponible à sélectionner.");
                 return new NoEvent();
             }
-
             var factory = allEventFactories.PickRandom();
             return factory(dropType);
         }
