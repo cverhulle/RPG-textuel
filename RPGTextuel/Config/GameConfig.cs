@@ -14,4 +14,4 @@ namespace RPGTextuel.Config
         // Taille Maximum pour le nom des personnages.
         public const int MaxNameLength = 15;
     }
-}
+} 
