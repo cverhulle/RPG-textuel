@@ -35,7 +35,7 @@ namespace RPGTextuel.RandomEvent.Factory
             if (allEventFactories == null || allEventFactories.Count == 0)
             {
                 Console.WriteLine("Aucun événement disponible à sélectionner.");
-                // return new NoEvent();
+                return new NoEvent();
             }
 
             var factory = allEventFactories.PickRandom();
