@@ -30,13 +30,16 @@ namespace RPGTextuel.RandomEvent.Factory
         };
 
         // On choisit aléatoirement un événement parmi une liste.
-        public static RandomEventClass GetRandomEvent(List<RandomEventClass> options)
+        public static RandomEventClass GetRandomEvent(ItemDropTableType dropType = ItemDropTableType.Default)
         {
-            if (options == null || options.Count == 0)
+            if (allEventFactories == null || allEventFactories.Count == 0)
             {
-                throw new ArgumentException("La liste ne peut pas être vide");
+                Console.WriteLine("Aucun événement disponible à sélectionner.");
+                // return new NoEventAvailable();
             }
-            return options.PickRandom();
+
+            var factory = allEventFactories.PickRandom();
+            return factory(dropType);
         }
     }
 }
