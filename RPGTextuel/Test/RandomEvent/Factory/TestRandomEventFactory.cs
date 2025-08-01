@@ -42,5 +42,16 @@ namespace RPGTextuel.Test.RandomEvents.Factory
 
             GameUtils.WaitForUser();
         }
+
+        // Cette méthode permet de tester un événement aléatoire parmi tous ceux définis
+        // On choisit les loot de boss.
+        public static void TestRandomEventFactoryBossLoot()
+        {
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+
+            RandomEventFactoryTestUtils(player, ItemDropTableType.Boss);
+
+            GameUtils.WaitForUser();
+        }
     }
 }
