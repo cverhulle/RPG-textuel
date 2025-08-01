@@ -16,13 +16,13 @@ namespace RPGTextuel.Test.RandomEvents
 
             FindItemEvent findItemEvent = new FindItemEvent();
             findItemEvent.Trigger(player);
-            
+
             Console.WriteLine("Inventaire final :");
             player.Inventory.DisplayInventory();
         }
 
         // Méthode utilitaire pour tester FindItemEvent avec la table d'objet de boss.
-        public static void FindItemEventWithCustomLootUtils(Player player)
+        public static void FindItemEventWithBossItemDrops(Player player)
         {
             Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
