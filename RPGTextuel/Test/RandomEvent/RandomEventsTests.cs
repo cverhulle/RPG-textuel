@@ -20,9 +20,9 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
         public static void TestLoseItemEventWithInventoryNotEmpty()
         {
-            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            RandomEventsTestsUtils.FindItemEventUtils(player);
+            RandomEventsTestsUtils.LoseHealthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
