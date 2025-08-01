@@ -1,4 +1,3 @@
-using RPGTextuel.Test.Game.TestGameUtils;
 using RPGTextuel.Test.RandomEvents;
 
 namespace RPGTextuel.Test
