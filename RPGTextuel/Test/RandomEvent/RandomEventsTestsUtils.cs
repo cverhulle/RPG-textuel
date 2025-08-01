@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Extensions.Characters;
 using RPGTextuel.RandomEvent.SetupEvent;
@@ -7,13 +8,30 @@ namespace RPGTextuel.Test.RandomEvents
     // Cette classe regroupe les méthodes d'aide liées aux évenements aléatoires.
     public static class RandomEventsTestsUtils
     {
-        // Méthode utilitaire liée à l'évenement FindItemEvent
-        public static void FindItemEventUtils(Player player)
+        // Méthode utilitaire liée à l'évenement FindItemEvent avec les items par défaut.
+        public static void FindItemEventUtilsByDefault(Player player)
         {
             Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
+
             FindItemEvent findItemEvent = new FindItemEvent();
             findItemEvent.Trigger(player);
+            
+            Console.WriteLine("Inventaire final :");
+            player.Inventory.DisplayInventory();
+        }
+
+        // Méthode utilitaire pour tester FindItemEvent avec la table d'objet de boss.
+        public static void FindItemEventWithCustomLootUtils(Player player)
+        {
+            Console.WriteLine("Inventaire initial :");
+            player.Inventory.DisplayInventory();
+
+            // On utilise la table BossItemDrops
+            var customLootTable = ItemDropConfig.BossItemDrops;
+            FindItemEvent findItemEvent = new FindItemEvent(customLootTable);
+            findItemEvent.Trigger(player);
+
             Console.WriteLine("Inventaire final :");
             player.Inventory.DisplayInventory();
         }
