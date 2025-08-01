@@ -68,5 +68,22 @@ namespace RPGTextuel.Test.RandomEvents
             Console.WriteLine("Santé final :");
             player.PrintHealthBar();
         }
+
+        // Méthode utilitaire liée à l'évenement PeacefulDayEvent
+        public static void PeacefulDayEventUtils(Player player)
+        {
+            Console.WriteLine("Santé initiale :");
+            player.PrintHealthBar();
+            Console.WriteLine("Inventaire initial :");
+            player.Inventory.DisplayInventory();
+
+            PeacefulDayEvent peacefulDayEvent = new PeacefulDayEvent();
+            peacefulDayEvent.Trigger(player);
+
+            Console.WriteLine("\nSanté finale :");
+            player.PrintHealthBar();
+            Console.WriteLine("Inventaire final :");
+            player.Inventory.DisplayInventory();
+        }
     }
 }
