@@ -1,8 +1,10 @@
 using RPGTextuel.Config.Enum;
 using RPGTextuel.Core;
 using RPGTextuel.Extensions.Characters;
+using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.RandomEvent.Class;
 using RPGTextuel.RandomEvent.Factory;
+using RPGTextuel.Test.Core;
 
 namespace RPGTextuel.Test.RandomEvents.Factory
 {
@@ -10,7 +12,7 @@ namespace RPGTextuel.Test.RandomEvents.Factory
     public static class TestRandomEventFactory
     {
         // Méthode utilitaire pour tester l'obtention d'un événement aléatoire via la factory
-        public static void RandomEventFactoryTestUtils(Player player, ItemDropTableType dropType = ItemDropTableType.Default)
+        private static void RandomEventFactoryTestUtils(Player player, ItemDropTableType dropType = ItemDropTableType.Default)
         {
             Console.WriteLine("Santé initiale :");
             player.PrintHealthBar();
@@ -28,6 +30,17 @@ namespace RPGTextuel.Test.RandomEvents.Factory
             player.PrintHealthBar();
             Console.WriteLine("Inventaire après événement :");
             player.Inventory.DisplayInventory();
+        }
+
+        // Cette méthode permet de tester un événement aléatoire parmi tous ceux définis
+        // On choisit les loot par défaut.
+        public static void TestRandomEventFactoryDefaultLoot()
+        {
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
+
+            RandomEventFactoryTestUtils(player, ItemDropTableType.Default);
+
+            GameUtils.WaitForUser();
         }
     }
 }
