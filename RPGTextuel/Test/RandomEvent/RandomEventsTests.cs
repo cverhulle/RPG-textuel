@@ -17,6 +17,16 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Cette méthode permet de tester l'évenement FindItemEvent avec le drop de boss.
+        public static void TestFindItemEventWithBossItemDrop()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.FindItemEventWithBossItemDrops(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
         public static void TestLoseItemEventWithInventoryNotEmpty()
         {
