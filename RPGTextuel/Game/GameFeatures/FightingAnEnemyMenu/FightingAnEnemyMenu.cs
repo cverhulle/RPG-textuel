@@ -69,7 +69,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                     case 4:
                         if (randomEventAlreadyTried)
                         {
-                            Console.WriteLine("Vous avez déjà tenté votre chance pour cet affrontement !");
+                            FightingAnEnemyMenuUtils.ChooseRandomEventButAlreadyTried();
                         }
                         else
                         {
