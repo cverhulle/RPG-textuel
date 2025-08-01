@@ -73,12 +73,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                         }
                         else
                         {
-                            Console.Clear();
-                            Console.WriteLine("Vous tentez votre chance avec un événement aléatoire...");
-                            var randomEvent = RandomEventFactory.GetRandomEvent();
-                            Console.WriteLine($"\nÉvénement : {randomEvent.Name}");
-                            Console.WriteLine($"{randomEvent.Description}\n");
-                            randomEvent.Trigger(player);
+                            FightingAnEnemyMenuUtils.ChooseRandomEvent(player);
                             randomEventAlreadyTried = true;
                         }
                         GameUtils.WaitForUser();
