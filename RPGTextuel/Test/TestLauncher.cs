@@ -1,5 +1,6 @@
 using RPGTextuel.Test.RandomEvents;
 using RPGTextuel.Test.RandomEvents.Factory;
+using RPGTextuel.Test.Weight;
 
 namespace RPGTextuel.Test
 {
@@ -9,7 +10,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            RandomEventsTests.TestPeacefulDayEvent();
+            TestWeightedRandomSelector.TestSelectRandom();
         }
     }
 }
