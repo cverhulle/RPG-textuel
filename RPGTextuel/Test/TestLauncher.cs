@@ -1,4 +1,5 @@
 using RPGTextuel.Test.RandomEvents;
+using RPGTextuel.Test.RandomEvents.Factory;
 
 namespace RPGTextuel.Test
 {
@@ -8,7 +9,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            RandomEventsTests.TestFindItemEventWithBossItemDrop();
+            TestRandomEventFactory.TestRandomEventFactoryDefaultLoot();
         }
     }
 }
