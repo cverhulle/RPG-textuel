@@ -9,7 +9,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestRandomEventFactory.TestRandomEventFactoryDefaultLoot();
+            RandomEventsTests.TestPeacefulDayEvent();
         }
     }
 }

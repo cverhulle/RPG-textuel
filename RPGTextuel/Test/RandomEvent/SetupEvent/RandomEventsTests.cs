@@ -70,9 +70,19 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement LoseHealthEvent
         public static void TestLoseHealthEvent()
         {
-        Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.LoseHealthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+        
+        // Cette méthode permet de tester PeacefulDayEvent.
+        public static void TestPeacefulDayEvent()
+        {
+            Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(20);
+
+            RandomEventsTestsUtils.PeacefulDayEventUtils(player);
 
             GameUtils.WaitForUser();
         }
