@@ -14,6 +14,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
             "Passer au combat suivant.",
             "Statistiques",
             "Voir l'inventaire.",
+            "Tenter un événement aléatoire",
             "Quitter le jeu"
         };
 
