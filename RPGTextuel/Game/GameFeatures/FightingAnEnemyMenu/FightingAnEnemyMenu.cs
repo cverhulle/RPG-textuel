@@ -3,6 +3,7 @@ using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
 using RPGTextuel.Game.GameUtilsNamespace;
+using RPGTextuel.RandomEvent.Factory;
 
 namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 {
@@ -33,6 +34,9 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
         // Elle retourne un booléan déterminant si l'utilisateur veut continuer de jouer ou non.
         public static Boolean HandleMainMenu(Player player, Enemy enemy)
         {
+            // Cette variable permet de controler si l'utilisateur a déjà tenté l'événement aléatoire ou non.
+            bool randomEventAlreadyTried = false;
+
             // On crée une boucle infinie. Tant que le combat n'est pas choisi
             // Ou que le joueur ne quitte pas le jeu, on continue !
             while (true)
@@ -60,8 +64,28 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                         InventoryInteraction.PromptUseItem(player);
                         break;
 
-                    // Fermeture du jeu
+                    // On lance un événement aléatoire.
+                    // Disponible une seule fois entre chaque combat.
                     case 4:
+                        if (randomEventAlreadyTried)
+                        {
+                            Console.WriteLine("Vous avez déjà tenté votre chance pour cet affrontement !");
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Vous tentez votre chance avec un événement aléatoire...");
+                            var randomEvent = RandomEventFactory.GetRandomEvent();
+                            Console.WriteLine($"\nÉvénement : {randomEvent.Name}");
+                            Console.WriteLine($"{randomEvent.Description}\n");
+                            randomEvent.Trigger(player);
+                            randomEventAlreadyTried = true;
+                        }
+                        GameUtils.WaitForUser();
+                        break;
+
+                    // Fermeture du jeu
+                    case 5:
                         return true;
 
                     // Si la réponse n'est pas valide, on recommence la boucle.
