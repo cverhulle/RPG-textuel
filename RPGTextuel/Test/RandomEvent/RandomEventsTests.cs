@@ -7,12 +7,12 @@ namespace RPGTextuel.Test.RandomEvents
     // Cette classe regroupe les tests liés aux évenements aléatoires
     public static class RandomEventsTests
     {
-        // Cette méthode permet de tester l'évenement FindItemEvent
-        public static void TestFindItemEvent()
+        // Cette méthode permet de tester l'évenement FindItemEvent par défaut.
+        public static void TestFindItemEventByDefault()
         {
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
-            RandomEventsTestsUtils.FindItemEventUtils(player);
+            RandomEventsTestsUtils.FindItemEventUtilsByDefault(player);
 
             GameUtils.WaitForUser();
         }
