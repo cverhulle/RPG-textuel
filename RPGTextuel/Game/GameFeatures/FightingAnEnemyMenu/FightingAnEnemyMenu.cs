@@ -21,7 +21,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 
         // Cette méthode affiche le menu principal.
         // Elle retourne le choix, valide, de l'utilisateur
-        public static int AskMainMenuChoice()
+        private static int AskMainMenuChoice()
         {
             // On nettoie la console.
             Console.Clear();
