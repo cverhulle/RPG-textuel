@@ -2,6 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
+using RPGTextuel.Game.GameFeatures.RandomEvents;
 using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.RandomEvent.Factory;
 
@@ -17,19 +18,17 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         {
             // On sauvegarde le nombre d'ennemis que l'on combat.
             int fightNumber = 0;
-            
+
             // Pour chaque ennemi dans la liste
             foreach (Enemy enemy in ennemies)
             {
                 // 🔹 Déclenche un événement aléatoire avant le combat sauf pour le premier ennemi
                 if (fightNumber > 0)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Un événement survient avant votre prochain combat...");
-                    var randomEvent = RandomEventFactory.GetRandomEvent();
-                    Console.WriteLine($"\nÉvénement : {randomEvent.Name}");
-                    Console.WriteLine($"{randomEvent.Description}\n");
-                    randomEvent.Trigger(player);
+                    RandomEventsInGame.TriggerRandomEventWithIntro(
+                        player,
+                        "Un événement survient avant votre prochain combat..."
+                    );
                     GameUtils.WaitForUser();
                 }
 
