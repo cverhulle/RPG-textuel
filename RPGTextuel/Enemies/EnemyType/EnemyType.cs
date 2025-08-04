@@ -6,7 +6,6 @@ namespace RPGTextuel.Enemies.EnemyTypes
         GoblinMinion,
         Goblin,
         GoblinChief,
-        Ogre,
         RedDragon
     }
 }
