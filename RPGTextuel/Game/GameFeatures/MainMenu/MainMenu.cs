@@ -1,9 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
-using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
-using RPGTextuel.Game.GameFeatures.RandomEvents;
-using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.MainMenu
 {
@@ -27,17 +24,9 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
 
-                // Si le joueur quitte, on arrête la partie
-                if (wantsToQuit)
+                // On "regarde" si la partie doit s'arrêter.
+                if (MainMenuUtils.ShouldEndGame(wantsToQuit, player))
                 {
-                    CloseGame.CloseTheGame();
-                    return true;
-                }
-
-                // Si le joueur meurt, on arrête la partie
-                if (!player.IsAlive)
-                {
-                    Console.WriteLine("Vous êtes mort. Fin de la partie.");
                     return true;
                 }
 
