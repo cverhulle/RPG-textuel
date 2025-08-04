@@ -30,6 +30,23 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
             return GameInputUser.AskMenuChoice(MainMenuChoice, "MENU PRINCIPAL");
         }
 
+        // Cette méthode permet de gérer le cas où l'utilisateur choisit l'événement aléatoire.
+        // Disponible une seule fois entre chaque combat.
+        private static void HandleRandomEvent(Player player, ref bool alreadyTried)
+        {
+            if (alreadyTried)
+            {
+                FightingAnEnemyMenuUtils.ChooseRandomEventButAlreadyTried();
+            }
+            else
+            {
+                FightingAnEnemyMenuUtils.ChooseRandomEvent(player);
+                alreadyTried = true;
+            }
+
+            GameUtils.WaitForUser();
+        }
+
         // Cette méthode affiche le menu de combat contre un ennemi donné
         // Elle retourne un booléan déterminant si l'utilisateur veut continuer de jouer ou non.
         public static Boolean HandleMainMenu(Player player, Enemy enemy)
@@ -64,19 +81,9 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                         InventoryInteraction.PromptUseItem(player);
                         break;
 
-                    // On lance un événement aléatoire.
-                    // Disponible une seule fois entre chaque combat.
+                    // On gère le cas de l'événement aléatoire
                     case 4:
-                        if (randomEventAlreadyTried)
-                        {
-                            FightingAnEnemyMenuUtils.ChooseRandomEventButAlreadyTried();
-                        }
-                        else
-                        {
-                            FightingAnEnemyMenuUtils.ChooseRandomEvent(player);
-                            randomEventAlreadyTried = true;
-                        }
-                        GameUtils.WaitForUser();
+                        HandleRandomEvent(player, ref randomEventAlreadyTried);
                         break;
 
                     // Fermeture du jeu
