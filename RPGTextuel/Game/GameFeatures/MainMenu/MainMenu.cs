@@ -15,12 +15,12 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         // Elle retourne, en booléan, l'arrêt, ou non, de la partie.
         public static Boolean HandleMainMenu(Player player, List<Enemy> ennemies)
         {
+            // On sauvegarde le nombre d'ennemis que l'on combat.
+            int fightNumber = 0;
+            
             // Pour chaque ennemi dans la liste
             foreach (Enemy enemy in ennemies)
             {
-                // On sauvegarde le nombre d'ennemis que l'on combat.
-                int fightNumber = 0;
-
                 // 🔹 Déclenche un événement aléatoire avant le combat sauf pour le premier ennemi
                 if (fightNumber > 0)
                 {
