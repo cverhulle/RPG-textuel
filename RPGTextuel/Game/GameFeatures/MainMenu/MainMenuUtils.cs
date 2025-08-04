@@ -26,6 +26,24 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             ShowEnemyIntroduction(enemy);
         }
 
+        // Méthode utilitaire permettant de savoir si l'on doit arreter la partie.
+        // On retourne True si c'est le cas et, false sinon.
+        public static bool ShouldEndGame(bool wantsToQuit, Player player)
+        {
+            if (wantsToQuit)
+            {
+                CloseGame.CloseTheGame();
+                return true;
+            }
+
+            if (!player.IsAlive)
+            {
+                Console.WriteLine("Vous êtes mort. Fin de la partie.");
+                return true;
+            }
+            return false;
+        }
+
         // Méthode utilitaire pour gérer l'introduction du nouvel ennemi entre chaque combat.
         private static void ShowEnemyIntroduction(Enemy enemy)
         {
