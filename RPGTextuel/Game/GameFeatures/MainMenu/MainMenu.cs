@@ -21,18 +21,8 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // Pour chaque ennemi dans la liste
             foreach (Enemy enemy in ennemies)
             {
-                // 🔹 Déclenche un événement aléatoire avant le combat sauf pour le premier ennemi
-                if (fightNumber > 0)
-                {
-                    RandomEventsInGame.TriggerRandomEventWithIntro(
-                        player,
-                        "Un événement survient avant votre prochain combat..."
-                    );
-                    GameUtils.WaitForUser();
-                }
-
-                // On affiche un message indiquant qu'on passe au combat suivant.
-                MainMenuUtils.ShowEnemyIntroduction(enemy);
+                // Cette méthode s'occupe de gérer les événements entre les combats
+                MainMenuUtils.HandleEventsBetweenFights(fightNumber, player, enemy);
 
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
