@@ -6,4 +6,4 @@ Gestion des affrontements :
 Idées d'améliorations :
 1. Ajout d'alliés
 2. Ajout de différentes classes 
-3. Coups spéciaux / Critique
+3. Coups spéciaux / Critiques
