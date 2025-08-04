@@ -6,7 +6,7 @@ namespace RPGTextuel.SetupEnemies
     // Cette classe permet de créer les ennemis de type "GoblinMinion".
     public static class SetupGoblinMinions
     {
-        // Créeons la liste des ennemies de type "GoblinMinion"
+        // Créeons la liste des ennemis de type "GoblinMinion"
         public static List<GoblinMinion> GoblinMinions = new List<GoblinMinion>
         {
             new GoblinMinion("Virk", 20, 4, 20),

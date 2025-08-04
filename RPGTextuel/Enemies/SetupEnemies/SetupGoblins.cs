@@ -3,10 +3,10 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
-    // Cette classe permet de créer les ennemis que l'on affrontera
+    // Cette classe permet de créer les ennemis de type gobelins que l'on affrontera
     public static class SetupGoblins
     {
-        // Créeons la liste des ennemies de type "Goblin"
+        // Créeons la liste des ennemis de type "Goblin"
         public static List<Goblin> Goblins = new List<Goblin>
         {
             new Goblin("Snot", 36, 8, 36),

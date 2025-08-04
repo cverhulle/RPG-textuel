@@ -3,10 +3,10 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
-    // Cette classe permet de créer les ennemis que l'on affrontera
+    // Cette classe permet de créer les ennemis de type chef gobelin que l'on affrontera
     public static class SetupGoblinChiefs
     {
-        // Créeons la liste des ennemies de type "GoblinChief"
+        // Créeons la liste des ennemis de type "GoblinChief"
         public static List<GoblinChief> GoblinChiefs = new List<GoblinChief>
         {
             new GoblinChief("Zonva", 60, 15, 60),
