@@ -15,7 +15,8 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
                 {
                     SetupGoblinMinions.GetRandomGoblinMinion(),
                     SetupGoblins.GetRandomGoblin(),
-                    SetupGoblinChiefs.GetRandomGoblinChief()
+                    SetupGoblinChiefs.GetRandomGoblinChief(),
+                    SetupRedDragons.GetRandomRedDragon()
                 };
         }        
     }
