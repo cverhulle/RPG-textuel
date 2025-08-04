@@ -55,6 +55,9 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                     Console.WriteLine("Vous êtes mort. Fin de la partie.");
                     return true;
                 }
+
+                // Après chaque combat, on augmente le compteur de 1.
+                fightNumber++;
             }
             return false;
         }
