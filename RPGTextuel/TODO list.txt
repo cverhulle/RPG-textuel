@@ -1,11 +1,9 @@
 En cours : 
-1. Ajout d'évenements aléatoires.
-Tests crées et fonctionnels.
-
+Gestion des affrontements : 
+    -> Affronter plusieurs ennemis en combat.
+    -> Ajout des 2 types non utilisés.
 
 Idées d'améliorations :
-1. Affronter plusieurs ennemis en combat
-2. Ajout d'alliés
-3. Niveaux de difficultés
-4. Ajout de différentes classes 
-5. Coups spéciaux
+1. Ajout d'alliés
+2. Ajout de différentes classes 
+3. Coups spéciaux
