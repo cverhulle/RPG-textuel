@@ -2,6 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
+using RPGTextuel.Game.GameFeatures.RandomEvents;
 using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.RandomEvent.Factory;
 
@@ -36,11 +37,13 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
         {
             if (alreadyTried)
             {
-                FightingAnEnemyMenuUtils.ChooseRandomEventButAlreadyTried();
+                RandomEventsInGame.TriggerRandomEventButAlreadyTried();
             }
             else
             {
-                FightingAnEnemyMenuUtils.ChooseRandomEvent(player);
+                RandomEventsInGame.TriggerRandomEventWithIntro(
+                    player,
+                    "Vous tentez votre chance avec un événement aléatoire...");
                 alreadyTried = true;
             }
 

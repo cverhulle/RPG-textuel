@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Factory;
 namespace RPGTextuel.Game.GameFeatures.RandomEvents
 {
     // Cette classe s'occupe de la gestion des évenements aléatoires.
-    public static class RandomEvents
+    public static class RandomEventsInGame
     {
         // Cette méthode se déclenche lorsque l'utilisateur choisit l'option "Tenter un événement"
         // Cependant, il a déjà utilisé sa chance pour ce combat.
