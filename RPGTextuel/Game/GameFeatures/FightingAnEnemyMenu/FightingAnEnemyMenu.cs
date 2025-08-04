@@ -4,7 +4,6 @@ using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
 using RPGTextuel.Game.GameFeatures.RandomEvents;
 using RPGTextuel.Game.GameUtilsNamespace;
-using RPGTextuel.RandomEvent.Factory;
 
 namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 {
