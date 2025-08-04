@@ -10,7 +10,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     public static class MainMenuUtils
     {
         // Méthode utilitaire pour gérer les événements entre les combats
-        public static void HandleEventsBetweenFights(int fightNumber, Player player, Enemy enemy)
+        public static void HandleEventsBetweenFights(Player player, Enemy enemy, int fightNumber, string messageIntroFight)
         {
             // Déclenche un événement aléatoire avant le combat sauf pour le premier ennemi
             if (fightNumber > 0)
@@ -23,7 +23,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             }
 
             // On affiche un message indiquant qu'on passe au combat suivant.
-            ShowEnemyIntroduction(enemy);
+            ShowEnemyIntroduction(enemy, messageIntroFight);
         }
 
         // Méthode utilitaire permettant de savoir si l'on doit arreter la partie.
@@ -45,10 +45,10 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         }
 
         // Méthode utilitaire pour gérer l'introduction du nouvel ennemi entre chaque combat.
-        private static void ShowEnemyIntroduction(Enemy enemy)
+        private static void ShowEnemyIntroduction(Enemy enemy, string message)
         {
             Console.Clear();
-            Console.WriteLine("Un nouvel ennemi approche !");
+            Console.WriteLine(message);
             enemy.PrintStats();
             GameUtils.WaitForUser();
         }

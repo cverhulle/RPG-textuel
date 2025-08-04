@@ -19,7 +19,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             foreach (Enemy enemy in ennemies)
             {
                 // Cette méthode s'occupe de gérer les événements entre les combats
-                MainMenuUtils.HandleEventsBetweenFights(fightNumber, player, enemy);
+                MainMenuUtils.HandleEventsBetweenFights(player, enemy, fightNumber, "Un nouvel ennemi approche");
 
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
