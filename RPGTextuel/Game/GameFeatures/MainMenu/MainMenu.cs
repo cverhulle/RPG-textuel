@@ -11,15 +11,6 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     // Il apparaît entre chaque combat.
     public static class MainMenu
     {
-        // Méthode utilitaire pour gérer l'introduction du nouvel ennemi entre chaque combat.
-        private static void ShowEnemyIntroduction(Enemy enemy)
-        {
-            Console.Clear();
-            Console.WriteLine("Un nouvel ennemi approche !");
-            enemy.PrintStats();
-            GameUtils.WaitForUser();
-        }
-
         // Cette méthode lance la boucle de jeu.
         // Elle retourne, en booléan, l'arrêt, ou non, de la partie.
         public static Boolean HandleMainMenu(Player player, List<Enemy> ennemies)
@@ -41,7 +32,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 }
 
                 // On affiche un message indiquant qu'on passe au combat suivant.
-                ShowEnemyIntroduction(enemy);
+                MainMenuUtils.ShowEnemyIntroduction(enemy);
 
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
