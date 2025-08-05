@@ -22,6 +22,17 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // On déclenche un événement avant chaque combat sauf le premier.
             HandleEventsBetweenFights(player, fightNumber);
 
+            // On présente le nouvel ennemi
+            HandleEnemyPresentation(enemy, messageIntroFight, isFinalBoss);
+        }
+
+        // Cette méthode permet de gérer l'affichage de l'introduction de l'ennemi
+        private static void HandleEnemyPresentation(
+            Enemy enemy,
+            string messageIntroFight = "Un nouvel ennemi approche",
+            bool isFinalBoss = false 
+        )
+        {
             // Si l'on affronte le boss final, on personnalise le message.
             if (isFinalBoss)
             {
