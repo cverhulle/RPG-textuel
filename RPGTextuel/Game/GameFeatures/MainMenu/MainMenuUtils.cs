@@ -32,13 +32,17 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // Si l'on affronte le boss final, on personnalise le message.
             if (isFinalBoss)
             {
-                ShowEnemyIntroduction(enemy, $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !");
+                GameDisplay.ShowEnemyStatsWithAMessage
+                (
+                    enemy,
+                    $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !"
+                );
             }
 
             // On affiche un message indiquant qu'on passe au combat suivant.
             else
             {
-                ShowEnemyIntroduction(enemy, messageIntroFight);
+                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight);
             }
         }
 
@@ -58,15 +62,6 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 return true;
             }
             return false;
-        }
-
-        // Méthode utilitaire pour gérer l'introduction du nouvel ennemi entre chaque combat.
-        private static void ShowEnemyIntroduction(Enemy enemy, string message)
-        {
-            Console.Clear();
-            Console.WriteLine(message);
-            enemy.PrintStats();
-            GameUtils.WaitForUser();
         }
     }
 }
