@@ -32,7 +32,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // Si l'on affronte le boss final, on personnalise le message.
             if (isFinalBoss)
             {
-                ShowEnemyIntroduction(enemy, $"🔥 Un grondement sourd secoue les environs... \n {enemy.Name} approche ! Le combat final va commencer !");
+                ShowEnemyIntroduction(enemy, $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !");
             }
 
             // On affiche un message indiquant qu'on passe au combat suivant.
