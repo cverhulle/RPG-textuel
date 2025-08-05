@@ -16,7 +16,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
 
             bool result = MainMenuUtils.ShouldEndGame(wantsToQuit, player);
 
-            Console.WriteLine("Résultat attendu : false ; Résultat obtenu ${result}");
+            Console.WriteLine($"Résultat attendu : false ; Résultat obtenu {result}");
         }
 
         // Cette méthode permet de tester ShouldEndGame quand le joueur est mort
@@ -28,7 +28,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
 
             bool result = MainMenuUtils.ShouldEndGame(wantsToQuit, player);
 
-            Console.WriteLine("Résultat attendu : true ; Résultat obtenu ${result}");
+            Console.WriteLine($"Résultat attendu : true ; Résultat obtenu {result}");
         }
 
         // Cette méthode permet de tester ShouldEndGame quand le joueur veut quitter
@@ -40,7 +40,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
 
             bool result = MainMenuUtils.ShouldEndGame(wantsToQuit, player);
 
-            Console.WriteLine("Résultat attendu : true ; Résultat obtenu ${result}");
+            Console.WriteLine($"Résultat attendu : true ; Résultat obtenu {result}");
         }
     }
 }
