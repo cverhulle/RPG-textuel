@@ -72,7 +72,15 @@ namespace RPGTextuel.Game.GameUtilsNamespace
                 }
 
             GameUtils.WaitForUser();
+        }
 
+        // Cette méthode permet d'afficher un message et les stats d'un ennemi.
+        public static void ShowEnemyStatsWithAMessage(Enemy enemy, string message)
+        {
+            Console.Clear();
+            Console.WriteLine(message);
+            enemy.PrintStats();
+            GameUtils.WaitForUser();
         }
 
         // Cette méthode affiche permet d'afficher une liste d'options.
