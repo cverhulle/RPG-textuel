@@ -113,5 +113,19 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintStats(enemy);
         }
+
+        // Test de ShowEnemyStatsWithAMessage()
+        public static void TestShowEnemyStatsWithAMessage()
+        {
+            Console.WriteLine("=== Test de ShowEnemyStatsWithAMessage ===");
+            Enemy enemy = EnemyTestFactory.CreateGoblin();
+            string testMessage = "Message de test";
+
+            Console.WriteLine("\nRésultat attendu :\n- Affichage de Message de test \n- Puis Affichage des stats de l'ennemi \n");
+            GameUtils.WaitForUser("Lancer le test");
+
+            Console.WriteLine("=== Résultat obtenu ===");
+            GameDisplay.ShowEnemyStatsWithAMessage(enemy, testMessage);
+        }
     }
 }
