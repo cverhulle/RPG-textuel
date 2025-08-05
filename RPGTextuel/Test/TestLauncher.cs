@@ -1,3 +1,4 @@
+using RPGTextuel.Test.Game.TestGameUtils;
 using RPGTextuel.Test.RandomEvents;
 using RPGTextuel.Test.RandomEvents.Factory;
 using RPGTextuel.Test.Weight;
@@ -10,7 +11,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestWeightedRandomSelector.TestSelectRandom();
+            TestGameDisplay.TestShowEnemyStatsWithAMessage();
         }
     }
 }

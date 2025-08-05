@@ -121,7 +121,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Enemy enemy = EnemyTestFactory.CreateGoblin();
             string testMessage = "Message de test";
 
-            Console.WriteLine("\nRésultat attendu :\n- Affichage de Message de test \n- Puis Affichage des stats de l'ennemi \n");
+            Console.WriteLine("\nRésultat attendu :\n- Affichage de Message de test \n- Puis Affichage des stats de l'ennemi");
             GameUtils.WaitForUser("Lancer le test");
 
             Console.WriteLine("=== Résultat obtenu ===");
