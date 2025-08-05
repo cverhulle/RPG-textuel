@@ -9,7 +9,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     // Cette classe s'occupe de gérer les méthodes utilitaires de MainMenu.
     public static class MainMenuUtils
     {
-        // Méthode utilitaire pour gérer les événements entre les combats
+        // Méthode utilitaire pour la gestion avant un combat.
         public static void HandleBetweenFights
         (
             Player player,
@@ -19,15 +19,8 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             bool isFinalBoss = false
         )
         {
-            // Déclenche un événement aléatoire avant le combat sauf pour le premier ennemi
-            if (fightNumber > 0)
-            {
-                RandomEventsInGame.TriggerRandomEventWithIntro(
-                    player,
-                    "Un événement survient avant votre prochain combat..."
-                );
-                GameUtils.WaitForUser();
-            }
+            // On déclenche un événement avant chaque combat sauf le premier.
+            HandleEventsBetweenFights(player, fightNumber);
 
             // Si l'on affronte le boss final, on personnalise le message.
             if (isFinalBoss)
@@ -43,6 +36,19 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             else
             {
                 GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight);
+            }
+        }
+
+        // Cette méthode permet de déclencher un événement aléatoire avant le combat sauf pour le premier ennemi
+        private static void HandleEventsBetweenFights(Player player, int fightNumber)
+        {
+            if (fightNumber > 0)
+            {
+                RandomEventsInGame.TriggerRandomEventWithIntro(
+                    player,
+                    "Un événement survient avant votre prochain combat..."
+                );
+                GameUtils.WaitForUser();
             }
         }
 
