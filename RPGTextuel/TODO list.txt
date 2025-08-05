@@ -1,9 +1,15 @@
 En cours : 
-Gestion des affrontements : 
-    -> Affronter plusieurs ennemis en combat.
-    -> Ajout des 2 types non utilisés.
+1) Test des nouvelles fonctionnalités
+
+2) Coup Critiques : 
+    -> Création de la stat pour joueur et ennemi    
+    -> Evenement aléatoire pour l'augmenter
+    -> Evenement aléatoire pour la diminuer
+    -> Gestion en combat.
+
+
 
 Idées d'améliorations :
 1. Ajout d'alliés
 2. Ajout de différentes classes 
-3. Coups spéciaux / Critiques
+3. Coups spéciaux
