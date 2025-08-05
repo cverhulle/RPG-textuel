@@ -38,6 +38,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
             bool wantsToQuit = true;
 
+            Console.WriteLine($"Résultat attendu : Message de sortie du jeu");
             bool result = MainMenuUtils.ShouldEndGame(wantsToQuit, player);
 
             Console.WriteLine($"Résultat attendu : true ; Résultat obtenu {result}");
