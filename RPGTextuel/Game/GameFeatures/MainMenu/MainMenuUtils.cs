@@ -10,7 +10,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     public static class MainMenuUtils
     {
         // Méthode utilitaire pour gérer les événements entre les combats
-        public static void HandleEventsBetweenFights
+        public static void HandleBetweenFights
         (
             Player player,
             Enemy enemy,

@@ -22,7 +22,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 bool isFinalBoss = (fightNumber == ennemies.Count - 1);
 
                 // Cette méthode s'occupe de gérer les événements entre les combats
-                MainMenuUtils.HandleEventsBetweenFights(player, enemy, fightNumber, "Un nouvel ennemi approche", isFinalBoss);
+                MainMenuUtils.HandleBetweenFights(player, enemy, fightNumber, "Un nouvel ennemi approche", isFinalBoss);
 
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
