@@ -1,3 +1,4 @@
+using RPGTextuel.Test.Game.TestGameFeatures;
 using RPGTextuel.Test.Game.TestGameUtils;
 using RPGTextuel.Test.RandomEvents;
 using RPGTextuel.Test.RandomEvents.Factory;
@@ -11,7 +12,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestGameDisplay.TestShowEnemyStatsWithAMessage();
+            TestMainMenuUtils.TestShouldEndGameWhenPlayerWantsToQuit();
         }
     }
 }
