@@ -15,6 +15,9 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // On sauvegarde le nombre d'ennemis que l'on combat.
             int fightNumber = 0;
 
+            // On introduit une variable permettant de dire si l'on affronte le boss final ou non.
+            bool isFinalBoss = (fightNumber == ennemies.Count - 1);
+
             // Pour chaque ennemi dans la liste
             foreach (Enemy enemy in ennemies)
             {
