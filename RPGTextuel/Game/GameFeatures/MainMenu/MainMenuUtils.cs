@@ -10,7 +10,14 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     public static class MainMenuUtils
     {
         // Méthode utilitaire pour gérer les événements entre les combats
-        public static void HandleEventsBetweenFights(Player player, Enemy enemy, int fightNumber, string messageIntroFight)
+        public static void HandleEventsBetweenFights
+        (
+            Player player,
+            Enemy enemy,
+            int fightNumber,
+            string messageIntroFight = "Un nouvel ennemi approche",
+            bool isFinalBoss = false
+        )
         {
             // Déclenche un événement aléatoire avant le combat sauf pour le premier ennemi
             if (fightNumber > 0)
@@ -22,8 +29,17 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 GameUtils.WaitForUser();
             }
 
+            // Si l'on affronte le boss final, on personnalise le message.
+            if (isFinalBoss)
+            {
+                ShowEnemyIntroduction(enemy, "🔥 Un grondement sourd secoue les environs... \n {enemy.Name} approche ! Le combat final va commencer ! ");
+            }
+
             // On affiche un message indiquant qu'on passe au combat suivant.
-            ShowEnemyIntroduction(enemy, messageIntroFight);
+            else
+            {
+                ShowEnemyIntroduction(enemy, messageIntroFight);
+            }
         }
 
         // Méthode utilitaire permettant de savoir si l'on doit arreter la partie.
