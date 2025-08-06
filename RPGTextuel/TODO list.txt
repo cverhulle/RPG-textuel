@@ -1,6 +1,6 @@
 En cours : 
 Coup Critiques : 
-    -> Création de la stat pour joueur et ennemi    
+    -> Affichage du taux de critique dans PrintStats.   
     -> Evenement aléatoire pour l'augmenter
     -> Evenement aléatoire pour la diminuer
     -> Gestion en combat.
