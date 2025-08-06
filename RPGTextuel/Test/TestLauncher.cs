@@ -8,7 +8,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestMainMenuUtils.TestShouldEndGameWhenPlayerWantsToQuit();
+            TestMainMenuUtils.TestHandleBetweenFightWhenItIsNotFirstFight();
         }
     }
 }
