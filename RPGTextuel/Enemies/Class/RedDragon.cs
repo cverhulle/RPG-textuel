@@ -5,7 +5,7 @@ namespace RPGTextuel.Enemies.Class
     {
         // On implémente le constructeur de la classe.
         public RedDragon(string name, int health, int strength, int maxHealth)
-            : base(name, health, strength, maxHealth, EnemyTypes.EnemyType.RedDragon)
+            : base(name, health, strength, maxHealth, EnemyTypes.EnemyType.RedDragon, 0.1)
         {
         }
 
