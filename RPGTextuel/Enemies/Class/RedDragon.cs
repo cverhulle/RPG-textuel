@@ -4,8 +4,8 @@ namespace RPGTextuel.Enemies.Class
     public class RedDragon : Enemy
     {
         // On implémente le constructeur de la classe.
-        public RedDragon(string name, int health, int strength, int maxHealth)
-            : base(name, health, strength, maxHealth, EnemyTypes.EnemyType.RedDragon, 0.1)
+        public RedDragon(string name, int health, int strength, int maxHealth, double criticalHitChance = 0.1)
+            : base(name, health, strength, maxHealth, EnemyTypes.EnemyType.RedDragon, criticalHitChance)
         {
         }
 
