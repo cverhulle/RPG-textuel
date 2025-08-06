@@ -1,7 +1,5 @@
 En cours : 
-1) Test des nouvelles fonctionnalités
-
-2) Coup Critiques : 
+Coup Critiques : 
     -> Création de la stat pour joueur et ennemi    
     -> Evenement aléatoire pour l'augmenter
     -> Evenement aléatoire pour la diminuer
