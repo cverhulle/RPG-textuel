@@ -29,6 +29,26 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             );
         }
 
+        // Cette méthode permet de tester HandleBetweenFight quand ce n'est pas le premier combat
+        public static void TestHandleBetweenFightWhenItIsNotFirstFight()
+        {
+            Console.WriteLine("=== Test de HandleBetweenFightWhenItIsFirstFight ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Enemy enemy = EnemyTestFactory.CreateGoblinChief();
+            int fightNumber = 1;
+            string messageIntroFight = "Un nouvel ennemi approche";
+            bool isFinalBoss = false;
+
+            Console.WriteLine("=== Résultat attendu : Pas d'événement \n Infos de l'ennemi uniquement ===");
+            MainMenuUtils.HandleBetweenFights(
+                player,
+                enemy,
+                fightNumber,
+                messageIntroFight,
+                isFinalBoss
+            );
+        }
+
         // Cette méthode permet de tester ShouldEndGame quand le jeu doit continuer
         public static void TestShouldEndGameWhenGameShouldContinue()
         {
