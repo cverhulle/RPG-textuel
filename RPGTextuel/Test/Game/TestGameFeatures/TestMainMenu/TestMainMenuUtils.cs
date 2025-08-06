@@ -1,12 +1,34 @@
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.MainMenu;
 using RPGTextuel.Test.Core;
+using RPGTextuel.Test.Enemies;
 
 namespace RPGTextuel.Test.Game.TestGameFeatures
 {
     // Cette classe permet de tester MainMenuUtils
     public static class TestMainMenuUtils
     {
+        // Cette méthode permet de tester HandleBetweenFight quand c'est le premier combat
+        public static void TestHandleBetweenFightWhenItIsFirstFight()
+        {
+            Console.WriteLine("=== Test de HandleBetweenFightWhenItIsFirstFight ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Enemy enemy = EnemyTestFactory.CreateGoblinChief();
+            int fightNumber = 0;
+            string messageIntroFight = "Un nouvel ennemi approche";
+            bool isFinalBoss = false;
+
+            Console.WriteLine("=== Résultat attendu : Pas d'événement \n Infos de l'ennemi uniquement ===");
+            MainMenuUtils.HandleBetweenFights(
+                player,
+                enemy,
+                fightNumber,
+                messageIntroFight,
+                isFinalBoss
+            );
+        }
+
         // Cette méthode permet de tester ShouldEndGame quand le jeu doit continuer
         public static void TestShouldEndGameWhenGameShouldContinue()
         {
