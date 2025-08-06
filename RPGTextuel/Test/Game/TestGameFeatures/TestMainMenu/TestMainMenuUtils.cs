@@ -66,7 +66,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             Console.WriteLine("=== Test de HandleBetweenFightWhenItIsFirstFight ===");
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
             Enemy enemy = EnemyTestFactory.CreateGoblinChief();
-            int fightNumber = 1;
+            int fightNumber = 0;
             string messageIntroFight = "Message de test";
             bool isFinalBoss = false;
 
@@ -91,9 +91,9 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             Console.WriteLine("=== Test de HandleBetweenFightWhenItIsFirstFight ===");
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
             Enemy enemy = EnemyTestFactory.CreateGoblinChief();
-            int fightNumber = 1;
+            int fightNumber = 0;
             string messageIntroFight = "Message de test";
-            bool isFinalBoss = false;
+            bool isFinalBoss = true;
 
             Console.WriteLine("=== Résultat attendu : Pas d'événement \n Infos de l'ennemi précédé du message d'intro du boss ===");
             GameUtils.WaitForUser();
