@@ -7,6 +7,7 @@ namespace RPGTextuel.Core.Characters
         private int health;
         private int strength;
         private int maxHealth;
+        private double criticalHitChance;
 
         // On définit les méthodes set et get pour le name.
         // On rejette les noms "null" ou vide.
@@ -44,6 +45,14 @@ namespace RPGTextuel.Core.Characters
         {
             get => maxHealth;
             set => maxHealth = Math.Max(0, value);
+        }
+
+        // On définit les méthodes set et get pour l'attribut criticalHitChance.
+        // On utilise Math pour mettre à 0 les chances de coups critiques s'ils tombent en négatif.
+        public double CriticalHitChance
+        {
+            get => criticalHitChance;
+            set => criticalHitChance = Math.Max(0, value);
         }
     }
 }
