@@ -39,7 +39,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             string messageIntroFight = "Un nouvel ennemi approche";
             bool isFinalBoss = false;
 
-            Console.WriteLine("=== Résultat attendu : Pas d'événement \n Infos de l'ennemi uniquement ===");
+            Console.WriteLine("=== Résultat attendu : Un événement est déclenché \n Infos de l'ennemi ===");
             MainMenuUtils.HandleBetweenFights(
                 player,
                 enemy,
