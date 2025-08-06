@@ -82,6 +82,31 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             );
         }
 
+        
+        // Cette méthode permet de tester HandleBetweenFight quand ce est le combat de boss.
+        // Pas d'événement activé.
+        // Le message de boss doit apparâitre avant les infos de l'ennemi
+        public static void TestHandleBetweenFightWithBossEnemy()
+        {
+            Console.WriteLine("=== Test de HandleBetweenFightWhenItIsFirstFight ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Enemy enemy = EnemyTestFactory.CreateGoblinChief();
+            int fightNumber = 1;
+            string messageIntroFight = "Message de test";
+            bool isFinalBoss = false;
+
+            Console.WriteLine("=== Résultat attendu : Pas d'événement \n Infos de l'ennemi précédé du message d'intro du boss ===");
+            GameUtils.WaitForUser();
+
+            MainMenuUtils.HandleBetweenFights(
+                player,
+                enemy,
+                fightNumber,
+                messageIntroFight,
+                isFinalBoss
+            );
+        }
+
         // Cette méthode permet de tester ShouldEndGame quand le jeu doit continuer
         public static void TestShouldEndGameWhenGameShouldContinue()
         {
