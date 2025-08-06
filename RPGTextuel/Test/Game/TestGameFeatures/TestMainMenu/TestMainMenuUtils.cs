@@ -1,6 +1,7 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.MainMenu;
+using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.Test.Core;
 using RPGTextuel.Test.Enemies;
 
@@ -20,6 +21,8 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             bool isFinalBoss = false;
 
             Console.WriteLine("=== Résultat attendu : Pas d'événement \n Infos de l'ennemi uniquement ===");
+            GameUtils.WaitForUser();
+
             MainMenuUtils.HandleBetweenFights(
                 player,
                 enemy,
@@ -40,6 +43,8 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             bool isFinalBoss = false;
 
             Console.WriteLine("=== Résultat attendu : Un événement est déclenché \n Infos de l'ennemi ===");
+            GameUtils.WaitForUser();
+            
             MainMenuUtils.HandleBetweenFights(
                 player,
                 enemy,
