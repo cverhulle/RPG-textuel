@@ -52,7 +52,7 @@ namespace RPGTextuel.Core.Characters
         public double CriticalHitChance
         {
             get => criticalHitChance;
-            set => criticalHitChance = Math.Max(0, value);
+            set => criticalHitChance = Math.Clamp(value, 0, 1);
         }
     }
 }
