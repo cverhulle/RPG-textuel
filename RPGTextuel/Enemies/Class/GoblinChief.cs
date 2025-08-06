@@ -6,7 +6,7 @@ namespace RPGTextuel.Enemies.Class
     public class GoblinChief : Enemy
     {
         public GoblinChief(string name, int health, int strength, int maxHealth)
-            : base(name, health, strength, maxHealth, EnemyType.GoblinChief)
+            : base(name, health, strength, maxHealth, EnemyType.GoblinChief, 0.1)
         {
         }
 
