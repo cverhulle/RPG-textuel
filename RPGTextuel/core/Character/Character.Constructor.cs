@@ -1,9 +1,18 @@
+using RPGTextuel.Config;
+
 namespace RPGTextuel.Core.Characters
 {
     public abstract partial class Character
     {
         // On implémente le constructeur de la classe.
-        protected Character(string characterName, int characterHealth, int characterStrength, int characterMaxHealth, double criticalHitChance = 0.05)
+        protected Character
+        (
+            string characterName,
+            int characterHealth,
+            int characterStrength,
+            int characterMaxHealth,
+            double criticalHitChance = GameConfig.criticalHitByDefault
+        )
         {
             name = characterName;
             Health = characterHealth;
