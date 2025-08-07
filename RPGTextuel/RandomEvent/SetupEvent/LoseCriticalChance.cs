@@ -3,6 +3,7 @@ using RPGTextuel.RandomEvent.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
+    
     public class LoseCriticalChanceEvent : RandomEventClass
     {
         public override string Name => "Vision troublée";
@@ -10,6 +11,15 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         public override void Trigger(Player player)
         {
+            // Réduction entre 0.03 (3%) et 0.1 (10%)
+            double penalty = Random.Shared.NextDouble() * 0.07 + 0.03;
+
+            // On applique la pénalité, sans descendre sous 0
+            player.CriticalHitChance = Math.Max(0, player.CriticalHitChance - penalty);
+
+            // Messages d'informations pour l'utilisateur.
+            Console.WriteLine($"Votre chance de coup critique a diminué de {penalty * 100:0.#}% !");
+            Console.WriteLine($"Chance de critique actuelle : {player.CriticalHitChance * 100:0.#}%");
         }
     }
 }
