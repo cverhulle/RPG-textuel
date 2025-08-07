@@ -32,6 +32,7 @@ namespace RPGTextuel.Extensions.Players
             Console.Write("PV         : ");
             player.PrintHealthBar();
             Console.WriteLine($"Force      : {player.Strength}");
+            Console.WriteLine($"Critique   : {player.CriticalHitChance * 100:0.##}%");
             Console.WriteLine(border);
         }
     }
