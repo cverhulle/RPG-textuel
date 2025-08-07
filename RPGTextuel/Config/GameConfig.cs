@@ -16,5 +16,8 @@ namespace RPGTextuel.Config
 
         // Chance de coup critique par défaut
         public const double criticalHitByDefault = 0.1;
+
+        // Chance de coup critique légérement augmenté
+        public const double criticalHitAugmented = criticalHitByDefault + 0.5;
     }
 } 
