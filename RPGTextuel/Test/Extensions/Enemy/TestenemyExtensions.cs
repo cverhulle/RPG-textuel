@@ -34,5 +34,14 @@ namespace RPGTextuel.Test.ExtensionsEnemy
             enemy.PrintStats();
             GameUtils.WaitForUser();
         }
+
+        // On teste la méthode PrintStats pour un dragon rouge.
+        public static void TestRedDragonStats()
+        {
+            Console.WriteLine("=== Test : PrintStats (Dragon rouge) ===");
+            Enemy enemy = EnemyTestFactory.CreateRedDragon();
+            enemy.PrintStats();
+            GameUtils.WaitForUser();
+        }
     }
 }
