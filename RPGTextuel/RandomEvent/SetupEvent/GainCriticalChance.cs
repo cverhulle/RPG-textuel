@@ -17,7 +17,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
             double boost = Random.Shared.NextDouble() * 0.1 + 0.05;
 
             // On applique le boost à la chance de coup critique du joueur
-            player.CriticalHitChance += boost;
+            player.CriticalHitChance = Math.Min(1, player.CriticalHitChance + boost);
 
             // On affiche un message d'information.
             Console.WriteLine($"Votre chance de coup critique a augmenté de {boost * 100:0.#}% !");
