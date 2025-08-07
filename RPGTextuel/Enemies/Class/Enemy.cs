@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.EnemyTypes;
 
@@ -10,7 +11,15 @@ namespace RPGTextuel.Enemies.Class
         public EnemyType type { get; }
 
         // On construit un Enemy à partir de la classe Character
-        public Enemy(string name, int health, int strength, int maxHealth, EnemyType enemyType, double criticalHitChance = 0.05)
+        public Enemy
+        (
+            string name,
+            int health,
+            int strength,
+            int maxHealth,
+            EnemyType enemyType,
+            double criticalHitChance = GameConfig.criticalHitByDefault
+        )
             : base(name, health, strength, maxHealth,criticalHitChance)
         {
             type = enemyType;

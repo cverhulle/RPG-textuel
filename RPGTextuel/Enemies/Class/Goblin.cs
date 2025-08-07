@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Enemies.EnemyTypes;
 
 namespace RPGTextuel.Enemies.Class
@@ -6,7 +7,14 @@ namespace RPGTextuel.Enemies.Class
     public class Goblin : Enemy
     {
         // Constructeur de la classe
-        public Goblin(string name, int health, int strength, int maxHealth, double criticalHitChance = 0.05)
+        public Goblin
+        (
+            string name,
+            int health,
+            int strength,
+            int maxHealth,
+            double criticalHitChance = GameConfig.criticalHitByDefault
+        )
             : base(name, health, strength, maxHealth, EnemyType.Goblin, criticalHitChance)
         {
         }
