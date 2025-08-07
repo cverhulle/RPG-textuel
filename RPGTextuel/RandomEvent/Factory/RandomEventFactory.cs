@@ -27,7 +27,9 @@ namespace RPGTextuel.RandomEvent.Factory
             (_) => new GainHealthEvent(),
             (_) => new LoseHealthEvent(),
             (_) => new LoseItemEvent(),
-            (_) => new PeacefulDayEvent()
+            (_) => new PeacefulDayEvent(),
+            (_) => new GainCriticalChanceEvent(),
+            (_) => new LoseCriticalChanceEvent()
         };
 
         // On choisit aléatoirement un événement parmi une liste.
