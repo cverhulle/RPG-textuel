@@ -1,7 +1,6 @@
 En cours : 
 Coup Critiques : 
     -> Affichage du taux de critique dans PrintStats.   
-    -> Gestion du taux de critique dans GameConfig ?
     -> Evenement aléatoire pour l'augmenter
     -> Evenement aléatoire pour la diminuer
     -> Gestion en combat.
