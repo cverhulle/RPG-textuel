@@ -1,10 +1,8 @@
 En cours : 
 Coup Critiques :   
-    -> Evenement aléatoire pour l'augmenter
-    -> Evenement aléatoire pour la diminuer
+    -> Test des événements augmentant et diminuant le critique
+    -> Evenement pour augmenter la chance critique du prochain adversaire ? La diminuer ?
     -> Gestion en combat.
-
-
 
 Idées d'améliorations :
 1. Ajout d'alliés
