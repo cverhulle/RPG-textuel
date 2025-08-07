@@ -24,6 +24,12 @@ namespace RPGTextuel.Test.Enemies
             return SetupGoblinChiefs.GetRandomGoblinChief();
         }
 
+        // Cette fonction permet de créer un ennemi de type RedDragon
+        public static RedDragon CreateRedDragon()
+        {
+            return SetupRedDragons.GetRandomRedDragon();
+        }
+
         // Cette fonction crée un Petit Gobelin endommagé.
         public static Enemy CreateWeakGoblinMinion()
         {
