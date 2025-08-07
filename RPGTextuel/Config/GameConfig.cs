@@ -13,5 +13,8 @@ namespace RPGTextuel.Config
 
         // Taille Maximum pour le nom des personnages.
         public const int MaxNameLength = 15;
+
+        // Chance de coup critique par défaut
+        public const double criticalHitByDefault = 0.1;
     }
 } 
