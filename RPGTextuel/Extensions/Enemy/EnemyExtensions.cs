@@ -23,6 +23,7 @@ namespace RPGTextuel.Extensions.Enemies
             Console.Write("PV         : ");
             enemy.PrintHealthBar();
             Console.WriteLine($"Force      : {enemy.Strength}");
+            Console.WriteLine($"Critique   : {enemy.CriticalHitChance * 100:0.##}%");
             Console.WriteLine($"Type       : {enemy.DisplayType}");
             Console.WriteLine(border);
         }
