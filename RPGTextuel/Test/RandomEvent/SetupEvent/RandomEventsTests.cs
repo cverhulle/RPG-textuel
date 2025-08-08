@@ -37,6 +37,20 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Méthode de test de GainCriticalChancePlayerEvent quand le critique est à 100%
+        public static void TestGainCriticalChancePlayerEventWithFullCrit()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            // On met le critique à 100
+            player.CriticalHitChance = 1;
+            Console.WriteLine("Résultat attendu : Le critique reste à 100% et n'augmente pas");
+
+            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie non pleine
         public static void TestGainHealthEventNotWithFullHealth()
         {
