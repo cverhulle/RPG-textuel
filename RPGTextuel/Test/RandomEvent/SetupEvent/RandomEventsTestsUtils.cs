@@ -80,6 +80,17 @@ namespace RPGTextuel.Test.RandomEvents
             player.PrintHealthBar();
         }
 
+        // Méthode utilitaire liée à l'événement LoseCriticalChancePlayerEvent
+        public static void LoseCriticalChancePlayerEventUtils(Player player)
+        {
+            Console.WriteLine($"Chance critique initiale : {player.CriticalHitChance * 100:0.#}%");
+
+            LoseCriticalChancePlayerEvent evt = new LoseCriticalChancePlayerEvent();
+            evt.Trigger(player);
+
+            Console.WriteLine($"Chance critique finale : {player.CriticalHitChance * 100:0.#}%");
+        }
+
         // Méthode utilitaire liée à l'évenement PeacefulDayEvent
         public static void PeacefulDayEventUtils(Player player)
         {
