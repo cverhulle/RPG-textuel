@@ -47,6 +47,16 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Méthode de test de LoseCriticalChancePlayerEvent
+        public static void TestLoseCriticalChancePlayerEvent()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Méthode de test de GainCriticalChancePlayerEvent
         public static void TestGainCriticalChancePlayerEvent()
         {
