@@ -1,6 +1,7 @@
 En cours : 
 Coup Critiques :   
-    -> Test des événements augmentant et diminuant le critique
+    -> Lorsque le critique est à 100% et que GainCriticalChancePlayerEvent se déclenche, il faudrait personnaliser le message
+    -> Lorsque le critique est à 0% et que LoseCriticalChancePlayerEvent se déclenche, il faudrait personnaliser le message
     -> Evenement pour augmenter la chance critique du prochain adversaire ? La diminuer ?
     -> Gestion en combat.
 
