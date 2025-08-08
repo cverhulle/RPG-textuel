@@ -81,6 +81,20 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Méthode de test de LoseCriticalChancePlayerEvent quand le critique est à 0.
+        public static void TestLoseCriticalChancePlayerEventWithNoCrit()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            // On met le critique à 0.
+            player.CriticalHitChance = 0;
+            Console.WriteLine("Résultat attendu : Le critique reste à 0% et ne diminue pas pas");
+
+            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Cette méthode permet de tester l'évenement LoseHealthEvent
         public static void TestLoseHealthEvent()
         {
