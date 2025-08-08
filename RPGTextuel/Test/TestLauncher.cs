@@ -1,4 +1,3 @@
-using RPGTextuel.Test.ExtensionsEnemy;
 using RPGTextuel.Test.RandomEvents;
 
 namespace RPGTextuel.Test

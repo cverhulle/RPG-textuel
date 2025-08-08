@@ -36,17 +36,6 @@ namespace RPGTextuel.Test.RandomEvents
             player.Inventory.DisplayInventory();
         }
 
-        // Méthode utilitaire liée à l'évenement LoseItemEvent
-        public static void LoseItemEventUtils(Player player)
-        {
-            Console.WriteLine("Inventaire initial :");
-            player.Inventory.DisplayInventory();
-            LoseItemEvent loseItemEvent = new LoseItemEvent();
-            loseItemEvent.Trigger(player);
-            Console.WriteLine("Inventaire final :");
-            player.Inventory.DisplayInventory();
-        }
-
         // Méthode utilitaire liée à l'événement GainCriticalChancePlayerEvent
         public static void GainCriticalChancePlayerEventUtils(Player player)
         {
@@ -67,6 +56,15 @@ namespace RPGTextuel.Test.RandomEvents
             player.PrintHealthBar();
         }
 
+        // Méthode utilitaire liée à l'événement LoseCriticalChancePlayerEvent
+        public static void LoseCriticalChancePlayerEventUtils(Player player)
+        {
+            Console.WriteLine($"Chance critique initiale : {player.CriticalHitChance * 100:0.#}%");
+
+            LoseCriticalChancePlayerEvent evt = new LoseCriticalChancePlayerEvent();
+            evt.Trigger(player);
+        }
+
         // Méthode utilitaire liée à l'évenement LosehealthEvent
         public static void LoseHealthEventUtils(Player player)
         {
@@ -78,13 +76,15 @@ namespace RPGTextuel.Test.RandomEvents
             player.PrintHealthBar();
         }
 
-        // Méthode utilitaire liée à l'événement LoseCriticalChancePlayerEvent
-        public static void LoseCriticalChancePlayerEventUtils(Player player)
+        // Méthode utilitaire liée à l'évenement LoseItemEvent
+        public static void LoseItemEventUtils(Player player)
         {
-            Console.WriteLine($"Chance critique initiale : {player.CriticalHitChance * 100:0.#}%");
-
-            LoseCriticalChancePlayerEvent evt = new LoseCriticalChancePlayerEvent();
-            evt.Trigger(player);
+            Console.WriteLine("Inventaire initial :");
+            player.Inventory.DisplayInventory();
+            LoseItemEvent loseItemEvent = new LoseItemEvent();
+            loseItemEvent.Trigger(player);
+            Console.WriteLine("Inventaire final :");
+            player.Inventory.DisplayInventory();
         }
 
         // Méthode utilitaire liée à l'évenement PeacefulDayEvent

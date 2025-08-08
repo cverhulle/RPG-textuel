@@ -27,8 +27,48 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
-        public static void TestLoseItemEventWithInventoryNotEmpty()
+        // Méthode de test de GainCriticalChancePlayerEvent
+        public static void TestGainCriticalChancePlayerEvent()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie non pleine
+        public static void TestGainHealthEventNotWithFullHealth()
+        {
+            Player player = PlayerTestFactory.CreateWoundedPlayer(20);
+
+            RandomEventsTestsUtils.GainHealthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie pleine 
+        public static void TestGainHealthEventWithFullHealth()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.GainHealthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Méthode de test de LoseCriticalChancePlayerEvent
+        public static void TestLoseCriticalChancePlayerEvent()
+        {
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Cette méthode permet de tester l'évenement LoseHealthEvent
+        public static void TestLoseHealthEvent()
         {
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
@@ -47,48 +87,8 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        // Méthode de test de LoseCriticalChancePlayerEvent
-        public static void TestLoseCriticalChancePlayerEvent()
-        {
-            Player player = PlayerTestFactory.CreateBasicTestPlayer();
-
-            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
-
-            GameUtils.WaitForUser();
-        }
-
-        // Méthode de test de GainCriticalChancePlayerEvent
-        public static void TestGainCriticalChancePlayerEvent()
-        {
-            Player player = PlayerTestFactory.CreateBasicTestPlayer();
-
-            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
-
-            GameUtils.WaitForUser();
-        }
-
-        // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie pleine 
-        public static void TestGainHealthEventWithFullHealth()
-        {
-            Player player = PlayerTestFactory.CreateBasicTestPlayer();
-
-            RandomEventsTestsUtils.GainHealthEventUtils(player);
-
-            GameUtils.WaitForUser();
-        }
-
-        // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie non pleine
-        public static void TestGainHealthEventNotWithFullHealth()
-        {
-            Player player = PlayerTestFactory.CreateWoundedPlayer(20);
-
-            RandomEventsTestsUtils.GainHealthEventUtils(player);
-
-            GameUtils.WaitForUser();
-        }
-
-        // Cette méthode permet de tester l'évenement LoseHealthEvent
-        public static void TestLoseHealthEvent()
+        // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
+        public static void TestLoseItemEventWithInventoryNotEmpty()
         {
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
