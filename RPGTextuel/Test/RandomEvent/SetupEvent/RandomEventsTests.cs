@@ -10,6 +10,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement FindItemEvent par défaut.
         public static void TestFindItemEventByDefault()
         {
+            Console.WriteLine("===== Test de FindItemEventByDefault ====="); 
+
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
             RandomEventsTestsUtils.FindItemEventUtilsByDefault(player);
@@ -20,6 +22,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement FindItemEvent avec le drop de boss.
         public static void TestFindItemEventWithBossItemDrop()
         {
+            Console.WriteLine("===== Test de FindItemEventWithBossItemDrop ====="); 
+            
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.FindItemEventWithBossItemDrops(player);
@@ -30,6 +34,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Méthode de test de GainCriticalChancePlayerEvent
         public static void TestGainCriticalChancePlayerEvent()
         {
+            Console.WriteLine("===== Test de GainCriticalChancePlayerEvent =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
@@ -40,6 +46,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Méthode de test de GainCriticalChancePlayerEvent quand le critique est à 100%
         public static void TestGainCriticalChancePlayerEventWithFullCrit()
         {
+            Console.WriteLine("===== Test de GainCriticalChancePlayerEventWithFullCrit =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             // On met le critique à 100
@@ -54,6 +62,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie non pleine
         public static void TestGainHealthEventNotWithFullHealth()
         {
+            Console.WriteLine("===== Test de GainHealthEventNotWithFullHealth =====");
+
             Player player = PlayerTestFactory.CreateWoundedPlayer(20);
 
             RandomEventsTestsUtils.GainHealthEventUtils(player);
@@ -64,6 +74,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie pleine 
         public static void TestGainHealthEventWithFullHealth()
         {
+            Console.WriteLine("===== Test de GainHealthEventWithFullHealth =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.GainHealthEventUtils(player);
@@ -74,6 +86,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Méthode de test de LoseCriticalChancePlayerEvent
         public static void TestLoseCriticalChancePlayerEvent()
         {
+            Console.WriteLine("===== Test de LoseCriticalChancePlayerEvent =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
@@ -84,6 +98,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Méthode de test de LoseCriticalChancePlayerEvent quand le critique est à 0.
         public static void TestLoseCriticalChancePlayerEventWithNoCrit()
         {
+            Console.WriteLine("===== Test de LoseCriticalChancePlayerEventWithNoCrit =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             // On met le critique à 0.
@@ -98,6 +114,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement LoseHealthEvent
         public static void TestLoseHealthEvent()
         {
+            Console.WriteLine("===== Test de LoseHealthEvent =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.LoseHealthEventUtils(player);
@@ -108,6 +126,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire vide 
         public static void TestLoseItemEventWithInventoryEmpty()
         {
+            Console.WriteLine("===== Test de LoseItemEventWithInventoryEmpty =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.LoseItemEventUtils(player);
@@ -118,6 +138,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester l'évenement LoseItemEvent avec inventaire non vide 
         public static void TestLoseItemEventWithInventoryNotEmpty()
         {
+            Console.WriteLine("===== Test de LoseItemEventWithInventoryNotEmpty =====");
+
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.LoseHealthEventUtils(player);
@@ -128,6 +150,8 @@ namespace RPGTextuel.Test.RandomEvents
         // Cette méthode permet de tester PeacefulDayEvent.
         public static void TestPeacefulDayEvent()
         {
+            Console.WriteLine("===== Test de PeacefulDayEvent =====");
+
             Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(20);
 
             RandomEventsTestsUtils.PeacefulDayEventUtils(player);
