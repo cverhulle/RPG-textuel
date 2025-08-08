@@ -47,6 +47,17 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Méthode de test de GainCriticalChancePlayerEvent
+        public static void TestGainCriticalChancePlayerEvent()
+        {
+            // Création d'un joueur avec une chance critique de départ de 20%
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Cette méthode permet de tester l'évenement GainHealthEvent avec la vie pleine 
         public static void TestGainHealthEventWithFullHealth()
         {
