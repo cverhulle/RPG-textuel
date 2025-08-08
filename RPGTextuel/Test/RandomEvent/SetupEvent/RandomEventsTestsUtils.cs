@@ -54,8 +54,6 @@ namespace RPGTextuel.Test.RandomEvents
 
             GainCriticalChancePlayerEvent evt = new GainCriticalChancePlayerEvent();
             evt.Trigger(player);
-
-            Console.WriteLine($"Chance critique finale : {player.CriticalHitChance * 100:0.#}%");
         }
 
         // Méthode utilitaire liée à l'évenement Gain!healthEvent
@@ -87,8 +85,6 @@ namespace RPGTextuel.Test.RandomEvents
 
             LoseCriticalChancePlayerEvent evt = new LoseCriticalChancePlayerEvent();
             evt.Trigger(player);
-
-            Console.WriteLine($"Chance critique finale : {player.CriticalHitChance * 100:0.#}%");
         }
 
         // Méthode utilitaire liée à l'évenement PeacefulDayEvent
