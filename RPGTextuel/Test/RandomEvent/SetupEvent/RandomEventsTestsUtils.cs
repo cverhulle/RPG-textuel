@@ -47,6 +47,17 @@ namespace RPGTextuel.Test.RandomEvents
             player.Inventory.DisplayInventory();
         }
 
+        // Méthode utilitaire liée à l'événement GainCriticalChancePlayerEvent
+        public static void GainCriticalChancePlayerEventUtils(Player player)
+        {
+            Console.WriteLine($"Chance critique initiale : {player.CriticalHitChance * 100:0.#}%");
+
+            GainCriticalChancePlayerEvent evt = new GainCriticalChancePlayerEvent();
+            evt.Trigger(player);
+
+            Console.WriteLine($"Chance critique finale : {player.CriticalHitChance * 100:0.#}%");
+        }
+
         // Méthode utilitaire liée à l'évenement Gain!healthEvent
         public static void GainHealthEventUtils(Player player)
         {
