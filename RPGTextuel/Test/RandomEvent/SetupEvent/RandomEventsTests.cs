@@ -50,7 +50,6 @@ namespace RPGTextuel.Test.RandomEvents
         // Méthode de test de GainCriticalChancePlayerEvent
         public static void TestGainCriticalChancePlayerEvent()
         {
-            // Création d'un joueur avec une chance critique de départ de 20%
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
