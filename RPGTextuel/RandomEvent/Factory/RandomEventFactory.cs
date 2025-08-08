@@ -20,7 +20,7 @@ namespace RPGTextuel.RandomEvent.Factory
 
         // Liste de tous les événements disponibles.
         // On stocke des fonctions qui, lorsqu'elles sont appelées, instancient un événement.
-        // On fournit le type de drop en entrée.
+        // On fournit le type de drop en entrée (pour l'événement FindItemEvent).
         private static readonly List<Func<ItemDropTableType, RandomEventClass>> allEventFactories = new()
         {
             (dropType) => new FindItemEvent(GetItemTable(dropType)),
@@ -35,10 +35,13 @@ namespace RPGTextuel.RandomEvent.Factory
         // On choisit aléatoirement un événement parmi une liste.
         public static RandomEventClass GetRandomEvent(ItemDropTableType dropType = ItemDropTableType.Default)
         {
+            // S'il n'y a pas d'événement (pas attendu), on ne fait rien.
             if (allEventFactories == null || allEventFactories.Count == 0)
             {
                 return new PeacefulDayEvent();
             }
+
+            // sinon, on choisit un événement aléatoirement et, on le retourne
             var factory = allEventFactories.PickRandom();
             return factory(dropType);
         }
