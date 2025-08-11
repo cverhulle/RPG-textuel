@@ -6,6 +6,7 @@ Coup Critique :
     -> Gestion en combat.
 
 Idées d'améliorations :
-1. Ajout d'alliés
-2. Ajout de différentes classes 
-3. Coups spéciaux
+1. Ajouter un gain d'objet après chaque combat.
+2. Ajout d'alliés
+3. Ajout de différentes classes 
+4. Coups spéciaux
