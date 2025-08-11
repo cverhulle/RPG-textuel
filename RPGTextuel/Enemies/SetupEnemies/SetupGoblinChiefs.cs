@@ -9,8 +9,8 @@ namespace RPGTextuel.SetupEnemies
         // Créeons la liste des ennemis de type "GoblinChief"
         public static List<GoblinChief> GoblinChiefs = new List<GoblinChief>
         {
-            new GoblinChief("Zonva", 60, 15, 60),
-            new GoblinChief("Grimlok", 65, 13, 65)
+            new GoblinChief("Zonva", 60, 12, 60),
+            new GoblinChief("Grimlok", 65, 11, 65)
         };
 
         // Cette méthode permet de choisir aléatoirement un élement de la liste des GoblinChiefs.
