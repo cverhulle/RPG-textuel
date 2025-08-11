@@ -10,7 +10,7 @@ namespace RPGTextuel.SetupEnemies
         public static List<RedDragon> RedDragons = new List<RedDragon>
         {
             new RedDragon("Spyro", 100, 18, 100),
-            new RedDragon("Ignir", 50, 15, 50, 0.5),
+            new RedDragon("Ignir", 70, 15, 70, 0.5),
         };
 
         // Cette méthode permet de choisir aléatoirement un élement de la liste des Dragons rouges.
