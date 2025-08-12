@@ -19,12 +19,21 @@ namespace RPGTextuel.RandomEvent.SetupEvent
                 Console.WriteLine("Votre précision est déjà parfaite ! Aucun gain possible.");
                 return;
             }
-            
+
             // On définit le boost entre 0.05 (5%) et 0.15 (15%)
             double boost = Random.Shared.NextDouble() * 0.1 + 0.05;
 
-            // On applique le boost à la chance de coup critique du joueur
-            player.CriticalHitChance = Math.Min(1, player.CriticalHitChance + boost);
+            // On calcule ce qu'il manque pour arriver à 100%
+            double manque = 1.0 - player.CriticalHitChance;
+
+            // Si le boost dépasse ce qu'il manque, on le limite
+            if (boost > manque)
+            {
+                boost = manque;
+            }
+
+            // On ajoute le boost au joueur.
+            player.CriticalHitChance += boost;
 
             // On affiche un message d'information.
             Console.WriteLine($"Votre chance de coup critique a augmenté de {boost * 100:0.#}% !");
