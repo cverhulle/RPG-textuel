@@ -13,6 +13,13 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // On définit l'effet de l'événement : Augmentation de la chance de coup critique.
         public override void Trigger(Player player)
         {
+            // Vérifie si le joueur est déjà à 100%
+            if (player.CriticalHitChance >= 1.0)
+            {
+                Console.WriteLine("Votre précision est déjà parfaite ! Aucun gain possible.");
+                return;
+            }
+            
             // On définit le boost entre 0.05 (5%) et 0.15 (15%)
             double boost = Random.Shared.NextDouble() * 0.1 + 0.05;
 
