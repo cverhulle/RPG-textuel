@@ -13,6 +13,13 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // Cet événement diminue la chance la coup critique du joueur.
         public override void Trigger(Player player)
         {
+            // Vérifie si le joueur est déjà à 0%
+            if (player.CriticalHitChance <= 0.0)
+            {
+                Console.WriteLine("Votre précision est déjà au plus bas...");
+                return;
+            }
+
             // Réduction entre 0.03 (3%) et 0.1 (10%)
             double penalty = Random.Shared.NextDouble() * 0.07 + 0.03;
 
