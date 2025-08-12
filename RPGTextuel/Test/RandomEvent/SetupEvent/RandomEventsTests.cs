@@ -101,13 +101,14 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        // Méthode de test de LoseCriticalChancePlayerEvent
-        public static void TestLoseCriticalChancePlayerEvent()
+        // Méthode de test de LoseCriticalChancePlayerEventByDefault
+        public static void TestLoseCriticalChancePlayerEventByDelfault()
         {
-            Console.WriteLine("===== Test de LoseCriticalChancePlayerEvent =====");
+            Console.WriteLine("===== Test de LoseCriticalChancePlayerEventByDefault =====");
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
+            Console.WriteLine("Résultat attendu : Diminution aléatoire du critique");
             RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
@@ -120,9 +121,9 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            // On met le critique à 0.
+            // On met le critique à 0%.
             player.CriticalHitChance = 0;
-            Console.WriteLine("Résultat attendu : Le critique reste à 0% et ne diminue pas pas");
+            Console.WriteLine("Résultat attendu : Message personnalisé indiquant que le critique ne peut pas dimminuer.");
 
             RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
 
