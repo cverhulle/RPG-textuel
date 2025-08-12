@@ -4,9 +4,9 @@ namespace RPGTextuel.Core.PlayerNamespace
     public static class PlayerStatHelper
     {
         // Cette méthode permet de modifier les stats d'un joueur selon des bornes.
-        public static void ModifyStatWithBounds
+        public static double ModifyStatWithBounds
         (
-            ref double stat,
+            double stat,
             double min,
             double max,
             double randomMinChange,
@@ -21,7 +21,7 @@ namespace RPGTextuel.Core.PlayerNamespace
             if ((increase && stat >= max) || (!increase && stat <= min))
             {
                 Console.WriteLine(alreadyAtBoundMessage);
-                return;
+                return stat;
             }
 
             // On calcule la valeur du changement
@@ -40,6 +40,8 @@ namespace RPGTextuel.Core.PlayerNamespace
             // Messages d'informations pour l'utilisateur.
             Console.WriteLine(string.Format(changeMessageTemplate, change * 100));
             Console.WriteLine(string.Format(finalValueMessageTemplate, stat * 100));
+
+            return stat;
         }
     }
 }
