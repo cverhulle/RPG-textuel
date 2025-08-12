@@ -17,27 +17,27 @@ namespace RPGTextuel.Core.Player
             string finalValueMessageTemplate
         )
         {
-            // Déjà au maximum ou minimum
+            // On regarde si la stat à modifier est déjà au maximum ou au minimum.
             if ((increase && stat >= max) || (!increase && stat <= min))
             {
                 Console.WriteLine(alreadyAtBoundMessage);
                 return;
             }
 
-            // Changement aléatoire
+            // On calcule la valeur du changement
             double change = Random.Shared.NextDouble() * (randomMaxChange - randomMinChange) + randomMinChange;
 
-            // Calcul de la marge disponible
+            // On Calcule de la marge disponible
             double availableChange = increase ? (max - stat) : (stat - min);
 
-            // Limiter le changement si besoin
+            // On Limite le changement si besoin
             if (change > availableChange)
                 change = availableChange;
 
-            // Appliquer le changement
+            // On modifie la statistique
             stat += increase ? change : -change;
 
-            // Messages
+            // Messages d'informations pour l'utilisateur.
             Console.WriteLine(string.Format(changeMessageTemplate, change * 100));
             Console.WriteLine(string.Format(finalValueMessageTemplate, stat * 100));
         }
