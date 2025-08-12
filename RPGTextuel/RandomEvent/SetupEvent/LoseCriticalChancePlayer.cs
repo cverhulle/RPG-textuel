@@ -1,4 +1,5 @@
 using RPGTextuel.Core;
+using RPGTextuel.Core.PlayerNamespace;
 using RPGTextuel.RandomEvent.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
@@ -13,31 +14,16 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // Cet événement diminue la chance la coup critique du joueur.
         public override void Trigger(Player player)
         {
-            // Vérifie si le joueur est déjà à 0%
-            if (player.CriticalHitChance <= 0.0)
-            {
-                Console.WriteLine("Votre précision est déjà au plus bas...");
-                return;
-            }
-
-            // Réduction entre 0.03 (3%) et 0.1 (10%)
-            double penalty = Random.Shared.NextDouble() * 0.07 + 0.03;
-
-            // On calcule combien on peut perdre au maximum
-            double maxLoss = player.CriticalHitChance;
-
-            // Si la perte dépasse ce qu'il reste, on la limite
-            if (penalty > maxLoss)
-            {
-                penalty = maxLoss;
-            }
-
-            // On applique la pénalité au joueur.
-            player.CriticalHitChance -= penalty;
-
-            // Messages d'informations pour l'utilisateur.
-            Console.WriteLine($"Votre chance de coup critique a diminué de {penalty * 100:0.#}% !");
-            Console.WriteLine($"Chance de critique actuelle : {player.CriticalHitChance * 100:0.#}%");
+            player.CriticalHitChance = PlayerStatHelper.ModifyStatWithBounds
+                (
+                    player.CriticalHitChance,                                   // Stat à modifier (chance de coup critique)
+                    0.0, 1.0,                                                   // La chance de coup critique varie entre 0% et 100%
+                    0.03, 0.10,                                                 // On diminue la chance de coup critique entre 3% et 10%
+                    false,                                                      // On veut réaliser une diminution
+                    "Votre précision est déjà au plus bas...",
+                    "Votre chance de coup critique a diminué de {0:0.#}% !",
+                    "Chance de critique actuelle : {0:0.#}%"
+                );
         }
     }
 }
