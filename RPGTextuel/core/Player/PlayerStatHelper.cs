@@ -6,15 +6,15 @@ namespace RPGTextuel.Core.PlayerNamespace
         // Cette méthode permet de modifier les stats d'un joueur selon des bornes.
         public static double ModifyStatWithBounds
         (
-            double stat,
-            double min,
-            double max,
-            double randomMinChange,
-            double randomMaxChange,
-            bool increase,
-            string alreadyAtBoundMessage,
-            string changeMessageTemplate,
-            string finalValueMessageTemplate
+            double stat,                        // Stat à modifier
+            double min,                         // Valeur minimale pour la stat
+            double max,                         // Valeur maximale pour la stat
+            double randomMinChange,             // Valeur minimale pour le changement à effectuer
+            double randomMaxChange,             // Valeur minimale pour le changement à effectuer
+            bool increase,                      // Augmentation : true ; Diminution : false
+            string alreadyAtBoundMessage,       // Si la stat est déjà au maximum ou au minimum, on personnalise le message
+            string changeMessageTemplate,       // Message d'information pour l'utilisateur indiquant la valeur de la modif.
+            string finalValueMessageTemplate    // Message indiquant la nouvelle valeur de la stat pour l'utilisateur.    
         )
         {
             // On regarde si la stat à modifier est déjà au maximum ou au minimum.
