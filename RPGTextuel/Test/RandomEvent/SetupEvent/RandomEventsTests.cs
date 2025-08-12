@@ -123,7 +123,7 @@ namespace RPGTextuel.Test.RandomEvents
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             // On met le critique à 1%.
-            player.CriticalHitChance = 0.1;
+            player.CriticalHitChance = 0.01;
             Console.WriteLine("Résultat attendu : Diminution du critique de 1% seulement.");
 
             RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
