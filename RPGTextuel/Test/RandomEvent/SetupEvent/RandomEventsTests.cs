@@ -38,6 +38,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
+            Console.WriteLine("Résultat attendu : Le critique augmente d'une valeur aléatoire");
             RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
