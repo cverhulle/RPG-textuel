@@ -32,11 +32,28 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Méthode de test de GainCriticalChancePlayerEvent
-        public static void TestGainCriticalChancePlayerEvent()
+        public static void TestGainCriticalChancePlayerEventByDefault()
         {
-            Console.WriteLine("===== Test de GainCriticalChancePlayerEvent =====");
+            Console.WriteLine("===== Test de GainCriticalChancePlayerEventByDefault =====");
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Méthode de test de GainCriticalChancePlayerEvent quand le critique est à 99%
+        // On teste si l'ajout ne dépasse pas les 100%
+        public static void TestGainCriticalChancePlayerEventWithAlmostFullCrit()
+        {
+            Console.WriteLine("===== Test de GainCriticalChancePlayerEventWithAlmostFullCrit =====");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            // On met le critique à 99%
+            player.CriticalHitChance = 0.99;
+            Console.WriteLine("Résultat attendu : Le critique augmente de 1% seulement");
 
             RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
 
@@ -50,9 +67,9 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            // On met le critique à 100
+            // On met le critique à 100%
             player.CriticalHitChance = 1;
-            Console.WriteLine("Résultat attendu : Le critique reste à 100% et n'augmente pas");
+            Console.WriteLine("Résultat attendu : Message personnalisé indiquant que le critique ne peut pas être modifié");
 
             RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
 
