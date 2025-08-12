@@ -1,4 +1,4 @@
-namespace RPGTextuel.Core.Player
+namespace RPGTextuel.Core.PlayerNamespace
 {
     // Cette classe fournit des méthodes utilitaires liées aux Player.
     public static class PlayerStatHelper
