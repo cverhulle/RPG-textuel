@@ -114,7 +114,24 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        // Méthode de test de LoseCriticalChancePlayerEvent quand le critique est à 0.
+        // Méthode de test de LoseCriticalChancePlayerEvent quand le critique est à 1%.
+        // On teste que la baisse ne fait pas descendre sous les 0%
+        public static void TestLoseCriticalChancePlayerEventWithAlmostNoCrit()
+        {
+            Console.WriteLine("===== Test de LoseCriticalChancePlayerEventWithAlmostNoCrit =====");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            // On met le critique à 1%.
+            player.CriticalHitChance = 0.1;
+            Console.WriteLine("Résultat attendu : Diminution du critique de 1% seulement.");
+
+            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Méthode de test de LoseCriticalChancePlayerEvent quand le critique est à 0%.
         public static void TestLoseCriticalChancePlayerEventWithNoCrit()
         {
             Console.WriteLine("===== Test de LoseCriticalChancePlayerEventWithNoCrit =====");
