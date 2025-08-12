@@ -23,8 +23,17 @@ namespace RPGTextuel.RandomEvent.SetupEvent
             // Réduction entre 0.03 (3%) et 0.1 (10%)
             double penalty = Random.Shared.NextDouble() * 0.07 + 0.03;
 
-            // On applique la pénalité, sans descendre sous 0
-            player.CriticalHitChance = Math.Max(0, player.CriticalHitChance - penalty);
+            // On calcule combien on peut perdre au maximum
+            double maxLoss = player.CriticalHitChance;
+
+            // Si la perte dépasse ce qu'il reste, on la limite
+            if (penalty > maxLoss)
+            {
+                penalty = maxLoss;
+            }
+
+            // On applique la pénalité au joueur.
+            player.CriticalHitChance -= penalty;
 
             // Messages d'informations pour l'utilisateur.
             Console.WriteLine($"Votre chance de coup critique a diminué de {penalty * 100:0.#}% !");
