@@ -1,9 +1,12 @@
 En cours : 
-
-Ajout du bleu lors du Trigger des objets.
-Personnaliser la couleur des messages de défaite et victoire.
+Personnaliser la couleur des messages :
+    i) Message de défaite et victoire finale.
+    ii) Création du personnage
+    iii) Intro du jeu
 
 Idées d'améliorations :
 1. Ajouter un gain d'objet après chaque combat.
 2. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
-3. Evenement pour augmenter ou baisser la force du joueur
+3. Evenement pour augmenter ou baisser la force du joueur.
+4. Evenement pour augmenter ou baisser la force du prochain adversaire.
+5. Gérer les chances d'apparation des potions et des événements.
