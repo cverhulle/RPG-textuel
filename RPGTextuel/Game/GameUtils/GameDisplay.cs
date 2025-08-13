@@ -75,6 +75,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         }
 
         // Cette méthode permet d'afficher un message et les stats d'un ennemi.
+        // L'arguement isBoss modifie le texte en rouge.
         public static void ShowEnemyStatsWithAMessage(Enemy enemy, string message, bool isBoss = false)
         {
             Console.Clear();
