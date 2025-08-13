@@ -1,7 +1,7 @@
 En cours : 
-Coup Critique :   
-    -> Gestion en combat.
+Modifier la couleur du texte de certain événement.
 
 Idées d'améliorations :
 1. Ajouter un gain d'objet après chaque combat.
 2. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
+3. Evenement pour augmenter ou baisser la force du joueur
