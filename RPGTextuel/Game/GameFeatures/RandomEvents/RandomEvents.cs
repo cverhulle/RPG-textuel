@@ -21,15 +21,24 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
         {
             Console.Clear();
 
+            // On affiche le texte en bleu
             Console.ForegroundColor = ConsoleColor.Blue;
+
+            // Intro de l'événement
             Console.WriteLine(introMessage);
 
+            // Selection de l'événement aléatoire 
             var randomEvent = RandomEventFactory.GetRandomEvent();
+
+            // Message d'informations pour l'utilisateur
             Console.WriteLine($"\nÉvénement : {randomEvent.Name}");
             Console.WriteLine($"{randomEvent.Description}\n");
-            Console.ResetColor();
 
+            // Déclenchement de l'événement.
             randomEvent.Trigger(player);
+
+            // On remet la couleur par défaut
+            Console.ResetColor();
         }
     }
 }
