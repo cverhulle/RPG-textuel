@@ -60,7 +60,9 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             DisplayUtils.WriteLineInColor(title, color);
             DisplayUtils.WriteLineInColor(message, color);
 
+            Console.ForegroundColor = color;
             extraAction?.Invoke();
+            Console.ResetColor();
 
             GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color);
         }
