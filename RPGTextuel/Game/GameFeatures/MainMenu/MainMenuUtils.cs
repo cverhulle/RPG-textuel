@@ -39,7 +39,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 (
                     enemy,
                     $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !",
-                    isBoss : true
+                    color: ConsoleColor.Red
                 );
             }
 
