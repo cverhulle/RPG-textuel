@@ -75,14 +75,13 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         }
 
         // Cette méthode permet d'afficher un message et les stats d'un ennemi.
-        // L'arguement isBoss modifie le texte en rouge.
-        public static void ShowEnemyStatsWithAMessage(Enemy enemy, string message, bool isBoss = false)
+        // Il est possible de personnaliser la couleur du texte.
+        public static void ShowEnemyStatsWithAMessage(Enemy enemy, string message, ConsoleColor color = ConsoleColor.Black)
         {
             Console.Clear();
 
-            // Si c'est un combat de boss, l'affichage passe en rouge.
-            if (isBoss)
-                Console.ForegroundColor = ConsoleColor.Red;
+            // On personnalise la couleur du texte
+            Console.ForegroundColor = color;
 
             Console.WriteLine(message);
             enemy.PrintStats();
@@ -91,7 +90,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             Console.ResetColor();
 
             // On laisse à l'utilisateur le temps de lire et d'avancer au clic.
-            GameUtils.WaitForUser();
+            GameUtils.WaitForUser(color : color);
         }
 
         // Cette méthode affiche permet d'afficher une liste d'options.
