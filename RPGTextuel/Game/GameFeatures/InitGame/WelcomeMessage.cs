@@ -1,5 +1,3 @@
-using RPGTextuel.Game.GameUtilsNamespace;
-
 namespace RPGTextuel.Game.GameFeatures.InitGame
 {
     // Cette classe s'occupe de gérer l'affichage pour le jeu.
@@ -20,7 +18,6 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             Console.WriteLine();
             Console.WriteLine("💥 Bienvenue " + name);
             Console.WriteLine("Vous allez devoir affronter trois ennemis redoutables !");
-            GameUtils.WaitForUser();
         }
     }
 }

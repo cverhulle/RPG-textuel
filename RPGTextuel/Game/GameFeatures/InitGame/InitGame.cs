@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game.GameFeatures.InitGame
 {
@@ -11,6 +12,9 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         // Elle retourne le joueur ainsi crée de type Player et la liste des ennemis.
         public static (Player player, List<Enemy> ennemies) InitTheGame()
         {
+            // On règle la couleur des textes.
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
             // On affiche le message d'accueil
             InitWelcomeMessage.ShowWelcomeMessage();
 
@@ -25,6 +29,12 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
 
             // On affiche le dexième message d'accueil
             InitWelcomeMessage.ShowWelcomeMessage2(name);
+
+            // On attend que l'utilisateur ait tout lu.
+            GameUtils.WaitForUser(color: ConsoleColor.Cyan);
+
+            // On reset la couleur des textes.
+            Console.ResetColor();
 
             return (player, ennemies);
         }
