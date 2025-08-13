@@ -57,19 +57,19 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         public static void PrintStats(Character character)
         {
             switch (character)
-                {
-                    case Player player:
-                        player.PrintStats();
-                        break;
+            {
+                case Player player:
+                    player.PrintStats();
+                    break;
 
-                    case Enemy enemy:
-                        enemy.PrintStats();
-                        break;
+                case Enemy enemy:
+                    enemy.PrintStats();
+                    break;
 
-                    default:
-                        Console.WriteLine("Type de personnage inconnu.");
-                        break;
-                }
+                default:
+                    Console.WriteLine("Type de personnage inconnu.");
+                    break;
+            }
 
             GameUtils.WaitForUser();
         }
@@ -99,6 +99,14 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         public static void ShowOptionsList(List<string> options, string? title = null)
         {
             PrintFramedList(options, option => option, title);
+        }
+        
+        // Cette commande permet d'afficher une ligne de texte dans la couleur souhaitée.
+        public static void WriteLineInColor(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(text);
+            Console.ResetColor();
         }
     }       
 }
