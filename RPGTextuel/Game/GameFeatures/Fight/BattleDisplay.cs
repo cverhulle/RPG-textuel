@@ -50,5 +50,17 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 Console.WriteLine("Erreur : Fin prématurée du combat.");
             }
         }
+
+        // Méthode utilitaire pour ShowBattleResult
+        // Elle affiche le message de fin de bataille en fonction du résultat.
+        private static void ShowEndBattleMessage(string title, string message, ConsoleColor color, Action? extraAction = null)
+        {
+            DisplayUtils.WriteLineInColor(title, color);
+            DisplayUtils.WriteLineInColor(message, color);
+
+            extraAction?.Invoke();
+
+            GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color);
+        }
     }
 }
