@@ -32,18 +32,20 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // On affiche un message relatif au résultat du combat.
             if (player.IsAlive && !enemy.IsAlive)
             {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("===== FIN DU COMBAT =====\n");
-                Console.WriteLine($"🎉 Victoire ! {enemy.Name} a été vaincu. \n");
-                player.PrintHealthBar();
-                GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color: ConsoleColor.DarkGreen);
-                Console.ResetColor();
+                ShowEndBattleMessage(
+                    "===== FIN DU COMBAT =====\n",
+                    $"🎉 Victoire ! {enemy.Name} a été vaincu. \n",
+                    ConsoleColor.DarkGreen,
+                    () => player.PrintHealthBar()
+                );
             }
             else if (!player.IsAlive && enemy.IsAlive)
             {
-                DisplayUtils.WriteLineInColor("===== FIN DU COMBAT =====\n", ConsoleColor.DarkRed);
-                DisplayUtils.WriteLineInColor($"💀 Défaite... {player.Name} a été terrassé par {enemy.Name}.", ConsoleColor.DarkRed);
-                GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color: ConsoleColor.DarkRed);
+                ShowEndBattleMessage(
+                    "===== FIN DU COMBAT =====\n",
+                    $"💀 Défaite... {player.Name} a été terrassé par {enemy.Name}.",
+                    ConsoleColor.DarkRed
+                );
             }
             else
             {
