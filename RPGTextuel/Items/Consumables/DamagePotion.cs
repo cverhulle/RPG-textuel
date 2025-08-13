@@ -19,14 +19,23 @@ namespace RPGTextuel.Items.Consumables
         // Elle prend en argument un personnage et lui enlève des PV égaux à damage.
         public override Boolean Use(Character user, Character target)
         {
+            // On modifie l'affichage en violet
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+
+            // Si l'utilisateur est la cible, c'est une "erreur"
             if (user == target)
             {
                 Console.WriteLine("Vous ne pouvez pas utiliser une potion de dégâts sur vous-même !");
-                return false; 
+                return false;
             }
 
+            // Sinon, on diminue les PV de la cible
             Console.WriteLine($"{user.Name} utilise {name} sur {target.Name}");
             target.TakeDamage(damage);
+
+            // On reset la couleur d'affichage.
+            Console.ResetColor();
+
             return true;
         }
     }
