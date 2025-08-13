@@ -38,7 +38,8 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 GameDisplay.ShowEnemyStatsWithAMessage
                 (
                     enemy,
-                    $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !"
+                    $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !",
+                    isBoss : true
                 );
             }
 
