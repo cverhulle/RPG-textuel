@@ -8,19 +8,18 @@ namespace RPGTextuel.Game.GameFeatures.EndGame
     public static class EndGame
     {
         // Cette méthode est appelée pour fermer le jeu.
-        public static Boolean CloseTheGame()
+        public static void CloseGame()
         {
             Console.WriteLine("À bientôt !");
-            return false;
         }
-        
+
         // Méthode utilitaire permettant de savoir si l'on doit arreter la partie.
         // On retourne True si c'est le cas et, false sinon.
         public static bool ShouldEndGame(bool wantsToQuit, Player player)
         {
             if (wantsToQuit)
             {
-                CloseGame.CloseTheGame();
+                CloseGame();
                 return true;
             }
 
