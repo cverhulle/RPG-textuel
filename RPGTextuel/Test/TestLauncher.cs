@@ -1,5 +1,4 @@
 using RPGTextuel.Test.CoreCharacter;
-using RPGTextuel.Test.RandomEvents;
 
 namespace RPGTextuel.Test
 {
