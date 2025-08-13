@@ -1,6 +1,5 @@
 En cours : 
 Personnaliser la couleur des messages :
-    i) Message de défaite et victoire finale.
     ii) Création du personnage
     iii) Intro du jeu
 
