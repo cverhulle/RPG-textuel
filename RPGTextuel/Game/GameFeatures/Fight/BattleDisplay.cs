@@ -34,9 +34,9 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("===== FIN DU COMBAT =====\n");
-                Console.WriteLine("$🎉 Victoire ! {enemy.Name} a été vaincu. \n");
+                Console.WriteLine($"🎉 Victoire ! {enemy.Name} a été vaincu. \n");
                 player.PrintHealthBar();
-                GameUtils.WaitForUser("Appuyez sur une touche pour continuer...");
+                GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color: ConsoleColor.DarkGreen);
                 Console.ResetColor();
             }
             else if (!player.IsAlive && enemy.IsAlive)
