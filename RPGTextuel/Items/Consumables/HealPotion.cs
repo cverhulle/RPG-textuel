@@ -19,8 +19,17 @@ namespace RPGTextuel.Items.Consumables
         // Elle régénère un certain montant de PV.
         public override Boolean Use(Character user, Character target)
         {
+            // On modifie l'affichage en violet
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+
             Console.WriteLine($"{user.Name} utilise {name} sur {target.Name}");
-            return target.Heal(healAmount);
+
+            bool isHealed = target.Heal(healAmount);
+
+            // On remet l'affichage en noir.
+            Console.ResetColor();
+
+            return isHealed;
         }
     }
 }
