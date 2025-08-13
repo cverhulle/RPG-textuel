@@ -96,11 +96,11 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             Boolean isItemUsed = player.Inventory.UseItem(index, player, target);
             if (isItemUsed)
             {
-                GameUtils.WaitForUser("Objet utilisé !");
+                GameUtils.WaitForUser("Objet utilisé !", ConsoleColor.DarkMagenta);
             }
             else
             {
-                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.");
+                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.", ConsoleColor.DarkMagenta);
             }
             return isItemUsed;
         }
