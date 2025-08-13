@@ -32,7 +32,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // On affiche un message relatif au résultat du combat.
             if (player.IsAlive && !enemy.IsAlive)
             {
-                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("===== FIN DU COMBAT =====\n");
                 Console.WriteLine("$🎉 Victoire ! {enemy.Name} a été vaincu. \n");
                 player.PrintHealthBar();
