@@ -25,7 +25,7 @@ namespace RPGTextuel.Core.Characters
             if (isCritical)
             {
                 // On augmente les dégats.
-                damage = (int)(damage * GameConfig.criticalMultiplicator);
+                damage = (int) Math.Round(damage * GameConfig.criticalMultiplicator);
 
                 // On gère l'affichage
                 Console.ForegroundColor = ConsoleColor.Yellow;
