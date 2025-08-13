@@ -17,6 +17,7 @@ namespace RPGTextuel.Items.Consumables
 
         // On implémente la méthode Use.
         // Elle prend en argument un personnage et lui enlève des PV égaux à damage.
+        // On retourne un booléen indiquant sur l'objet est utilisé ou non.
         public override Boolean Use(Character user, Character target)
         {
             // On modifie l'affichage en violet
