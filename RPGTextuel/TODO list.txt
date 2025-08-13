@@ -1,7 +1,5 @@
 En cours : 
-Personnaliser la couleur des messages :
-    ii) Création du personnage
-    iii) Intro du jeu
+Gérer d'autres couleurs ? Dégradé de rouge en fonction de la force des ennemis ?
 
 Idées d'améliorations :
 1. Ajouter un gain d'objet après chaque combat.
