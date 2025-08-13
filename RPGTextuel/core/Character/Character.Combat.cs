@@ -1,3 +1,5 @@
+using RPGTextuel.Config;
+
 namespace RPGTextuel.Core.Characters
 {
     public abstract partial class Character
@@ -23,7 +25,7 @@ namespace RPGTextuel.Core.Characters
             if (isCritical)
             {
                 // On augmente les dégats.
-                damage = (int)(damage * 2);
+                damage = (int)(damage * GameConfig.criticalMultiplicator);
 
                 // On gère l'affichage
                 Console.ForegroundColor = ConsoleColor.Yellow;
