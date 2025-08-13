@@ -51,5 +51,33 @@ namespace RPGTextuel.Test.CoreCharacter
 
             GameUtils.WaitForUser();
         }
+
+        // On teste la méthode Attack avec un critique forcé
+        public static void TestAttackWithCriticalHit()
+        {
+            Console.WriteLine("=== Test : AttackWithCriticalHit ===");
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Enemy enemy = EnemyTestFactory.CreateGoblinMinion();
+
+            // On met le critique du joueur à 100%
+            player.CriticalHitChance = 1;
+
+            Console.WriteLine("Statistiques initiales :");
+            Console.WriteLine(">>> Joueur :");
+            player.PrintStats();
+            Console.WriteLine(">>> Ennemi :");
+            enemy.PrintStats();
+
+            Console.WriteLine("Résultat attendu : Affichage du message relatif au coup critique");
+            player.Attack(enemy);
+
+            Console.WriteLine("\nStatistiques après attaque :");
+            Console.WriteLine(">>> Joueur :");
+            player.PrintStats();
+            Console.WriteLine(">>> Ennemi :");
+            enemy.PrintStats();
+
+            GameUtils.WaitForUser();
+        }
     }
 }
