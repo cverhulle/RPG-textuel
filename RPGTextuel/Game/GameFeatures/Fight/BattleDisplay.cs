@@ -2,6 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Game.GameUtilsNamespace;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameFeatures.Fight
 {
@@ -28,25 +29,26 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         {
             Console.Clear();
 
-            Console.WriteLine("===== FIN DU COMBAT =====\n");
-
             // On affiche un message relatif au résultat du combat.
             if (player.IsAlive && !enemy.IsAlive)
             {
-                Console.WriteLine($"🎉 Victoire ! {enemy.Name} a été vaincu. \n");
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("===== FIN DU COMBAT =====\n");
+                Console.WriteLine("$🎉 Victoire ! {enemy.Name} a été vaincu. \n");
                 player.PrintHealthBar();
+                GameUtils.WaitForUser("Appuyez sur une touche pour continuer...");
+                Console.ResetColor();
             }
             else if (!player.IsAlive && enemy.IsAlive)
             {
-                Console.WriteLine($"💀 Défaite... {player.Name} a été terrassé par {enemy.Name}.");
+                DisplayUtils.WriteLineInColor("===== FIN DU COMBAT =====\n", ConsoleColor.DarkRed);
+                DisplayUtils.WriteLineInColor($"💀 Défaite... {player.Name} a été terrassé par {enemy.Name}.", ConsoleColor.DarkRed);
+                GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color: ConsoleColor.DarkRed);
             }
             else
             {
                 Console.WriteLine("Erreur : Fin prématurée du combat.");
             }
-            
-            // On attend l'appui de l'utilisateur pour continuer.
-            GameUtils.WaitForUser("Appuyez sur une touche pour continuer...");
         }
     }
 }
