@@ -1,3 +1,4 @@
+using RPGTextuel.Test.CoreCharacter;
 using RPGTextuel.Test.RandomEvents;
 
 namespace RPGTextuel.Test
@@ -8,7 +9,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            RandomEventsTests.TestLoseCriticalChancePlayerEventWithAlmostNoCrit();
+            TestCharacterCombat.TestAttack();
         }
     }
 }
