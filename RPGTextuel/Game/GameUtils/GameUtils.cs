@@ -1,4 +1,5 @@
 using RPGTextuel.Config;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameUtilsNamespace
 {
@@ -48,9 +49,10 @@ namespace RPGTextuel.Game.GameUtilsNamespace
 
         // Cette méthode affiche un message à l'utilisateur et attend qu'il tape sur le clavier pour
         // continuer le déroulé du programme
-        public static void WaitForUser(string message = "Appuyez sur une touche pour continuer...")
+        // Il est possible de personnalisé la couleur du message.
+        public static void WaitForUser(string message = "Appuyez sur une touche pour continuer...", ConsoleColor color = ConsoleColor.Black)
         {
-            Console.WriteLine($"\n{message}");
+            DisplayUtils.WriteLineInColor($"\n{message}", color);
             Console.ReadKey(true);
         }
     }
