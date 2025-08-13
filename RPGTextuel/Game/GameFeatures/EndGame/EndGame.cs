@@ -2,7 +2,7 @@ using RPGTextuel.Core;
 using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.Utils;
 
-namespace RPGTextuel.Game.GameFeatures.EndGame
+namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
 {
     // Cette classe s'occupe de gérer la fin de partie
     public static class EndGame

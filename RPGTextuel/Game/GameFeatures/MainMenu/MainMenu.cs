@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameFeatures.EndGameNamespace;
 using RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus;
 
 namespace RPGTextuel.Game.GameFeatures.MainMenu
@@ -28,7 +29,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
 
                 // On "regarde" si la partie doit s'arrêter.
-                if (MainMenuUtils.ShouldEndGame(wantsToQuit, player))
+                if (EndGame.ShouldEndGame(wantsToQuit, player))
                 {
                     return true;
                 }

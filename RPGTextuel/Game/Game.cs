@@ -1,6 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
-using RPGTextuel.Game.GameFeatures.EndGame;
+using RPGTextuel.Game.GameFeatures.EndGameNamespace;
 using RPGTextuel.Game.GameFeatures.InitGame;
 using RPGTextuel.Game.GameFeatures.MainMenu;
 
