@@ -8,7 +8,7 @@ namespace RPGTextuel.Game.GameFeatures.EndGame
     public static class EndGame
     {
         // Cette méthode est appelée lorsque le joueur décide de fermer le jeu.
-        private static void CloseGame()
+        private static void PlayerCloseGame()
         {
             Console.WriteLine("À bientôt !");
         }
@@ -25,7 +25,7 @@ namespace RPGTextuel.Game.GameFeatures.EndGame
         {
             if (wantsToQuit)
             {
-                CloseGame();
+                PlayerCloseGame();
                 return true;
             }
 
