@@ -43,10 +43,10 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                 RandomEventsInGame.TriggerRandomEventWithIntro(
                     player,
                     "Vous tentez votre chance avec un événement aléatoire...");
-                alreadyTried = true;
+                    alreadyTried = true;
             }
 
-            GameUtils.WaitForUser();
+            GameUtils.WaitForUser(color: ConsoleColor.Blue);
         }
 
         // Cette méthode affiche le menu de combat contre un ennemi donné
