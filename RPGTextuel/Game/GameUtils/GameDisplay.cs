@@ -100,13 +100,5 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         {
             PrintFramedList(options, option => option, title);
         }
-        
-        // Cette commande permet d'afficher une ligne de texte dans la couleur souhaitée.
-        public static void WriteLineInColor(string text, ConsoleColor color)
-        {
-            Console.ForegroundColor = color;
-            Console.WriteLine(text);
-            Console.ResetColor();
-        }
     }       
 }
