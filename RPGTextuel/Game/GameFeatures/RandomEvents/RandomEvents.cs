@@ -1,5 +1,6 @@
 using RPGTextuel.Core;
 using RPGTextuel.RandomEvent.Factory;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameFeatures.RandomEvents
 {
@@ -10,9 +11,7 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
         // Cependant, il a déjà utilisé sa chance pour ce combat.
         public static void TriggerRandomEventButAlreadyTried()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Vous avez déjà tenté votre chance pour cet affrontement !");
-            Console.ResetColor();
+            DisplayUtils.WriteLineInColor("Vous avez déjà tenté votre chance pour cet affrontement !", ConsoleColor.Blue);
         }
 
         // Cette méthode permet de déclencher un événement aléatoire.
