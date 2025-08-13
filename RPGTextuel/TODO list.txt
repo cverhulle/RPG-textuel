@@ -4,6 +4,4 @@ Coup Critique :
 
 Idées d'améliorations :
 1. Ajouter un gain d'objet après chaque combat.
-2. Ajout d'alliés
-3. Ajout de différentes classes 
-4. Coups spéciaux
+2. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
