@@ -1,7 +1,7 @@
 namespace RPGTextuel.Utils
 {
     // Cette classe fournit des méthodes utilitaires pour l'affichage
-    public class DispplayUtils
+    public class DisplayUtils
     {
         // Cette méthode permet d'afficher un texte dans une couleur donnée
         public static void WriteLineInColor(string text, ConsoleColor color)
