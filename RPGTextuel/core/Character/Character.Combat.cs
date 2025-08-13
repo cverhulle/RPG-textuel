@@ -13,24 +13,31 @@ namespace RPGTextuel.Core.Characters
         // Cette méthode permet d'infliger des dégats à un autre Character.
         public virtual void Attack(Character target)
         {
+            // On tire aléatoirement un nombre pour savoir si l'attaque est critique ou non.
             bool isCritical = Random.Shared.NextDouble() <= CriticalHitChance;
+
+            // On récupère les dégats du joueur
             int damage = Strength;
 
+            // Si l'attaque est critique...
             if (isCritical)
             {
-                damage = (int)(damage * 2); // Double les dégâts
+                // On augmente les dégats.
+                damage = (int)(damage * 2);
+
+                // On gère l'affichage
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !");
                 Console.ResetColor();
             }
+            // Sinon, on gère simplement l'affichage.
             else
             {
                 Console.WriteLine($"{Name} attaque {target.Name} pour {damage} points de dégâts.");
             }
 
+            // Dans les deux cas, on inflige les dégats à la cible
             target.TakeDamage(damage);
-
-
         }
     }
 }
