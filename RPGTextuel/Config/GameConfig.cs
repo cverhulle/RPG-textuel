@@ -44,7 +44,10 @@ namespace RPGTextuel.Config
 
         // Couleur des boss
         public const ConsoleColor bossColor = ConsoleColor.Red;
-        
+
+        // Couleur de la défaite
+        public const ConsoleColor defeatColor = ConsoleColor.DarkRed;
+
         // Couleur des événements
         public const ConsoleColor eventsColor = ConsoleColor.Blue;
 
@@ -53,5 +56,8 @@ namespace RPGTextuel.Config
 
         // Couleur de l'intro
         public const ConsoleColor introColor = ConsoleColor.Cyan;
+
+        // Couleur de la victoire
+        public const ConsoleColor victoryColor = ConsoleColor.DarkGreen;
     }
 } 
