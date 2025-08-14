@@ -1,5 +1,4 @@
 En cours : 
-Gérer d'autres couleurs ?
 
 Idées d'améliorations :
 1. Ajouter un gain d'objet après chaque combat.
