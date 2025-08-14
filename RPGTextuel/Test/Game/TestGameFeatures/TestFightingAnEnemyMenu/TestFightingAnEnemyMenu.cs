@@ -16,7 +16,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
             Enemy enemy = EnemyTestFactory.CreateGoblin();
 
-            FightingAnEnemyMenu.HandleMainMenu(player, enemy);
+            FightingAnEnemyMenu.HandleMainMenu(player, enemy, false);
         }
     }
 }
