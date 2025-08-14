@@ -1,6 +1,5 @@
 En cours : 
 Gérer d'autres couleurs ?
-Mettre les couleurs dans le fichier de config : Victoire, défaite, crit et des waitanduser
 
 Idées d'améliorations :
 1. Ajouter un gain d'objet après chaque combat.
