@@ -38,7 +38,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 GameDisplay.ShowEnemyStatsWithAMessage
                 (
                     enemy,
-                    $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer !",
+                    $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer ! 🔥",
                     color: ConsoleColor.Red
                 );
             }
@@ -46,7 +46,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // On affiche un message indiquant qu'on passe au combat suivant.
             else
             {
-                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight, ConsoleColor.DarkMagenta);
+                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight, ConsoleColor.DarkRed);
             }
         }
 
