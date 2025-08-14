@@ -39,6 +39,10 @@ namespace RPGTextuel.Config
 
 
         // Couleur des textes
+        // Couleur des objets
         public const ConsoleColor itemsColor = ConsoleColor.DarkMagenta;
+
+        // Couleur de l'intro
+        public const ConsoleColor introColor = ConsoleColor.Cyan;
     }
 } 

@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameUtilsNamespace;
@@ -13,7 +14,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         public static (Player player, List<Enemy> ennemies) InitTheGame()
         {
             // On règle la couleur des textes.
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = GameConfig.introColor;
 
             // On affiche le message d'accueil
             InitWelcomeMessage.ShowWelcomeMessage();
