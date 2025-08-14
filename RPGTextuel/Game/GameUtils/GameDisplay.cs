@@ -5,6 +5,7 @@ using RPGTextuel.Extensions.Players;
 using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Config;
 using RPGTextuel.Utils;
+using System.Drawing;
 
 namespace RPGTextuel.Game.GameUtilsNamespace
 {
@@ -97,9 +98,9 @@ namespace RPGTextuel.Game.GameUtilsNamespace
 
         // Cette méthode affiche permet d'afficher une liste d'options.
         // Elle prend en paramètre une liste de phrases à afficher et, éventuellement, un titre.
-        public static void ShowOptionsList(List<string> options, string? title = null)
+        public static void ShowOptionsList(List<string> options, string? title = null, ConsoleColor color = GameConfig.defaultColor)
         {
-            PrintFramedList(options, option => option, title);
+            PrintFramedList(options, option => option, title, color: color);
         }
     }       
 }
