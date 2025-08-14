@@ -40,14 +40,14 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 (
                     enemy,
                     $"🔥 Un grondement sourd secoue les environs... \n{enemy.Name} approche ! Le combat final va commencer ! 🔥",
-                    color: ConsoleColor.Red
+                    color: GameConfig.bossColor
                 );
             }
 
             // On affiche un message indiquant qu'on passe au combat suivant.
             else
             {
-                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight, ConsoleColor.DarkRed);
+                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight, GameConfig.ennemiesColor);
             }
         }
 
