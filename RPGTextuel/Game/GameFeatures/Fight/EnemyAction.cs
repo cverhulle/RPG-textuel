@@ -9,7 +9,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
     public static class EnemyAction
     {
         // Cette méthode gère le tour des ennemis.
-        public static void EnemyTurn(Player player, Enemy enemy, bool isFinalBoss)
+        public static void EnemyTurn(Player player, Enemy enemy, Boolean isFinalBoss)
         {
             // On calcule la couleur de l'affichage
             ConsoleColor colorToDisplay = isFinalBoss ? GameConfig.bossColor : GameConfig.ennemiesColor;

@@ -52,7 +52,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 
         // Cette méthode affiche le menu de combat contre un ennemi donné
         // Elle retourne un booléan déterminant si l'utilisateur veut continuer de jouer ou non.
-        public static Boolean HandleMainMenu(Player player, Enemy enemy, bool isFinalBoss)
+        public static Boolean HandleMainMenu(Player player, Enemy enemy, Boolean isFinalBoss)
         {
             // Cette variable permet de controler si l'utilisateur a déjà tenté l'événement aléatoire ou non.
             bool randomEventAlreadyTried = false;
