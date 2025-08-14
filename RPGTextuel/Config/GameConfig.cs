@@ -52,7 +52,7 @@ namespace RPGTextuel.Config
         public const ConsoleColor defeatColor = ConsoleColor.DarkRed;
 
         // Couleur par défaut
-        public const ConsoleColor defaultColor = ConsoleColor.Gray;
+        public const ConsoleColor defaultColor = ConsoleColor.Black;
 
         // Couleur des événements
         public const ConsoleColor eventsColor = ConsoleColor.Blue;
