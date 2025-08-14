@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.RandomEvents;
@@ -59,7 +60,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                     player,
                     "Un événement survient avant votre prochain combat..."
                 );
-                GameUtils.WaitForUser(color : ConsoleColor.Blue);
+                GameUtils.WaitForUser(color : GameConfig.eventsColor);
             }
         }
     }
