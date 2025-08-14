@@ -39,6 +39,12 @@ namespace RPGTextuel.Config
 
 
         // Couleur des textes
+        // Couleur des ennemis
+        public const ConsoleColor ennemiesColor = ConsoleColor.DarkRed;
+
+        // Couleur des boss
+        public const ConsoleColor bossColor = ConsoleColor.Red;
+        
         // Couleur des événements
         public const ConsoleColor eventsColor = ConsoleColor.Blue;
 
