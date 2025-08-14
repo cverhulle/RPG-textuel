@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.Fight;
@@ -46,7 +47,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                     alreadyTried = true;
             }
 
-            GameUtils.WaitForUser(color: ConsoleColor.Blue);
+            GameUtils.WaitForUser(color: GameConfig.eventsColor);
         }
 
         // Cette méthode affiche le menu de combat contre un ennemi donné
