@@ -39,6 +39,9 @@ namespace RPGTextuel.Config
 
 
         // Couleur des textes
+        // Couleur des événements
+        public const ConsoleColor eventsColor = ConsoleColor.Cyan;
+
         // Couleur des objets
         public const ConsoleColor itemsColor = ConsoleColor.DarkMagenta;
 
