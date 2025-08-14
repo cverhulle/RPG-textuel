@@ -32,7 +32,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             InitWelcomeMessage.ShowWelcomeMessage2(name);
 
             // On attend que l'utilisateur ait tout lu.
-            GameUtils.WaitForUser(color: ConsoleColor.Cyan);
+            GameUtils.WaitForUser(color: GameConfig.introColor);
 
             // On reset la couleur des textes.
             Console.ResetColor();
