@@ -14,6 +14,9 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // On calcule la couleur de l'affichage
             ConsoleColor colorToDisplay = isFinalBoss ? GameConfig.bossColor : GameConfig.ennemiesColor;
 
+            // On affiche le texte dans la couleur
+            Console.ForegroundColor = colorToDisplay;
+
             // Message d'action
             Console.WriteLine("\n== TOUR DE L'ADVERSAIRE ====");
 
