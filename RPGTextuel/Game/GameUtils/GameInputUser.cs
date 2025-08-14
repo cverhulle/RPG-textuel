@@ -7,6 +7,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
     public class GameInputUser
     {
         // Cette méthode affiche une question à l'utilisateur et retourne sa réponse.
+        // On n'utilise pas DisplayUtils.WriteLineInColor pour ne pas avoir le saut de ligne.
         public static string AskUserInput(string prompt, ConsoleColor color = GameConfig.defaultColor)
         {
             // On applique la couleur
