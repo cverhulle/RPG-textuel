@@ -1,4 +1,5 @@
 using RPGTextuel.Config;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Core.Characters
 {
@@ -28,9 +29,7 @@ namespace RPGTextuel.Core.Characters
                 damage = (int) Math.Round(damage * GameConfig.criticalMultiplicator);
 
                 // On gère l'affichage
-                Console.ForegroundColor = GameConfig.critColor;
-                Console.WriteLine($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !");
-                Console.ResetColor();
+                DisplayUtils.WriteLineInColor($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !", GameConfig.critColor);
             }
             // Sinon, on gère simplement l'affichage.
             else
