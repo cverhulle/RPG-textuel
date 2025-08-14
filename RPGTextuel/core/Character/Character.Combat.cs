@@ -28,7 +28,7 @@ namespace RPGTextuel.Core.Characters
                 damage = (int) Math.Round(damage * GameConfig.criticalMultiplicator);
 
                 // On gère l'affichage
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = GameConfig.critColor;
                 Console.WriteLine($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !");
                 Console.ResetColor();
             }

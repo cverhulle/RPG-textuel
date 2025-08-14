@@ -45,6 +45,9 @@ namespace RPGTextuel.Config
         // Couleur des boss
         public const ConsoleColor bossColor = ConsoleColor.Red;
 
+        // Couleur des coups critique 
+        public const ConsoleColor critColor = ConsoleColor.Yellow;
+
         // Couleur de la défaite
         public const ConsoleColor defeatColor = ConsoleColor.DarkRed;
 
