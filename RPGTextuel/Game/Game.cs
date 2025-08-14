@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.EndGameNamespace;
@@ -12,6 +13,9 @@ namespace RPGTextuel.Game
         // Cette méthode a pour but de lancer la partie
         public static void StartGame()
         {
+            // On initialise la couleur par défaut
+            Console.ForegroundColor = GameConfig.defaultColor;
+            
             // On initialise la partie
             (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
 
