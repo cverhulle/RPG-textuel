@@ -2,6 +2,7 @@ using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameUtilsNamespace;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameFeatures.Fight
 {
@@ -23,7 +24,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // Attaque de l'ennemi
             enemy.Attack(player);
 
-            Console.WriteLine("============================");
+            DisplayUtils.WriteLineInColor("============================", colorToDisplay);
 
             // On reset la couleur de l'écran
             Console.ForegroundColor = GameConfig.defaultColor;          
