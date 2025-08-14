@@ -9,11 +9,20 @@ namespace RPGTextuel.Game.GameUtilsNamespace
         // Cette méthode affiche une question à l'utilisateur et retourne sa réponse.
         public static string AskUserInput(string prompt, ConsoleColor color = GameConfig.defaultColor)
         {
-            // On affiche la question à l'utilisateur.
-            DisplayUtils.WriteLineInColor(prompt, color);
+            // On applique la couleur
+            Console.ForegroundColor = color;
+
+            // On écrit la demande
+            Console.Write(prompt + " ");
+
+            // On récupère la réponse
+            string rep = Console.ReadLine() ?? string.Empty;
+
+            // On remet la couleur par défaut
+            Console.ForegroundColor = GameConfig.defaultColor;
 
             // On retourne la réponse et, par défaut un message vide.
-            return Console.ReadLine() ?? string.Empty;
+            return rep;
         }
 
         // Cette méthode retourne le choix de l'utilisateur parmi un menu.
