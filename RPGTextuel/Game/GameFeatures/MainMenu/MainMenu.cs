@@ -26,7 +26,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 MainMenuUtils.HandleBetweenFights(player, enemy, fightNumber, "Un nouvel ennemi approche", isFinalBoss);
 
                 // On délègue la gestion du menu principal à une méthode dédiée
-                Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy);
+                Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy, isFinalBoss);
 
                 // On "regarde" si la partie doit s'arrêter.
                 if (EndGame.ShouldEndGame(wantsToQuit, player))

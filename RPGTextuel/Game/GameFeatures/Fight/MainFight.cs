@@ -7,7 +7,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
     public class MainFight
     {
         // Cette classe s'occupe du déroulé du combat.
-        public static void HandleBattle(Player player, Enemy enemy)
+        public static void HandleBattle(Player player, Enemy enemy, bool isFinalBoss)
         {
             // Tant que les 2 combattants sont en vie, le combat continue.
             while (player.IsAlive && enemy.IsAlive)
@@ -21,7 +21,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 // Tour de l'ennemi
                 if (enemy.IsAlive)
                 {
-                    EnemyAction.EnemyTurn(player, enemy);
+                    EnemyAction.EnemyTurn(player, enemy, isFinalBoss);
                 }
             }
 

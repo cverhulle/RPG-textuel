@@ -8,7 +8,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
     public static class EnemyAction
     {
         // Cette méthode gère le tour des ennemis.
-        public static void EnemyTurn(Player player, Enemy enemy)
+        public static void EnemyTurn(Player player, Enemy enemy, bool isFinalBoss)
         {
             // Message d'action
             Console.WriteLine("\n== TOUR DE L'ADVERSAIRE ====");
