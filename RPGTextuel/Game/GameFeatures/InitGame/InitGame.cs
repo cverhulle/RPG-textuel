@@ -35,7 +35,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             GameUtils.WaitForUser(color: GameConfig.introColor);
 
             // On reset la couleur des textes.
-            Console.ResetColor();
+            Console.ForegroundColor = GameConfig.defaultColor;
 
             return (player, ennemies);
         }

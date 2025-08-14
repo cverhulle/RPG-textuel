@@ -24,7 +24,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             Console.ForegroundColor = GameConfig.playerColor;
             player.Attack(enemy);
             GameUtils.WaitForUser(color: GameConfig.playerColor);
-            Console.ResetColor();
+            Console.ForegroundColor = GameConfig.defaultColor;
         }
 
         // Cette méthode gère le tour du joueur.

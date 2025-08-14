@@ -63,7 +63,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
 
             Console.ForegroundColor = color;
             extraAction?.Invoke();
-            Console.ResetColor();
+            Console.ForegroundColor = GameConfig.defaultColor;
 
             GameUtils.WaitForUser("Appuyez sur une touche pour continuer...", color);
         }

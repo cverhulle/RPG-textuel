@@ -26,7 +26,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             Console.WriteLine("============================");
 
             // On reset la couleur de l'écran
-            Console.ResetColor();            
+            Console.ForegroundColor = GameConfig.defaultColor;          
 
             //Pause pour que le joueur ait le temps de lire
             GameUtils.WaitForUser(color : colorToDisplay);

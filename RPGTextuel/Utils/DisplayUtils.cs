@@ -1,3 +1,5 @@
+using RPGTextuel.Config;
+
 namespace RPGTextuel.Utils
 {
     // Cette classe fournit des méthodes utilitaires pour l'affichage
@@ -8,7 +10,7 @@ namespace RPGTextuel.Utils
         {
             Console.ForegroundColor = color;
             Console.WriteLine(text);
-            Console.ResetColor();
+            Console.ForegroundColor = GameConfig.defaultColor;
         }
     }
 }

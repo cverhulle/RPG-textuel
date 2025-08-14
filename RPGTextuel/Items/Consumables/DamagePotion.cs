@@ -36,7 +36,7 @@ namespace RPGTextuel.Items.Consumables
             target.TakeDamage(damage);
 
             // On reset la couleur d'affichage.
-            Console.ResetColor();
+            Console.ForegroundColor = GameConfig.defaultColor;
 
             return true;
         }

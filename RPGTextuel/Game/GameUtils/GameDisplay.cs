@@ -3,6 +3,7 @@ using RPGTextuel.Core.Characters;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Players;
 using RPGTextuel.Extensions.Enemies;
+using RPGTextuel.Config;
 
 namespace RPGTextuel.Game.GameUtilsNamespace
 {
@@ -87,7 +88,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             enemy.PrintStats();
 
             // On remet la couleur en noire dans tous les cas.
-            Console.ResetColor();
+            Console.ForegroundColor = GameConfig.defaultColor;
 
             // On laisse à l'utilisateur le temps de lire et d'avancer au clic.
             GameUtils.WaitForUser(color : color);

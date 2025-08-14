@@ -27,8 +27,8 @@ namespace RPGTextuel.Items.Consumables
 
             bool isHealed = target.Heal(healAmount);
 
-            // On remet l'affichage en noir.
-            Console.ResetColor();
+            // On remet l'affichage par défaut.
+            Console.ForegroundColor = GameConfig.defaultColor;
 
             return isHealed;
         }
