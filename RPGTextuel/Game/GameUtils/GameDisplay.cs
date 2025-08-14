@@ -4,6 +4,7 @@ using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Players;
 using RPGTextuel.Extensions.Enemies;
 using RPGTextuel.Config;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameUtilsNamespace
 {
@@ -11,12 +12,12 @@ namespace RPGTextuel.Game.GameUtilsNamespace
     public static class GameDisplay
     {
         // Cette méthode est une méthode générique pour afficher une liste d'options.
-        public static void PrintFramedList<T>(List<T> elements, Func<T, string> formatter, string? title = null, bool showCount = false)
+        public static void PrintFramedList<T>(List<T> elements, Func<T, string> formatter, string? title = null, bool showCount = false, ConsoleColor color = GameConfig.defaultColor)
         {
             // Si elements est vide ou null, on retourne une erreur.
             if (elements == null || elements.Count == 0)
             {
-                Console.WriteLine("Aucun élément à afficher.");
+                DisplayUtils.WriteLineInColor("Aucun élément à afficher.", color);
                 return;
             }
 
@@ -24,26 +25,26 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             if (!string.IsNullOrWhiteSpace(title))
             {
                 string header = $"===== {title.ToUpper()} =====";
-                Console.WriteLine(header);
+                DisplayUtils.WriteLineInColor(header, color);
             }
 
             // Affichage des éléments formatés
             for (int i = 0; i < elements.Count; i++)
             {
-                Console.WriteLine($"  {i + 1}. {formatter(elements[i])}");
+                DisplayUtils.WriteLineInColor($"  {i + 1}. {formatter(elements[i])}", color);
             }
 
             // Ligne de fin si titre présent
             if (!string.IsNullOrWhiteSpace(title))
             {
                 int underlineLength = $"===== {title} =====".Length;
-                Console.WriteLine(new string('=', underlineLength));
+                DisplayUtils.WriteLineInColor(new string('=', underlineLength), color);
             }
 
             // Affichage du compteur
             if (showCount)
             {
-                Console.WriteLine($"\n{elements.Count} élément(s) au total.");
+                DisplayUtils.WriteLineInColor($"\n{elements.Count} élément(s) au total.", color);
             }
         }
 
