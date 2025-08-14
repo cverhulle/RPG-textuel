@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Extensions.Characters;
@@ -35,7 +36,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 ShowEndBattleMessage(
                     "===== FIN DU COMBAT =====\n",
                     $"🎉 Victoire ! {enemy.Name} a été vaincu. \n",
-                    ConsoleColor.DarkGreen,
+                    GameConfig.victoryColor,
                     () => player.PrintHealthBar()
                 );
             }
@@ -44,7 +45,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 ShowEndBattleMessage(
                     "===== FIN DU COMBAT =====\n",
                     $"💀 Défaite... {player.Name} a été terrassé par {enemy.Name}.",
-                    ConsoleColor.DarkRed
+                    GameConfig.defeatColor
                 );
             }
             else
