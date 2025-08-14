@@ -32,7 +32,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             }
 
             // Sinon, on demande à l'utilisateur la cible.
-            int choice = GameInputUser.AskMenuChoice(options, "Choisissez une cible");
+            int choice = GameInputUser.AskMenuChoice(options, "Choisissez une cible", GameConfig.itemsColor);
 
             return targets[choice - 1];
         }
