@@ -17,6 +17,13 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             "Voir mes stats"
         };
 
+        // On gère le choix "attaque" de la part du joueur
+        private static void PlayerAttack(Player player, Enemy enemy)
+        {
+            player.Attack(enemy);
+            GameUtils.WaitForUser();
+        }
+
         // Cette méthode gère le tour du joueur.
         public static void PlayerTurn(Player player, Enemy enemy)
         {
@@ -35,8 +42,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 {
                     // Attaque ; Cette action met fin au tour.
                     case 1:
-                        player.Attack(enemy);
-                        GameUtils.WaitForUser();
+                        PlayerAttack(player, enemy);
                         hasActed = true;
                         break;
 
@@ -46,12 +52,12 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                         break;
 
                     // Voir les stats de l'adversaire
-                    case 3: 
+                    case 3:
                         GameDisplay.PrintStats(enemy);
                         break;
 
                     // Voir mes stats
-                    case 4: 
+                    case 4:
                         GameDisplay.PrintStats(player);
                         break;
                 }
