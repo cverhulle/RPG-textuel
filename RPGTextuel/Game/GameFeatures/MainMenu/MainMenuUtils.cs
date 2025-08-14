@@ -46,7 +46,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // On affiche un message indiquant qu'on passe au combat suivant.
             else
             {
-                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight);
+                GameDisplay.ShowEnemyStatsWithAMessage(enemy, messageIntroFight, ConsoleColor.DarkMagenta);
             }
         }
 
