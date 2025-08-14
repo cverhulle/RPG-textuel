@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Game.GameUtilsNamespace;
@@ -96,11 +97,11 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             Boolean isItemUsed = player.Inventory.UseItem(index, player, target);
             if (isItemUsed)
             {
-                GameUtils.WaitForUser("Objet utilisé !", ConsoleColor.DarkMagenta);
+                GameUtils.WaitForUser("Objet utilisé !", GameConfig.itemsColor);
             }
             else
             {
-                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.", ConsoleColor.DarkMagenta);
+                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.", GameConfig.itemsColor);
             }
             return isItemUsed;
         }

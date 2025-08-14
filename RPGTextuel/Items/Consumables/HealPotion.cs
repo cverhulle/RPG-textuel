@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Items.Class;
 
@@ -20,7 +21,7 @@ namespace RPGTextuel.Items.Consumables
         public override Boolean Use(Character user, Character target)
         {
             // On modifie l'affichage en violet
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = GameConfig.itemsColor;
 
             Console.WriteLine($"{user.Name} utilise {name} sur {target.Name}");
 
