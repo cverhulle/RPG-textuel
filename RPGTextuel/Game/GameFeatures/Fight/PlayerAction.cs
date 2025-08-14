@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
@@ -20,8 +21,10 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         // On gère le choix "attaque" de la part du joueur
         private static void PlayerAttack(Player player, Enemy enemy)
         {
+            Console.ForegroundColor = GameConfig.playerColor;
             player.Attack(enemy);
-            GameUtils.WaitForUser();
+            GameUtils.WaitForUser(color: GameConfig.playerColor);
+            Console.ResetColor();
         }
 
         // Cette méthode gère le tour du joueur.
