@@ -25,7 +25,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             while (true)
             {
                 // On récupère la réponse de l'utilisateur.
-                string input = AskUserInput("\nFaites votre choix : ");
+                string input = AskUserInput("\nFaites votre choix : ", color);
 
                 // On analyse la réponse de l'utilisateur
                 if (GameUtils.IsValidMenuChoice(input, options.Count, out int choice))
@@ -34,7 +34,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
                 }
 
                 // Si l'entrée n'est pas valide, on affiche un message.
-                Console.WriteLine("Entrée invalide.");
+                DisplayUtils.WriteLineInColor("Entrée invalide.", color);
             }
         }
     }
