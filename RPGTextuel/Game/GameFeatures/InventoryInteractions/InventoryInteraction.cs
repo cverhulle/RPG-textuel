@@ -55,7 +55,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             // On gère le cas où l'inventaire est vide.
             if (inventory.IsEmpty())
             {
-                GameUtils.WaitForUser("Votre inventaire est vide.");
+                GameUtils.WaitForUser("Votre inventaire est vide.", color: GameConfig.itemsColor);
                 return inventory.Count +1;
             }
 
@@ -63,7 +63,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             List<string> options = GetItemNameListsAndBackMessage(inventory.GetAllItems());
 
             // Appelle la fonction qui gère l'affichage et la réponse au menu.
-            return GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}");
+            return GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}", GameConfig.itemsColor);
         }
 
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
