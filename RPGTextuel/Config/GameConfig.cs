@@ -2,6 +2,7 @@ namespace RPGTextuel.Config
 {
     public static class GameConfig
     {
+        // Barre de vie 
         // Taille de la barre de vie (nombre de cœurs)
         public const int HealthBarLength = 10;
 
@@ -11,9 +12,17 @@ namespace RPGTextuel.Config
         // Symbole pour un cœur vide
         public const string EmptyHeartSymbol = "🤍 ";
 
+
+
+
+        // Paramètre de jeu 
         // Taille Maximum pour le nom des personnages.
         public const int MaxNameLength = 15;
 
+
+
+
+        // Coup critique 
         // Chance de coup critique par défaut
         public const double criticalHitByDefault = 0.05;
 
@@ -25,5 +34,11 @@ namespace RPGTextuel.Config
 
         // Multiplicateur pour des dégats en coup critique
         public const double criticalMultiplicator = 1.4;
+
+
+
+
+        // Couleur des textes
+        public const ConsoleColor itemsColor = ConsoleColor.DarkMagenta;
     }
 } 
