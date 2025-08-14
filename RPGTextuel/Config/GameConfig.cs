@@ -60,6 +60,9 @@ namespace RPGTextuel.Config
         // Couleur de l'intro
         public const ConsoleColor introColor = ConsoleColor.Cyan;
 
+        // Couleur pour le joueur
+        public const ConsoleColor playerColor = ConsoleColor.Green;
+
         // Couleur de la victoire
         public const ConsoleColor victoryColor = ConsoleColor.DarkGreen;
     }
