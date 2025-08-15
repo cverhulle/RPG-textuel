@@ -9,6 +9,7 @@ namespace RPGTextuel.Config
     public static class ItemDropConfig
     {
         // Taux de drop des objets par défaut.
+        // Récompense après un combat "normal"
         public static readonly List<Weighted<Item>> DefaultPotionDrops = new()
         {
             new Weighted<Item>(SetupHealPotions.SmallHealPotion, 50),
