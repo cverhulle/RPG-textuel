@@ -1,8 +1,9 @@
 En cours : 
+Ajouter un gain d'objet après chaque combat.
+
 
 Idées d'améliorations :
-1. Ajouter un gain d'objet après chaque combat.
-2. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
-3. Evenement pour augmenter ou baisser la force du joueur.
-4. Evenement pour augmenter ou baisser la force du prochain adversaire.
-5. Gérer les chances d'apparation des potions et des événements.
+1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
+2. Evenement pour augmenter ou baisser la force du joueur.
+3. Evenement pour augmenter ou baisser la force du prochain adversaire.
+4. Gérer les chances d'apparation des potions et des événements.
