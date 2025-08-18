@@ -18,6 +18,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             var itemToEarn = RandomEventFactory.GetRandomItem(ItemDropTableType.Default);
 
             // On décleche l'événement (ajout de l'objet dans l'inventaire et affichage)
+            Console.Write("===== RECOMPENSE DE FIN DE COMBAT ===== \n");
             itemToEarn.Trigger(player);
 
             // On remet la couleur par défaut
