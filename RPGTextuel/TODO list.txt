@@ -1,6 +1,4 @@
 En cours : 
-Ajouter un gain d'objet après chaque combat.
-
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
