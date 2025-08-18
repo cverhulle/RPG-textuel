@@ -45,5 +45,10 @@ namespace RPGTextuel.RandomEvent.Factory
             var factory = allEventFactories.PickRandom();
             return factory(dropType);
         }
+
+        public static RandomEventClass GetRandomItem(ItemDropTableType dropType = ItemDropTableType.Default)
+        {
+            return new FindItemEvent(GetItemTable(dropType));
+        }
     }
 }
