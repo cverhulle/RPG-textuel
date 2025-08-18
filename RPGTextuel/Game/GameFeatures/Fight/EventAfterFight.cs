@@ -1,6 +1,7 @@
 using RPGTextuel.Config;
 using RPGTextuel.Config.Enum;
 using RPGTextuel.Core;
+using RPGTextuel.Game.GameUtilsNamespace;
 using RPGTextuel.RandomEvent.Factory;
 
 namespace RPGTextuel.Game.GameFeatures.Fight
@@ -20,6 +21,9 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             // On décleche l'événement (ajout de l'objet dans l'inventaire et affichage)
             Console.Write("===== RECOMPENSE DE FIN DE COMBAT ===== \n");
             itemToEarn.Trigger(player);
+
+            // On laisse à l'utilisateur le temps de lire l'affichage
+            GameUtils.WaitForUser(color: GameConfig.eventsColor);
 
             // On remet la couleur par défaut
             Console.ForegroundColor = GameConfig.defaultColor;
