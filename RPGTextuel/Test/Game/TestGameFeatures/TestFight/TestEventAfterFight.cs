@@ -13,7 +13,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             Console.WriteLine("=== Test EarnAnItem ===");
 
             // On crée un joueur de test
-            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+            Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
             Console.WriteLine("Inventaire avant l'ajout :");
             player.Inventory.DisplayInventory();
