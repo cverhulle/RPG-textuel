@@ -21,7 +21,7 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
         {
             Console.Clear();
 
-            // On affiche le texte en bleu
+            // On affiche le texte en couleur
             Console.ForegroundColor = GameConfig.eventsColor;
 
             // Intro de l'événement
