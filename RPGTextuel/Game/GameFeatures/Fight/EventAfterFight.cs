@@ -8,10 +8,10 @@ namespace RPGTextuel.Game.GameFeatures.Fight
     public static class EventAfterAFight
     {
         // Cette méthode permet de faire gagner un objet au joueur après un combat en utilisant la table par défaut.
-        public static void EarnAnObjet(Player player)
+        public static void EarnAnItem(Player player)
         {
-            var objetctToEarn = RandomEventFactory.GetRandomItem(ItemDropTableType.Default);
-            objetctToEarn.Trigger(player);
+            var itemToEarn = RandomEventFactory.GetRandomItem(ItemDropTableType.Default);
+            itemToEarn.Trigger(player);
         }
     }
 }
