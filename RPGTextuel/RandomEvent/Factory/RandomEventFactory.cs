@@ -46,6 +46,7 @@ namespace RPGTextuel.RandomEvent.Factory
             return factory(dropType);
         }
 
+        // Cette méthode permet de retourner un événement qui donne un item aléatoire.
         public static RandomEventClass GetRandomItem(ItemDropTableType dropType = ItemDropTableType.Default)
         {
             return new FindItemEvent(GetItemTable(dropType));
