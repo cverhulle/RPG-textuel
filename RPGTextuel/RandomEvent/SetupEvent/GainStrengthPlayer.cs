@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'évenement "Gain de Force".
+    // On définit l'évenement "Gain de Force pour le joueur".
     public class GainStrengthEvent : RandomEventClass
     {
         // Nom et description de l'événement
@@ -17,15 +17,15 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         {
             // On applique la méthode générique
             player.Strength = (int)PlayerStatHelper.ModifyStatWithBounds(   
-                stat: player.Strength,                                              // stat actuelle
-                min: 1,                                                             // valeur minimale possible
-                max: 999,                                                           // valeur max qu’on s’autorise
-                randomMinChange: 1,                                                 // gain minimal (ici en "points bruts")
-                randomMaxChange: 3,                                                 // gain maximal
-                increase: true,                                                     // on augmente
+                stat: player.Strength,                                              // Stat actuelle
+                min: 1,                                                             // Valeur minimale possible
+                max: 999,                                                           // Valeur max qu’on s’autorise
+                randomMinChange: 1,                                                 // Gain minimal
+                randomMaxChange: 3,                                                 // Gain maximal
+                increase: true,                                                     // On augmente
                 alreadyAtBoundMessage: "Votre force est déjà au maximum 💪",
-                changeMessageTemplate: "Vous gagnez {0} points de force !",         // ici on n'est pas en %, donc {0} directement
-                finalValueMessageTemplate: "Votre force est maintenant de {0}."     // pareil
+                changeMessageTemplate: "Vous gagnez {0} points de force !",         // Ici on n'est pas en %, donc {0} directement
+                finalValueMessageTemplate: "Votre force est maintenant de {0}."     // Pareil
             );
         }
     }
