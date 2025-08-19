@@ -23,7 +23,9 @@ namespace RPGTextuel.RandomEvent.SetupEvent
                 increase: false,                                                    // On perd des points
                 alreadyAtBoundMessage: "Vous êtes déjà au minimum de force.",
                 changeMessageTemplate: "Vous perdez {0} points de force...",        // Ici on n'est pas en %, donc {0} directement
-                finalValueMessageTemplate: "Votre force est maintenant de {0}."     // Pateil
+                finalValueMessageTemplate: "Votre force est maintenant de {0}." ,    // Pareil
+                isPercentage : false,                                               // La donnée n'est pas en pourcentage
+                roundToInt: true                                                     // La force est un entier
             );
         }
     }
