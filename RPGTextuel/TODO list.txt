@@ -1,6 +1,4 @@
 En cours : 
-Evenement pour augmenter ou baisser la force du joueur.
-
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
