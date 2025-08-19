@@ -26,7 +26,8 @@ namespace RPGTextuel.RandomEvent.SetupEvent
                 alreadyAtBoundMessage: "Votre force est déjà au maximum 💪",
                 changeMessageTemplate: "Vous gagnez {0:0.#} points de force !",             // Ici on n'est pas en %, donc {0:0.#} directement
                 finalValueMessageTemplate: "Votre force est maintenant de {0:0.#}.",        // Pareil
-                isPercentage : false                                                        // La donnée n'est pas en pourcentage
+                isPercentage : false,                                                       // La donnée n'est pas en pourcentage
+                roundToInt: true                                                            // La force est un entier
             );
         }
     }
