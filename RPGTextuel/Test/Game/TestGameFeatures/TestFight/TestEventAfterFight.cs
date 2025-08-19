@@ -7,10 +7,10 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
     // Cette classe permet de tester EventAfterAFight
     public static class TestEventAfterAFight
     {
-        // Cette méthode permet de tester EarnAnItem
-        public static void TestEarnAnItem()
+        // Cette méthode permet de tester EarnAnItem (hors combat de boss)
+        public static void TestEarnAnItemByDefault()
         {
-            Console.WriteLine("=== Test EarnAnItem ===");
+            Console.WriteLine("=== Test EarnAnItemByDefault ===");
 
             // On crée un joueur de test
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
@@ -19,7 +19,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             player.Inventory.DisplayInventory();
 
             // On appelle la méthode à tester
-            EventAfterAFight.EarnAnItem(player);
+            EventAfterAFight.EarnAnItem(player, false);
 
             // On affiche l'inventaire après ajout
             Console.WriteLine("Inventaire après l'ajout :");
