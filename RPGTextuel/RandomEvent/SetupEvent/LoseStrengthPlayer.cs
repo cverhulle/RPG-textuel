@@ -10,6 +10,8 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public override string Name => "Blessure musculaire";
         public override string Description => "Une mauvaise blessure vous affaiblit...";
 
+        // Activation de l'événement :
+        // Perte aléatoire entre 1 et 2 points de Force
         public override void Trigger(Player player)
         {
             player.Strength = (int)PlayerStatHelper.ModifyStatWithBounds(
