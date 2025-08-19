@@ -1,4 +1,5 @@
-using RPGTextuel.Test.Game.TestGameFeatures;
+using RPGTextuel.Test.RandomEvents;
+
 
 namespace RPGTextuel.Test
 {
@@ -8,7 +9,7 @@ namespace RPGTextuel.Test
         // On lance cette méthode pour tester le programme.
         public static void TestLauncherMain()
         {
-            TestEventAfterAFight.TestEarnAnItemAfterBoss();
+            RandomEventsTests.TestGainStrengthEventByDefault();
         }
     }
 }
