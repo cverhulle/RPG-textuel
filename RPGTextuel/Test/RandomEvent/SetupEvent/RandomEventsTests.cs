@@ -128,6 +128,20 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Test de GainStrengthEvent avec force déjà au maximum
+        public static void TestGainStrengthEventWithMaxStrength()
+        {
+            Console.WriteLine("===== Test de GainStrengthEventWithMaxStrength =====");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            player.Strength = 999;
+            Console.WriteLine("Résultat attendu : Message indiquant que la force est déjà au maximum.");
+            RandomEventsTestsUtils.GainStrengthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Méthode de test de LoseCriticalChancePlayerEventByDefault
         public static void TestLoseCriticalChancePlayerEventByDelfault()
         {
