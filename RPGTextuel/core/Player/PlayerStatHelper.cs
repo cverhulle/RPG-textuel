@@ -14,7 +14,8 @@ namespace RPGTextuel.Core.PlayerNamespace
             bool increase,                      // Augmentation : true ; Diminution : false
             string alreadyAtBoundMessage,       // Si la stat est déjà au maximum ou au minimum, on personnalise le message
             string changeMessageTemplate,       // Message d'information pour l'utilisateur indiquant la valeur de la modif.
-            string finalValueMessageTemplate    // Message indiquant la nouvelle valeur de la stat pour l'utilisateur.    
+            string finalValueMessageTemplate,    // Message indiquant la nouvelle valeur de la stat pour l'utilisateur.    
+            bool isPercentage = true            // Définit si la stat est exprimée en % ou non
         )
         {
             // On regarde si la stat à modifier est déjà au maximum ou au minimum.
@@ -37,9 +38,17 @@ namespace RPGTextuel.Core.PlayerNamespace
             // On modifie la statistique
             stat += increase ? change : -change;
 
-            // Messages d'informations pour l'utilisateur.
-            Console.WriteLine(string.Format(changeMessageTemplate, change * 100));
-            Console.WriteLine(string.Format(finalValueMessageTemplate, stat * 100));
+            // Format d’affichage : % ou valeur brute
+            if (isPercentage)
+            {
+                Console.WriteLine(string.Format(changeMessageTemplate, change * 100));
+                Console.WriteLine(string.Format(finalValueMessageTemplate, stat * 100));
+            }
+            else
+            {
+                Console.WriteLine(string.Format(changeMessageTemplate, change));
+                Console.WriteLine(string.Format(finalValueMessageTemplate, stat));
+            }
 
             return stat;
         }
