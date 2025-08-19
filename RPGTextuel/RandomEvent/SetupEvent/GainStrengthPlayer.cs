@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'évenement "Gain de Points de vie".
+    // On définit l'évenement "Gain de Force".
     public class GainStrengthEvent : RandomEventClass
     {
         // Nom et description de l'événement

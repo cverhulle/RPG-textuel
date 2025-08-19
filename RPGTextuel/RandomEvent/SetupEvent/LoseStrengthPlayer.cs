@@ -1,0 +1,4 @@
+namespace RPGTextuel.RandomEvent.SetupEvent
+{
+    
+}
