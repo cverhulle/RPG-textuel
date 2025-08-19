@@ -56,6 +56,15 @@ namespace RPGTextuel.Test.RandomEvents
             player.PrintHealthBar();
         }
 
+        // Méthode utilitaire liée à l'événement GainStrengthEvent
+        public static void GainStrengthEventUtils(Player player)
+        {
+            Console.WriteLine($"Force initiale : {player.Strength}");
+
+            GainStrengthEvent evt = new GainStrengthEvent();
+            evt.Trigger(player);
+        }
+
         // Méthode utilitaire liée à l'événement LoseCriticalChancePlayerEvent
         public static void LoseCriticalChancePlayerEventUtils(Player player)
         {
