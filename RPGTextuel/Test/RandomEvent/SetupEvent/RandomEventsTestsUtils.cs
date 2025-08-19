@@ -96,6 +96,15 @@ namespace RPGTextuel.Test.RandomEvents
             player.Inventory.DisplayInventory();
         }
 
+        // Méthode utilitaire liée à l'événement LoseStrengthEvent
+        public static void LoseStrengthEventUtils(Player player)
+        {
+            Console.WriteLine($"Force initiale : {player.Strength}");
+
+            LoseStrengthEvent evt = new LoseStrengthEvent();
+            evt.Trigger(player);
+        }
+
         // Méthode utilitaire liée à l'évenement PeacefulDayEvent
         public static void PeacefulDayEventUtils(Player player)
         {
