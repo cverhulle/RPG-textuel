@@ -223,6 +223,19 @@ namespace RPGTextuel.Test.RandomEvents
 
             GameUtils.WaitForUser();
         }
+
+        // On teste LoseStrengthEvent par défaut.
+        public static void TestLoseStrengthEventByDefault()
+        {
+            Console.WriteLine("===== Test de LoseStrengthEventByDefault =====");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            Console.WriteLine("Résultat attendu : Diminution aléatoire de la force (1 à 2).");
+            RandomEventsTestsUtils.LoseStrengthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
         
         // Cette méthode permet de tester PeacefulDayEvent.
         public static void TestPeacefulDayEvent()
