@@ -29,7 +29,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             BattleDisplay.ShowBattleResult(player, enemy);
 
             // On déclenche le gain d'un objet après le combat
-            EventAfterAFight.EarnAnItem(player);
+            EventAfterAFight.EarnAnItem(player, isFinalBoss);
         }
     }
 }

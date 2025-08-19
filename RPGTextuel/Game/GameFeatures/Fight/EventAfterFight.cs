@@ -10,8 +10,15 @@ namespace RPGTextuel.Game.GameFeatures.Fight
     public static class EventAfterAFight
     {
         // Cette méthode permet de faire gagner un objet au joueur après un combat en utilisant la table par défaut.
-        public static void EarnAnItem(Player player)
+        // Après le boss final, on ne gagne pas d'objet.
+        public static void EarnAnItem(Player player, Boolean isFinalBoss)
         {
+            // Si c'est le boss final, on ne fait rien.
+            if (isFinalBoss)
+            {
+                return;
+            }
+            
             // On affiche le texte en couleur
             Console.ForegroundColor = GameConfig.eventsColor;
 
