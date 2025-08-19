@@ -101,6 +101,19 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
+        // Test de GainStrengthEvent par défaut
+        public static void TestGainStrengthEventByDefault()
+        {
+            Console.WriteLine("===== Test de GainStrengthEventByDefault =====");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            Console.WriteLine("Résultat attendu : Augmentation aléatoire de la force (1 à 3).");
+            RandomEventsTestsUtils.GainStrengthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
+
         // Méthode de test de LoseCriticalChancePlayerEventByDefault
         public static void TestLoseCriticalChancePlayerEventByDelfault()
         {
