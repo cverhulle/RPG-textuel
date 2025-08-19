@@ -21,6 +21,9 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             // On appelle la méthode à tester
             EventAfterAFight.EarnAnItem(player, false);
 
+            // On explicite le résultat attendu
+            Console.WriteLine("Résultat attendu : Ajout d'un objet aléatoire");
+
             // On affiche l'inventaire après ajout
             Console.WriteLine("Inventaire après l'ajout :");
             player.Inventory.DisplayInventory();
@@ -29,7 +32,7 @@ namespace RPGTextuel.Test.Game.TestGameFeatures
             // Cette méthode permet de tester EarnAnItem (combat de boss)
         public static void TestEarnAnItemAfterBoss()
         {
-            Console.WriteLine("=== Test EarnAnItemByDefault ===");
+            Console.WriteLine("=== Test EarnAnItemAfterBoss ===");
 
             // On crée un joueur de test
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
