@@ -236,6 +236,20 @@ namespace RPGTextuel.Test.RandomEvents
 
             GameUtils.WaitForUser();
         }
+
+        // On teste LoseStrengthEvent quand la force est à 2.
+        public static void TestLoseStrengthEventWithAlmostMinStrength()
+        {
+            Console.WriteLine("===== Test de LoseStrengthEventWithAlmostMinStrength =====");
+
+            Player player = PlayerTestFactory.CreateBasicTestPlayer();
+
+            player.Strength = 2;
+            Console.WriteLine("Résultat attendu : Perte limitée (1 point seulement).");
+            RandomEventsTestsUtils.LoseStrengthEventUtils(player);
+
+            GameUtils.WaitForUser();
+        }
         
         // Cette méthode permet de tester PeacefulDayEvent.
         public static void TestPeacefulDayEvent()
