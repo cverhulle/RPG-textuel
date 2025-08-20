@@ -14,11 +14,11 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         public static void EarnAnItem(Player player, Boolean isFinalBoss)
         {
             // Si c'est le boss final, on ne fait rien.
-            if (isFinalBoss)
+            if (!player.IsAlive || isFinalBoss)
             {
                 return;
             }
-            
+                    
             // On affiche le texte en couleur
             Console.ForegroundColor = GameConfig.eventsColor;
 
