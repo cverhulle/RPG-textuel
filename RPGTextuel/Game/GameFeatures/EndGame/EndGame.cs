@@ -22,6 +22,7 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
         }
 
         // Cette méthode permet de gérer la mort du joueur
+        // Elle retourne l'état du joueur sous forme de booléen.
         public static bool isPlayerDead(Player player)
         {
             if (!player.IsAlive)
