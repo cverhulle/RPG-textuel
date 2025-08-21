@@ -10,8 +10,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     public static class MainMenuUtils
     {
         // Méthode utilitaire pour la gestion avant un combat.
-        // On retourne l'état de la mort du joueur sous forme de booléen.
-        public static Boolean HandleBetweenFights
+        public static void HandleBetweenFights
         (
             Player player,
             Enemy enemy,
@@ -26,13 +25,11 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
             // Si le joueur est mort, on quitte la boucle
             if (!player.IsAlive)
             {
-                return true;
+                return;
             }
 
             // On présente le nouvel ennemi
             HandleEnemyPresentation(enemy, messageIntroFight, isFinalBoss);
-
-            return false;
         }
 
         // Cette méthode permet de gérer l'affichage de l'introduction de l'ennemi
