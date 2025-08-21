@@ -43,12 +43,7 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
                 return true;
             }
 
-            if (!player.IsAlive)
-            {
-                DeathMessage();
-                return true;
-            }
-            return false;
+            return isPlayerDead(player);
         }
 
         // Cette méthode gère l'affichage en cas de victoire du joueur.
