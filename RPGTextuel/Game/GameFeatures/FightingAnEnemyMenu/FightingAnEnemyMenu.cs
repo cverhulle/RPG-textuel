@@ -1,6 +1,7 @@
 using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameFeatures.EndGameNamespace;
 using RPGTextuel.Game.GameFeatures.Fight;
 using RPGTextuel.Game.GameFeatures.InventoryNamespace;
 using RPGTextuel.Game.GameFeatures.RandomEvents;
@@ -85,8 +86,13 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                         break;
 
                     // On gère le cas de l'événement aléatoire
+                    // Si le joueur meurt pendant l'événement, on quitte la boucle.
                     case 4:
                         HandleRandomEvent(player, ref randomEventAlreadyTried);
+                        if (EndGame.isPlayerDead(player))
+                        {
+                            return false;
+                        }
                         break;
 
                     // Fermeture du jeu
