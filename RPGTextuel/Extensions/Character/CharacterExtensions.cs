@@ -50,7 +50,9 @@ namespace RPGTextuel.Extensions.Characters
             ratio = Math.Clamp(ratio, 0, 1); // On fait en sorte que ratio reste entre 0 et 1.
 
             // On calcule le nombre de coeurs de vie on doit afficher.
-            int filled = (int)(ratio * total);
+                int filled = character.Health > 0 
+                    ? Math.Max(1, (int)(ratio * total)) 
+                    : 0;
 
             // On calcule le nombre de coeurs vides à afficher
             int empty = total - filled;
