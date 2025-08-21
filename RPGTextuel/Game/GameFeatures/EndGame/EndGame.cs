@@ -21,6 +21,17 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
             GameUtils.WaitForUser(color: ConsoleColor.DarkRed);
         }
 
+        // Cette méthode permet de gérer la mort du joueur
+        public static bool isPlayerDead(Player player)
+        {
+            if (!player.IsAlive)
+            {
+                DeathMessage();
+                return true;
+            }
+            return false;
+        }
+
         // Méthode utilitaire permettant de savoir si l'on doit arreter la partie.
         // On retourne True si c'est le cas et, false sinon.
         public static bool ShouldEndGame(bool wantsToQuit, Player player)
