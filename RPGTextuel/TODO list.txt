@@ -1,5 +1,5 @@
 En cours : 
-Problème lors de la mort pendant un événement (en appuyant sur 4): Le jeu continue
+Problème lors de la mort pendant un événement (en appuyant sur 4): Deux messages de mort apparaissent.
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
