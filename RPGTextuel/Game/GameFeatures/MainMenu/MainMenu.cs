@@ -25,6 +25,12 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // Cette méthode s'occupe de gérer les événements entre les combats
                 MainMenuUtils.HandleBetweenFights(player, enemy, fightNumber, "Un nouvel ennemi approche", isFinalBoss);
 
+                // On vérifie l'état du joueur après l'événement automatique
+                if (EndGame.isPlayerDead(player))
+                {
+                    return true;
+                }
+
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy, isFinalBoss);
 
