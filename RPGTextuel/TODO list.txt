@@ -1,5 +1,10 @@
 En cours : 
-Evenement pour augmenter ou baisser la force du prochain adversaire.
+Evenement pour augmenter la force du prochain adversaire :
+    -> Tests à faire
+    -> Ajout dans SetupEvent : Problème avec les deux classes d'événements
+
+Faire de même avec la baisse de force.
+
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
