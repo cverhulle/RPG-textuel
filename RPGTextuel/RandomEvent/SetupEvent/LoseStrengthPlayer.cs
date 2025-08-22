@@ -5,7 +5,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Perte de Force pour le joueur".
-    public class LoseStrengthEvent : RandomEventClass
+    public class LoseStrengthEvent : PlayerRandomEventClass
     {
         public override string Name => "Blessure musculaire";
         public override string Description => "Une mauvaise blessure vous affaiblit...";

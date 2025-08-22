@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Gain de Points de vie".
-    public class GainHealthEvent : RandomEventClass
+    public class GainHealthEvent : PlayerRandomEventClass
     {
         // On définit son nom et sa description.
         public override string Name => "Délicieux repas";

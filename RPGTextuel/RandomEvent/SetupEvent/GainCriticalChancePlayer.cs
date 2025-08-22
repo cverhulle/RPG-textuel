@@ -5,7 +5,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'événement "Augmentation de la chance de critique".
-    public class GainCriticalChancePlayerEvent : RandomEventClass
+    public class GainCriticalChancePlayerEvent : PlayerRandomEventClass
     {
         // On définit son nom et sa description.
         public override string Name => "Eclair de génie !";

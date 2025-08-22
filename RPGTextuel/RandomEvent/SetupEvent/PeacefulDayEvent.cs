@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Jour de paix" : il ne "fait rien"
-    public class PeacefulDayEvent : RandomEventClass
+    public class PeacefulDayEvent : PlayerRandomEventClass
     {
         // On définit le nom et la description de l'événement.
         public override string Name => "Jour paisible";

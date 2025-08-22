@@ -5,7 +5,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Gain de Force pour le joueur".
-    public class GainStrengthEvent : RandomEventClass
+    public class GainStrengthEvent : PlayerRandomEventClass
     {
         // Nom et description de l'événement
         public override string Name => "Entraînement intensif";

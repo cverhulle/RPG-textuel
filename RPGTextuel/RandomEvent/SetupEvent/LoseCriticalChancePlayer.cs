@@ -5,7 +5,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'événement "Baisse de la chance de coup critique"
-    public class LoseCriticalChancePlayerEvent : RandomEventClass
+    public class LoseCriticalChancePlayerEvent : PlayerRandomEventClass
     {
         // On définit le nom et la description
         public override string Name => "Vision troublée";

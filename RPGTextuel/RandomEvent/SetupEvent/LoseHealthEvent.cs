@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Perte de Points de vie".
-    public class LoseHealthEvent : RandomEventClass
+    public class LoseHealthEvent : PlayerRandomEventClass
     {
         // On définit son nom et sa description.
         public override string Name => "Éboulement";

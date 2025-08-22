@@ -8,7 +8,7 @@ using RPGTextuel.Weight.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Trouver un objet".
-    public class FindItemEvent : RandomEventClass
+    public class FindItemEvent : PlayerRandomEventClass
     {
         // On définit son nom et sa description.
         public override string Name => "Jour de chance";

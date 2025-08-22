@@ -5,7 +5,7 @@ using RPGTextuel.RandomEvent.Class;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Perdre un objet".
-    public class LoseItemEvent : RandomEventClass
+    public class LoseItemEvent : PlayerRandomEventClass
     {
         // On définit son nom et sa description.
         public override string Name => "Sac percé";
