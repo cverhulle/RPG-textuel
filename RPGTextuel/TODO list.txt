@@ -1,6 +1,6 @@
 En cours : 
+Evenement pour augmenter ou baisser la force du prochain adversaire.
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
-2. Evenement pour augmenter ou baisser la force du prochain adversaire.
-3. Gérer les chances d'apparation des potions et des événements.
+2. Gérer les chances d'apparation des potions et des événements.
