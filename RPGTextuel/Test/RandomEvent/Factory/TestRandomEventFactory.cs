@@ -19,7 +19,7 @@ namespace RPGTextuel.Test.RandomEvents.Factory
             Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
 
-            RandomEventClass randomEvent = RandomEventFactory.GetRandomEvent(dropType);
+            PlayerRandomEventClass randomEvent = RandomEventFactory.GetRandomEvent(dropType);
 
             Console.WriteLine($"\n🎲 Événement déclenché : {randomEvent.Name}");
             Console.WriteLine($"{randomEvent.Description}\n");
