@@ -1,7 +1,7 @@
 namespace RPGTextuel.Core.PlayerNamespace
 {
-    // Cette classe fournit des méthodes utilitaires liées aux Player.
-    public static class PlayerStatHelper
+    // Cette classe fournit des méthodes utilitaires pour modifier les stats des personnages.
+    public static class ModifyStatHelper
     {
         // Cette méthode permet de modifier les stats d'un joueur selon des bornes.
         public static double ModifyStatWithBounds
