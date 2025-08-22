@@ -1,6 +1,6 @@
 using RPGTextuel.Core;
-using RPGTextuel.Core.PlayerNamespace;
 using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
@@ -14,7 +14,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // On définit l'effet de l'événement : Augmentation de la chance de coup critique.
         public override void Trigger(Player player)
         {
-            player.CriticalHitChance = PlayerStatHelper.ModifyStatWithBounds
+            player.CriticalHitChance = ModifyStatHelper.ModifyStatWithBounds
                 (
                     player.CriticalHitChance,                                       // Stat à modifier (chance de coup critique)
                     0.0, 1.0,                                                       // La chance de coup critique varie entre 0% et 100%

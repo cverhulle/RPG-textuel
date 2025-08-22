@@ -1,7 +1,6 @@
-using RPGTextuel.Core.PlayerNamespace;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.RandomEvent.Class;
-
+using RPGTextuel.Utils;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'événement "Gain de force pour le prochain ennemi
@@ -14,7 +13,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // On définit l'activation de l'événement.
         public override void Trigger(Enemy enemy)
         {
-            enemy.Strength = (int)PlayerStatHelper.ModifyStatWithBounds(
+            enemy.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(
                 stat: enemy.Strength,                                                                   // Stat à modifier
                 min: 1,                                                                                 // Minimum 1 de force
                 max: 999,                                                                               // Maximum 999 de force

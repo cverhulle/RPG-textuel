@@ -1,6 +1,6 @@
 using RPGTextuel.Core;
-using RPGTextuel.Core.PlayerNamespace;
 using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
@@ -16,7 +16,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public override void Trigger(Player player)
         {
             // On applique la méthode générique
-            player.Strength = (int)PlayerStatHelper.ModifyStatWithBounds(   
+            player.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(   
                 stat: player.Strength,                                                      // Stat actuelle
                 min: 1,                                                                     // Valeur minimale possible
                 max: 999,                                                                   // Valeur max qu’on s’autorise

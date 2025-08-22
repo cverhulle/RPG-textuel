@@ -1,6 +1,6 @@
 using RPGTextuel.Core;
-using RPGTextuel.Core.PlayerNamespace;
 using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
@@ -14,7 +14,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         // Perte aléatoire entre 1 et 2 points de Force
         public override void Trigger(Player player)
         {
-            player.Strength = (int)PlayerStatHelper.ModifyStatWithBounds(
+            player.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(
                 stat: player.Strength,                                              // Stat à modifier
                 min: 1,                                                             // Valeur minimale possible
                 max: 999,                                                           // Valeur max qu’on s’autorise
