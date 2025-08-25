@@ -5,8 +5,8 @@ using RPGTextuel.RandomEvent.SetupEvent;
 
 namespace RPGTextuel.Test.RandomEvents
 {
-    // Cette classe regroupe les méthodes d'aide liées aux évenements aléatoires.
-    public static class RandomEventsTestsUtils
+    // Cette classe regroupe les méthodes d'aide liées aux évenements aléatoires du joueur.
+    public static class PlayerRandomEventsTestsUtils
     {
         // Méthode utilitaire liée à l'évenement FindItemEvent avec les items par défaut.
         public static void FindItemEventUtilsByDefault(Player player)
