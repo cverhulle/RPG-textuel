@@ -1,8 +1,7 @@
 En cours : 
 Evenement pour augmenter la force du prochain adversaire :
     -> Modifier le type des extensions des événements : Mettre l'interface
-    -> Modifier tous les typages des événements
-    -> Modifier les appels au choix de l'événement aléatoire.
+    -> Modifier les appels du déclenchement de l'événement aléatoire dans le jeu.
 
 Faire de même avec la baisse de force.
 
