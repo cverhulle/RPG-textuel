@@ -33,5 +33,19 @@ namespace RPGTextuel.Test.RandomEvents
 
             GameUtils.WaitForUser();
         }
+
+        // Test de GainStrengthEnemyEvent avec force déjà au maximum
+        public static void TestGainStrengthEnemyEventWithMaxStrength()
+        {
+            Console.WriteLine("===== Test de GainStrengthEventWithMaxStrength =====");
+
+            Enemy enemy = EnemyTestFactory.CreateGoblin();
+
+            enemy.Strength = 999;
+            Console.WriteLine("Résultat attendu : Message indiquant que la force est déjà au maximum.");
+            EnemyRandomEventsTestsUtils.GainStrengthEnemyUtils(enemy);
+
+            GameUtils.WaitForUser();
+        }
     }
 }
