@@ -1,6 +1,5 @@
 En cours : 
 Evenement pour augmenter la force du prochain adversaire :
-    -> Tests à faire
     -> Ajout dans SetupEvent : Problème avec les deux classes d'événements
 
 Faire de même avec la baisse de force.
