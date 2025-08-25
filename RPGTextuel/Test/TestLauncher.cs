@@ -1,6 +1,5 @@
 using RPGTextuel.Test.RandomEvents;
 
-
 namespace RPGTextuel.Test
 {
     // Cette classe lance le test.
