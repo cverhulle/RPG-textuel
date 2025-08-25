@@ -19,5 +19,19 @@ namespace RPGTextuel.Test.RandomEvents
 
             GameUtils.WaitForUser();
         }
+
+        // Test de GainStrengthEnemyEvent avec force proche du maximum
+        public static void TestGainStrengthEnemyEventWithAlmostMaxStrength()
+        {
+            Console.WriteLine("===== Test de GainStrengthEnemyEventWithAlmostMaxStrength =====");
+
+            Enemy enemy = EnemyTestFactory.CreateGoblin();
+
+            enemy.Strength = 998;
+            Console.WriteLine("Résultat attendu : Gain limité (1 point max).");
+            EnemyRandomEventsTestsUtils.GainStrengthEnemyUtils(enemy);
+
+            GameUtils.WaitForUser();
+        }
     }
 }
