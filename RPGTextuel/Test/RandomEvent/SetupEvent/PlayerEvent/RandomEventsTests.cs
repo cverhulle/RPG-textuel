@@ -4,8 +4,8 @@ using RPGTextuel.Test.Core;
 
 namespace RPGTextuel.Test.RandomEvents
 {
-    // Cette classe regroupe les tests liés aux évenements aléatoires
-    public static class RandomEventsTests
+    // Cette classe regroupe les tests liés aux évenements aléatoires du joueur
+    public static class PlayerRandomEventsTests
     {
         // Cette méthode permet de tester l'évenement FindItemEvent par défaut.
         public static void TestFindItemEventByDefault()
@@ -14,7 +14,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreatePlayerWithHealAndDamagePotions();
 
-            RandomEventsTestsUtils.FindItemEventUtilsByDefault(player);
+            PlayerRandomEventsTestsUtils.FindItemEventUtilsByDefault(player);
 
             GameUtils.WaitForUser();
         }
@@ -26,7 +26,7 @@ namespace RPGTextuel.Test.RandomEvents
             
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            RandomEventsTestsUtils.FindItemEventWithBossItemDrops(player);
+            PlayerRandomEventsTestsUtils.FindItemEventWithBossItemDrops(player);
 
             GameUtils.WaitForUser();
         }
@@ -39,7 +39,7 @@ namespace RPGTextuel.Test.RandomEvents
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             Console.WriteLine("Résultat attendu : Le critique augmente d'une valeur aléatoire");
-            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -56,7 +56,7 @@ namespace RPGTextuel.Test.RandomEvents
             player.CriticalHitChance = 0.99;
             Console.WriteLine("Résultat attendu : Le critique augmente de 1% seulement");
 
-            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -72,7 +72,7 @@ namespace RPGTextuel.Test.RandomEvents
             player.CriticalHitChance = 1;
             Console.WriteLine("Résultat attendu : Message personnalisé indiquant que le critique ne peut pas être modifié");
 
-            RandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -84,7 +84,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateWoundedPlayer(20);
 
-            RandomEventsTestsUtils.GainHealthEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainHealthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -96,7 +96,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            RandomEventsTestsUtils.GainHealthEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainHealthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -109,7 +109,7 @@ namespace RPGTextuel.Test.RandomEvents
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             Console.WriteLine("Résultat attendu : Augmentation aléatoire de la force (1 à 3).");
-            RandomEventsTestsUtils.GainStrengthEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainStrengthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -123,7 +123,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             player.Strength = 998;
             Console.WriteLine("Résultat attendu : Gain limité (1 point max).");
-            RandomEventsTestsUtils.GainStrengthEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainStrengthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -137,7 +137,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             player.Strength = 999;
             Console.WriteLine("Résultat attendu : Message indiquant que la force est déjà au maximum.");
-            RandomEventsTestsUtils.GainStrengthEventUtils(player);
+            PlayerRandomEventsTestsUtils.GainStrengthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -150,7 +150,7 @@ namespace RPGTextuel.Test.RandomEvents
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             Console.WriteLine("Résultat attendu : Diminution aléatoire du critique");
-            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -167,7 +167,7 @@ namespace RPGTextuel.Test.RandomEvents
             player.CriticalHitChance = 0.01;
             Console.WriteLine("Résultat attendu : Diminution du critique de 1% seulement.");
 
-            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -183,7 +183,7 @@ namespace RPGTextuel.Test.RandomEvents
             player.CriticalHitChance = 0;
             Console.WriteLine("Résultat attendu : Message personnalisé indiquant que le critique ne peut pas dimminuer.");
 
-            RandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseCriticalChancePlayerEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -195,7 +195,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            RandomEventsTestsUtils.LoseHealthEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseHealthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -207,7 +207,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            RandomEventsTestsUtils.LoseItemEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseItemEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -219,7 +219,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
-            RandomEventsTestsUtils.LoseHealthEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseHealthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -232,7 +232,7 @@ namespace RPGTextuel.Test.RandomEvents
             Player player = PlayerTestFactory.CreateBasicTestPlayer();
 
             Console.WriteLine("Résultat attendu : Diminution aléatoire de la force (1 à 2).");
-            RandomEventsTestsUtils.LoseStrengthEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseStrengthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -246,7 +246,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             player.Strength = 2;
             Console.WriteLine("Résultat attendu : Perte limitée (1 point seulement).");
-            RandomEventsTestsUtils.LoseStrengthEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseStrengthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -260,7 +260,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             player.Strength = 1;
             Console.WriteLine("Résultat attendu : Message indiquant que la force ne peut pas diminuer davantage.");
-            RandomEventsTestsUtils.LoseStrengthEventUtils(player);
+            PlayerRandomEventsTestsUtils.LoseStrengthEventUtils(player);
 
             GameUtils.WaitForUser();
         }
@@ -272,7 +272,7 @@ namespace RPGTextuel.Test.RandomEvents
 
             Player player = PlayerTestFactory.CreateWoundedPlayerWithPotions(20);
 
-            RandomEventsTestsUtils.PeacefulDayEventUtils(player);
+            PlayerRandomEventsTestsUtils.PeacefulDayEventUtils(player);
 
             GameUtils.WaitForUser();
         }
