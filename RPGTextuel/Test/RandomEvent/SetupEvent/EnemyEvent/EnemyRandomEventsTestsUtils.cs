@@ -14,5 +14,14 @@ namespace RPGTextuel.Test.RandomEvents
             GainStrengthEnemyEvent evt = new GainStrengthEnemyEvent();
             evt.Trigger(enemy);
         }
+
+        // Méthode utilitaire liée à l'évenement LoseStrengthEnemy avec les items par défaut.
+        public static void LoseStrengthEnemyUtils(Enemy enemy)
+        {
+            Console.WriteLine($"Force initiale : {enemy.Strength}");
+
+            LoseStrengthEnemyEvent evt = new LoseStrengthEnemyEvent();
+            evt.Trigger(enemy);
+        }
     }
 }
