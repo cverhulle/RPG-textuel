@@ -61,21 +61,21 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        /*
-        // Test de GainStrengthEnemyEvent avec force proche du maximum
-        public static void TestGainStrengthEnemyEventWithAlmostMaxStrength()
+        // Test de LoseStrengthEnemyEvent avec force proche du minimum
+        public static void TestLoseStrengthEnemyEventWithAlmostMaxStrength()
         {
-            Console.WriteLine("===== Test de GainStrengthEnemyEventWithAlmostMaxStrength =====");
+            Console.WriteLine("===== Test de LoseStrengthEnemyEventWithAlmostMaxStrength =====");
 
             Enemy enemy = EnemyTestFactory.CreateGoblin();
 
-            enemy.Strength = 998;
-            Console.WriteLine("Résultat attendu : Gain limité (1 point max).");
-            EnemyRandomEventsTestsUtils.GainStrengthEnemyUtils(enemy);
+            enemy.Strength = 2;
+            Console.WriteLine("Résultat attendu : Perte limité (1 point max).");
+            EnemyRandomEventsTestsUtils.LoseStrengthEnemyUtils(enemy);
 
             GameUtils.WaitForUser();
         }
 
+        /*
         // Test de GainStrengthEnemyEvent avec force déjà au maximum
         public static void TestGainStrengthEnemyEventWithMaxStrength()
         {
