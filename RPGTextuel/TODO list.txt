@@ -1,10 +1,7 @@
 En cours : 
-Evenement pour augmenter la force du prochain adversaire :
-    -> Modifier le type des extensions des événements : Mettre l'interface
-    -> Modifier les appels du déclenchement de l'événement aléatoire dans le jeu.
-
-Faire de même avec la baisse de force.
-
+Modifier le type des extensions des événements : Mettre l'interface au lieu de Player/Enemy RandomEvents
+Mettre à jour la factory en conséquence
+Modifier les appels du déclenchement de l'événement aléatoire dans le jeu.
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
