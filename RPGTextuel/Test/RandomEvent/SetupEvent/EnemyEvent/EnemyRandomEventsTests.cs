@@ -75,20 +75,18 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        /*
-        // Test de GainStrengthEnemyEvent avec force déjà au maximum
-        public static void TestGainStrengthEnemyEventWithMaxStrength()
+        // Test de LoseStrengthEnemyEvent avec force déjà au maximum
+        public static void TestLoseStrengthEnemyEventWithMaxStrength()
         {
-            Console.WriteLine("===== Test de GainStrengthEventWithMaxStrength =====");
+            Console.WriteLine("===== Test de LoseStrengthEventWithMaxStrength =====");
 
             Enemy enemy = EnemyTestFactory.CreateGoblin();
 
-            enemy.Strength = 999;
-            Console.WriteLine("Résultat attendu : Message indiquant que la force est déjà au maximum.");
-            EnemyRandomEventsTestsUtils.GainStrengthEnemyUtils(enemy);
+            enemy.Strength = 1;
+            Console.WriteLine("Résultat attendu : Message indiquant que la force est déjà au minimum.");
+            EnemyRandomEventsTestsUtils.LoseStrengthEnemyUtils(enemy);
 
             GameUtils.WaitForUser();
         }
-        */
     }
 }
