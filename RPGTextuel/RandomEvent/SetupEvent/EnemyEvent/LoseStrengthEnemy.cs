@@ -17,12 +17,12 @@ namespace RPGTextuel.RandomEvent.SetupEvent
                 stat: enemy.Strength,                                                                   // Stat à modifier
                 min: 1,                                                                                 // Minimum 1 de force
                 max: 999,                                                                               // Maximum 999 de force
-                randomMinChange: 1,                                                                     // Au minimum on gagne 1
-                randomMaxChange: 2,                                                                     // Au maximum, on gagne 2 de force
-                increase: true,                                                                         // C'est une augmentation
-                alreadyAtBoundMessage: "Le prochain adversaire est déjà au sommet de son art !",        // Message si l'ennemi est déjà à 999 de force.
-                changeMessageTemplate: "La force du prochain adversaire a augmenté de {0:0.#} !",      // Message pour l'utilisateur
-                finalValueMessageTemplate: "Force finale du prochain adversaire : {0:0.#}",            // Message pour l'utilisateur
+                randomMinChange: 2,                                                                     // Au minimum on gagne 2
+                randomMaxChange: 4,                                                                     // Au maximum, on gagne 4 de force
+                increase: false,                                                                        // C'est une diminution
+                alreadyAtBoundMessage: "Le prochain adversaire est déjà très faible !",                 // Message si l'ennemi est déjà à 1 de force.
+                changeMessageTemplate: "La force du prochain adversaire a diminué de {0:0.#} !",        // Message pour l'utilisateur
+                finalValueMessageTemplate: "Force finale du prochain adversaire : {0:0.#}",             // Message pour l'utilisateur
                 isPercentage: false,                                                                    // Les valeurs ne sont pas en pourcentage
                 roundToInt: true                                                                        // La force est un entier
             );
