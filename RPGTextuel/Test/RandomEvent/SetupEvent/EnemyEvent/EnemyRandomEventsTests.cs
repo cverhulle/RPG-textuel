@@ -62,7 +62,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Test de LoseStrengthEnemyEvent avec force proche du minimum
-        public static void TestLoseStrengthEnemyEventWithAlmostMaxStrength()
+        public static void TestLoseStrengthEnemyEventWithAlmostMinStrength()
         {
             Console.WriteLine("===== Test de LoseStrengthEnemyEventWithAlmostMaxStrength =====");
 
@@ -75,8 +75,8 @@ namespace RPGTextuel.Test.RandomEvents
             GameUtils.WaitForUser();
         }
 
-        // Test de LoseStrengthEnemyEvent avec force déjà au maximum
-        public static void TestLoseStrengthEnemyEventWithMaxStrength()
+        // Test de LoseStrengthEnemyEvent avec force déjà au minimum
+        public static void TestLoseStrengthEnemyEventWithMinStrength()
         {
             Console.WriteLine("===== Test de LoseStrengthEventWithMaxStrength =====");
 
