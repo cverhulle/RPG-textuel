@@ -1,6 +1,5 @@
 ﻿using RPGTextuel.Game;
 using RPGTextuel.Test;
-
 class Program
 {
     // Cette méthode permet de lancer le programme.
