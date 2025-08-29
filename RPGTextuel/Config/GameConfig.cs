@@ -12,15 +12,9 @@ namespace RPGTextuel.Config
         // Symbole pour un cœur vide
         public const string EmptyHeartSymbol = "🤍 ";
 
-
-
-
         // Paramètre de jeu 
         // Taille Maximum pour le nom des personnages.
         public const int MaxNameLength = 15;
-
-
-
 
         // Coup critique 
         // Chance de coup critique par défaut
@@ -34,9 +28,6 @@ namespace RPGTextuel.Config
 
         // Multiplicateur pour des dégats en coup critique
         public const double criticalMultiplicator = 1.4;
-
-
-
 
         // Couleur des textes
         // Couleur des ennemis
