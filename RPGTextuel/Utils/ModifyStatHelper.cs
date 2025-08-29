@@ -42,8 +42,8 @@ namespace RPGTextuel.Utils
             // Si besoin, on force en entier
             if (roundToInt)
             {
-                change = Math.Round(change); // on affiche le gain comme entier
-                stat = Math.Round(stat);     // on garde la stat comme entier
+                change = Math.Round(change); // On affiche le gain comme entier
+                stat = Math.Round(stat);     // On garde la stat comme entier
             }
 
             // Format d’affichage : % ou valeur brute
@@ -57,7 +57,6 @@ namespace RPGTextuel.Utils
                 Console.WriteLine(string.Format(changeMessageTemplate, change));
                 Console.WriteLine(string.Format(finalValueMessageTemplate, stat));
             }
-
             return stat;
         }
     }
