@@ -8,7 +8,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
     {
         // On définit son nom et sa description.
         public override string Name => "Faiblesse détectée";
-        public override string Description => "D'après les rumeurs, le prochain adversaire n'est pas si puissant...";
+        public override string Description => "Vous avez détécté une faiblesse sur prochain adversaire...";
 
         // On définit l'activation de l'événement.
         public override void Trigger(Enemy enemy)
