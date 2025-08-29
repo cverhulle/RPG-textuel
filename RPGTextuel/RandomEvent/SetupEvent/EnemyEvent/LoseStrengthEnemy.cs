@@ -7,7 +7,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
     public class LoseStrengthEnemyEvent : EnemyRandomEventClass
     {
         // On définit son nom et sa description.
-        public override string Name => "Des rumeurs qui court...";
+        public override string Name => "Faiblesse détectée";
         public override string Description => "D'après les rumeurs, le prochain adversaire n'est pas si puissant...";
 
         // On définit l'activation de l'événement.
