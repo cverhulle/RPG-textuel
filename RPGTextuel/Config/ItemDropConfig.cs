@@ -20,6 +20,7 @@ namespace RPGTextuel.Config
         };
 
         // Taux de drop des objets après avoir vaincu un boss.
+        // Pas utilisé pour le moment.
         public static readonly List<Weighted<Item>> BossItemDrops = new()
         {
             new Weighted<Item>(SetupHealPotions.MediumHealPotion, 30),
