@@ -1,5 +1,9 @@
 using RPGTextuel.Core;
 
+//////////////////////////////////
+// ATTENTION : CLASSE NON UTILISEE 
+//////////////////////////////////
+
 namespace RPGTextuel.RandomEvent.Class
 {
     // Cette classe définit la structure d'un évenement aléatoire.
