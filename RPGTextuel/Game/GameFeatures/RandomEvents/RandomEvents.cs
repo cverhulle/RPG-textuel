@@ -1,5 +1,6 @@
 using RPGTextuel.Config;
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
 using RPGTextuel.RandomEvent.Factory;
 using RPGTextuel.Utils;
 
@@ -17,7 +18,7 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
 
         // Cette méthode permet de déclencher un événement aléatoire.
         // Il est possible de personnalisé le message d'intro.
-        public static void TriggerRandomEventWithIntro(Player player, string introMessage)
+        public static void TriggerRandomEventWithIntro(Player player, Enemy nextEnemy, string introMessage)
         {
             Console.Clear();
 
@@ -35,7 +36,7 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
             Console.WriteLine($"{randomEvent.Description}\n");
 
             // Déclenchement de l'événement. 
-            randomEvent.Trigger(player);
+            randomEvent.Trigger(player, nextEnemy);
 
             // On remet la couleur par défaut
             Console.ForegroundColor = GameConfig.defaultColor;
