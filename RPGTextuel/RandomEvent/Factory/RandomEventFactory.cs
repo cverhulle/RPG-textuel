@@ -2,7 +2,7 @@ using RPGTextuel.Config;
 using RPGTextuel.Config.Enum;
 using RPGTextuel.Extensions.List;
 using RPGTextuel.Items.Class;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.RandomEvent.SetupEvent;
 using RPGTextuel.Weight.Class;
 
@@ -21,7 +21,7 @@ namespace RPGTextuel.RandomEvent.Factory
         // Liste de tous les événements disponibles.
         // On stocke des fonctions qui, lorsqu'elles sont appelées, instancient un événement.
         // On fournit le type de drop en entrée (pour l'événement FindItemEvent).
-        private static readonly List<Func<ItemDropTableType, PlayerRandomEventClass>> allEventFactories = new()
+        private static readonly List<Func<ItemDropTableType, IRandomEvent>> allEventFactories = new()
         {
             (dropType) => new FindItemEvent(GetItemTable(dropType)),
             (_) => new GainHealthEvent(),
@@ -35,7 +35,7 @@ namespace RPGTextuel.RandomEvent.Factory
         };
 
         // On choisit aléatoirement un événement parmi une liste.
-        public static PlayerRandomEventClass GetRandomEvent(ItemDropTableType dropType = ItemDropTableType.Default)
+        public static IRandomEvent GetRandomEvent(ItemDropTableType dropType = ItemDropTableType.Default)
         {
             // S'il n'y a pas d'événement (pas attendu), on ne fait rien.
             if (allEventFactories == null || allEventFactories.Count == 0)
@@ -49,7 +49,7 @@ namespace RPGTextuel.RandomEvent.Factory
         }
 
         // Cette méthode permet de retourner un événement qui donne un item aléatoire.
-        public static PlayerRandomEventClass GetRandomItem(ItemDropTableType dropType = ItemDropTableType.Default)
+        public static IRandomEvent GetRandomItem(ItemDropTableType dropType = ItemDropTableType.Default)
         {
             return new FindItemEvent(GetItemTable(dropType));
         }
