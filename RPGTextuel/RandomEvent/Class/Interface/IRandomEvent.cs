@@ -12,6 +12,6 @@ namespace RPGTextuel.RandomEvent.Class.Interface
 
         // Méthode pour déclencher l'évenement.
         // Si l'événement ne concerne pas une entité, on lui passe null
-        void Trigger(Player? player, Enemy? enemy);
+        void Trigger(Player? player = null, Enemy? enemy = null);
     }
 }
