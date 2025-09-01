@@ -1,6 +1,5 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
-using RPGTextuel.RandomEvent.Class;
 using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 
@@ -19,7 +18,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         {
             if (player == null) return; // Sécurité
 
-            
+
             // On applique la méthode générique
             player.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(   
                 stat: player.Strength,                                                      // Stat actuelle
