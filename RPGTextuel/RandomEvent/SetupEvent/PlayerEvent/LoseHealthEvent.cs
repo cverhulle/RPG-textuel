@@ -1,19 +1,22 @@
 using RPGTextuel.Core;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Enemies.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Perte de Points de vie".
-    public class LoseHealthEvent : PlayerRandomEventClass
+    public class LoseHealthEvent : IRandomEvent
     {
         // On définit son nom et sa description.
-        public override string Name => "Éboulement";
-        public override string Description => "Une chute de pierre vous blesse légèrement.";
+        public string Name => "Éboulement";
+        public string Description => "Une chute de pierre vous blesse légèrement.";
 
         // On définit son activation : 
         // Perte aléatoire entre 5 et 15 PV.
-        public override void Trigger(Player player)
+        public void Trigger(Player? player, Enemy? enemy)
         {
+            if (player == null) return; // Sécurité
+
             int damage = Random.Shared.Next(5, 15);
             player.TakeDamage(damage);
         }
