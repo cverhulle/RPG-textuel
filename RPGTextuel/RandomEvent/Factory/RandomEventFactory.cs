@@ -31,7 +31,9 @@ namespace RPGTextuel.RandomEvent.Factory
             (_) => new GainCriticalChancePlayerEvent(),
             (_) => new LoseCriticalChancePlayerEvent(),
             (_) => new GainStrengthEvent(),
-            (_) => new LoseStrengthEvent()
+            (_) => new LoseStrengthEvent(),
+            (_) => new GainStrengthEnemyEvent(),
+            (_) => new LoseStrengthEnemyEvent()
         };
 
         // On choisit aléatoirement un événement parmi une liste.
