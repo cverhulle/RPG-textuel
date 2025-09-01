@@ -12,7 +12,7 @@ namespace RPGTextuel.Test.RandomEvents
             Console.WriteLine($"Force initiale : {enemy.Strength}");
 
             GainStrengthEnemyEvent evt = new GainStrengthEnemyEvent();
-            evt.Trigger(enemy);
+            evt.Trigger(null, enemy);
         }
 
         // Méthode utilitaire liée à l'évenement LoseStrengthEnemy.
@@ -21,7 +21,7 @@ namespace RPGTextuel.Test.RandomEvents
             Console.WriteLine($"Force initiale : {enemy.Strength}");
 
             LoseStrengthEnemyEvent evt = new LoseStrengthEnemyEvent();
-            evt.Trigger(enemy);
+            evt.Trigger(null, enemy);
         }
     }
 }
