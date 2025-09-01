@@ -1,18 +1,19 @@
 using RPGTextuel.Config;
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
 using RPGTextuel.Items.Class;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Weight;
 using RPGTextuel.Weight.Class;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Trouver un objet".
-    public class FindItemEvent : PlayerRandomEventClass
+    public class FindItemEvent : IRandomEvent
     {
         // On définit son nom et sa description.
-        public override string Name => "Jour de chance";
-        public override string Description => "Au détour d'un chemin, vous trouvez un objet au sol !";
+        public string Name => "Jour de chance";
+        public string Description => "Au détour d'un chemin, vous trouvez un objet au sol !";
 
         // On ajoute la liste des items avec un poids.
         private readonly List<Weighted<Item>> _weightedItems;
@@ -30,8 +31,10 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         // On définit son activation : 
         // Ajout d'un item aléatoire dans l'inventaire du joueur.
-        public override void Trigger(Player player)
+        public void Trigger(Player? player, Enemy? enemy)
         {
+            if (player == null) return; // sécurité
+
             Item randomItem = WeightedRandomSelector.SelectRandom(_weightedItems);
             player.Inventory.AddItem(randomItem);
             Console.WriteLine($"Vous avez trouvé un objet : {randomItem.name} !");
