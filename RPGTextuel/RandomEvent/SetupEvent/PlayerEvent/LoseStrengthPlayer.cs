@@ -1,6 +1,5 @@
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
-using RPGTextuel.RandomEvent.Class;
 using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 
