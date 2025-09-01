@@ -1,19 +1,22 @@
 using RPGTextuel.Core;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.Enemies.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'événement "Baisse de la chance de coup critique"
-    public class LoseCriticalChancePlayerEvent : PlayerRandomEventClass
+    public class LoseCriticalChancePlayerEvent : IRandomEvent
     {
         // On définit le nom et la description
-        public override string Name => "Vision troublée";
-        public override string Description => "Une migraine soudaine trouble votre perception... Vos chances de viser juste diminuent.";
+        public string Name => "Vision troublée";
+        public string Description => "Une migraine soudaine trouble votre perception... Vos chances de viser juste diminuent.";
 
         // Cet événement diminue la chance la coup critique du joueur.
-        public override void Trigger(Player player)
+        public void Trigger(Player? player, Enemy? enemy)
         {
+            if (player == null) return; // Sécurité
+
             player.CriticalHitChance = ModifyStatHelper.ModifyStatWithBounds
                 (
                     player.CriticalHitChance,                                   // Stat à modifier (chance de coup critique)
