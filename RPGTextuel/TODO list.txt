@@ -1,6 +1,5 @@
 En cours : 
 Modifier les appels du déclenchement de l'événement aléatoire dans le jeu.
-Suppression des anciennes classes.
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
