@@ -34,7 +34,7 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
             Console.WriteLine($"\nÉvénement : {randomEvent.Name}");
             Console.WriteLine($"{randomEvent.Description}\n");
 
-            // Déclenchement de l'événement.
+            // Déclenchement de l'événement. 
             randomEvent.Trigger(player);
 
             // On remet la couleur par défaut
