@@ -33,7 +33,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
 
         // Cette méthode permet de gérer le cas où l'utilisateur choisit l'événement aléatoire.
         // Disponible une seule fois entre chaque combat.
-        private static void HandleRandomEvent(Player player, ref bool alreadyTried)
+        private static void HandleRandomEvent(Player player, Enemy enemy, ref bool alreadyTried)
         {
             if (alreadyTried)
             {
@@ -43,6 +43,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
             {
                 RandomEventsInGame.TriggerRandomEventWithIntro(
                     player,
+                    enemy,
                     "Vous tentez votre chance avec un événement aléatoire...");
                     alreadyTried = true;
             }
@@ -87,7 +88,7 @@ namespace RPGTextuel.Game.GameFeatures.FightingAnEnemyMenus
                     // On gère le cas de l'événement aléatoire
                     // Si le joueur meurt pendant l'événement, on quitte la boucle.
                     case 4:
-                        HandleRandomEvent(player, ref randomEventAlreadyTried);
+                        HandleRandomEvent(player, enemy, ref randomEventAlreadyTried);
                         if (!player.IsAlive)
                         {
                             return false;
