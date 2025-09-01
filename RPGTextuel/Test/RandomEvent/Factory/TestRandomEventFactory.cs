@@ -2,7 +2,7 @@ using RPGTextuel.Config.Enum;
 using RPGTextuel.Core;
 using RPGTextuel.Extensions.Characters;
 using RPGTextuel.Game.GameUtilsNamespace;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.RandomEvent.Factory;
 using RPGTextuel.Test.Core;
 
@@ -19,7 +19,7 @@ namespace RPGTextuel.Test.RandomEvents.Factory
             Console.WriteLine("Inventaire initial :");
             player.Inventory.DisplayInventory();
 
-            PlayerRandomEventClass randomEvent = RandomEventFactory.GetRandomEvent(dropType);
+            IRandomEvent randomEvent = RandomEventFactory.GetRandomEvent(dropType);
 
             Console.WriteLine($"\n🎲 Événement déclenché : {randomEvent.Name}");
             Console.WriteLine($"{randomEvent.Description}\n");
