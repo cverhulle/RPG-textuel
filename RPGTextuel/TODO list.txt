@@ -1,7 +1,8 @@
 En cours : 
-Modifier les appels du déclenchement de l'événement aléatoire dans le jeu.
+Tester les événements avec le nouveau système
 
 Idées d'améliorations :
 1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
 2. Gérer les chances d'apparation des potions et des événements.
 3. Ajouter un niveau de difficulté.
+4. Nouveaux événements ?
