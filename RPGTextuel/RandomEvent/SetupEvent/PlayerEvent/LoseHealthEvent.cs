@@ -13,7 +13,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         // On définit son activation : 
         // Perte aléatoire entre 5 et 15 PV.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
 

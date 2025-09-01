@@ -31,7 +31,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         // On définit son activation : 
         // Ajout d'un item aléatoire dans l'inventaire du joueur.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // sécurité
 

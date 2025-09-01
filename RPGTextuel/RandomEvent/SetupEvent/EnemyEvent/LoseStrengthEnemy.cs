@@ -12,7 +12,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public string Description => "Vous avez détécté une faiblesse sur prochain adversaire...";
 
         // On définit l'activation de l'événement.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (enemy == null) return; // Sécurité
 

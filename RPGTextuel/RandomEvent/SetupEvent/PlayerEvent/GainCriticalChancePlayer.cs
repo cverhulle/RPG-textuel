@@ -13,7 +13,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public string Description => "Un éclair de lucidité traverse votre esprit. Vos prochaines attaques seront plus précises !";
 
         // On définit l'effet de l'événement : Augmentation de la chance de coup critique.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
 

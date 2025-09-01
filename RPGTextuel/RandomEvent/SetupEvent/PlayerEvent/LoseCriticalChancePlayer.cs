@@ -13,7 +13,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public string Description => "Une migraine soudaine trouble votre perception... Vos chances de viser juste diminuent.";
 
         // Cet événement diminue la chance la coup critique du joueur.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
 

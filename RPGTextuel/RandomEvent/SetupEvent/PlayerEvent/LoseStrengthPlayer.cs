@@ -13,7 +13,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         // Activation de l'événement :
         // Perte aléatoire entre 1 et 2 points de Force
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
 

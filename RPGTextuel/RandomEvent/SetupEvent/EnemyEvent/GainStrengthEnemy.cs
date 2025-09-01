@@ -12,9 +12,9 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public string Description => "D'après les rumeurs, le prochain adversaire est puissant...";
 
         // On définit l'activation de l'événement.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
-             if (enemy == null) return; // Sécurité
+            if (enemy == null) return; // Sécurité
 
             enemy.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(
                 stat: enemy.Strength,                                                                   // Stat à modifier

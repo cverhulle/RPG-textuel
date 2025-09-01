@@ -11,7 +11,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
         public string Name => "Jour paisible";
         public string Description => "Le soleil est radieux, le vent est doux...";
 
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
 

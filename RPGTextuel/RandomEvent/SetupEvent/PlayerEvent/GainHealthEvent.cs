@@ -13,7 +13,7 @@ namespace RPGTextuel.RandomEvent.SetupEvent
 
         // On définit son activation : 
         // Gain aléatoire entre 10 et 30 PV.
-        public void Trigger(Player? player, Enemy? enemy)
+        public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
 
