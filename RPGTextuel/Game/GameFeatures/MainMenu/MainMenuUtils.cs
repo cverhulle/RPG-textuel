@@ -20,7 +20,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         )
         {
             // On déclenche un événement avant chaque combat sauf le premier.
-            HandleEventsBetweenFights(player, fightNumber);
+            HandleEventsBetweenFights(player, enemy, fightNumber);
 
             // Si le joueur est mort, on quitte la boucle
             if (!player.IsAlive)
@@ -58,12 +58,13 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         }
 
         // Cette méthode permet de déclencher un événement aléatoire avant le combat sauf pour le premier ennemi
-        private static void HandleEventsBetweenFights(Player player, int fightNumber)
+        private static void HandleEventsBetweenFights(Player player, Enemy enemy, int fightNumber)
         {
             if (fightNumber > 0)
             {
                 RandomEventsInGame.TriggerRandomEventWithIntro(
                     player,
+                    enemy,
                     "Un événement survient avant votre prochain combat..."
                 );
                 GameUtils.WaitForUser(color : GameConfig.eventsColor);
