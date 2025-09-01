@@ -1,19 +1,23 @@
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
 using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Perte de Force pour le joueur".
-    public class LoseStrengthEvent : PlayerRandomEventClass
+    public class LoseStrengthEvent : IRandomEvent
     {
-        public override string Name => "Blessure musculaire";
-        public override string Description => "Une mauvaise blessure vous affaiblit...";
+        public string Name => "Blessure musculaire";
+        public string Description => "Une mauvaise blessure vous affaiblit...";
 
         // Activation de l'événement :
         // Perte aléatoire entre 1 et 2 points de Force
-        public override void Trigger(Player player)
+        public void Trigger(Player? player, Enemy? enemy)
         {
+            if (player == null) return; // Sécurité
+
             player.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(
                 stat: player.Strength,                                              // Stat à modifier
                 min: 1,                                                             // Valeur minimale possible
