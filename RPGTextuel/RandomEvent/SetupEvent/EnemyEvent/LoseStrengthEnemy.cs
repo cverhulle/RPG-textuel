@@ -1,18 +1,21 @@
+using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'événement "Gain de force pour le prochain ennemi
-    public class LoseStrengthEnemyEvent : EnemyRandomEventClass
+    public class LoseStrengthEnemyEvent : IRandomEvent
     {
         // On définit son nom et sa description.
-        public override string Name => "Faiblesse détectée";
-        public override string Description => "Vous avez détécté une faiblesse sur prochain adversaire...";
+        public string Name => "Faiblesse détectée";
+        public string Description => "Vous avez détécté une faiblesse sur prochain adversaire...";
 
         // On définit l'activation de l'événement.
-        public override void Trigger(Enemy enemy)
+        public void Trigger(Player? player, Enemy? enemy)
         {
+            if (enemy == null) return; // Sécurité
+
             enemy.Strength = (int)ModifyStatHelper.ModifyStatWithBounds(
                 stat: enemy.Strength,                                                                   // Stat à modifier
                 min: 1,                                                                                 // Minimum 1 de force
