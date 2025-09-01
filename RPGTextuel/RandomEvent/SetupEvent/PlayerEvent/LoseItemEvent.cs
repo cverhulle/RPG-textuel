@@ -1,21 +1,24 @@
 using RPGTextuel.Core;
+using RPGTextuel.Enemies.Class;
 using RPGTextuel.Items.Class;
-using RPGTextuel.RandomEvent.Class;
+using RPGTextuel.RandomEvent.Class.Interface;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
     // On définit l'évenement "Perdre un objet".
-    public class LoseItemEvent : PlayerRandomEventClass
+    public class LoseItemEvent : IRandomEvent
     {
         // On définit son nom et sa description.
-        public override string Name => "Sac percé";
-        public override string Description => "Votre sac est percé... un objet semble avoir disparu";
+        public string Name => "Sac percé";
+        public string Description => "Votre sac est percé... un objet semble avoir disparu";
 
 
         // On définit son activation : 
         // Perte d'un item aléatoire dans l'inventaire du joueur.
-        public override void Trigger(Player player)
+        public void Trigger(Player? player, Enemy? enemy)
         {
+            if (player == null) return; // Sécurité
+
             // On récupère le nombre d'objet du player.
             int inventoryLength = player.Inventory.Count;
 
