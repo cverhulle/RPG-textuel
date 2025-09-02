@@ -17,17 +17,17 @@ namespace RPGTextuel.RandomEvent.SetupEvent
             if (enemy == null) return; // Sécurité
 
             enemy.CriticalHitChance = (int)ModifyStatHelper.ModifyStatWithBounds(
-                stat: enemy.CriticalHitChance,                                                                   // Stat à modifier
-                min: 0.0,                                                                                 // Minimum 1 de force
-                max: 1.0,                                                                               // Maximum 999 de force
-                randomMinChange: 0.05,                                                                     // Au minimum on gagne 1
-                randomMaxChange: 0.15,                                                                     // Au maximum, on gagne 2 de force
-                increase: true,                                                                         // C'est une augmentation
-                alreadyAtBoundMessage: "Le prochain adversaire est déjà expert en critique !",        // Message si l'ennemi est déjà à 999 de force.
-                changeMessageTemplate: "La chance de coup critique du prochain adversaire a augmenté de {0:0.#}% !",      // Message pour l'utilisateur
-                finalValueMessageTemplate: "Chance critique finale : {0:0.#}%",            // Message pour l'utilisateur
-                isPercentage: true,                                                                    // Les valeurs ne sont pas en pourcentage
-                roundToInt: false                                                                        // La force est un entier
+                stat: enemy.CriticalHitChance,                                                                              // Stat à modifier
+                min: 0.0,                                                                                                   // Minimum 0% de crit
+                max: 1.0,                                                                                                   // Maximum 100% de crit
+                randomMinChange: 0.05,                                                                                      // Au minimum on gagne 5%
+                randomMaxChange: 0.15,                                                                                      // Au maximum, on gagne 15%
+                increase: true,                                                                                             // C'est une augmentation
+                alreadyAtBoundMessage: "Le prochain adversaire est déjà expert en critique !",                              // Message si l'ennemi est déjà à 100% de crit.
+                changeMessageTemplate: "La chance de coup critique du prochain adversaire a augmenté de {0:0.#}% !",        // Message pour l'utilisateur
+                finalValueMessageTemplate: "Chance critique finale : {0:0.#}%",                                             // Message pour l'utilisateur
+                isPercentage: true,                                                                                         // Les valeurs sont en pourcentage
+                roundToInt: false                                                                                           // Le critique n'est pas un entier
             );
         }
     }
