@@ -23,9 +23,9 @@ namespace RPGTextuel.RandomEvent.SetupEvent
                 randomMinChange: 0.05,                                                                                      // Au minimum on gagne 5%
                 randomMaxChange: 0.15,                                                                                      // Au maximum, on gagne 15%
                 increase: true,                                                                                             // C'est une augmentation
-                alreadyAtBoundMessage: "Le prochain adversaire est déjà expert en critique !",                              // Message si l'ennemi est déjà à 100% de crit.
-                changeMessageTemplate: "La chance de coup critique du prochain adversaire a augmenté de {0:0.#}% !",        // Message pour l'utilisateur
-                finalValueMessageTemplate: "Chance critique finale : {0:0.#}%",                                             // Message pour l'utilisateur
+                alreadyAtBoundMessage: "Le prochain adversaire est déjà expert en critique !",                              
+                changeMessageTemplate: "La chance de coup critique du prochain adversaire a augmenté de {0:0.#}% !",        
+                finalValueMessageTemplate: "Chance critique finale : {0:0.#}%",                                             
                 isPercentage: true,                                                                                         // Les valeurs sont en pourcentage
                 roundToInt: false                                                                                           // Le critique n'est pas un entier
             );
