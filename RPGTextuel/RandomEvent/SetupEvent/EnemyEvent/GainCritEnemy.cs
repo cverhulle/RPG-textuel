@@ -4,7 +4,7 @@ using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'événement "Gain de chance de critique pour le prochain ennemi
+    // On définit l'événement "Gain de chance de critique pour le prochain ennemi"
     public class GainCritEnemyEvent : IRandomEvent
     {
         // On définit son nom et sa description.
