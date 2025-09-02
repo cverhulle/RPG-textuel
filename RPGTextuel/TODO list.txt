@@ -1,8 +1,7 @@
 En cours : 
-Tester les événements avec le nouveau système
+Evenement pour augmenter et diminuer le crit du prochain adversaire.
 
 Idées d'améliorations :
-1. Evenement pour augmenter ou diminuer le crit du prochain adversaire.
-2. Tri des objets dans l'inventaire
-3. Gérer les chances d'apparation des potions et des événements.
-4. Ajouter un niveau de difficulté.
+1. Tri des objets dans l'inventaire
+2. Gérer les chances d'apparation des potions et des événements.
+3. Ajouter un niveau de difficulté.
