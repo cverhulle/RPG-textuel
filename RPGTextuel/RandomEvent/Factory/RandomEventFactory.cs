@@ -3,6 +3,7 @@ using RPGTextuel.Config.Enum;
 using RPGTextuel.Extensions.List;
 using RPGTextuel.Items.Class;
 using RPGTextuel.RandomEvent.Class.Interface;
+using RPGTextuel.RandomEvent.Events;
 using RPGTextuel.RandomEvent.SetupEvent;
 using RPGTextuel.Weight.Class;
 
@@ -33,7 +34,9 @@ namespace RPGTextuel.RandomEvent.Factory
             (_) => new GainStrengthEvent(),
             (_) => new LoseStrengthEvent(),
             (_) => new GainStrengthEnemyEvent(),
-            (_) => new LoseStrengthEnemyEvent()
+            (_) => new LoseStrengthEnemyEvent(),
+            (_) => new GainCritEnemyEvent(),
+            (_) => new LoseCritEnemyEvent()
         };
 
         // On choisit aléatoirement un événement parmi une liste.
