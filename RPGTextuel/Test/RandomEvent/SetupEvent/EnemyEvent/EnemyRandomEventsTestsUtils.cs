@@ -1,4 +1,5 @@
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.RandomEvent.Events;
 using RPGTextuel.RandomEvent.SetupEvent;
 
 namespace RPGTextuel.Test.RandomEvents
@@ -21,6 +22,15 @@ namespace RPGTextuel.Test.RandomEvents
             Console.WriteLine($"Force initiale : {enemy.Strength}");
 
             GainStrengthEnemyEvent evt = new GainStrengthEnemyEvent();
+            evt.Trigger(null, enemy);
+        }
+
+        // Méthode utilitaire liée à l'évenement LoseCritEnemy.
+        public static void LoseCritEnemyUtils(Enemy enemy)
+        {
+            Console.WriteLine($"Critique initial : {enemy.CriticalHitChance}");
+
+            LoseCritEnemyEvent evt = new LoseCritEnemyEvent();
             evt.Trigger(null, enemy);
         }
 
