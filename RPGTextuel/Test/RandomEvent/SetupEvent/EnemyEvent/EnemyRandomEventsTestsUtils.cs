@@ -10,7 +10,7 @@ namespace RPGTextuel.Test.RandomEvents
         // Méthode utilitaire liée à l'évenement GainCritEnemy.
         public static void GainCritEnemyUtils(Enemy enemy)
         {
-            Console.WriteLine($"Critique initial : {enemy.CriticalHitChance}");
+            Console.WriteLine($"Critique initial : {enemy.CriticalHitChance * 100:0.#}%");
 
             GainCritEnemyEvent evt = new GainCritEnemyEvent();
             evt.Trigger(null, enemy);
