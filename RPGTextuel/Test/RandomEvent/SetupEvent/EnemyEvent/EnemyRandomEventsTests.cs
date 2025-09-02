@@ -21,7 +21,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Test de GainCritEnemyEvent avec critique proche du maximum.
-        public static void TestGainCritEnemyEventWithAlmostMaxStrength()
+        public static void TestGainCritEnemyEventWithAlmostMaxCrit()
         {
             Console.WriteLine("===== Test de GainCritEnemyEventWithAlmostMaxStrength =====");
 
@@ -35,7 +35,7 @@ namespace RPGTextuel.Test.RandomEvents
         }
 
         // Test de GainCritEnemyEvent avec critique déjà au maximum.
-        public static void TestGainCritEnemyEventWithMaxStrength()
+        public static void TestGainCritEnemyEventWithMaxCrit()
         {
             Console.WriteLine("===== Test de GainCritEventWithMaxStrength =====");
 
