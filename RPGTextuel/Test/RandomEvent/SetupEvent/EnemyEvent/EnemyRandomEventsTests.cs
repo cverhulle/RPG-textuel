@@ -7,6 +7,47 @@ namespace RPGTextuel.Test.RandomEvents
     // Cette classe regroupe les méthodes liées aux évenements aléatoires des ennemis.
     public static class EnemyRandomEventsTests
     {
+        // Test de GainCritEnemyEvent par défaut
+        public static void TestGainCritEnemyEventByDefault()
+        {
+            Console.WriteLine("===== Test de GainCritEnemyEventByDefault =====");
+
+            Enemy enemy = EnemyTestFactory.CreateGoblin();
+
+            Console.WriteLine("Résultat attendu : Augmentation aléatoire du critique de 5 à 15%.");
+            EnemyRandomEventsTestsUtils.GainCritEnemyUtils(enemy);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Test de GainCritEnemyEvent avec critique proche du maximum.
+        public static void TestGainCritEnemyEventWithAlmostMaxStrength()
+        {
+            Console.WriteLine("===== Test de GainCritEnemyEventWithAlmostMaxStrength =====");
+
+            Enemy enemy = EnemyTestFactory.CreateGoblin();
+
+            enemy.CriticalHitChance = 0.99;
+            Console.WriteLine("Résultat attendu : Gain limité : 1%.");
+            EnemyRandomEventsTestsUtils.GainCritEnemyUtils(enemy);
+
+            GameUtils.WaitForUser();
+        }
+
+        // Test de GainCritEnemyEvent avec critique déjà au maximum.
+        public static void TestGainCritEnemyEventWithMaxStrength()
+        {
+            Console.WriteLine("===== Test de GainCritEventWithMaxStrength =====");
+
+            Enemy enemy = EnemyTestFactory.CreateGoblin();
+
+            enemy.CriticalHitChance = 1;
+            Console.WriteLine("Résultat attendu : Message indiquant que le critique est déjà au maximum.");
+            EnemyRandomEventsTestsUtils.GainCritEnemyUtils(enemy);
+
+            GameUtils.WaitForUser();
+        }
+
         // Test de GainStrengthEnemyEvent par défaut
         public static void TestGainStrengthEnemyEventByDefault()
         {
