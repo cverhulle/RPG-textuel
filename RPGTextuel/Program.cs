@@ -6,9 +6,9 @@ class Program
     static void Main(string[] args)
     {
         // Méthode pour lancer le jeu
-        // Game.StartGame();
+        Game.StartGame();
 
         // Méthode pour tester le jeu.
-        TestLauncher.TestLauncherMain();
+        // TestLauncher.TestLauncherMain();
     }
 }
