@@ -1,7 +1,8 @@
 En cours : 
-Evenement pour augmenter et diminuer le crit du prochain adversaire.
+
 
 Idées d'améliorations :
-1. Tri des objets dans l'inventaire
-2. Gérer les chances d'apparation des potions et des événements.
-3. Ajouter un niveau de difficulté.
+1. Offrir la possiblité de refaire une nouvelle partie à la fin
+2. Tri des objets dans l'inventaire
+3. Gérer les chances d'apparation des potions et des événements.
+4. Ajouter un niveau de difficulté.
