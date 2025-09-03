@@ -13,7 +13,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
     public static class GameDisplay
     {
         // Cette méthode est une méthode générique pour afficher une liste d'options.
-        public static void PrintFramedList<T>(List<T> elements, Func<T, string> formatter, string? title = null, bool showCount = false, ConsoleColor color = GameConfig.defaultColor)
+        public static void PrintFramedList<T>(List<T> elements, Func<T, string> formatter, string? title = null, bool showCount = false, ConsoleColor color = TextColorConfig.defaultColor)
         {
             // Si elements est vide ou null, on retourne une erreur.
             if (elements == null || elements.Count == 0)
@@ -90,7 +90,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             enemy.PrintStats();
 
             // On remet la couleur en noire dans tous les cas.
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
 
             // On laisse à l'utilisateur le temps de lire et d'avancer au clic.
             GameUtils.WaitForUser(color : color);
@@ -98,7 +98,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
 
         // Cette méthode affiche permet d'afficher une liste d'options.
         // Elle prend en paramètre une liste de phrases à afficher et, éventuellement, un titre.
-        public static void ShowOptionsList(List<string> options, string? title = null, ConsoleColor color = GameConfig.defaultColor)
+        public static void ShowOptionsList(List<string> options, string? title = null, ConsoleColor color = TextColorConfig.defaultColor)
         {
             PrintFramedList(options, option => option, title, color: color);
         }

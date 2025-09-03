@@ -10,7 +10,7 @@ namespace RPGTextuel.Utils
         {
             Console.ForegroundColor = color;
             Console.WriteLine(text);
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
         }
     }
 }

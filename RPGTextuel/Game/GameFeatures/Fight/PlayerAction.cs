@@ -21,10 +21,10 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         // On gère le choix "attaque" de la part du joueur
         private static void PlayerAttack(Player player, Enemy enemy)
         {
-            Console.ForegroundColor = GameConfig.playerColor;
+            Console.ForegroundColor = TextColorConfig.playerColor;
             player.Attack(enemy);
-            GameUtils.WaitForUser(color: GameConfig.playerColor);
-            Console.ForegroundColor = GameConfig.defaultColor;
+            GameUtils.WaitForUser(color: TextColorConfig.playerColor);
+            Console.ForegroundColor = TextColorConfig.defaultColor;
         }
 
         // Cette méthode gère le tour du joueur.

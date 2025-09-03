@@ -8,7 +8,7 @@ namespace RPGTextuel.Game.GameUtilsNamespace
     {
         // Cette méthode affiche une question à l'utilisateur et retourne sa réponse.
         // On n'utilise pas DisplayUtils.WriteLineInColor pour ne pas avoir le saut de ligne.
-        public static string AskUserInput(string prompt, ConsoleColor color = GameConfig.defaultColor)
+        public static string AskUserInput(string prompt, ConsoleColor color = TextColorConfig.defaultColor)
         {
             // On applique la couleur
             Console.ForegroundColor = color;
@@ -20,14 +20,14 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             string rep = Console.ReadLine() ?? string.Empty;
 
             // On remet la couleur par défaut
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
 
             // On retourne la réponse et, par défaut un message vide.
             return rep;
         }
 
         // Cette méthode retourne le choix de l'utilisateur parmi un menu.
-        public static int AskMenuChoice(List<string> options, string? title = null, ConsoleColor color = GameConfig.defaultColor)
+        public static int AskMenuChoice(List<string> options, string? title = null, ConsoleColor color = TextColorConfig.defaultColor)
         {
             // On affiche la liste des possibilités
             GameDisplay.ShowOptionsList(options, title, color);

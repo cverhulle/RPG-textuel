@@ -39,7 +39,7 @@ namespace RPGTextuel.Game.GameFeatures.RandomEvents
             randomEvent.Trigger(player, nextEnemy);
 
             // On remet la couleur par défaut
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
         }
     }
 }

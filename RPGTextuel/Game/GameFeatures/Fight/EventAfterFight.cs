@@ -31,10 +31,10 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             itemToEarn.Trigger(player);
 
             // On laisse à l'utilisateur le temps de lire l'affichage
-            GameUtils.WaitForUser(color: GameConfig.eventsColor);
+            GameUtils.WaitForUser(color: TextColorConfig.eventsColor);
 
             // On remet la couleur par défaut
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
         }
     }
 }

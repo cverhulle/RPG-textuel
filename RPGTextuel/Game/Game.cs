@@ -14,7 +14,7 @@ namespace RPGTextuel.Game
         public static void StartGame()
         {
             // On initialise la couleur par défaut
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
             
             // On initialise la partie
             (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();

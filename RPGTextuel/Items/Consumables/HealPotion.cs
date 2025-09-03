@@ -21,14 +21,14 @@ namespace RPGTextuel.Items.Consumables
         public override Boolean Use(Character user, Character target)
         {
             // On modifie l'affichage en violet
-            Console.ForegroundColor = GameConfig.itemsColor;
+            Console.ForegroundColor = TextColorConfig.itemsColor;
 
             Console.WriteLine($"{user.Name} utilise {name} sur {target.Name}");
 
             bool isHealed = target.Heal(healAmount);
 
             // On remet l'affichage par défaut.
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
 
             return isHealed;
         }
