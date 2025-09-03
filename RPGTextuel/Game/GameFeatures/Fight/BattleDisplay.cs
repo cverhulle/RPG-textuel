@@ -45,7 +45,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 ShowEndBattleMessage(
                     "===== FIN DU COMBAT =====\n",
                     $"💀 Défaite... {player.Name} a été terrassé par {enemy.Name}.",
-                    GameConfig.defeatColor
+                    TextColorConfig.defeatColor
                 );
             }
             else

@@ -30,7 +30,7 @@ namespace RPGTextuel.Core.Characters
                 damage = (int)Math.Round(damage * GameConfig.criticalMultiplicator);
 
                 // On gère l'affichage
-                DisplayUtils.WriteLineInColor($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !", GameConfig.critColor);
+                DisplayUtils.WriteLineInColor($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !", TextColorConfig.critColor);
             }
             // Sinon, on gère simplement l'affichage.
             else
@@ -40,15 +40,15 @@ namespace RPGTextuel.Core.Characters
 
             // On modifie la couleur du texte 
             if (this is Player)
-                Console.ForegroundColor = GameConfig.playerColor;
+                Console.ForegroundColor = TextColorConfig.playerColor;
             else if (this is Enemy)
-                Console.ForegroundColor = GameConfig.ennemiesColor;
+                Console.ForegroundColor = TextColorConfig.ennemiesColor;
 
             // Dans les deux cas, on inflige les dégats à la cible
             target.TakeDamage(damage);
 
             // On remet la couleur par défaut
-            Console.ForegroundColor = GameConfig.defaultColor;
+            Console.ForegroundColor = TextColorConfig.defaultColor;
         }
     }
 }

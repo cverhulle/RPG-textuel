@@ -13,7 +13,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
         public static void EnemyTurn(Player player, Enemy enemy, Boolean isFinalBoss)
         {
             // On calcule la couleur de l'affichage
-            ConsoleColor colorToDisplay = isFinalBoss ? GameConfig.bossColor : GameConfig.ennemiesColor;
+            ConsoleColor colorToDisplay = isFinalBoss ? TextColorConfig.bossColor : TextColorConfig.ennemiesColor;
 
             // On affiche le texte dans la couleur
             Console.ForegroundColor = colorToDisplay;
