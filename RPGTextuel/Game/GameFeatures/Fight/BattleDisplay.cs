@@ -36,7 +36,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
                 ShowEndBattleMessage(
                     "===== FIN DU COMBAT =====\n",
                     $"🎉 Victoire ! {enemy.Name} a été vaincu. \n",
-                    GameConfig.victoryColor,
+                    TextColorConfig.victoryColor,
                     () => player.PrintHealthBar()
                 );
             }

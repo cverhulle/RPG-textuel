@@ -32,7 +32,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             }
 
             // Sinon, on demande à l'utilisateur la cible.
-            int choice = GameInputUser.AskMenuChoice(options, "Choisissez une cible", GameConfig.itemsColor);
+            int choice = GameInputUser.AskMenuChoice(options, "Choisissez une cible", TextColorConfig.itemsColor);
 
             return targets[choice - 1];
         }
@@ -55,7 +55,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             // On gère le cas où l'inventaire est vide.
             if (inventory.IsEmpty())
             {
-                GameUtils.WaitForUser("Votre inventaire est vide.", color: GameConfig.itemsColor);
+                GameUtils.WaitForUser("Votre inventaire est vide.", color: TextColorConfig.itemsColor);
                 return inventory.Count +1;
             }
 
@@ -63,7 +63,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             List<string> options = GetItemNameListsAndBackMessage(inventory.GetAllItems());
 
             // Appelle la fonction qui gère l'affichage et la réponse au menu.
-            return GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}", GameConfig.itemsColor);
+            return GameInputUser.AskMenuChoice(options, $"Inventaire de {player.Name}", TextColorConfig.itemsColor);
         }
 
         // Cette méthode demande à l'utilisateur quel objet il souhaite utiliser.
@@ -97,11 +97,11 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
             Boolean isItemUsed = player.Inventory.UseItem(index, player, target);
             if (isItemUsed)
             {
-                GameUtils.WaitForUser("Objet utilisé !", GameConfig.itemsColor);
+                GameUtils.WaitForUser("Objet utilisé !", TextColorConfig.itemsColor);
             }
             else
             {
-                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.", GameConfig.itemsColor);
+                GameUtils.WaitForUser("L'objet n'a pas pu être utilisé.", TextColorConfig.itemsColor);
             }
             return isItemUsed;
         }

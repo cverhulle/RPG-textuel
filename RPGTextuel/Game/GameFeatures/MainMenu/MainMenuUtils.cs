@@ -67,7 +67,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                     enemy,
                     "Un événement survient avant votre prochain combat..."
                 );
-                GameUtils.WaitForUser(color : GameConfig.eventsColor);
+                GameUtils.WaitForUser(color : TextColorConfig.eventsColor);
             }
         }
     }

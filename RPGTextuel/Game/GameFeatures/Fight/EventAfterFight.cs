@@ -21,7 +21,7 @@ namespace RPGTextuel.Game.GameFeatures.Fight
             }
                     
             // On affiche le texte en couleur
-            Console.ForegroundColor = GameConfig.eventsColor;
+            Console.ForegroundColor = TextColorConfig.eventsColor;
 
             // On récupère l'événement à lancer
             var itemToEarn = RandomEventFactory.GetRandomItem(ItemDropTableType.Default);

@@ -22,7 +22,7 @@ namespace RPGTextuel.Items.Consumables
         public override Boolean Use(Character user, Character target)
         {
             // On modifie l'affichage en violet
-            Console.ForegroundColor = GameConfig.itemsColor;
+            Console.ForegroundColor = TextColorConfig.itemsColor;
 
             // Si l'utilisateur est la cible, c'est une "erreur"
             if (user == target)
