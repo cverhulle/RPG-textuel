@@ -18,7 +18,7 @@ namespace RPGTextuel.Enemies.Class
             int strength,
             int maxHealth,
             EnemyType enemyType,
-            double criticalHitChance = GameConfig.criticalHitByDefault
+            double criticalHitChance = GameStatConfig.criticalHitByDefault
         )
             : base(name, health, strength, maxHealth,criticalHitChance)
         {

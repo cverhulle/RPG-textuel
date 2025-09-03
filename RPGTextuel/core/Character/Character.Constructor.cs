@@ -11,7 +11,7 @@ namespace RPGTextuel.Core.Characters
             int characterHealth,
             int characterStrength,
             int characterMaxHealth,
-            double criticalHitChance = GameConfig.criticalHitByDefault
+            double criticalHitChance = GameStatConfig.criticalHitByDefault
         )
         {
             name = characterName;

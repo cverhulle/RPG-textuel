@@ -12,7 +12,7 @@ namespace RPGTextuel.Enemies.Class
             int health,
             int strength,
             int maxHealth,
-            double criticalHitChance = GameConfig.criticalHitByDefault
+            double criticalHitChance = GameStatConfig.criticalHitByDefault
         )
             : base(name, health, strength, maxHealth, EnemyType.GoblinMinion, criticalHitChance)
         {

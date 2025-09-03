@@ -27,7 +27,7 @@ namespace RPGTextuel.Core.Characters
             if (isCritical)
             {
                 // On augmente les dégats.
-                damage = (int)Math.Round(damage * GameConfig.criticalMultiplicator);
+                damage = (int)Math.Round(damage * GameStatConfig.criticalMultiplicator);
 
                 // On gère l'affichage
                 DisplayUtils.WriteLineInColor($"{Name} réussit un COUP CRITIQUE sur {target.Name} infligeant {damage} dégâts !", TextColorConfig.critColor);
