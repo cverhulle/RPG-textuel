@@ -3,6 +3,13 @@ namespace RPGTextuel.Config
     // Cette classe s'occupe de la gestion des statistiques par défaut
     public static class GameStatConfig
     {
+        // Stat du joueur
+        // PV de base du joueur
+        public const int playerHealthByDefault = 100;
+
+        // Attaque de base du joueur
+        public const int playerAttackByDefault = 10;
+
         // Coup critique 
         // Chance de coup critique par défaut
         public const double criticalHitByDefault = 0.05;
