@@ -13,7 +13,13 @@ namespace RPGTextuel.Core
         // La chance de critique est fixé dans GameConfig 
         // Le nom est laissé libre.
         public Player(string name) :
-            base(name, 100, 10, 100, GameStatConfig.criticalHitPlayer)
+            base(
+                name,
+                GameStatConfig.playerHealthByDefault,
+                GameStatConfig.playerAttackByDefault,
+                GameStatConfig.playerHealthByDefault,
+                GameStatConfig.criticalHitPlayer
+                )
         {
             Inventory = new Inventory(this);
         }
