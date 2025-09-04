@@ -35,14 +35,11 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy, isFinalBoss);
 
                 // On "regarde" si la partie doit s'arrêter.
-                if (wantsToQuit)
+                // Si c'est le cas, on retourne la cause de l'arrêt.
+                EndGameState? endState = MainMenuUtils.CheckEndConditions(player, wantsToQuit);
+                if (endState.HasValue)
                 {
-                    return EndGameState.PlayerQuit;
-                }
-
-                if (EndGame.isPlayerDead(player))
-                {
-                    return EndGameState.PlayerDeath;
+                    return endState.Value;
                 }
 
                 // Après chaque combat, on augmente le compteur de 1.
