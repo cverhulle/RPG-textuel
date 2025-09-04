@@ -33,19 +33,6 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
             return false;
         }
 
-        // Méthode utilitaire permettant de savoir si l'on doit arreter la partie.
-        // On retourne True si c'est le cas et, false sinon.
-        public static bool ShouldEndGame(bool wantsToQuit, Player player)
-        {
-            if (wantsToQuit)
-            {
-                PlayerCloseGame();
-                return true;
-            }
-
-            return isPlayerDead(player);
-        }
-
         // Cette méthode gère l'affichage en cas de victoire du joueur.
         public static void VictoryMessage()
         {
