@@ -21,16 +21,6 @@ namespace RPGTextuel.Game
             {
                 EndGameState endParty = PlayOneGame();
 
-                // On initialise la couleur par défaut
-                Console.ForegroundColor = TextColorConfig.defaultColor;
-
-                // On initialise la partie
-                (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
-
-                // On lance la boucle de jeu
-                // On récupère l'état à la fin de la partie
-                EndGameState endParty = MainMenu.HandleMainMenu(player, ennemies);
-
                 // On gère le résultat de la partie.
                 switch (endParty)
                 {
