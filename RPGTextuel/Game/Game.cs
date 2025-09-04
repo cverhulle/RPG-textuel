@@ -26,13 +26,24 @@ namespace RPGTextuel.Game
                 (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
 
                 // On lance la boucle de jeu
-                // En cas d'arret de la partie, on récupère le booléan "true".
-                Boolean stopGame = MainMenu.HandleMainMenu(player, ennemies);
+                // On récupère l'état à la fin de la partie
+                EndGameState endParty = MainMenu.HandleMainMenu(player, ennemies);
 
-                // Si tous les ennemis sont vaincus, on affiche le message de victoire.
-                if (!stopGame)
+                // On gère le résultat de la partie.
+                switch (endParty)
                 {
-                    EndGame.VictoryMessage();
+                    case EndGameState.Victory:
+                        EndGame.VictoryMessage();
+                        break;
+
+                    case EndGameState.PlayerDeath:
+                        // Le message de mort est déjà géré avant
+                        break;
+
+                    case EndGameState.PlayerQuit:
+                        // Message déjà géré avant
+                        // Le joueur a quitté : on sort directement de la boucle
+                        return;
                 }
             }
         }
