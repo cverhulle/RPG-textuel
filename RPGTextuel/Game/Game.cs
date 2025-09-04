@@ -44,7 +44,7 @@ namespace RPGTextuel.Game
                 replay = (choix == "o" || choix == "oui");
             }
         }
-        
+
         /// <summary>
         /// Joue une partie complète (init + combats) et retourne l’état final.
         /// </summary>
@@ -59,6 +59,16 @@ namespace RPGTextuel.Game
             // On lance la boucle de jeu
             // On récupère l'état à la fin de la partie
             return MainMenu.HandleMainMenu(player, ennemies);
+        }
+        
+        /// <summary>
+        /// Demande au joueur s’il souhaite rejouer.
+        /// </summary>
+        private static bool AskReplay()
+        {
+            Console.WriteLine("\nVoulez-vous rejouer ? (o/n)");
+            string? choix = Console.ReadLine()?.Trim().ToLower();
+            return (choix == "o" || choix == "oui");
         }
     }
 }
