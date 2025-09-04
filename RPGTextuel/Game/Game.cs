@@ -45,6 +45,11 @@ namespace RPGTextuel.Game
                         // Le joueur a quitté : on sort directement de la boucle
                         return;
                 }
+
+                // Si le joueur n'a pas volontairement quitté, on propose de rejouer
+                Console.WriteLine("\nVoulez-vous rejouer ? (o/n)");
+                string? choix = Console.ReadLine()?.Trim().ToLower();
+                replay = (choix == "o" || choix == "oui");
             }
         }
     }
