@@ -9,7 +9,7 @@ namespace RPGTextuel.Game
 {
     // Cette classe s'occupe de gérer la boucle de jeu.
     public static class Game
-    {        
+    {
         // Cette méthode a pour but de lancer la partie
         public static void StartGame()
         {
@@ -19,6 +19,8 @@ namespace RPGTextuel.Game
             // Tant que l'on rejoue, la partie continue
             while (replay)
             {
+                EndGameState endParty = PlayOneGame();
+
                 // On initialise la couleur par défaut
                 Console.ForegroundColor = TextColorConfig.defaultColor;
 
@@ -51,6 +53,22 @@ namespace RPGTextuel.Game
                 string? choix = Console.ReadLine()?.Trim().ToLower();
                 replay = (choix == "o" || choix == "oui");
             }
+        }
+        
+        /// <summary>
+        /// Joue une partie complète (init + combats) et retourne l’état final.
+        /// </summary>
+        private static EndGameState PlayOneGame()
+        {
+            // On initialise la couleur par défaut
+            Console.ForegroundColor = TextColorConfig.defaultColor;
+
+            // On initialise la partie
+            (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
+
+            // On lance la boucle de jeu
+            // On récupère l'état à la fin de la partie
+            return MainMenu.HandleMainMenu(player, ennemies);
         }
     }
 }
