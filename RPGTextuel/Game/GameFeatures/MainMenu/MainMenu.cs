@@ -10,8 +10,8 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
     public static class MainMenu
     {
         // Cette méthode lance la boucle de jeu.
-        // Elle retourne, en booléan, l'arrêt, ou non, de la partie.
-        public static Boolean HandleMainMenu(Player player, List<Enemy> ennemies)
+        // Elle retourne, en EndGameState, l'état de la partie (victoire, défaite, arrêt).
+        public static EndGameState HandleMainMenu(Player player, List<Enemy> ennemies)
         {
             // On sauvegarde le nombre d'ennemis que l'on combat.
             int fightNumber = 0;
