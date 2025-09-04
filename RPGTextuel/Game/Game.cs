@@ -70,7 +70,7 @@ namespace RPGTextuel.Game
             int choice = GameInputUser.AskMenuChoice(
                 options,
                 title: "Voulez-vous rejouer ?",
-                color: ConsoleColor.Yellow
+                color: TextColorConfig.replayColor
             );
 
             return choice == 1;
