@@ -26,22 +26,20 @@ namespace RPGTextuel.Game
                 {
                     case EndGameState.Victory:
                         EndGame.VictoryMessage();
+                        replay = AskReplay();
                         break;
 
                     case EndGameState.PlayerDeath:
                         // Le message de mort est déjà géré avant
+                        replay = AskReplay();
                         break;
 
                     case EndGameState.PlayerQuit:
                         // Message déjà géré avant
                         // Le joueur a quitté : on sort directement de la boucle
+                        replay = false;
                         return;
                 }
-
-                // Si le joueur n'a pas volontairement quitté, on propose de rejouer
-                Console.WriteLine("\nVoulez-vous rejouer ? (o/n)");
-                string? choix = Console.ReadLine()?.Trim().ToLower();
-                replay = (choix == "o" || choix == "oui");
             }
         }
 
