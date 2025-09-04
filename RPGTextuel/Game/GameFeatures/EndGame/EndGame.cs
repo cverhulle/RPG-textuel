@@ -8,7 +8,7 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
     public static class EndGame
     {
         // Cette méthode est appelée lorsque le joueur décide de fermer le jeu.
-        private static void PlayerCloseGame()
+        public static void PlayerCloseGame()
         {
             Console.WriteLine("À bientôt !");
         }

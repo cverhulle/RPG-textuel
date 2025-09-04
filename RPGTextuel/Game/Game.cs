@@ -35,9 +35,9 @@ namespace RPGTextuel.Game
                         replay = AskReplay();
                         break;
 
+                    // Le joueur souhaite fermer le jeu : on sort de la boucle.
                     case EndGameState.PlayerQuit:
-                        // Message déjà géré avant
-                        // Le joueur a quitté : on sort directement de la boucle
+                        EndGame.PlayerCloseGame();
                         replay = false;
                         return;
                 }
@@ -72,7 +72,7 @@ namespace RPGTextuel.Game
                 title: "Voulez-vous rejouer ?",
                 color: ConsoleColor.Yellow
             );
-            
+
             return choice == 1;
         }
     }
