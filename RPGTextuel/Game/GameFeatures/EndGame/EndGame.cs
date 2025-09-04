@@ -21,13 +21,11 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
             GameUtils.WaitForUser(color: ConsoleColor.DarkRed);
         }
 
-        // Cette méthode permet de gérer la mort du joueur
-        // Elle retourne l'état du joueur sous forme de booléen.
+        // Cette méthode retourne l'état du joueur sous forme de booléen.
         public static bool isPlayerDead(Player player)
         {
             if (!player.IsAlive)
             {
-                DeathMessage();
                 return true;
             }
             return false;
