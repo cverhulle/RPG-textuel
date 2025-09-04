@@ -1,5 +1,4 @@
 En cours : 
-Mettre les stats par défaut des joueurs et ennemis dans le fichier GameStatConfig.
 
 Idées d'améliorations :
 1. Offrir la possiblité de refaire une nouvelle partie à la fin
