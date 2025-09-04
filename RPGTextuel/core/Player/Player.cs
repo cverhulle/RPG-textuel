@@ -9,8 +9,7 @@ namespace RPGTextuel.Core
         // Par défaut, elle est vide.
         public Inventory Inventory { get; }
 
-        // On définit un Player comme un Character à 100PV, 10 de force, 100PV max.
-        // La chance de critique est fixé dans GameConfig 
+        // Les stats sont définis dans le fichier de configuration.
         // Le nom est laissé libre.
         public Player(string name) :
             base(
