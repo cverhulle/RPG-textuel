@@ -28,22 +28,27 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                 // On vérifie l'état du joueur après l'événement automatique
                 if (EndGame.isPlayerDead(player))
                 {
-                    return true;
+                    return EndGameState.PlayerDeath;
                 }
 
                 // On délègue la gestion du menu principal à une méthode dédiée
                 Boolean wantsToQuit = FightingAnEnemyMenu.HandleMainMenu(player, enemy, isFinalBoss);
 
                 // On "regarde" si la partie doit s'arrêter.
-                if (EndGame.ShouldEndGame(wantsToQuit, player))
+                if (wantsToQuit)
                 {
-                    return true;
+                    return EndGameState.PlayerQuit;
+                }
+
+                if (EndGame.isPlayerDead(player))
+                {
+                    return EndGameState.PlayerDeath;
                 }
 
                 // Après chaque combat, on augmente le compteur de 1.
                 fightNumber++;
             }
-            return false;
+            return EndGameState.Victory;
         }
     }
 }
