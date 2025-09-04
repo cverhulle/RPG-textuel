@@ -31,7 +31,7 @@ namespace RPGTextuel.Game
                         break;
 
                     case EndGameState.PlayerDeath:
-                        // Le message de mort est déjà géré avant
+                        EndGame.DeathMessage();
                         replay = AskReplay();
                         break;
 

@@ -14,7 +14,7 @@ namespace RPGTextuel.Game.GameFeatures.EndGameNamespace
         }
 
         // Cette méthode est appelée lorsque le joueur meurt
-        private static void DeathMessage()
+        public static void DeathMessage()
         {
             Console.Clear();
             DisplayUtils.WriteLineInColor("Vous êtes mort. Fin de la partie.", ConsoleColor.DarkRed);
