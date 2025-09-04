@@ -1,6 +1,7 @@
 using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
+using RPGTextuel.Game.GameFeatures.EndGameNamespace;
 using RPGTextuel.Game.GameFeatures.RandomEvents;
 using RPGTextuel.Game.GameUtilsNamespace;
 
@@ -36,7 +37,7 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
         private static void HandleEnemyPresentation(
             Enemy enemy,
             string messageIntroFight = "Un nouvel ennemi approche",
-            bool isFinalBoss = false 
+            bool isFinalBoss = false
         )
         {
             // Si l'on affronte le boss final, on personnalise le message.
@@ -67,8 +68,27 @@ namespace RPGTextuel.Game.GameFeatures.MainMenu
                     enemy,
                     "Un événement survient avant votre prochain combat..."
                 );
-                GameUtils.WaitForUser(color : TextColorConfig.eventsColor);
+                GameUtils.WaitForUser(color: TextColorConfig.eventsColor);
             }
+        }
+        
+        /// <summary>
+        /// Centralise la logique de fin de partie (mort ou abandon).
+        /// Retourne null si la partie continue.
+        /// </summary>
+        public static EndGameState? CheckEndConditions(Player player, bool wantsToQuit)
+        {
+            if (wantsToQuit)
+            {
+                return EndGameState.PlayerQuit;
+            }
+
+            if (EndGame.isPlayerDead(player))
+            {
+                return EndGameState.PlayerDeath;
+            }
+
+            return null;
         }
     }
 }
