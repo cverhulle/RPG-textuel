@@ -4,6 +4,7 @@ using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameFeatures.EndGameNamespace;
 using RPGTextuel.Game.GameFeatures.InitGame;
 using RPGTextuel.Game.GameFeatures.MainMenu;
+using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Game
 {
@@ -64,9 +65,15 @@ namespace RPGTextuel.Game
         /// </summary>
         private static bool AskReplay()
         {
-            Console.WriteLine("\nVoulez-vous rejouer ? (o/n)");
-            string? choix = Console.ReadLine()?.Trim().ToLower();
-            return (choix == "o" || choix == "oui");
+            var options = new List<string> { "Oui", "Non" };
+
+            int choice = GameInputUser.AskMenuChoice(
+                options,
+                title: "Voulez-vous rejouer ?",
+                color: ConsoleColor.Yellow
+            );
+            
+            return choice == 1;
         }
     }
 }
