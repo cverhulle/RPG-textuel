@@ -32,5 +32,8 @@ namespace RPGTextuel.Config
 
         // Couleur de la victoire
         public const ConsoleColor victoryColor = ConsoleColor.DarkGreen;
+
+        // Couleur pour rejouer une partie
+        public const ConsoleColor replayColor = ConsoleColor.Yellow;
     }
 }
