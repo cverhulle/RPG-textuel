@@ -12,8 +12,8 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             Console.WriteLine();
         }
 
-        // Cette méthode se déclenche après le choix du nom du personnage, après initialisation du jeu
-        public static void ShowWelcomeMessage2(string name)
+        // Cette méthode affiche un message avant le début d'une run.
+        public static void ShowMessageBeforeARun(string name)
         {
             Console.WriteLine();
             Console.WriteLine("💥 Bienvenue " + name);
