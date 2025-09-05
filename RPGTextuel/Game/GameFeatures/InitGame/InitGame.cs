@@ -15,19 +15,10 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         {
             // On règle la couleur des textes
             Console.ForegroundColor = TextColorConfig.introColor;
-
+            
+            // On affiche le message
             Console.WriteLine();
-
-            // On affiche le message d'accueil
-            if (!isReplay)
-            {
-                InitWelcomeMessage.ShowMessageBeforeARun(playerName);
-            }
-            else
-            {
-                // ------------------- A MODIFIER -----------------------
-                DisplayUtils.WriteLineInColor($"Une nouvelle aventure commence pour vous, {playerName} !", ConsoleColor.Cyan);
-            }
+            InitWelcomeMessage.ShowMessageBeforeARun(playerName, isReplay);
 
             // On laisse le temps à l'utilisateur de lire
             GameUtils.WaitForUser(color: TextColorConfig.introColor);
