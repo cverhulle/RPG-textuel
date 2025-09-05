@@ -18,7 +18,7 @@ namespace RPGTextuel.Game
             bool replay = true;
 
             // On initialise l’identité du joueur.
-            string playerName = InitGame.InitPlayerIdentity();
+            string playerName = InitGame.InitPlayerIdentityAndWelcomeMessage();
 
             // Tant que l'on rejoue, la partie continue
             while (replay)

@@ -44,7 +44,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         /// <summary>
         /// Demande et retourne le nom du joueur.
         /// </summary>
-        public static string InitPlayerIdentity()
+        public static string InitPlayerIdentityAndWelcomeMessage()
         {
             // On règle la couleur des textes.
             Console.ForegroundColor = TextColorConfig.introColor;
