@@ -32,12 +32,21 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             Console.WriteLine();
         }
 
-        // Cette méthode affiche un message avant le début d'une run.
-        public static void ShowMessageBeforeARun(string name)
+        /// <summary>
+        /// Retourne le message avant le début d’une run.
+        /// </summary>
+        public static string ShowMessageBeforeARun(string name, bool isReplay)
         {
-            Console.WriteLine();
-            Console.WriteLine("💥 Bienvenue " + name);
-            Console.WriteLine("Vous allez devoir affronter trois ennemis redoutables !");
+            if (!isReplay)
+            {
+                string firstMessage = FirstRunMessages[rnd.Next(FirstRunMessages.Length)];
+                return firstMessage + "Bienvenue {name} !";
+            }
+            else
+            {
+                string replayMessage = ReplayMessages[rnd.Next(ReplayMessages.Length)];
+                return replayMessage;
+            }
         }
     }
 }

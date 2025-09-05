@@ -16,6 +16,8 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             // On règle la couleur des textes
             Console.ForegroundColor = TextColorConfig.introColor;
 
+            Console.WriteLine();
+
             // On affiche le message d'accueil
             if (!isReplay)
             {
