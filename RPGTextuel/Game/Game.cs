@@ -27,7 +27,7 @@ namespace RPGTextuel.Game
             while (replay)
             {
                 // Affichage du message de lancement avant chaque run
-                InitGame.InitMessageBeforeARun(playerName);
+                InitGame.InitMessageBeforeARun(playerName, runCount > 0);
 
                 // On joue une partie
                 EndGameState endParty = PlayOneGame(playerName);
