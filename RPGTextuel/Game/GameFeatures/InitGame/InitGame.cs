@@ -41,6 +41,20 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         }
 
         /// <summary>
+        /// Instancie le joueur et génère la liste des ennemis pour la partie.
+        /// </summary>
+        public static (Player player, List<Enemy> ennemies) InitNewRun(string playerName)
+        {
+            // On crée l'instance de type joueur
+            Player player = InitPlayerCreation.CreateAPlayer(playerName);
+
+            // On crée la liste des ennemis pendant cette partie
+            List<Enemy> ennemies = InitEnnemiesToFight.GetRandomGoblinSet();
+
+            return (player, ennemies);
+        }
+
+        /// <summary>
         /// Demande le nom du joueur et affiche les messages d'accueils
         /// Cette méthode n'est déclenchée qu'au lancement du programme.
         /// </summary>
