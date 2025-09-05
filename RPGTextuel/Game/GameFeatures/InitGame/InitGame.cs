@@ -23,26 +23,15 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         }
 
         /// <summary>
-        /// Demande le nom du joueur et affiche les messages d'accueils
-        /// Cette méthode n'est déclenchée qu'au lancement du programme.
-        /// On retourne le nom du joueur
+        /// Demande et retourne le nom du joueur.
         /// </summary>
         public static string InitPlayerIdentity()
         {
             // On règle la couleur des textes.
             Console.ForegroundColor = TextColorConfig.introColor;
 
-            // Message d'accueil
-            InitWelcomeMessage.ShowWelcomeMessage();
-
             // On récupère le nom du joueur
             string name = InitPlayerName.AskAndVerifyPlayerName();
-
-            // On affiche le dexième message d'accueil
-            InitWelcomeMessage.ShowWelcomeMessage2(name);
-
-            // On attend que l'utilisateur ait tout lu.
-            GameUtils.WaitForUser(color: TextColorConfig.introColor);
 
             // On reset la couleur des textes.
             Console.ForegroundColor = TextColorConfig.defaultColor;
