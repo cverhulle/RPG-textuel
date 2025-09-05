@@ -7,7 +7,6 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
 {
     public static class InitGame
     {
-
         // <summary>
         /// Affiche les messages de lancement.
         /// </summary>
