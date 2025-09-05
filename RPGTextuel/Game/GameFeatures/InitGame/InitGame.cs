@@ -17,8 +17,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             Console.ForegroundColor = TextColorConfig.introColor;
 
             // On affiche les messages d'accueil
-            InitWelcomeMessage.ShowWelcomeMessage();
-            InitWelcomeMessage.ShowWelcomeMessage2(playerName);
+            InitWelcomeMessage.ShowMessageBeforeARun(playerName);
 
             // On laisse le temps à l'utilisateur de lire
             GameUtils.WaitForUser(color: TextColorConfig.introColor);
@@ -49,6 +48,9 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         {
             // On règle la couleur des textes.
             Console.ForegroundColor = TextColorConfig.introColor;
+
+            // On affiche un message d'accueil
+            InitWelcomeMessage.ShowWelcomeMessage();
 
             // On récupère le nom du joueur
             string name = InitPlayerName.AskAndVerifyPlayerName();
