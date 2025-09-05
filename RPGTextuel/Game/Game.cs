@@ -20,6 +20,9 @@ namespace RPGTextuel.Game
             // On initialise l’identité du joueur.
             string playerName = InitGame.InitPlayerIdentityAndWelcomeMessage();
 
+            // On compte le nombre de run
+            int runCount = 0;
+
             // Tant que l'on rejoue, la partie continue
             while (replay)
             {
@@ -48,6 +51,8 @@ namespace RPGTextuel.Game
                         replay = false;
                         return;
                 }
+
+                runCount++;
             }
         }
 
