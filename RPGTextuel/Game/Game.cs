@@ -17,10 +17,13 @@ namespace RPGTextuel.Game
             // On regarde si le joueur souhaite rejouer.
             bool replay = true;
 
+            // On initialise l’identité du joueur.
+            string playerName = InitGame.InitPlayerIdentity();
+
             // Tant que l'on rejoue, la partie continue
             while (replay)
             {
-                EndGameState endParty = PlayOneGame();
+                EndGameState endParty = PlayOneGame(playerName);
 
                 // On gère le résultat de la partie.
                 switch (endParty)
@@ -47,13 +50,13 @@ namespace RPGTextuel.Game
         /// <summary>
         /// Joue une partie complète (init + combats) et retourne l’état final.
         /// </summary>
-        private static EndGameState PlayOneGame()
+        private static EndGameState PlayOneGame(string playerName)
         {
             // On initialise la couleur par défaut
             Console.ForegroundColor = TextColorConfig.defaultColor;
 
             // On initialise la partie
-            (Player player, List<Enemy> ennemies) = InitGame.InitTheGame();
+            (Player player, List<Enemy> ennemies) = InitGame.InitNewRun(playerName);
 
             // On lance la boucle de jeu
             // On récupère l'état à la fin de la partie
