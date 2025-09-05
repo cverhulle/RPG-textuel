@@ -35,7 +35,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         /// <summary>
         /// Retourne le message avant le début d’une run.
         /// </summary>
-        public static string ShowMessageBeforeARun(string name, bool isReplay)
+        public static string GetMessageBeforeARun(string name, bool isReplay)
         {
             if (!isReplay)
             {

@@ -17,7 +17,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             
             // On affiche le message
             Console.WriteLine();
-            InitWelcomeMessage.ShowMessageBeforeARun(playerName, isReplay);
+            InitWelcomeMessage.GetMessageBeforeARun(playerName, isReplay);
 
             // On laisse le temps à l'utilisateur de lire
             GameUtils.WaitForUser(color: TextColorConfig.introColor);
