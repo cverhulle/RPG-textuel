@@ -7,6 +7,26 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
 {
     public static class InitGame
     {
+
+        // <summary>
+        /// Affiche les messages de lancement.
+        /// </summary>
+        public static void InitGameIntro(string playerName)
+        {
+            // On règle la couleur des textes
+            Console.ForegroundColor = TextColorConfig.introColor;
+
+            // On affiche les messages d'accueil
+            InitWelcomeMessage.ShowWelcomeMessage();
+            InitWelcomeMessage.ShowWelcomeMessage2(playerName);
+
+            // On laisse le temps à l'utilisateur de lire
+            GameUtils.WaitForUser(color: TextColorConfig.introColor);
+
+            // On remet la couleur par défaut.
+            Console.ForegroundColor = TextColorConfig.defaultColor;
+        }
+
         /// <summary>
         /// Instancie le joueur et génère la liste des ennemis pour la partie.
         /// On retourne le joueur et la liste d'ennemis
