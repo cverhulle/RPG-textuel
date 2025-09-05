@@ -39,5 +39,31 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
 
             return (player, ennemies);
         }
+
+        /// <summary>
+        /// Demande le nom du joueur et affiche le message d'accueil (une seule fois).
+        /// </summary>
+        public static string InitPlayerIdentity()
+        {
+            // On règle la couleur des textes.
+            Console.ForegroundColor = TextColorConfig.introColor;
+
+            // Message d'accueil
+            InitWelcomeMessage.ShowWelcomeMessage();
+
+            // On récupère le nom du joueur
+            string name = InitPlayerName.AskAndVerifyPlayerName();
+
+            // On affiche le dexième message d'accueil
+            InitWelcomeMessage.ShowWelcomeMessage2(name);
+
+            // On attend que l'utilisateur ait tout lu.
+            GameUtils.WaitForUser(color: TextColorConfig.introColor);
+
+            // On reset la couleur des textes.
+            Console.ForegroundColor = TextColorConfig.defaultColor;
+
+            return name;
+        }
     }
 }
