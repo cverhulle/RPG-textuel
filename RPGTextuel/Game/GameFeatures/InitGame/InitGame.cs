@@ -11,7 +11,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         // <summary>
         /// Affiche les messages de lancement.
         /// </summary>
-        public static void InitGameIntro(string playerName)
+        public static void InitMessageBeforeARun(string playerName)
         {
             // On règle la couleur des textes
             Console.ForegroundColor = TextColorConfig.introColor;
