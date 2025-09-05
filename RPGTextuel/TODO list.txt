@@ -1,6 +1,4 @@
 En cours : 
-Lors de la nouvelle partie :
-    i) Afficher un message spécifique 
 
 Idées d'améliorations :
 1. Tri des objets dans l'inventaire
