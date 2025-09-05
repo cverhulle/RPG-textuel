@@ -23,6 +23,7 @@ namespace RPGTextuel.Game
             // Tant que l'on rejoue, la partie continue
             while (replay)
             {
+                // On joue une partie
                 EndGameState endParty = PlayOneGame(playerName);
 
                 // On gère le résultat de la partie.
@@ -48,7 +49,8 @@ namespace RPGTextuel.Game
         }
 
         /// <summary>
-        /// Joue une partie complète (init + combats) et retourne l’état final.
+        /// Joue une partie complète (init + combats).
+        /// On retourne l’état final de la partie (victoire, défaite, quitter le jeu).
         /// </summary>
         private static EndGameState PlayOneGame(string playerName)
         {
