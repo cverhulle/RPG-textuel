@@ -17,10 +17,10 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         // Messages pour les parties où l'on rejoue.
         private static readonly string[] ReplayMessages =
         {
-            "Un nouveau défi vous attend, {0} !",
-            "Les ténèbres reviennent, {0}… il est temps de reprendre les armes.",
-            "{0}, votre légende n'est pas encore écrite en entier !",
-            "Encore une aventure épique pour vous, {0} !"
+            "Un nouveau défi vous attend, {name} !",
+            "Les ténèbres reviennent, {name}… il est temps de reprendre les armes.",
+            "{name}, votre légende n'est pas encore écrite en entier !",
+            "Encore une aventure épique pour vous, {name} !"
         };
 
         // Cette méthode affiche le message de début de jeu
@@ -40,12 +40,12 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             if (!isReplay)
             {
                 string firstMessage = FirstRunMessages[rnd.Next(FirstRunMessages.Length)];
-                return $"Bienvenue {name} ! \n" + firstMessage;
+                return $"Bienvenue {name} ! \n{firstMessage}";
             }
             else
             {
-                string replayMessage = ReplayMessages[rnd.Next(ReplayMessages.Length)];
-                return replayMessage;
+                string replayMessageTemplate = ReplayMessages[rnd.Next(ReplayMessages.Length)];
+                return replayMessageTemplate.Replace("{name}", name);
             }
         }
     }
