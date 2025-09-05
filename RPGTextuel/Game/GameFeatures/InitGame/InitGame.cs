@@ -2,7 +2,6 @@ using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameUtilsNamespace;
-using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameFeatures.InitGame
 {
