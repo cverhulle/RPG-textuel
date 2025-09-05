@@ -23,6 +23,9 @@ namespace RPGTextuel.Game
             // Tant que l'on rejoue, la partie continue
             while (replay)
             {
+                // Affichage du message de lancement avant chaque run
+                InitGame.InitGameIntro(playerName);
+
                 // On joue une partie
                 EndGameState endParty = PlayOneGame(playerName);
 
