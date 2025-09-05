@@ -2,6 +2,7 @@ using RPGTextuel.Config;
 using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.Game.GameUtilsNamespace;
+using RPGTextuel.Utils;
 
 namespace RPGTextuel.Game.GameFeatures.InitGame
 {
@@ -11,19 +12,14 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         /// Affiche les messages de lancement.
         /// </summary>
         public static void InitMessageBeforeARun(string playerName, bool isReplay)
-        {
-            // On règle la couleur des textes
-            Console.ForegroundColor = TextColorConfig.introColor;
-            
+        {         
             // On affiche le message
             Console.WriteLine();
-            InitWelcomeMessage.GetMessageBeforeARun(playerName, isReplay);
+            string message = InitWelcomeMessage.GetMessageBeforeARun(playerName, isReplay);
+            DisplayUtils.WriteLineInColor(message, TextColorConfig.introColor);
 
             // On laisse le temps à l'utilisateur de lire
             GameUtils.WaitForUser(color: TextColorConfig.introColor);
-
-            // On remet la couleur par défaut.
-            Console.ForegroundColor = TextColorConfig.defaultColor;
         }
 
         /// <summary>
