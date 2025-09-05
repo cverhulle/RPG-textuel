@@ -41,7 +41,8 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
         }
 
         /// <summary>
-        /// Demande le nom du joueur et affiche le message d'accueil (une seule fois).
+        /// Demande le nom du joueur et affiche les messages d'accueils
+        /// Cette méthode n'est déclenchée qu'au lancement du programme.
         /// </summary>
         public static string InitPlayerIdentity()
         {
