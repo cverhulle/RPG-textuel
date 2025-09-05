@@ -40,7 +40,7 @@ namespace RPGTextuel.Game.GameFeatures.InitGame
             if (!isReplay)
             {
                 string firstMessage = FirstRunMessages[rnd.Next(FirstRunMessages.Length)];
-                return $"Bienvenue {name} ! \n" + firstMessage + ;
+                return $"Bienvenue {name} ! \n" + firstMessage;
             }
             else
             {
