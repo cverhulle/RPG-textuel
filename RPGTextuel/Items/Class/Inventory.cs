@@ -37,9 +37,6 @@ namespace RPGTextuel.Items.Class
                 return;
             }
 
-            // On trie l'inventaire dans l'ordre alphabétique
-            items.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.OrdinalIgnoreCase));
-
             // On appelle la méthode pour gérer l'affichage des options.
             GameDisplay.PrintFramedList(
                 items,
@@ -52,7 +49,9 @@ namespace RPGTextuel.Items.Class
         // Cette méthode retourne tous les items dans l'inventaire.
         public List<Item> GetAllItems()
         {
-            return items;
+            return items
+                    .OrderBy(i => i.name, StringComparer.OrdinalIgnoreCase)
+                    .ToList();
         }
 
         // Cette méthode retourne true si l'inventaire est vide et false sinon.
