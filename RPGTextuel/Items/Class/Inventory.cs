@@ -39,7 +39,7 @@ namespace RPGTextuel.Items.Class
 
             // On appelle la méthode pour gérer l'affichage des options.
             GameDisplay.PrintFramedList(
-                items,
+                GetAllItems(),
                 item => item.name,
                 $"Inventaire de {owner.Name}",
                 showCount: true
