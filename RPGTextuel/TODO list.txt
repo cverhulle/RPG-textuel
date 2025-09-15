@@ -1,5 +1,3 @@
 En cours : 
-Tri des objets dans l'inventaire : Ajouter des choix (alphabétique, type, taille)
-Bug : La vie des ennemis lors de la nouvelle partie est à 0.
 
 Idées d'améliorations :
