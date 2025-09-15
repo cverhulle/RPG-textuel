@@ -17,7 +17,8 @@ namespace RPGTextuel.SetupEnemies
         // Cette méthode permet de choisir aléatoirement un élement de la liste des GoblinChiefs.
         public static GoblinChief GetRandomGoblinChief()
         {
-            return GoblinChiefs.PickRandom();
+            var template = GoblinChiefs.PickRandom();
+            return (GoblinChief) template.Clone(); 
         }
     }
 }
