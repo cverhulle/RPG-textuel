@@ -78,6 +78,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             // 2 élément(s) au total.
         }
 
+        /*
         // Test de la méthode PrintInventory
         public static void TestPrintInventory()
         {
@@ -89,6 +90,7 @@ namespace RPGTextuel.Test.Game.TestGameUtils
             Console.WriteLine("=== Résultat obtenu ===");
             GameDisplay.PrintInventory(player);
         }
+        */
 
         // Test de PrintStats avec un player.
         public static void TestPrintStatsWithPlayer()

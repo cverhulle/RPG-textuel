@@ -49,13 +49,6 @@ namespace RPGTextuel.Game.GameUtilsNamespace
             }
         }
 
-        // Cette méthode affiche l'inventaire du joueur et met le jeu en attente.
-        public static void PrintInventory(Player player)
-        {
-            player.Inventory.DisplayInventory();
-            GameUtils.WaitForUser();
-        }
-
         // Cette méthode affiche les stats d'un personnage et met le jeu en attente.
         public static void PrintStats(Character character)
         {
