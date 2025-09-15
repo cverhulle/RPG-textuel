@@ -36,6 +36,9 @@ namespace RPGTextuel.Items.Class
                 return;
             }
 
+            // On trie l'inventaire dans l'ordre alphabétique
+            items.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.OrdinalIgnoreCase));
+
             // On appelle la méthode pour gérer l'affichage des options.
             GameDisplay.PrintFramedList(
                 items,
