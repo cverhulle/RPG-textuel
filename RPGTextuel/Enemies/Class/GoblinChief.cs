@@ -20,5 +20,11 @@ namespace RPGTextuel.Enemies.Class
 
         // Propriété pour afficher le type de l'ennemi.
         public override string DisplayType => "Chef Gobelin";
+
+        // On réécrit la méthode Clone.
+        public override Enemy Clone()
+        {
+            return new GoblinChief(Name, MaxHealth, Strength, MaxHealth, CriticalHitChance);
+        }
     }
 }

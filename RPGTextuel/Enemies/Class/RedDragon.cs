@@ -20,5 +20,11 @@ namespace RPGTextuel.Enemies.Class
 
         // Propriété pour afficher le type de l'ennemi.
         public override string DisplayType => "Dragon Rouge";
+
+        // On réécrit la méthode Clone.
+        public override Enemy Clone()
+        {
+            return new RedDragon(Name, MaxHealth, Strength, MaxHealth, CriticalHitChance);
+        }
     }
 }

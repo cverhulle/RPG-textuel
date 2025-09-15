@@ -21,7 +21,7 @@ namespace RPGTextuel.Enemies.Class
         // Propriété pour afficher le type de l'ennemi.
         public override string DisplayType => "Petit Gobelin";
 
-        // On réécrit la méthode CLone pour cette classe.
+        // On réécrit la méthode CLone.
         public override Enemy Clone()
         {
             return new GoblinMinion(Name, MaxHealth, Strength, MaxHealth, CriticalHitChance);
