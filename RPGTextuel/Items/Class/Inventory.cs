@@ -1,3 +1,4 @@
+using RPGTextuel.Config;
 using RPGTextuel.Core.Characters;
 using RPGTextuel.Game.GameUtilsNamespace;
 
@@ -32,7 +33,7 @@ namespace RPGTextuel.Items.Class
             if (IsEmpty())
             {
                 // Si c'est le cas, on affiche un message personnalisé.
-                Console.WriteLine($"{owner.Name} n'a pas d'objet");
+                GameUtils.WaitForUser("Votre inventaire est vide.", color: TextColorConfig.itemsColor);
                 return;
             }
 
