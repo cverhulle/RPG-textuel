@@ -85,7 +85,7 @@ namespace RPGTextuel.Game.GameFeatures.InventoryNamespace
                     ? ChooseTarget(player, enemy)
                     : ChooseTarget(player);
 
-            // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice)
+            // Sinon, on utilise l’objet correspondant (on n'oublie pas le décalage d'indice) 
             return UseItemAndWait(choice - 1, player, target);
         }
 
