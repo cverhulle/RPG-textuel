@@ -20,7 +20,7 @@ namespace RPGTextuel.Enemies.Class
             EnemyType enemyType,
             double criticalHitChance = GameStatConfig.criticalHitByDefault
         )
-            : base(name, health, strength, maxHealth,criticalHitChance)
+            : base(name, health, strength, maxHealth, criticalHitChance)
         {
             type = enemyType;
         }
@@ -28,5 +28,12 @@ namespace RPGTextuel.Enemies.Class
         // Cette méthode retourne le type de l'ennemi.
         // Par défaut, le type est "Ennemi".
         public virtual string DisplayType => "Ennemi";
+
+        // Cette méthode permet de créer un clone
+        // Utile pour le smodifications de PV, stats etc.. sans modifier la base de données.
+        public virtual Enemy Clone()
+        {
+            return new Enemy(Name, MaxHealth, Strength, MaxHealth, type, CriticalHitChance);
+        }
     }
 }
