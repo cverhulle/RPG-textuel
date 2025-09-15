@@ -50,8 +50,22 @@ namespace RPGTextuel.Items.Class
         public List<Item> GetAllItems()
         {
             return items
-                    .OrderBy(i => i.name, StringComparer.OrdinalIgnoreCase)
-                    .ToList();
+                .OrderBy(i =>
+                {
+                    // Priorité par type
+                    if (i.name.Contains("soin", StringComparison.OrdinalIgnoreCase)) return 1;
+                    if (i.name.Contains("dégats", StringComparison.OrdinalIgnoreCase)) return 2;
+                    return 99; // autres objets en dernier
+                })
+                .ThenBy(i =>
+                {
+                    // Priorité par taille
+                    if (i.name.Contains("petite", StringComparison.OrdinalIgnoreCase)) return 1;
+                    if (i.name.Contains("moyenne", StringComparison.OrdinalIgnoreCase)) return 2;
+                    if (i.name.Contains("grande", StringComparison.OrdinalIgnoreCase)) return 3;
+                    return 99; // taille inconnue en dernier
+                })
+                .ToList();
         }
 
         // Cette méthode retourne true si l'inventaire est vide et false sinon.
