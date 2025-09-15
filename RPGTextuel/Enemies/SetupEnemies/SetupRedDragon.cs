@@ -17,7 +17,8 @@ namespace RPGTextuel.SetupEnemies
         // Cette méthode permet de choisir aléatoirement un élement de la liste des Dragons rouges.
         public static RedDragon GetRandomRedDragon()
         {
-            return RedDragons.PickRandom();
+            var template = RedDragons.PickRandom();
+            return (RedDragon) template.Clone(); 
         }
     }
 }
