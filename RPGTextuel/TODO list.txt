@@ -1,6 +1,4 @@
 En cours : 
+Tri des objets dans l'inventaire : Ajouter des choix (alphabétique, type, taille)
 
 Idées d'améliorations :
-1. Tri des objets dans l'inventaire
-2. Gérer les chances d'apparition des potions et des événements.
-3. Ajouter un niveau de difficulté.
