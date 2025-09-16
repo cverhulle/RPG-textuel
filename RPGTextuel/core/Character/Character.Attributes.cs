@@ -1,5 +1,10 @@
 namespace RPGTextuel.Core.Characters
 {
+    /// <summary>
+    /// Classe de base abstraite représentant un personnage du jeu.
+    /// Fournit les attributs communs tels que la santé, la force, 
+    /// la santé maximale et la probabilité de coup critique.
+    /// </summary>
     public abstract partial class Character
     {
         // On définit les attributs de la classe Character.
@@ -9,8 +14,10 @@ namespace RPGTextuel.Core.Characters
         private int maxHealth;
         private double criticalHitChance;
 
-        // On définit les méthodes set et get pour le name.
-        // On rejette les noms "null" ou vide.
+        /// <summary>
+        /// Nom du personnage.
+        /// Le nom ne peut pas être vide ou composé uniquement d’espaces.
+        /// </summary>
         public string Name
         {
             get => name;
@@ -23,32 +30,40 @@ namespace RPGTextuel.Core.Characters
             }
         }
 
-        // On définit les méthodes set et get pour l'attribut health.
-        // On utilise Math pour mettre à 0 les points de vie s'ils tombent en négatif.
+        /// <summary>
+        /// Points de vie actuels du personnage.
+        /// Ne peut jamais être inférieur à 0.
+        /// </summary>
         public int Health
         {
             get => health;
             set => health = Math.Max(0, value);
         }
 
-        // On définit les méthodes set et get pour l'attribut strength.
-        // On utilise Math pour mettre à 0 les points de force s'ils tombent en négatif.
+        /// <summary>
+        /// Force d’attaque du personnage.
+        /// Ne peut jamais être négative.
+        /// </summary>
         public int Strength
         {
             get => strength;
             set => strength = Math.Max(0, value);
         }
 
-        // On définit les méthodes set et get pour l'attribut maxHealth.
-        // On utilise Math pour mettre à 0 les points de vie maximum s'ils tombent en négatif.
+        /// <summary>
+        /// Points de vie maximum du personnage.
+        /// Ne peut jamais être inférieur à 0.
+        /// </summary>
         public int MaxHealth
         {
             get => maxHealth;
             set => maxHealth = Math.Max(0, value);
         }
 
-        // On définit les méthodes set et get pour l'attribut criticalHitChance.
-        // On utilise Math pour mettre à 0 les chances de coups critiques s'ils tombent en négatif.
+        /// <summary>
+        /// Probabilité de réussir un coup critique.
+        /// La valeur est toujours comprise entre 0 et 1 (0% à 100%).
+        /// </summary>
         public double CriticalHitChance
         {
             get => criticalHitChance;
