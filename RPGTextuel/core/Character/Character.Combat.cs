@@ -6,8 +6,14 @@ namespace RPGTextuel.Core.Characters
 {
     public abstract partial class Character
     {
-        // Cette méthode permet d'encaisser des dégats.
-        // Elle prend en argument un entier "dégats" et diminue la vie du Character de ce nombre.
+        /// <summary>
+        /// Réduit les points de vie du personnage en fonction des dégâts reçus.
+        /// </summary>
+        /// <param name="hit">Le nombre de points de dégâts subis.</param>
+        /// <remarks>
+        /// La valeur des points de vie est automatiquement bornée à un minimum de 0.
+        /// Un message est affiché dans la console pour indiquer les dégâts reçus.
+        /// </remarks>
         public virtual void TakeDamage(int hit)
         {
             Health -= hit;
