@@ -6,37 +6,59 @@ namespace RPGTextuel.Config
     /// </summary>
     public static class TextColorConfig
     {
-        // Couleur des ennemis
+        /// <summary>
+        /// Couleur utilisée pour les ennemis standards.
+        /// </summary>
         public const ConsoleColor ennemiesColor = ConsoleColor.DarkRed;
 
-        // Couleur des boss
+        /// <summary>
+        /// Couleur utilisée pour les boss.
+        /// </summary>
         public const ConsoleColor bossColor = ConsoleColor.Red;
 
-        // Couleur des coups critique 
+        /// <summary>
+        /// Couleur utilisée pour afficher les coups critiques.
+        /// </summary>
         public const ConsoleColor critColor = ConsoleColor.Yellow;
 
-        // Couleur de la défaite
+        /// <summary>
+        /// Couleur utilisée lors de la défaite du joueur.
+        /// </summary>
         public const ConsoleColor defeatColor = ConsoleColor.DarkRed;
 
-        // Couleur par défaut
+        /// <summary>
+        /// Couleur par défaut des textes.
+        /// </summary>
         public const ConsoleColor defaultColor = ConsoleColor.Black;
 
-        // Couleur des événements
+        /// <summary>
+        /// Couleur utilisée pour afficher les événements spéciaux.
+        /// </summary>
         public const ConsoleColor eventsColor = ConsoleColor.Blue;
 
-        // Couleur des objets
+        /// <summary>
+        /// Couleur utilisée pour les objets.
+        /// </summary>
         public const ConsoleColor itemsColor = ConsoleColor.DarkMagenta;
 
-        // Couleur de l'intro
+        /// <summary>
+        /// Couleur utilisée pour le texte d’introduction.
+        /// </summary>
         public const ConsoleColor introColor = ConsoleColor.Cyan;
 
-        // Couleur pour le joueur
+        /// <summary>
+        /// Couleur utilisée pour le joueur.
+        /// </summary>
         public const ConsoleColor playerColor = ConsoleColor.Green;
 
-        // Couleur de la victoire
+        /// <summary>
+        /// Couleur utilisée lors d’une victoire.
+        /// </summary>
         public const ConsoleColor victoryColor = ConsoleColor.DarkGreen;
 
-        // Couleur pour rejouer une partie
+        /// <summary>
+        /// Couleur utilisée pour l’option permettant de rejouer une partie.
+        /// </summary>
         public const ConsoleColor replayColor = ConsoleColor.Yellow;
     }
 }
