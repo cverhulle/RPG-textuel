@@ -1,6 +1,9 @@
 namespace RPGTextuel.Config
 {
-    // Cette classe s'occupe des couleurs des textes.
+    /// <summary>
+    /// Contient la configuration des couleurs utilisées pour l’affichage des textes du jeu.
+    /// Chaque couleur est associée à un type d’entité, d’événement ou de message spécifique.
+    /// </summary>
     public static class TextColorConfig
     {
         // Couleur des ennemis
