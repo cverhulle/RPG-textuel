@@ -20,7 +20,16 @@ namespace RPGTextuel.Core.Characters
             Console.WriteLine($"{Name} subit {hit} points de dégâts. PV restants : {Health}");
         }
 
-        // Cette méthode permet d'infliger des dégats à un autre Character.
+        /// <summary>
+        /// Attaque un autre personnage et inflige des dégâts.
+        /// </summary>
+        /// <param name="target">Le personnage cible qui subira les dégâts.</param>
+        /// <remarks>
+        /// - Si l’attaque est un coup critique, les dégâts sont multipliés par le facteur défini dans
+        /// <see cref="GameStatConfig.CriticalMultiplicator"/> et un message coloré est affiché.
+        /// - La couleur du texte est ajustée selon l’attaquant (<see cref="Player"/> ou <see cref="Enemy"/>).
+        /// - Après l’attaque, les dégâts sont appliqués via <see cref="TakeDamage(int)"/> et la couleur est réinitialisée.
+        /// </remarks>
         public virtual void Attack(Character target)
         {
             // On tire aléatoirement un nombre pour savoir si l'attaque est critique ou non.
