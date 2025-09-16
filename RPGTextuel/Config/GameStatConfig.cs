@@ -1,6 +1,9 @@
 namespace RPGTextuel.Config
 {
-    // Cette classe s'occupe de la gestion des statistiques par défaut
+    /// <summary>
+    /// Contient les constantes de configuration liées aux statistiques.
+    /// Utilisé pour définir les valeurs initiales de santé, d’attaque et les chances de coups critiques.
+    /// </summary>
     public static class GameStatConfig
     {
         // Stat du joueur
