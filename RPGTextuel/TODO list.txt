@@ -1,3 +1,4 @@
 En cours : 
+Amélioration des commentaires sur les fonctions
 
 Idées d'améliorations :
