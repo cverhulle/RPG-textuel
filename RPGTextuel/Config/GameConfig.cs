@@ -1,9 +1,16 @@
 namespace RPGTextuel.Config
 {
+    /// <summary>
+    /// Contient les constantes globales de configuration du jeu.
+    /// Utilisé pour définir les paramètres généraux comme l'affichage de la barre de vie ou la longueur maximale des noms.
+    /// </summary>
     public static class GameConfig
     {
         // Barre de vie 
-        // Taille de la barre de vie (nombre de cœurs)
+        
+        /// <summary>
+        /// Taille de la barre de vie, exprimée en nombre de cœurs affichés.
+        /// </summary>
         public const int HealthBarLength = 10;
 
         // Symbole pour un cœur rempli
