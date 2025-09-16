@@ -6,24 +6,38 @@ namespace RPGTextuel.Config
     /// </summary>
     public static class GameStatConfig
     {
-        // Stat du joueur
-        // PV de base du joueur
+        // --- Statistiques du joueur ---
+
+        /// <summary>
+        /// Points de vie initiaux du joueur.
+        /// </summary>
         public const int playerHealthByDefault = 100;
 
-        // Attaque de base du joueur
+        /// <summary>
+        /// Valeur d’attaque de base du joueur.
+        /// </summary>
         public const int playerAttackByDefault = 10;
 
-        // Coup critique 
-        // Chance de coup critique par défaut
+        // --- Coup critique ---
+        
+        /// <summary>
+        /// Probabilité par défaut de réussir un coup critique (5%).
+        /// </summary>
         public const double criticalHitByDefault = 0.05;
 
-        // Chance de coup critique légérement augmenté
+        /// <summary>
+        /// Probabilité d’un coup critique légèrement augmentée (par défaut +10%).
+        /// </summary>
         public const double criticalHitAugmented = criticalHitByDefault + 0.1;
 
-        // Chance de coup critique pour le joueur
+        /// <summary>
+        /// Probabilité d’un coup critique spécifique au joueur (15%).
+        /// </summary>
         public const double criticalHitPlayer = 0.15;
 
-        // Multiplicateur pour des dégats en coup critique
+        /// <summary>
+        /// Multiplicateur appliqué aux dégâts en cas de coup critique.
+        /// </summary>
         public const double criticalMultiplicator = 1.4;
     }
 }
