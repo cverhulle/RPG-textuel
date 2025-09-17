@@ -2,21 +2,34 @@ namespace RPGTextuel.Core.Characters
 {
     public abstract partial class Character
     {
-        // Cette méthode indique si le Character peut recevoir des soins.
+        /// <summary>
+        /// Vérifie si le personnage peut recevoir un soin donné.
+        /// </summary>
+        /// <param name="amount">Montant de points de vie à restaurer.</param>
+        /// <returns>
+        /// <c>true</c> si <paramref name="amount"/> est positif et que
+        /// <see cref="Health"/> est inférieur à <see cref="MaxHealth"/> ;
+        /// sinon <c>false</c>.
+        /// </returns>
         public bool CanBeHealed(int amount)
         {
             return amount > 0 && Health < MaxHealth;
         }
 
-        // Cette méthode permet de gérer le dépassement des points de vie max.
+        /// <summary>
+        /// S'assure que les points de vie n'excèdent pas <see cref="MaxHealth"/>.
+        /// </summary>
         protected void HandleExceedingLifePoints()
         {
             if (Health > MaxHealth)
                 Health = MaxHealth;
         }
 
-        // Cette méthode permet de gérer le calcul des soins.
-        // Elle retourne le montnant de soin effectif.
+        /// <summary>
+        /// Applique un soin et retourne le montant réellement restauré.
+        /// </summary>
+        /// <param name="amount">Montant de points de vie à restaurer.</param>
+        /// <returns>Nombre de PV effectivement restaurés.</returns>
         protected int ApplyHeal(int amount)
         {
             // On mémorise l'ancien nombre de PV.
