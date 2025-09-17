@@ -30,7 +30,10 @@ namespace RPGTextuel.Core.Characters
             CriticalHitChance = criticalHitChance;
         }
 
-        // Création de la propriété isAlive pour savoir si un personnage est en vie ou mort.
+        /// <summary>
+        /// Indique si le personnage est toujours en vie.  
+        /// Retourne <c>true</c> si <see cref="Health"/> est supérieur à 0, sinon <c>false</c>.
+        /// </summary>
         public bool IsAlive => Health > 0;
     }
 }
