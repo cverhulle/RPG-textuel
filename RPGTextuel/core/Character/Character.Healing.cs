@@ -45,8 +45,13 @@ namespace RPGTextuel.Core.Characters
             return Health - oldHealth;
         }
 
-        // Cette méthode permet de se soigner de "soin" PV.
-        // On retourne true si le soin est effectué et false sinon.
+        /// <summary>
+        /// Tente de soigner le personnage.
+        /// </summary>
+        /// <param name="amount">Montant de points de vie à restaurer.</param>
+        /// <returns>
+        /// <c>true</c> si le soin a été appliqué avec succès, sinon <c>false</c>.
+        /// </returns>
         public virtual Boolean Heal(int amount)
         {
             // On vérfie que le Character peut recevoir des soins
