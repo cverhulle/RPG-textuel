@@ -3,9 +3,22 @@ using RPGTextuel.Enemies.EnemyTypes;
 
 namespace RPGTextuel.Enemies.Class
 {
-    // On crée un sous-type d'ennemi de type GoblinChief
+    /// <summary>
+    /// Représente un ennemi de type Chef Gobelin. 
+    /// Hérite de <see cref="Enemy"/> avec des statistiques renforcées.
+    /// </summary>
     public class GoblinChief : Enemy
     {
+        /// <summary>
+        /// Initialise une nouvelle instance de <see cref="GoblinChief"/>.
+        /// </summary>
+        /// <param name="name">Nom du chef gobelin.</param>
+        /// <param name="health">Points de vie actuels.</param>
+        /// <param name="strength">Force d’attaque.</param>
+        /// <param name="maxHealth">Points de vie maximum.</param>
+        /// <param name="criticalHitChance">
+        /// Probabilité de coup critique (par défaut : <see cref="GameStatConfig.CriticalHitAugmented"/>).
+        /// </param>
         public GoblinChief
         (
             string name,
@@ -18,10 +31,14 @@ namespace RPGTextuel.Enemies.Class
         {
         }
 
-        // Propriété pour afficher le type de l'ennemi.
+        /// <summary>
+        /// Retourne le type de l’ennemi sous forme lisible.
+        /// </summary>
         public override string DisplayType => "Chef Gobelin";
 
-        // On réécrit la méthode Clone.
+        /// <summary>
+        /// Crée une nouvelle instance de <see cref="GoblinChief"/>.  
+        /// </summary>
         public override Enemy Clone()
         {
             return new GoblinChief(Name, MaxHealth, Strength, MaxHealth, CriticalHitChance);
