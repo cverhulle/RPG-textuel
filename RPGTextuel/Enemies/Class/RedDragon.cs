@@ -2,10 +2,22 @@ using RPGTextuel.Config;
 
 namespace RPGTextuel.Enemies.Class
 {
-    // On crée un sous-type d'ennemi de type RedDragon
+    /// <summary>
+    /// Représente un ennemi de type Dragon Rouge.
+    /// Ennemi puissant avec des statistiques élevées.
+    /// </summary>
     public class RedDragon : Enemy
     {
-        // On implémente le constructeur de la classe.
+        /// <summary>
+        /// Initialise une nouvelle instance de <see cref="RedDragon"/>.
+        /// </summary>
+        /// <param name="name">Nom du dragon rouge.</param>
+        /// <param name="health">Points de vie actuels.</param>
+        /// <param name="strength">Force d’attaque.</param>
+        /// <param name="maxHealth">Points de vie maximum.</param>
+        /// <param name="criticalHitChance">
+        /// Probabilité de coup critique (par défaut : <see cref="GameStatConfig.CriticalHitAugmented"/>).
+        /// </param>
         public RedDragon
         (
             string name,
@@ -18,10 +30,14 @@ namespace RPGTextuel.Enemies.Class
         {
         }
 
-        // Propriété pour afficher le type de l'ennemi.
+        /// <summary>
+        /// Retourne le type de l’ennemi sous forme lisible.
+        /// </summary>
         public override string DisplayType => "Dragon Rouge";
 
-        // On réécrit la méthode Clone.
+        /// <summary>
+        /// Crée une nouvelle instance de <see cref="RedDragon"/>.  
+        /// </summary>
         public override Enemy Clone()
         {
             return new RedDragon(Name, MaxHealth, Strength, MaxHealth, CriticalHitChance);
