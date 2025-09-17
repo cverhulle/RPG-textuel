@@ -7,7 +7,10 @@ namespace RPGTextuel.Enemies.Class
     public class Enemy : Character
     {
 
-        // On ajoute un champ pour gérer le type de l'ennemi
+        /// <summary>
+        /// Représente un ennemi générique du jeu. 
+        /// Hérite de <see cref="Character"/> et possède un type spécifique (<see cref="EnemyType"/>).
+        /// </summary>
         public EnemyType type { get; }
 
         // On construit un Enemy à partir de la classe Character
