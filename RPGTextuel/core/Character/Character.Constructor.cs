@@ -2,9 +2,18 @@ using RPGTextuel.Config;
 
 namespace RPGTextuel.Core.Characters
 {
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="Character"/>.
+        /// </summary>
+        /// <param name="characterName">Nom du personnage.</param>
+        /// <param name="characterHealth">Points de vie initiaux.</param>
+        /// <param name="characterStrength">Force d’attaque initiale.</param>
+        /// <param name="characterMaxHealth">Points de vie maximum autorisés.</param>
+        /// <param name="criticalHitChance"> Probabilité de coup critique.  
+        /// Par défaut, utilise <see cref="GameStatConfig.CriticalHitByDefault"/>.
+        /// </param>
     public abstract partial class Character
     {
-        // On implémente le constructeur de la classe.
         protected Character
         (
             string characterName,
