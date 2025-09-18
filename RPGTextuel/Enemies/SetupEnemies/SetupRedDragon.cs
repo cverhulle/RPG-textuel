@@ -3,10 +3,13 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
-    // Cette classe permet de créer les ennemies de type Dragon Rouge que l'on affrontera
+    /// <summary>
+    /// Contient la configuration et la génération aléatoire
+    /// des ennemis de type Dragon Rouge.
+    /// </summary>
     public static class SetupRedDragons
     {
-        // Créeons la liste des ennemies de type "Dragon Rouge"
+        // Liste privée des dragons rouges prédéfinis.
         public static List<RedDragon> RedDragons = new List<RedDragon>
         {
             new RedDragon("Spyro", 100, 15, 100),
@@ -14,7 +17,9 @@ namespace RPGTextuel.SetupEnemies
             new RedDragon("Alexstrasza", 150, 6, 150, 0),   // Beaucoup de PV, peu de dégats, 0% critique
         };
 
-        // Cette méthode permet de choisir aléatoirement un élement de la liste des Dragons rouges.
+        /// <summary>
+        /// Retourne un dragon rouge aléatoire cloné à partir de la liste prédéfinie.
+        /// </summary>
         public static RedDragon GetRandomRedDragon()
         {
             var template = RedDragons.PickRandom();
