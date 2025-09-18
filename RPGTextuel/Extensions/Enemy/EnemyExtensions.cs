@@ -3,16 +3,25 @@ using RPGTextuel.Extensions.Characters;
 
 namespace RPGTextuel.Extensions.Enemies
 {
-    // Cette classe étend la classe Enemy
+    /// <summary>
+    /// Fournit des méthodes d'extension pour enrichir la classe <see cref="Enemy"/>.
+    /// </summary>
     public static class EnemyExtensions
     {
-        // Cette méthode permet à un ennemi de pousser un cri.
+        /// <summary>
+        /// Fait pousser un cri féroce à l’ennemi dans la console.
+        /// </summary>
+        /// <param name="enemy">L'ennemi qui rugit.</param>
         public static void Roar(this Enemy enemy)
         {
             Console.WriteLine($"{enemy.Name} pousse un cri féroce !");
         }
         
-        // Cette méthode permet d'afficher toutes les statistiques d'un ennemi.
+        /// <summary>
+        /// Affiche dans la console toutes les statistiques de l’ennemi,
+        /// y compris sa barre de vie, sa force et son taux de critique.
+        /// </summary>
+        /// <param name="enemy">L'ennemi dont les statistiques doivent être affichées.</param>
         public static void PrintStats(this Enemy enemy)
         {
             string title = $" STATISTIQUES DE {enemy.Name.ToUpper()} ";
