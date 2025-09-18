@@ -8,7 +8,10 @@ namespace RPGTextuel.Extensions.Characters
     /// </summary>
     public static class CharacterExtensions
     {
-        // Cette méthode permet d'afficher la barre de vie d'un character.
+        /// <summary>
+        /// Affiche dans la console la barre de vie du personnage sous forme de cœurs remplis/vides.
+        /// </summary>
+        /// <param name="character">Le personnage dont la barre de vie doit être affichée.</param>
         public static void PrintHealthBar(this Character character)
         {
             // On appelle la méthode pour construire la barre de vie.
@@ -23,7 +26,9 @@ namespace RPGTextuel.Extensions.Characters
             Console.WriteLine($"{character.Name} : [{bar}] {character.Health}/{character.MaxHealth} PV");
         }
 
-        // Cette méthode s'occupe de construire la barre de vie.
+        /// <summary>
+        /// Construit la barre de vie d'un personnage sous forme de chaîne de caractères.
+        /// </summary>
         private static string BuildHealthBar(Character character, int total, string filledSymbol, string emptySymbol)
         {
             // On récupère le nombre de coeurs à remplir et à laisser vide.
@@ -40,8 +45,14 @@ namespace RPGTextuel.Extensions.Characters
             return bar;
         }
 
-        // Cette méthode permet de calculer le nombre de coeurs restants.
-        // Elle retourne le nombre de coeurs à remplir dans la barre et le nombre de coeurs vides.
+        /// <summary>
+        /// Calcule le nombre de cœurs remplis et vides à afficher pour représenter la vie actuelle du personnage.
+        /// </summary>
+        /// <param name="character">Le personnage concerné.</param>
+        /// <param name="total">Le nombre total de cœurs dans la barre de vie.</param>
+        /// <returns>
+        /// Un tuple (filled, empty) représentant le nombre de cœurs remplis et vides.
+        /// </returns>
         private static (int, int) GetFilledAndEmptyHeart(Character character, int total)
         {
             // On gère la division par 0 (cas où maxHealth = 0).
