@@ -6,12 +6,22 @@ using RPGTextuel.Extensions.Characters;
 
 namespace RPGTextuel.Extensions.Players
 {
-    // Cette classe permet de définir les extensions de la classe Player
+    /// <summary>
+    /// Fournit des méthodes d’extension pour la classe <see cref="Player"/>.
+    /// </summary>
     public static class PlayerExtensions
     {
-        // Méthode d’extension pour ajouter une potion de soin par sa taille.
+        /// <summary>
+        /// Ajoute une potion de soin à un joueur, selon la taille spécifiée.
+        /// </summary>
+        /// <param name="player">Le joueur qui recevra la potion.</param>
+        /// <param name="size">La taille de la potion de soin.</param>
+        /// <exception cref="ArgumentNullException">Si le joueur est <c>null</c>.</exception>
         public static void AddHealPotion(this Player player, PotionSize size)
         {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player), "Le joueur ne peut pas être nul.");
+                
             SetupHealPotions.GiveHealPotionToPlayer(player, size);
         }
 
