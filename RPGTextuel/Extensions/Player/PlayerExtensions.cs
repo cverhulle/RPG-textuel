@@ -39,9 +39,16 @@ namespace RPGTextuel.Extensions.Players
             SetupDamagePotions.GiveDamagePotionToPlayer(player, size);
         }
 
-        // Cette méthode permet d'afficher toutes les statistiques d'un joueur.
+        /// <summary>
+        /// Affiche les statistiques du joueur dans la console (nom, PV, force, critique).
+        /// </summary>
+        /// <param name="player">Le joueur dont on veut afficher les statistiques.</param>
+        /// <exception cref="ArgumentNullException">Si le joueur est <c>null</c>.</exception>
         public static void PrintStats(this Player player)
         {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player), "Le joueur ne peut pas être nul.");
+
             string title = $" STATISTIQUES DE {player.Name.ToUpper()} ";
             string border = new string('=', title.Length + 12);
 
