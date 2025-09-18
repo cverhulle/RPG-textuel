@@ -18,8 +18,11 @@ namespace RPGTextuel.Extensions.List
         /// <exception cref="InvalidOperationException">Si la liste est vide.</exception>
         public static T PickRandom<T>(this List<T> list)
         {
-            if (list == null || list.Count == 0)
-                throw new ArgumentException("La liste est vide ou nulle.");
+            if (list == null)
+                throw new ArgumentNullException(nameof(list), "La liste ne peut pas être nulle.");
+
+            if (list.Count == 0)
+                throw new InvalidOperationException("Impossible de choisir un élément dans une liste vide.");
 
             return list[rng.Next(list.Count)];
         }
