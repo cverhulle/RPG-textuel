@@ -3,10 +3,13 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
-    // Cette classe permet de créer les ennemis de type chef gobelin que l'on affrontera
+    /// <summary>
+    /// Contient la configuration et la génération aléatoire
+    /// des ennemis de type GoblinChief.
+    /// </summary>
     public static class SetupGoblinChiefs
     {
-        // Créeons la liste des ennemis de type "GoblinChief"
+        // Liste des chefs gobelins prédéfinis
         public static List<GoblinChief> GoblinChiefs = new List<GoblinChief>
         {
             new GoblinChief("Zonva", 60, 12, 60),
@@ -14,7 +17,9 @@ namespace RPGTextuel.SetupEnemies
             new GoblinChief("Brom", 45, 8, 45, 0.3)
         };
 
-        // Cette méthode permet de choisir aléatoirement un élement de la liste des GoblinChiefs.
+        /// <summary>
+        /// Retourne un chef gobelin aléatoire cloné à partir de la liste prédéfinie.
+        /// </summary>
         public static GoblinChief GetRandomGoblinChief()
         {
             var template = GoblinChiefs.PickRandom();
