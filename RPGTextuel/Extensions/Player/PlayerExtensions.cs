@@ -21,13 +21,21 @@ namespace RPGTextuel.Extensions.Players
         {
             if (player == null)
                 throw new ArgumentNullException(nameof(player), "Le joueur ne peut pas être nul.");
-                
+
             SetupHealPotions.GiveHealPotionToPlayer(player, size);
         }
 
-        // Méthode d’extension pour ajouter une potion de dégats par sa taille.
+        /// <summary>
+        /// Ajoute une potion de dégâts à un joueur, selon la taille spécifiée.
+        /// </summary>
+        /// <param name="player">Le joueur qui recevra la potion.</param>
+        /// <param name="size">La taille de la potion de dégâts.</param>
+        /// <exception cref="ArgumentNullException">Si le joueur est <c>null</c>.</exception>
         public static void AddDamagePotion(this Player player, PotionSize size)
         {
+            if (player == null)
+                throw new ArgumentNullException(nameof(player), "Le joueur ne peut pas être nul.");
+
             SetupDamagePotions.GiveDamagePotionToPlayer(player, size);
         }
 
