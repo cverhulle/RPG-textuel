@@ -3,10 +3,13 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
-    // Cette classe permet de créer les ennemis de type gobelins que l'on affrontera
+    /// <summary>
+    /// Contient la configuration et la génération aléatoire
+    /// des ennemis de type Goblin.
+    /// </summary>
     public static class SetupGoblins
     {
-        // Créeons la liste des ennemis de type "Goblin"
+        // Liste privée des gobelins.
         public static List<Goblin> Goblins = new List<Goblin>
         {
             new Goblin("Snot", 36, 8, 36),
@@ -14,7 +17,9 @@ namespace RPGTextuel.SetupEnemies
             new Goblin("Tark", 45, 6, 45)
         };
 
-        // Cette méthode permet de choisir aléatoirement un élement de la liste des Goblins.
+        /// <summary>
+        /// Retourne un gobelin aléatoire cloné à partir de la liste prédéfinie.
+        /// </summary>
         public static Goblin GetRandomGoblin()
         {
             var template = Goblins.PickRandom();
