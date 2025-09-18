@@ -7,16 +7,7 @@ namespace RPGTextuel.Extensions.Enemies
     /// Fournit des méthodes d'extension pour enrichir la classe <see cref="Enemy"/>.
     /// </summary>
     public static class EnemyExtensions
-    {
-        /// <summary>
-        /// Fait pousser un cri féroce à l’ennemi dans la console.
-        /// </summary>
-        /// <param name="enemy">L'ennemi qui rugit.</param>
-        public static void Roar(this Enemy enemy)
-        {
-            Console.WriteLine($"{enemy.Name} pousse un cri féroce !");
-        }
-        
+    {     
         /// <summary>
         /// Affiche dans la console toutes les statistiques de l’ennemi,
         /// y compris sa barre de vie, sa force et son taux de critique.
