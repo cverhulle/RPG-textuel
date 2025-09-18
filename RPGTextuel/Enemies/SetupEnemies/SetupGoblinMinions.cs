@@ -3,10 +3,13 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.SetupEnemies
 {
-    // Cette classe permet de créer les ennemis de type "GoblinMinion".
+    /// <summary>
+    /// Contient la configuration et la génération aléatoire
+    /// des ennemis de type GoblinMinion.
+    /// </summary>
     public static class SetupGoblinMinions
     {
-        // Créeons la liste des ennemis de type "GoblinMinion"
+        // Liste privée des gobelins de type "GoblinMinion"
         public static List<GoblinMinion> GoblinMinions = new List<GoblinMinion>
         {
             new GoblinMinion("Virk", 20, 4, 20),
@@ -14,7 +17,9 @@ namespace RPGTextuel.SetupEnemies
             new GoblinMinion("Vrag", 25, 3, 25)
         };
 
-        // Cette méthode permet de choisir aléatoirement un élement de la liste des GoblinMinions.
+        /// <summary>
+        /// Retourne un gobelin de type "GoblinMinion" aléatoire cloné à partir de la liste prédéfinie.
+        /// </summary>
         public static GoblinMinion GetRandomGoblinMinion()
         {
             var template = GoblinMinions.PickRandom();
