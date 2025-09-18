@@ -3,7 +3,9 @@ using RPGTextuel.Config;
 
 namespace RPGTextuel.Extensions.Characters
 {
-    // Cette classe permet de créer des extensions de la classe Character.
+    /// <summary>
+    /// Fournit des méthodes d'extension pour enrichir la classe <see cref="Character"/>.
+    /// </summary>
     public static class CharacterExtensions
     {
         // Cette méthode permet d'afficher la barre de vie d'un character.
