@@ -4,29 +4,49 @@ using RPGTextuel.Game.GameUtilsNamespace;
 
 namespace RPGTextuel.Items.Class
 {
-    // On crée la classe "Inventaire"
+    /// <summary>
+    /// Représente l'inventaire d'un personnage.
+    /// Permet de stocker, afficher, utiliser et supprimer des objets.
+    /// </summary>
     public class Inventory
     {
-        // Cette classe contient une liste d'objet et le nom de son propriétaire.
+        /// <summary>
+        /// Liste des objets contenus dans l'inventaire.
+        /// </summary>
         private List<Item> items = new List<Item>();
+
+        /// <summary>
+        /// Référence vers le propriétaire de l'inventaire (joueur ou ennemi).
+        /// </summary>
         private Character owner;
 
-        // On définit le constructeur de la classe.
+        /// <summary>
+        /// Constructeur de la classe Inventory.
+        /// </summary>
+        /// <param name="inventoryOwner">Le personnage qui possède cet inventaire.</param>
         public Inventory(Character inventoryOwner)
         {
             owner = inventoryOwner;
         }
 
-        // Cette méthode retourne le nombre d'objets dans l'inventaire.
+        /// <summary>
+        /// Retourne le nombre d'objets présents dans l'inventaire.
+        /// </summary>
         public int Count => items.Count;
 
-        // Cette méthode permet d'ajouter un item dans l'inventaire.
+        /// <summary>
+        /// Ajoute un objet à l'inventaire.
+        /// </summary>
+        /// <param name="item">L'objet à ajouter.</param>
         public void AddItem(Item item)
         {
             items.Add(item);
         }
 
-        // Cette méthode permet d'afficher les items du joueur
+        /// <summary>
+        /// Affiche le contenu de l'inventaire.
+        /// Si l'inventaire est vide, affiche un message spécifique.
+        /// </summary>
         public void DisplayInventory()
         {
             // On regarde si l'inventaire est vide.
@@ -46,7 +66,9 @@ namespace RPGTextuel.Items.Class
             );
         }
 
-        // Cette méthode retourne tous les items dans l'inventaire.
+        /// <summary>
+        /// Retourne la liste des objets de l'inventaire triée par type et par taille.
+        /// </summary>
         public List<Item> GetAllItems()
         {
             return items
@@ -68,25 +90,35 @@ namespace RPGTextuel.Items.Class
                 .ToList();
         }
 
-        // Cette méthode retourne true si l'inventaire est vide et false sinon.
+        /// <summary>
+        /// Indique si l'inventaire est vide.
+        /// </summary>
         public bool IsEmpty()
         {
             return items.Count == 0;
         }
 
-        // Cette méthode vérifie si l'index passé en argument est valide.
+        /// <summary>
+        /// Vérifie si un index d'objet est valide.
+        /// </summary>
+        /// <param name="index">L'index de l'objet dans la liste.</param>
         public bool IsValidItemIndex(int index)
         {
             return index >= 0 && index < items.Count;
         }
 
-        // Cette méthode retourne le nom de tous les items dans l'inventaire sous forme de liste.
+        /// <summary>
+        /// Retourne la liste des noms des objets contenus dans l'inventaire.
+        /// </summary>
         public List<string> GetItemNames()
         {
             return items.Select(i => i.name).ToList();
         }
 
-        // Cette méthode permet de retirer un objet
+        /// <summary>
+        /// Supprime un objet de l'inventaire en fonction de son index.
+        /// </summary>
+        /// <param name="index">L'index de l'objet à supprimer.</param>
         public void RemoveItemByIndex(int index)
         {
             if (IsValidItemIndex(index))
@@ -99,9 +131,12 @@ namespace RPGTextuel.Items.Class
             }
         }
 
-        // Cette méthode permet d'utiliser un item et de le supprimer après utilisation.
-        // Si l'item ne peut pas être utilisé, on ne fait rien.
-        // On retourne true si l'item est utilisé ; false sinon.
+        /// <summary>
+        /// Utilise un objet de l'inventaire puis le supprime s'il a bien été utilisé.
+        /// </summary>
+        /// <param name="index">L'index de l'objet à utiliser.</param>
+        /// <param name="user">Le personnage qui utilise l'objet.</param>
+        /// <param name="target">La cible de l'utilisation de l'objet.</param>
         public Boolean UseItem(int index, Character user, Character target)
         {
             if (IsValidItemIndex(index))
