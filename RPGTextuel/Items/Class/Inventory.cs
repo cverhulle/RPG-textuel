@@ -137,6 +137,7 @@ namespace RPGTextuel.Items.Class
         /// <param name="index">L'index de l'objet à utiliser.</param>
         /// <param name="user">Le personnage qui utilise l'objet.</param>
         /// <param name="target">La cible de l'utilisation de l'objet.</param>
+        /// <returns>True si l'objet a été utilisé et supprimé, False sinon.</returns>
         public Boolean UseItem(int index, Character user, Character target)
         {
             if (IsValidItemIndex(index))
