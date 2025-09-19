@@ -1,10 +1,23 @@
 namespace RPGTextuel.Items.SetupItems
 {
-    // On crée une enum contenant les trois types de potions possibles.
+    /// <summary>
+    /// Représente les tailles possibles pour une potion.
+    /// </summary>
     public enum PotionSize
     {
+        /// <summary>
+        /// Potion de petite taille.
+        /// </summary>
         Small,
+
+        /// <summary>
+        /// Potion de taille moyenne.
+        /// </summary>
         Medium,
+
+        /// <summary>
+        /// Potion de grande taille.
+        /// </summary>
         Large
     }
 }
