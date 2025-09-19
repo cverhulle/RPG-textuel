@@ -4,20 +4,35 @@ using RPGTextuel.Items.Class;
 
 namespace RPGTextuel.Items.Consumables
 {
-    // Création de l'objet Potion de soin
+    /// <summary>
+    /// Représente une potion de soin, un objet consommable qui restaure des points de vie à une cible.
+    /// </summary>
     public class HealPotion : Item
     {
-        // On liste ses attributs
+        /// <summary>
+        /// Quantité de points de vie restaurés par la potion.
+        /// </summary>
         public int healAmount { get; }
 
-        // On définiti son constructeur
+        /// <summary>
+        /// Constructeur de la classe <see cref="HealPotion"/>.
+        /// </summary>
+        /// <param name="name">Nom de la potion.</param>
+        /// <param name="healAmountOfPotion">Nombre de points de vie restaurés.</param>
         public HealPotion(string name, int healAmountOfPotion) : base(name)
         {
             healAmount = healAmountOfPotion;
         }
 
-        // Cette méthode permet d'utiliser la potion de soin.
-        // Elle régénère un certain montant de PV.
+        /// <summary>
+        /// Utilise la potion de soin sur une cible.
+        /// </summary>
+        /// <param name="user">Le personnage qui utilise la potion.</param>
+        /// <param name="target">La cible de la potion.</param>
+        /// <returns>
+        /// True si la potion a été utilisée avec succès (soin appliqué), 
+        /// False si le soin n’a pas pu être appliqué.
+        /// </returns>
         public override Boolean Use(Character user, Character target)
         {
             // On modifie l'affichage en violet
