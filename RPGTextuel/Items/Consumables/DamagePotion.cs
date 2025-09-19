@@ -4,21 +4,35 @@ using RPGTextuel.Items.Class;
 
 namespace RPGTextuel.Items.Consumables
 {
-    // On crée la classe qui s'occupe de la potion de dégats.
+    /// <summary>
+    /// Représente une potion de dégâts, un objet consommable qui inflige des points de dégâts à une cible.
+    /// </summary>
     public class DamagePotion : Item
     {
-        // On définit son attribut.
+        /// <summary>
+        /// Quantité de dégâts infligés par la potion.
+        /// </summary>
         public int damage { get; }
 
-        // On implémente le constructeur de cette classe.
+        /// <summary>
+        /// Constructeur de la classe <see cref="DamagePotion"/>.
+        /// </summary>
+        /// <param name="name">Nom de la potion.</param>
+        /// <param name="damagePotion">Nombre de points de dégâts infligés.</param>
         public DamagePotion(string name, int damagePotion) : base(name)
         {
             damage = damagePotion;
         }
 
-        // On implémente la méthode Use.
-        // Elle prend en argument un personnage et lui enlève des PV égaux à damage.
-        // On retourne un booléen indiquant sur l'objet est utilisé ou non.
+        /// <summary>
+        /// Utilise la potion de dégâts sur une cible.
+        /// </summary>
+        /// <param name="user">Le personnage qui utilise la potion.</param>
+        /// <param name="target">La cible de la potion.</param>
+        /// <returns>
+        /// True si la potion a été utilisée avec succès, False si l’action est invalide 
+        /// (par exemple, si l’utilisateur tente de l’utiliser sur lui-même).
+        /// </returns>
         public override Boolean Use(Character user, Character target)
         {
             // On modifie l'affichage en violet
