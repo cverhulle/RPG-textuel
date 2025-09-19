@@ -3,10 +3,19 @@ using RPGTextuel.Items.Class;
 
 namespace RPGTextuel.Items.SetupItems
 {
-    // Cette classe fournit les méthodes génériques liées aux potions
+    /// <summary>
+    /// Fournit des méthodes génériques pour gérer les potions.
+    /// </summary>
     public static class PotionHelper
     {
-        // Cette méthode est une méthode générique pour donner des potions à un joueur.
+        /// <summary>
+        /// Donne une potion à un joueur en fonction de la taille choisie.
+        /// </summary>
+        /// <typeparam name="TPotion">Type de potion à donner, doit hériter de <see cref="Item"/>.</typeparam>
+        /// <param name="player">Le joueur qui recevra la potion.</param>
+        /// <param name="size">La taille de la potion (<see cref="PotionSize.Small"/>, <see cref="PotionSize.Medium"/>, <see cref="PotionSize.Large"/>).</param>
+        /// <param name="potionSelector">Fonction qui sélectionne la potion correspondante à la taille.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Lancée si la taille de potion n'est pas reconnue ou si la potion est nulle.</exception>
         public static void GivePotionToPlayer<TPotion>(
             Player player,
             PotionSize size,
