@@ -5,10 +5,14 @@ using RPGTextuel.Extensions.List;
 
 namespace RPGTextuel.Items.Factory
 {
-    // Cette classe s'occupe de regrouper tous le objets existants.
+    /// <summary>
+    /// Fournit une fabrique centralisée pour accéder et générer les différents objets du jeu.
+    /// </summary>
     public static class ItemFactory
     {
-        // On liste tous les objets existants.
+        /// <summary>
+        /// Liste contenant toutes les potions existantes (soin et dégâts).
+        /// </summary>
         public static readonly List<Item> allPotions = new List<Item>
         {
             SetupHealPotions.SmallHealPotion,
@@ -19,7 +23,12 @@ namespace RPGTextuel.Items.Factory
             SetupDamagePotions.LargeDamagePotion
         };
 
-        // On choisit aléatoirement un objet parmi une liste.
+        /// <summary>
+        /// Sélectionne aléatoirement un objet dans une liste d’items.
+        /// </summary>
+        /// <param name="items">La liste d’items disponibles.</param>
+        /// <returns>Un objet choisi aléatoirement dans la liste.</returns>
+        /// <exception cref="ArgumentException">Lancée si la liste est vide ou nulle.</exception>
         public static Item GetRandomItem(List<Item> items)
         {
             if (items == null || items.Count == 0)
