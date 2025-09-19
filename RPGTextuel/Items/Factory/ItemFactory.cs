@@ -31,8 +31,11 @@ namespace RPGTextuel.Items.Factory
         /// <exception cref="ArgumentException">Lancée si la liste est vide ou nulle.</exception>
         public static Item GetRandomItem(List<Item> items)
         {
-            if (items == null || items.Count == 0)
-                throw new ArgumentException("La liste ne peut pas être vide");
+            if (items == null)
+                throw new ArgumentNullException(nameof(items), "La liste ne peut pas être nulle.");
+        
+            if (items.Count == 0)
+                throw new InvalidOperationException("La liste ne peut pas être vide.");
 
             return items.PickRandom();
         }
