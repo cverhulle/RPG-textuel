@@ -28,7 +28,8 @@ namespace RPGTextuel.Items.Factory
         /// </summary>
         /// <param name="items">La liste d’items disponibles.</param>
         /// <returns>Un objet choisi aléatoirement dans la liste.</returns>
-        /// <exception cref="ArgumentException">Lancée si la liste est vide ou nulle.</exception>
+        /// <exception cref="ArgumentNullException">Lancée si <paramref name="items"/> est <c>null</c>.</exception>
+        /// <exception cref="InvalidOperationException">Lancée si <paramref name="items"/> est vide.</exception>
         public static Item GetRandomItem(List<Item> items)
         {
             if (items == null)
