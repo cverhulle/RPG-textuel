@@ -2,16 +2,30 @@ using RPGTextuel.Core;
 using RPGTextuel.Enemies.Class;
 using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
+
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'événement "Gain de force pour le prochain ennemi
+    /// <summary>
+    /// Événement aléatoire qui augmente la force du prochain ennemi.
+    /// </summary>
     public class GainStrengthEnemyEvent : IRandomEvent
     {
-        // On définit son nom et sa description.
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Un adversaire impressionnant";
+
+        
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "D'après les rumeurs, le prochain adversaire est puissant...";
 
-        // On définit l'activation de l'événement.
+        /// <summary>
+        /// Déclenche l'événement en augmentant la statistique de force du prochain ennemi.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (optionnel, peut être null).</param>
+        /// <param name="enemy">L'ennemi dont la force sera modifiée.</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (enemy == null) return; // Sécurité
