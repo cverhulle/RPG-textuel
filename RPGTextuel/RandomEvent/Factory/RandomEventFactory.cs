@@ -9,7 +9,9 @@ using RPGTextuel.Weight.Class;
 
 namespace RPGTextuel.RandomEvent.Factory
 {
-    // Cette classe permet de regrouper tous les évenements aléatoires.
+    /// <summary>
+    /// Fournit des méthodes pour créer et gérer les événements aléatoires du jeu.
+    /// </summary>
     public static class RandomEventFactory
     {
         // Renvoie la bonne table de loot
