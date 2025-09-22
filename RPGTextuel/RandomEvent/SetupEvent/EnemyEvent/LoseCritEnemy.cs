@@ -5,14 +5,26 @@ using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.Events
 {
-    // On définit l'événement "Perte de chance de critique pour le prochain ennemi"
+    /// <summary>
+    /// Événement aléatoire qui réduit la probabilité de coup critique du prochain ennemi.
+    /// </summary>
     public class LoseCritEnemyEvent : IRandomEvent
     {
-        // On définit son nom et sa description.
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Un adversaire maladroit";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Le prochain ennemi semble assez maladroit...";
 
-        // On définit l'activation de l'événement.
+        /// <summary>
+        /// Déclenche l'événement en réduisant la chance de coup critique du prochain ennemi.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (optionnel, peut être null).</param>
+        /// <param name="enemy">L'ennemi dont la statistique critique est modifiée.</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (enemy == null) return; // Sécurité
