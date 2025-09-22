@@ -4,14 +4,26 @@ using RPGTextuel.RandomEvent.Class.Interface;
 using RPGTextuel.Utils;
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'événement "Gain de chance de critique pour le prochain ennemi"
+    /// <summary>
+    /// Événement aléatoire qui augmente la chance de coup critique du prochain ennemi.
+    /// </summary>
     public class GainCritEnemyEvent : IRandomEvent
     {
-        // On définit son nom et sa description.
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Un adversaire vicieux";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Le prochain adversaire sait exploiter la moindre faille...";
 
-        // On définit l'activation de l'événement.
+        /// <summary>
+        /// Déclenche l'événement en augmentant la probabilité de coup critique de l'ennemi.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (optionnel, peut être null).</param>
+        /// <param name="enemy">L'ennemi dont la chance de critique sera modifiée.</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (enemy == null) return; // Sécurité
