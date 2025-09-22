@@ -6,14 +6,26 @@ using RPGTextuel.Enemies.Class;
 
 namespace RPGTextuel.RandomEvent.Class
 {
-    // Cette classe définit la structure d'un évenement aléatoire pour les ennemis
+    /// <summary>
+    /// Classe abstraite représentant un évènement aléatoire pouvant affecter un ennemi.
+    /// Chaque évènement possède un nom, une description et une logique d'exécution.
+    /// </summary>
     public abstract class EnemyRandomEventClass
     {
-        // On crée deux attributs "Name" et "Description"
+        /// <summary>
+        /// Nom de l'évènement aléatoire.
+        /// </summary>
         public abstract string Name { get; }
+
+        /// <summary>
+        /// Description détaillée de l'évènement.
+        /// </summary>
         public abstract string Description { get; }
 
-        // On implémente la méthode Trigger pour déclencher l'évenement.
+        /// <summary>
+        /// Déclenche l'évènement sur l'ennemi passé en paramètre.
+        /// </summary>
+        /// <param name="enemy">L'ennemi ciblé par l'évènement.</param>
         public abstract void Trigger(Enemy enemy);
     }
 }
