@@ -14,16 +14,21 @@ namespace RPGTextuel.RandomEvent.Factory
     /// </summary>
     public static class RandomEventFactory
     {
-        // Renvoie la bonne table de loot
+        /// <summary>
+        /// Retourne la table de loot correspondant au type spécifié.
+        /// </summary>
+        /// <param name="dropType">Le type de table de loot (boss, défaut, etc.).</param>
+        /// <returns>La table de loot associée.</returns>
         private static List<Weighted<Item>> GetItemTable(ItemDropTableType dropType) => dropType switch
         {
             ItemDropTableType.Boss => ItemDropConfig.BossItemDrops,
             _ => ItemDropConfig.DefaultPotionDrops
         };
 
-        // Liste de tous les événements disponibles.
-        // On stocke des fonctions qui, lorsqu'elles sont appelées, instancient un événement.
-        // On fournit le type de drop en entrée (pour l'événement FindItemEvent).
+        /// <summary>
+        /// Liste de toutes les fabriques d'événements disponibles.
+        /// Chaque fabrique est une fonction qui instancie un événement en fonction du type de loot.
+        /// </summary>
         private static readonly List<Func<ItemDropTableType, IRandomEvent>> allEventFactories = new()
         {
             (dropType) => new FindItemEvent(GetItemTable(dropType)),
@@ -41,7 +46,11 @@ namespace RPGTextuel.RandomEvent.Factory
             (_) => new LoseCritEnemyEvent()
         };
 
-        // On choisit aléatoirement un événement parmi une liste.
+        /// <summary>
+        /// Retourne un événement aléatoire en fonction du type de loot.
+        /// </summary>
+        /// <param name="dropType">Le type de loot à utiliser (par défaut : <see cref="ItemDropTableType.Default"/>).</param>
+        /// <returns>Un événement aléatoire.</returns>
         public static IRandomEvent GetRandomEvent(ItemDropTableType dropType = ItemDropTableType.Default)
         {
             // S'il n'y a pas d'événement (pas attendu), on ne fait rien.
@@ -55,7 +64,11 @@ namespace RPGTextuel.RandomEvent.Factory
             return factory(dropType);
         }
 
-        // Cette méthode permet de retourner un événement qui donne un item aléatoire.
+        /// <summary>
+        /// Retourne un événement qui fait obtenir un objet aléatoire.
+        /// </summary>
+        /// <param name="dropType">Le type de loot à utiliser (par défaut : <see cref="ItemDropTableType.Default"/>).</param>
+        /// <returns>Un événement de type <see cref="FindItemEvent"/>.</returns>
         public static IRandomEvent GetRandomItem(ItemDropTableType dropType = ItemDropTableType.Default)
         {
             return new FindItemEvent(GetItemTable(dropType));
