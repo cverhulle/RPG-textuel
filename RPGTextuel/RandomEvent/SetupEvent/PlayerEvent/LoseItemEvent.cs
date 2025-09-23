@@ -5,16 +5,28 @@ using RPGTextuel.RandomEvent.Class.Interface;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'évenement "Perdre un objet".
+    /// <summary>
+    /// Événement aléatoire : le joueur perd un objet de son inventaire.
+    /// </summary>
     public class LoseItemEvent : IRandomEvent
     {
-        // On définit son nom et sa description.
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Sac percé";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Votre sac est percé... un objet semble avoir disparu";
 
 
-        // On définit son activation : 
-        // Perte d'un item aléatoire dans l'inventaire du joueur.
+        /// <summary>
+        /// Déclenche l'événement : retire un objet aléatoire de l'inventaire du joueur,
+        /// si celui-ci n'est pas vide.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (peut être <c>null</c>).</param>
+        /// <param name="enemy">L’ennemi concerné (non utilisé ici).</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
