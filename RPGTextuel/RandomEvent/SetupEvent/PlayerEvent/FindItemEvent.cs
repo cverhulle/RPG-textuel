@@ -48,8 +48,11 @@ namespace RPGTextuel.RandomEvent.SetupEvent
             _weightedItems = weightedItems ?? throw new ArgumentNullException(nameof(weightedItems));
         }
 
-        // On définit son activation : 
-        // Ajout d'un item aléatoire dans l'inventaire du joueur.
+        /// <summary>
+        /// Déclenche l’événement : ajoute un objet aléatoire dans l’inventaire du joueur.
+        /// </summary>
+        /// <param name="player">Le joueur concerné (peut être null).</param>
+        /// <param name="enemy">L’ennemi concerné (non utilisé ici).</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // sécurité
