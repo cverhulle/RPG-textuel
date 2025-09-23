@@ -4,13 +4,26 @@ using RPGTextuel.RandomEvent.Class.Interface;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'évenement "Jour de paix" : il ne "fait rien"
+    /// <summary>
+    /// Événement aléatoire : Ne fait rien
+    /// </summary>
     public class PeacefulDayEvent : IRandomEvent
     {
-        // On définit le nom et la description de l'événement.
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Jour paisible";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Le soleil est radieux, le vent est doux...";
 
+        /// <summary>
+        /// Déclenche l'événement : Ne fait rien, un simple texte est affiché
+        /// </summary>
+        /// <param name="player">Le joueur affecté par l'événement (non utilisé ici).</param>
+        /// <param name="enemy">L’ennemi concerné (non utilisé ici).</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
