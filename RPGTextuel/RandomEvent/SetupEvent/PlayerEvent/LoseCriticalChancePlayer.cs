@@ -5,14 +5,27 @@ using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'événement "Baisse de la chance de coup critique"
+    /// <summary>
+    /// Événement aléatoire : baisse de la chance de coup critique du joueur.
+    /// </summary>
     public class LoseCriticalChancePlayerEvent : IRandomEvent
     {
-        // On définit le nom et la description
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Vision troublée";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Une migraine soudaine trouble votre perception... Vos chances de viser juste diminuent.";
 
-        // Cet événement diminue la chance la coup critique du joueur.
+        /// <summary>
+        /// Déclenche l'événement : diminue la chance de coup critique du joueur
+        /// entre 3% et 10%.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (peut être <c>null</c>).</param>
+        /// <param name="enemy">L’ennemi concerné (non utilisé ici).</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
