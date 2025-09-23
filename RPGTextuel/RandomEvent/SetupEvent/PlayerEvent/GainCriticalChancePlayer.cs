@@ -5,14 +5,27 @@ using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'événement "Augmentation de la chance de critique".
+    /// <summary>
+    /// Événement aléatoire : augmente la chance de coup critique du joueur.
+    /// </summary>
     public class GainCriticalChancePlayerEvent : IRandomEvent
     {
-        // On définit son nom et sa description.
+        /// <summary>
+        /// Nom de l'événement.
+        /// </summary>
         public string Name => "Eclair de génie !";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Un éclair de lucidité traverse votre esprit. Vos prochaines attaques seront plus précises !";
 
-        // On définit l'effet de l'événement : Augmentation de la chance de coup critique.
+        /// <summary>
+        /// Déclenche l'événement : augmente la chance de coup critique du joueur
+        /// d’une valeur aléatoire comprise entre 5% et 15%.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (peut être <c>null</c>).</param>
+        /// <param name="enemy">L’ennemi concerné (non utilisé ici).</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
