@@ -5,15 +5,26 @@ using RPGTextuel.Utils;
 
 namespace RPGTextuel.RandomEvent.SetupEvent
 {
-    // On définit l'évenement "Gain de Force pour le joueur".
+    /// <summary>
+    /// Événement aléatoire : le joueur gagne de la force grâce à un entraînement intensif.
+    /// </summary>
     public class GainStrengthEvent : IRandomEvent
     {
-        // Nom et description de l'événement
+        /// <summary>
+        /// Événement aléatoire : le joueur gagne de la force grâce à un entraînement intensif.
+        /// </summary>
         public string Name => "Entraînement intensif";
+
+        /// <summary>
+        /// Description de l'événement.
+        /// </summary>
         public string Description => "Votre entraînement acharné vous rend plus fort !";
 
-        // Activation de l'événement :
-        // Gain aléatoire entre 1 et 3 points de Force
+        /// <summary>
+        /// Déclenche l'événement : le joueur gagne entre 1 et 3 points de force.
+        /// </summary>
+        /// <param name="player">Le joueur concerné par l'événement (peut être <c>null</c>).</param>
+        /// <param name="enemy">L’ennemi concerné (non utilisé ici).</param>
         public void Trigger(Player? player = null, Enemy? enemy = null)
         {
             if (player == null) return; // Sécurité
